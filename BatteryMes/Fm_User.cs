@@ -46,7 +46,6 @@ namespace BatteryMes
         {
             Fm_Main Main = new Fm_Main();
             Main.Show();
-            this.Close();
         }
     }
 }
