@@ -40,11 +40,20 @@
             this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Lb_Search = new System.Windows.Forms.Label();
+            this.Cb_Search = new System.Windows.Forms.ComboBox();
+            this.Tb_Search = new System.Windows.Forms.TextBox();
+            this.Bt_Search = new System.Windows.Forms.Button();
+            this.Bt_Delete = new System.Windows.Forms.Button();
+            this.Bt_Signup = new System.Windows.Forms.Button();
+            this.Bt_change = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gv_user)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -83,6 +92,7 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.Gv_user, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(303, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -183,6 +193,81 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Bt_change);
+            this.panel3.Controls.Add(this.Bt_Signup);
+            this.panel3.Controls.Add(this.Bt_Delete);
+            this.panel3.Controls.Add(this.Bt_Search);
+            this.panel3.Controls.Add(this.Tb_Search);
+            this.panel3.Controls.Add(this.Cb_Search);
+            this.panel3.Controls.Add(this.Lb_Search);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(774, 144);
+            this.panel3.TabIndex = 1;
+            // 
+            // Lb_Search
+            // 
+            this.Lb_Search.AutoSize = true;
+            this.Lb_Search.Location = new System.Drawing.Point(123, 112);
+            this.Lb_Search.Name = "Lb_Search";
+            this.Lb_Search.Size = new System.Drawing.Size(37, 15);
+            this.Lb_Search.TabIndex = 0;
+            this.Lb_Search.Text = "조건";
+            // 
+            // Cb_Search
+            // 
+            this.Cb_Search.FormattingEnabled = true;
+            this.Cb_Search.Location = new System.Drawing.Point(181, 109);
+            this.Cb_Search.Name = "Cb_Search";
+            this.Cb_Search.Size = new System.Drawing.Size(121, 23);
+            this.Cb_Search.TabIndex = 1;
+            // 
+            // Tb_Search
+            // 
+            this.Tb_Search.Location = new System.Drawing.Point(308, 108);
+            this.Tb_Search.Name = "Tb_Search";
+            this.Tb_Search.Size = new System.Drawing.Size(119, 25);
+            this.Tb_Search.TabIndex = 2;
+            // 
+            // Bt_Search
+            // 
+            this.Bt_Search.Location = new System.Drawing.Point(433, 108);
+            this.Bt_Search.Name = "Bt_Search";
+            this.Bt_Search.Size = new System.Drawing.Size(75, 27);
+            this.Bt_Search.TabIndex = 3;
+            this.Bt_Search.Text = "조회";
+            this.Bt_Search.UseVisualStyleBackColor = true;
+            // 
+            // Bt_Delete
+            // 
+            this.Bt_Delete.Location = new System.Drawing.Point(678, 109);
+            this.Bt_Delete.Name = "Bt_Delete";
+            this.Bt_Delete.Size = new System.Drawing.Size(75, 23);
+            this.Bt_Delete.TabIndex = 4;
+            this.Bt_Delete.Text = "삭제";
+            this.Bt_Delete.UseVisualStyleBackColor = true;
+            // 
+            // Bt_Signup
+            // 
+            this.Bt_Signup.Location = new System.Drawing.Point(597, 110);
+            this.Bt_Signup.Name = "Bt_Signup";
+            this.Bt_Signup.Size = new System.Drawing.Size(75, 23);
+            this.Bt_Signup.TabIndex = 5;
+            this.Bt_Signup.Text = "등록";
+            this.Bt_Signup.UseVisualStyleBackColor = true;
+            // 
+            // Bt_change
+            // 
+            this.Bt_change.Location = new System.Drawing.Point(516, 109);
+            this.Bt_change.Name = "Bt_change";
+            this.Bt_change.Size = new System.Drawing.Size(75, 23);
+            this.Bt_change.TabIndex = 6;
+            this.Bt_change.Text = "변경";
+            this.Bt_change.UseVisualStyleBackColor = true;
+            // 
             // Fm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -197,6 +282,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gv_user)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +302,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Bt_Search;
+        private System.Windows.Forms.TextBox Tb_Search;
+        private System.Windows.Forms.ComboBox Cb_Search;
+        private System.Windows.Forms.Label Lb_Search;
+        private System.Windows.Forms.Button Bt_Delete;
+        private System.Windows.Forms.Button Bt_change;
+        private System.Windows.Forms.Button Bt_Signup;
     }
 }
