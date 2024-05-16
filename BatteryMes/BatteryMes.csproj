@@ -104,6 +104,12 @@
     <Compile Include="Fm_Control.Designer.cs">
       <DependentUpon>Fm_Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Login.Designer.cs">
+      <DependentUpon>Fm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
