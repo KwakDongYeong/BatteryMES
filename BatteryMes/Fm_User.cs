@@ -25,6 +25,7 @@ namespace BatteryMes
             this.Cb_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
         }
+      
 
         private void LoadUser()
         {
@@ -127,6 +128,23 @@ namespace BatteryMes
         private void Bt_Re_Click(object sender, EventArgs e)
         {
             LoadUser();
+        }
+
+        private void Bt_Signup_Click(object sender, EventArgs e)
+        {
+            Fm_Signup fm_Signup = new Fm_Signup();
+
+            fm_Signup.SignupFormClosed += Fm_Signup_SignupFormClosed;
+            fm_Signup.ShowDialog();
+        }
+        private void Fm_Signup_SignupFormClosed(object sender, EventArgs e)
+        {
+           LoadUser() ;
+        }
+
+        private void Bt_Delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

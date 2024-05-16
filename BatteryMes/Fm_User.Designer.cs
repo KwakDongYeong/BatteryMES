@@ -32,7 +32,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Gv_user = new System.Windows.Forms.DataGridView();
+            this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userpw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Bt_Re = new System.Windows.Forms.Button();
             this.Bt_change = new System.Windows.Forms.Button();
             this.Bt_Signup = new System.Windows.Forms.Button();
             this.Bt_Delete = new System.Windows.Forms.Button();
@@ -43,12 +50,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Bt_Re = new System.Windows.Forms.Button();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userpw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -107,9 +108,11 @@
             // 
             this.Gv_user.AllowUserToAddRows = false;
             this.Gv_user.AllowUserToDeleteRows = false;
+            this.Gv_user.AllowUserToResizeRows = false;
             this.Gv_user.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Gv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gv_user.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckBox,
             this.username,
             this.userid,
             this.userpw,
@@ -119,12 +122,65 @@
             this.Gv_user.Location = new System.Drawing.Point(3, 153);
             this.Gv_user.MultiSelect = false;
             this.Gv_user.Name = "Gv_user";
-            this.Gv_user.ReadOnly = true;
             this.Gv_user.RowHeadersWidth = 51;
             this.Gv_user.RowTemplate.Height = 27;
             this.Gv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Gv_user.Size = new System.Drawing.Size(774, 325);
             this.Gv_user.TabIndex = 0;
+            // 
+            // CheckBox
+            // 
+            this.CheckBox.FillWeight = 15F;
+            this.CheckBox.HeaderText = "";
+            this.CheckBox.MinimumWidth = 15;
+            this.CheckBox.Name = "CheckBox";
+            this.CheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // username
+            // 
+            this.username.DataPropertyName = "name";
+            this.username.FillWeight = 71.24693F;
+            this.username.HeaderText = "이름";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // userid
+            // 
+            this.userid.DataPropertyName = "id";
+            this.userid.FillWeight = 71.24693F;
+            this.userid.HeaderText = "ID";
+            this.userid.MinimumWidth = 6;
+            this.userid.Name = "userid";
+            this.userid.ReadOnly = true;
+            // 
+            // userpw
+            // 
+            this.userpw.DataPropertyName = "pw";
+            this.userpw.FillWeight = 71.24693F;
+            this.userpw.HeaderText = "PW";
+            this.userpw.MinimumWidth = 6;
+            this.userpw.Name = "userpw";
+            this.userpw.ReadOnly = true;
+            // 
+            // department
+            // 
+            this.department.DataPropertyName = "department";
+            this.department.FillWeight = 71.24693F;
+            this.department.HeaderText = "부서";
+            this.department.MinimumWidth = 6;
+            this.department.Name = "department";
+            this.department.ReadOnly = true;
+            // 
+            // position
+            // 
+            this.position.DataPropertyName = "position";
+            this.position.FillWeight = 71.24693F;
+            this.position.HeaderText = "직책";
+            this.position.MinimumWidth = 6;
+            this.position.Name = "position";
+            this.position.ReadOnly = true;
             // 
             // panel3
             // 
@@ -141,6 +197,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(774, 144);
             this.panel3.TabIndex = 1;
+            // 
+            // Bt_Re
+            // 
+            this.Bt_Re.Location = new System.Drawing.Point(433, 75);
+            this.Bt_Re.Name = "Bt_Re";
+            this.Bt_Re.Size = new System.Drawing.Size(75, 27);
+            this.Bt_Re.TabIndex = 7;
+            this.Bt_Re.Text = "초기화";
+            this.Bt_Re.UseVisualStyleBackColor = true;
+            this.Bt_Re.Click += new System.EventHandler(this.Bt_Re_Click);
             // 
             // Bt_change
             // 
@@ -159,6 +225,7 @@
             this.Bt_Signup.TabIndex = 5;
             this.Bt_Signup.Text = "등록";
             this.Bt_Signup.UseVisualStyleBackColor = true;
+            this.Bt_Signup.Click += new System.EventHandler(this.Bt_Signup_Click);
             // 
             // Bt_Delete
             // 
@@ -168,6 +235,7 @@
             this.Bt_Delete.TabIndex = 4;
             this.Bt_Delete.Text = "삭제";
             this.Bt_Delete.UseVisualStyleBackColor = true;
+            this.Bt_Delete.Click += new System.EventHandler(this.Bt_Delete_Click);
             // 
             // Bt_Search
             // 
@@ -237,56 +305,6 @@
             this.panel1.Size = new System.Drawing.Size(1086, 94);
             this.panel1.TabIndex = 1;
             // 
-            // Bt_Re
-            // 
-            this.Bt_Re.Location = new System.Drawing.Point(433, 75);
-            this.Bt_Re.Name = "Bt_Re";
-            this.Bt_Re.Size = new System.Drawing.Size(75, 27);
-            this.Bt_Re.TabIndex = 7;
-            this.Bt_Re.Text = "초기화";
-            this.Bt_Re.UseVisualStyleBackColor = true;
-            this.Bt_Re.Click += new System.EventHandler(this.Bt_Re_Click);
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "name";
-            this.username.HeaderText = "이름";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            // 
-            // userid
-            // 
-            this.userid.DataPropertyName = "id";
-            this.userid.HeaderText = "ID";
-            this.userid.MinimumWidth = 6;
-            this.userid.Name = "userid";
-            this.userid.ReadOnly = true;
-            // 
-            // userpw
-            // 
-            this.userpw.DataPropertyName = "pw";
-            this.userpw.HeaderText = "PW";
-            this.userpw.MinimumWidth = 6;
-            this.userpw.Name = "userpw";
-            this.userpw.ReadOnly = true;
-            // 
-            // department
-            // 
-            this.department.DataPropertyName = "department";
-            this.department.HeaderText = "부서";
-            this.department.MinimumWidth = 6;
-            this.department.Name = "department";
-            this.department.ReadOnly = true;
-            // 
-            // position
-            // 
-            this.position.DataPropertyName = "position";
-            this.position.HeaderText = "직책";
-            this.position.MinimumWidth = 6;
-            this.position.Name = "position";
-            this.position.ReadOnly = true;
-            // 
             // Fm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -325,6 +343,7 @@
         private System.Windows.Forms.Button Bt_change;
         private System.Windows.Forms.Button Bt_Signup;
         private System.Windows.Forms.Button Bt_Re;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn userid;
         private System.Windows.Forms.DataGridViewTextBoxColumn userpw;
