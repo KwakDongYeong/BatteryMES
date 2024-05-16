@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -144,8 +145,74 @@ namespace BatteryMes
 
         private void Bt_Delete_Click(object sender, EventArgs e)
         {
-
+            DeleteUser();
         }
+
+        private void DeleteUser()
+        {
+            int rowsToDelete = 0; 
+
+            foreach (DataGridViewRow row in Gv_user.Rows)
+            {
+                DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(chk.Value))
+                {
+                    rowsToDelete++;
+                }
+            }
+
+            if (rowsToDelete == 0)
+            {
+                MessageBox.Show("선택된 행이 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            string connectionString = "Server = 10.10.32.238; Database = batterymes; Uid = BatteryMes; Pwd = Battery;";
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // 선택된 모든 행을 삭제합니다.
+                    for (int i = Gv_user.Rows.Count - 1; i >= 0; i--)
+                    {
+                        DataGridViewRow row = Gv_user.Rows[i];
+                        DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
+                        if (Convert.ToBoolean(chk.Value))
+                        {
+                            string id = row.Cells["userid"].Value.ToString();
+                            DeleteRecordFromDatabase(connection, id);
+                            Gv_user.Rows.RemoveAt(i);
+                        }
+                    }
+
+                    // 삭제된 행의 개수에 따라 메시지를 표시합니다.
+                    MessageBox.Show(rowsToDelete + "정보가 삭제되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("삭제 불가: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteRecordFromDatabase(MySqlConnection connection, string id)
+        {
+            try
+            {
+                string deletesql = "DELETE FROM user WHERE id = @id";
+                MySqlCommand delcommand = new MySqlCommand(deletesql, connection);
+                delcommand.Parameters.AddWithValue("@id", id);
+                delcommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("삭제 불가" + ex.Message);
+            }
+        }
+
+
+
     }
     
 }
