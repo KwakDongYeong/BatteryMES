@@ -18,6 +18,7 @@ namespace BatteryMes
         public Fm_Test()
         {
             InitializeComponent();
+            Pn_Tray_On.Paint += panel2_Paint;
         }
 
         private void Fm_Test_Load(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace BatteryMes
 
         public void LightOn()
         {
-                int value;
+             int value;
             plc.GetDevice("M1", out value);
             if(value == 0)
             {
@@ -43,15 +44,26 @@ namespace BatteryMes
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            Panel panel = sender as Panel;
-            if (panel != null)
+            Panel Pn_Tray_On = sender as Panel;
+            if (Pn_Tray_On != null)
             {
                 // 원형 경로 생성
                 GraphicsPath path = new GraphicsPath();
-                path.AddEllipse(0, 0, panel.Width, panel.Height);
+                path.AddEllipse(0, 0, Pn_Tray_On.Width, Pn_Tray_On.Height);
 
                 // 클리핑 영역 설정
-                panel.Region = new Region(path);
+                Pn_Tray_On.Region = new Region(path);
+                int value;
+                plc.GetDevice("M1", out value);
+                if (value == 0)
+                {
+                    Pn_Tray_On.BackColor = Color.Black;
+                }
+                else
+                {
+                    Pn_Tray_On.BackColor = Color.Red;
+                }
+                
             }
         }
     }
