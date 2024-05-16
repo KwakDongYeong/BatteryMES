@@ -107,6 +107,12 @@
     <Compile Include="Fm_Control.Designer.cs">
       <DependentUpon>Fm_Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fm_Frame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Frame.Designer.cs">
+      <DependentUpon>Fm_Frame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fm_Frame.resx">
+      <DependentUpon>Fm_Frame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fm_Signup.resx">
       <DependentUpon>Fm_Signup.cs</DependentUpon>
     </EmbeddedResource>
