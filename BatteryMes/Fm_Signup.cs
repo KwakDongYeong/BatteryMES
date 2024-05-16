@@ -73,17 +73,31 @@ namespace BatteryMes
                         using (MySqlConnection connection = new MySqlConnection(userstring))
                         {
                             connection.Open();
-                            string query = "insert into user (name, id, pw, department, position)" + "VALUES (@username, @password, @userid, @department, @position)";
-                            MySqlCommand command = new MySqlCommand(query, connection);
-                            command.Parameters.AddWithValue("@username", username);
-                            command.Parameters.AddWithValue("@password", password);
-                            command.Parameters.AddWithValue("@userid", userid);
-                            command.Parameters.AddWithValue("@department", department);
-                            command.Parameters.AddWithValue("@position", position);
 
-                            command.ExecuteNonQuery();
+                            string checkQuery = "SELECT COUNT(*) FROM user WHERE id = @userid";
+                            MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection);
+                            checkCommand.Parameters.AddWithValue("@userid", userid);
 
-                            MessageBox.Show("등록되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            int count = Convert.ToInt32(checkCommand.ExecuteScalar());
+                            if (count > 0)
+                            {
+                                MessageBox.Show("이미 존재하는 ID입니다. 다른 ID를 사용해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            else
+                            {
+                                string query = "insert into user (name, id, pw, department, position)" + "VALUES (@username, @userid, @password , @department, @position)";
+                                MySqlCommand command = new MySqlCommand(query, connection);
+                                command.Parameters.AddWithValue("@username", username);
+                                command.Parameters.AddWithValue("@password", password);
+                                command.Parameters.AddWithValue("@userid", userid);
+                                command.Parameters.AddWithValue("@department", department);
+                                command.Parameters.AddWithValue("@position", position);
+
+                                command.ExecuteNonQuery();
+
+                                MessageBox.Show("등록되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                     catch (Exception ex)
