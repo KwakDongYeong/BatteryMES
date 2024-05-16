@@ -225,8 +225,11 @@ namespace BatteryMes
             }
         }
 
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Fm_Test fm_Test = new Fm_Test();
+            fm_Test.Show();
+        }
     }
     
 }
