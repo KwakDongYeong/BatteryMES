@@ -28,93 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.Pn_Title_M = new System.Windows.Forms.Panel();
+            this.Lb_Title_M = new System.Windows.Forms.Label();
+            this.Pn_monitoring = new System.Windows.Forms.Panel();
+            this.Pn_Title_C = new System.Windows.Forms.Panel();
+            this.Lb_Title_C = new System.Windows.Forms.Label();
+            this.Pn_Control = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.Pn_Tray_On = new System.Windows.Forms.Panel();
+            this.Pn_Title_M.SuspendLayout();
+            this.Pn_monitoring.SuspendLayout();
+            this.Pn_Title_C.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // Pn_Title_M
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 38);
-            this.panel1.TabIndex = 0;
+            this.Pn_Title_M.Controls.Add(this.Lb_Title_M);
+            this.Pn_Title_M.Location = new System.Drawing.Point(12, 28);
+            this.Pn_Title_M.Name = "Pn_Title_M";
+            this.Pn_Title_M.Size = new System.Drawing.Size(445, 38);
+            this.Pn_Title_M.TabIndex = 0;
             // 
-            // label1
+            // Lb_Title_M
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "센서 모니터링";
+            this.Lb_Title_M.AutoSize = true;
+            this.Lb_Title_M.Location = new System.Drawing.Point(169, 14);
+            this.Lb_Title_M.Name = "Lb_Title_M";
+            this.Lb_Title_M.Size = new System.Drawing.Size(102, 15);
+            this.Lb_Title_M.TabIndex = 0;
+            this.Lb_Title_M.Text = "센서 모니터링";
             // 
-            // panel2
+            // Pn_monitoring
             // 
-            this.panel2.Location = new System.Drawing.Point(12, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 442);
-            this.panel2.TabIndex = 1;
+            this.Pn_monitoring.Controls.Add(this.pictureBox1);
+            this.Pn_monitoring.Controls.Add(this.Pn_Tray_On);
+            this.Pn_monitoring.Location = new System.Drawing.Point(12, 72);
+            this.Pn_monitoring.Name = "Pn_monitoring";
+            this.Pn_monitoring.Size = new System.Drawing.Size(445, 442);
+            this.Pn_monitoring.TabIndex = 1;
             // 
-            // panel3
+            // Pn_Title_C
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(463, 28);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(418, 38);
-            this.panel3.TabIndex = 1;
+            this.Pn_Title_C.Controls.Add(this.Lb_Title_C);
+            this.Pn_Title_C.Location = new System.Drawing.Point(463, 28);
+            this.Pn_Title_C.Name = "Pn_Title_C";
+            this.Pn_Title_C.Size = new System.Drawing.Size(418, 38);
+            this.Pn_Title_C.TabIndex = 1;
             // 
-            // label2
+            // Lb_Title_C
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "조작";
+            this.Lb_Title_C.AutoSize = true;
+            this.Lb_Title_C.Location = new System.Drawing.Point(193, 14);
+            this.Lb_Title_C.Name = "Lb_Title_C";
+            this.Lb_Title_C.Size = new System.Drawing.Size(37, 15);
+            this.Lb_Title_C.TabIndex = 0;
+            this.Lb_Title_C.Text = "조작";
             // 
-            // panel4
+            // Pn_Control
             // 
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Location = new System.Drawing.Point(463, 72);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 442);
-            this.panel4.TabIndex = 2;
+            this.Pn_Control.Location = new System.Drawing.Point(463, 72);
+            this.Pn_Control.Name = "Pn_Control";
+            this.Pn_Control.Size = new System.Drawing.Size(418, 442);
+            this.Pn_Control.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(51, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(189, 200);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // Pn_Tray_On
+            // 
+            this.Pn_Tray_On.Location = new System.Drawing.Point(23, 26);
+            this.Pn_Tray_On.Name = "Pn_Tray_On";
+            this.Pn_Tray_On.Size = new System.Drawing.Size(34, 32);
+            this.Pn_Tray_On.TabIndex = 0;
             // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 526);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Pn_Control);
+            this.Controls.Add(this.Pn_Title_C);
+            this.Controls.Add(this.Pn_monitoring);
+            this.Controls.Add(this.Pn_Title_M);
             this.Name = "Fm_Test";
             this.Text = "Fm_Test";
             this.Load += new System.EventHandler(this.Fm_Test_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.Pn_Title_M.ResumeLayout(false);
+            this.Pn_Title_M.PerformLayout();
+            this.Pn_monitoring.ResumeLayout(false);
+            this.Pn_Title_C.ResumeLayout(false);
+            this.Pn_Title_C.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -122,12 +131,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel Pn_Title_M;
+        private System.Windows.Forms.Label Lb_Title_M;
+        private System.Windows.Forms.Panel Pn_monitoring;
+        private System.Windows.Forms.Panel Pn_Title_C;
+        private System.Windows.Forms.Label Lb_Title_C;
+        private System.Windows.Forms.Panel Pn_Control;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Pn_Tray_On;
     }
 }

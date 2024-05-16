@@ -65,12 +65,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1092, 593);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1131, 617);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -87,7 +88,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 487F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 487F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1086, 487);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 511);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -102,7 +103,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(780, 481);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(819, 505);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // Gv_user
@@ -126,7 +127,7 @@
             this.Gv_user.RowHeadersWidth = 51;
             this.Gv_user.RowTemplate.Height = 27;
             this.Gv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Gv_user.Size = new System.Drawing.Size(774, 325);
+            this.Gv_user.Size = new System.Drawing.Size(813, 349);
             this.Gv_user.TabIndex = 0;
             // 
             // CheckBox
@@ -196,12 +197,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(774, 144);
+            this.panel3.Size = new System.Drawing.Size(813, 144);
             this.panel3.TabIndex = 1;
             // 
             // Bt_Re
             // 
-            this.Bt_Re.Location = new System.Drawing.Point(433, 75);
+            this.Bt_Re.Location = new System.Drawing.Point(561, 110);
             this.Bt_Re.Name = "Bt_Re";
             this.Bt_Re.Size = new System.Drawing.Size(75, 27);
             this.Bt_Re.TabIndex = 7;
@@ -220,7 +221,8 @@
             // 
             // Bt_Signup
             // 
-            this.Bt_Signup.Location = new System.Drawing.Point(597, 110);
+            this.Bt_Signup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_Signup.Location = new System.Drawing.Point(642, 109);
             this.Bt_Signup.Name = "Bt_Signup";
             this.Bt_Signup.Size = new System.Drawing.Size(75, 23);
             this.Bt_Signup.TabIndex = 5;
@@ -230,7 +232,8 @@
             // 
             // Bt_Delete
             // 
-            this.Bt_Delete.Location = new System.Drawing.Point(678, 109);
+            this.Bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_Delete.Location = new System.Drawing.Point(723, 109);
             this.Bt_Delete.Name = "Bt_Delete";
             this.Bt_Delete.Size = new System.Drawing.Size(75, 23);
             this.Bt_Delete.TabIndex = 4;
@@ -285,7 +288,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(294, 481);
+            this.panel2.Size = new System.Drawing.Size(294, 505);
             this.panel2.TabIndex = 1;
             // 
             // button1
@@ -304,7 +307,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1086, 94);
+            this.panel1.Size = new System.Drawing.Size(1125, 94);
             this.panel1.TabIndex = 1;
             // 
             // button2
