@@ -97,6 +97,7 @@ namespace BatteryMes
                                 command.ExecuteNonQuery();
 
                                 MessageBox.Show("등록되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             }
                         }
                     }

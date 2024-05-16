@@ -150,7 +150,8 @@ namespace BatteryMes
 
         private void DeleteUser()
         {
-            int rowsToDelete = 0; 
+            int rowsToDelete = 0;
+            StringBuilder deletedNames = new StringBuilder();
 
             foreach (DataGridViewRow row in Gv_user.Rows)
             {
@@ -158,6 +159,11 @@ namespace BatteryMes
                 if (Convert.ToBoolean(chk.Value))
                 {
                     rowsToDelete++;
+
+                    string name = row.Cells["username"].Value.ToString();
+                    deletedNames.Append(name);
+                    deletedNames.Append(", ");
+
                 }
             }
 
@@ -173,7 +179,6 @@ namespace BatteryMes
                 {
                     connection.Open();
 
-                    // 선택된 모든 행을 삭제합니다.
                     for (int i = Gv_user.Rows.Count - 1; i >= 0; i--)
                     {
                         DataGridViewRow row = Gv_user.Rows[i];
@@ -186,8 +191,10 @@ namespace BatteryMes
                         }
                     }
 
-                    // 삭제된 행의 개수에 따라 메시지를 표시합니다.
-                    MessageBox.Show(rowsToDelete + "정보가 삭제되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show(rowsToDelete + "정보가 삭제되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string message = rowsToDelete + "개의 행이 성공적으로 삭제되었습니다.\n삭제된 사용자: " + deletedNames.ToString().TrimEnd(',', ' ');
+                    MessageBox.Show(message, "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             catch (Exception ex)
