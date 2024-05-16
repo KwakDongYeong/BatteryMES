@@ -72,12 +72,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(368, 455);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(348, 449);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Cb_Position);
             this.panel1.Controls.Add(this.Lb_Position);
             this.panel1.Controls.Add(this.Cb_Deparment);
@@ -94,7 +93,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 382);
+            this.panel1.Size = new System.Drawing.Size(346, 376);
             this.panel1.TabIndex = 0;
             // 
             // Cb_Position
@@ -219,7 +218,7 @@
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(366, 70);
+            this.panel2.Size = new System.Drawing.Size(346, 70);
             this.panel2.TabIndex = 1;
             // 
             // Lb_Title
@@ -239,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 455);
+            this.ClientSize = new System.Drawing.Size(348, 449);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

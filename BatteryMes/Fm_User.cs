@@ -134,7 +134,10 @@ namespace BatteryMes
         private void Bt_Signup_Click(object sender, EventArgs e)
         {
             Fm_Signup fm_Signup = new Fm_Signup();
+            //  fm_Signup.StartPosition = FormStartPosition.CenterScreen;
 
+            fm_Signup.StartPosition = FormStartPosition.Manual;
+            fm_Signup.Location = new Point(250, 150);
             fm_Signup.SignupFormClosed += Fm_Signup_SignupFormClosed;
             fm_Signup.ShowDialog();
         }
@@ -169,37 +172,41 @@ namespace BatteryMes
 
             if (rowsToDelete == 0)
             {
-                MessageBox.Show("선택된 행이 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("선택된 데이터가 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string connectionString = "Server = 10.10.32.238; Database = batterymes; Uid = BatteryMes; Pwd = Battery;";
-            try
+            DialogResult result = MessageBox.Show("선택한 데이터를 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                string connectionString = "Server = 10.10.32.238; Database = batterymes; Uid = BatteryMes; Pwd = Battery;";
+                try
                 {
-                    connection.Open();
-
-                    for (int i = Gv_user.Rows.Count - 1; i >= 0; i--)
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
-                        DataGridViewRow row = Gv_user.Rows[i];
-                        DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
-                        if (Convert.ToBoolean(chk.Value))
+                        connection.Open();
+
+                        for (int i = Gv_user.Rows.Count - 1; i >= 0; i--)
                         {
-                            string id = row.Cells["userid"].Value.ToString();
-                            DeleteRecordFromDatabase(connection, id);
-                            Gv_user.Rows.RemoveAt(i);
+                            DataGridViewRow row = Gv_user.Rows[i];
+                            DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
+                            if (Convert.ToBoolean(chk.Value))
+                            {
+                                string id = row.Cells["userid"].Value.ToString();
+                                DeleteRecordFromDatabase(connection, id);
+                                Gv_user.Rows.RemoveAt(i);
+                            }
                         }
+
+                        // MessageBox.Show(rowsToDelete + "정보가 삭제되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string message = rowsToDelete + "명의 정보가 삭제되었습니다.\n삭제된 사용자: " + deletedNames.ToString().TrimEnd(',', ' ');
+                        MessageBox.Show(message, "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
-
-                    // MessageBox.Show(rowsToDelete + "정보가 삭제되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    string message = rowsToDelete + "개의 행이 성공적으로 삭제되었습니다.\n삭제된 사용자: " + deletedNames.ToString().TrimEnd(',', ' ');
-                    MessageBox.Show(message, "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("삭제 불가: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("삭제 불가: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

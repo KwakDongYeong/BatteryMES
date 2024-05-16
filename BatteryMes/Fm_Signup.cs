@@ -17,7 +17,7 @@ namespace BatteryMes
         public Fm_Signup()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
+         //   FormBorderStyle = FormBorderStyle.None;
         }
 
         private void Fm_Signup_Load(object sender, EventArgs e)

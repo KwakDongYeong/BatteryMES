@@ -210,11 +210,11 @@
             // 
             // Bt_change
             // 
-            this.Bt_change.Location = new System.Drawing.Point(516, 109);
+            this.Bt_change.Location = new System.Drawing.Point(586, 12);
             this.Bt_change.Name = "Bt_change";
-            this.Bt_change.Size = new System.Drawing.Size(75, 23);
+            this.Bt_change.Size = new System.Drawing.Size(156, 71);
             this.Bt_change.TabIndex = 6;
-            this.Bt_change.Text = "변경";
+            this.Bt_change.Text = "변경기능은 새창 열어서 할지 고민중";
             this.Bt_change.UseVisualStyleBackColor = true;
             // 
             // Bt_Signup
