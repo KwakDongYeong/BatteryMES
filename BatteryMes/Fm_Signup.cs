@@ -97,6 +97,11 @@ namespace BatteryMes
                                 command.ExecuteNonQuery();
 
                                 MessageBox.Show("등록되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Tb_Name.Text = "";
+                                Tb_Id.Text = "";
+                                Tb_Pw.Text = "";
+                                Cb_Deparment.SelectedIndex = -1;
+                                Cb_Position.SelectedIndex = -1;
 
                             }
                         }
