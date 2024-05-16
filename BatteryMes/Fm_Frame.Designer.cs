@@ -37,6 +37,7 @@
             this.Bt_Static = new System.Windows.Forms.Button();
             this.Bt_User = new System.Windows.Forms.Button();
             this.Bt_Close = new System.Windows.Forms.Button();
+            this.Bt_Zoom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.Bt_Zoom);
             this.panel1.Controls.Add(this.Bt_Close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -77,11 +79,12 @@
             // 
             // Bt_Main
             // 
+            this.Bt_Main.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bt_Main.FlatAppearance.BorderSize = 0;
             this.Bt_Main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Main.Location = new System.Drawing.Point(8, 47);
+            this.Bt_Main.Location = new System.Drawing.Point(0, 0);
             this.Bt_Main.Name = "Bt_Main";
-            this.Bt_Main.Size = new System.Drawing.Size(235, 57);
+            this.Bt_Main.Size = new System.Drawing.Size(250, 57);
             this.Bt_Main.TabIndex = 0;
             this.Bt_Main.Text = "메인";
             this.Bt_Main.UseVisualStyleBackColor = true;
@@ -89,11 +92,12 @@
             // 
             // Bt_Control
             // 
+            this.Bt_Control.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bt_Control.FlatAppearance.BorderSize = 0;
             this.Bt_Control.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Control.Location = new System.Drawing.Point(15, 110);
+            this.Bt_Control.Location = new System.Drawing.Point(0, 57);
             this.Bt_Control.Name = "Bt_Control";
-            this.Bt_Control.Size = new System.Drawing.Size(235, 57);
+            this.Bt_Control.Size = new System.Drawing.Size(250, 57);
             this.Bt_Control.TabIndex = 1;
             this.Bt_Control.Text = "제어";
             this.Bt_Control.UseVisualStyleBackColor = true;
@@ -101,11 +105,12 @@
             // 
             // Bt_Test
             // 
+            this.Bt_Test.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bt_Test.FlatAppearance.BorderSize = 0;
             this.Bt_Test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Test.Location = new System.Drawing.Point(8, 188);
+            this.Bt_Test.Location = new System.Drawing.Point(0, 114);
             this.Bt_Test.Name = "Bt_Test";
-            this.Bt_Test.Size = new System.Drawing.Size(235, 57);
+            this.Bt_Test.Size = new System.Drawing.Size(250, 57);
             this.Bt_Test.TabIndex = 2;
             this.Bt_Test.Text = "수동 제어";
             this.Bt_Test.UseVisualStyleBackColor = true;
@@ -113,11 +118,12 @@
             // 
             // Bt_Static
             // 
+            this.Bt_Static.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bt_Static.FlatAppearance.BorderSize = 0;
             this.Bt_Static.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Static.Location = new System.Drawing.Point(15, 260);
+            this.Bt_Static.Location = new System.Drawing.Point(0, 171);
             this.Bt_Static.Name = "Bt_Static";
-            this.Bt_Static.Size = new System.Drawing.Size(235, 57);
+            this.Bt_Static.Size = new System.Drawing.Size(250, 57);
             this.Bt_Static.TabIndex = 3;
             this.Bt_Static.Text = "통계";
             this.Bt_Static.UseVisualStyleBackColor = true;
@@ -125,11 +131,12 @@
             // 
             // Bt_User
             // 
+            this.Bt_User.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bt_User.FlatAppearance.BorderSize = 0;
             this.Bt_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_User.Location = new System.Drawing.Point(15, 323);
+            this.Bt_User.Location = new System.Drawing.Point(0, 228);
             this.Bt_User.Name = "Bt_User";
-            this.Bt_User.Size = new System.Drawing.Size(235, 57);
+            this.Bt_User.Size = new System.Drawing.Size(250, 57);
             this.Bt_User.TabIndex = 4;
             this.Bt_User.Text = "직원관리";
             this.Bt_User.UseVisualStyleBackColor = true;
@@ -148,6 +155,19 @@
             this.Bt_Close.UseVisualStyleBackColor = true;
             this.Bt_Close.Click += new System.EventHandler(this.Bt_Close_Click);
             // 
+            // Bt_Zoom
+            // 
+            this.Bt_Zoom.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Bt_Zoom.FlatAppearance.BorderSize = 0;
+            this.Bt_Zoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Zoom.Location = new System.Drawing.Point(894, 0);
+            this.Bt_Zoom.Name = "Bt_Zoom";
+            this.Bt_Zoom.Size = new System.Drawing.Size(57, 50);
+            this.Bt_Zoom.TabIndex = 1;
+            this.Bt_Zoom.Text = "ㅇ";
+            this.Bt_Zoom.UseVisualStyleBackColor = true;
+            this.Bt_Zoom.Click += new System.EventHandler(this.Bt_Zoom_Click);
+            // 
             // Fm_Frame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -159,6 +179,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fm_Frame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fm_Frame";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -177,5 +198,6 @@
         private System.Windows.Forms.Button Bt_Control;
         private System.Windows.Forms.Button Bt_User;
         private System.Windows.Forms.Button Bt_Close;
+        private System.Windows.Forms.Button Bt_Zoom;
     }
 }

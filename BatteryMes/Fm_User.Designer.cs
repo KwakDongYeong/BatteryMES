@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Gv_user = new System.Windows.Forms.DataGridView();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,64 +45,25 @@
             this.Tb_Search = new System.Windows.Forms.TextBox();
             this.Cb_Search = new System.Windows.Forms.ComboBox();
             this.Lb_Search = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gv_user)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Gv_user, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 183F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1131, 617);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 103);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 511F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 511F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 511);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.Gv_user, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(303, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(819, 505);
-            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // Gv_user
             // 
@@ -121,13 +80,13 @@
             this.department,
             this.position});
             this.Gv_user.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Gv_user.Location = new System.Drawing.Point(3, 153);
+            this.Gv_user.Location = new System.Drawing.Point(3, 186);
             this.Gv_user.MultiSelect = false;
             this.Gv_user.Name = "Gv_user";
             this.Gv_user.RowHeadersWidth = 51;
             this.Gv_user.RowTemplate.Height = 27;
             this.Gv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Gv_user.Size = new System.Drawing.Size(813, 349);
+            this.Gv_user.Size = new System.Drawing.Size(1125, 428);
             this.Gv_user.TabIndex = 0;
             // 
             // CheckBox
@@ -197,12 +156,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(813, 144);
+            this.panel3.Size = new System.Drawing.Size(1125, 177);
             this.panel3.TabIndex = 1;
             // 
             // Bt_Re
             // 
-            this.Bt_Re.Location = new System.Drawing.Point(561, 110);
+            this.Bt_Re.Location = new System.Drawing.Point(214, 34);
             this.Bt_Re.Name = "Bt_Re";
             this.Bt_Re.Size = new System.Drawing.Size(75, 27);
             this.Bt_Re.TabIndex = 7;
@@ -222,7 +181,7 @@
             // Bt_Signup
             // 
             this.Bt_Signup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bt_Signup.Location = new System.Drawing.Point(642, 109);
+            this.Bt_Signup.Location = new System.Drawing.Point(954, 109);
             this.Bt_Signup.Name = "Bt_Signup";
             this.Bt_Signup.Size = new System.Drawing.Size(75, 23);
             this.Bt_Signup.TabIndex = 5;
@@ -233,7 +192,7 @@
             // Bt_Delete
             // 
             this.Bt_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bt_Delete.Location = new System.Drawing.Point(723, 109);
+            this.Bt_Delete.Location = new System.Drawing.Point(1035, 109);
             this.Bt_Delete.Name = "Bt_Delete";
             this.Bt_Delete.Size = new System.Drawing.Size(75, 23);
             this.Bt_Delete.TabIndex = 4;
@@ -281,45 +240,6 @@
             this.Lb_Search.TabIndex = 0;
             this.Lb_Search.Text = "조건";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(294, 505);
-            this.panel2.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(110, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "테스트창";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(101, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "메인이동";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 94);
-            this.panel1.TabIndex = 1;
-            // 
             // Fm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -331,12 +251,9 @@
             this.Text = "Fm_User";
             this.Load += new System.EventHandler(this.Fm_User_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gv_user)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -344,12 +261,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView Gv_user;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button Bt_Search;
         private System.Windows.Forms.TextBox Tb_Search;
@@ -365,6 +277,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userpw;
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
-        private System.Windows.Forms.Button button2;
     }
 }

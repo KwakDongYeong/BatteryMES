@@ -134,10 +134,10 @@ namespace BatteryMes
         private void Bt_Signup_Click(object sender, EventArgs e)
         {
             Fm_Signup fm_Signup = new Fm_Signup();
-            //  fm_Signup.StartPosition = FormStartPosition.CenterScreen;
+              fm_Signup.StartPosition = FormStartPosition.CenterScreen;
 
-            fm_Signup.StartPosition = FormStartPosition.Manual;
-            fm_Signup.Location = new Point(250, 150);
+           // fm_Signup.StartPosition = FormStartPosition.Manual;
+           // fm_Signup.Location = new Point(250, 150);
             fm_Signup.SignupFormClosed += Fm_Signup_SignupFormClosed;
             fm_Signup.ShowDialog();
         }

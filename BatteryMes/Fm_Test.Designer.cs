@@ -31,15 +31,15 @@
             this.Pn_Title_M = new System.Windows.Forms.Panel();
             this.Lb_Title_M = new System.Windows.Forms.Label();
             this.Pn_monitoring = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pn_Tray_On = new System.Windows.Forms.Panel();
             this.Pn_Title_C = new System.Windows.Forms.Panel();
             this.Lb_Title_C = new System.Windows.Forms.Label();
             this.Pn_Control = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Pn_Tray_On = new System.Windows.Forms.Panel();
             this.Pn_Title_M.SuspendLayout();
             this.Pn_monitoring.SuspendLayout();
-            this.Pn_Title_C.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Pn_Title_C.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pn_Title_M
@@ -68,6 +68,21 @@
             this.Pn_monitoring.Size = new System.Drawing.Size(445, 442);
             this.Pn_monitoring.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(189, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Pn_Tray_On
+            // 
+            this.Pn_Tray_On.Location = new System.Drawing.Point(23, 26);
+            this.Pn_Tray_On.Name = "Pn_Tray_On";
+            this.Pn_Tray_On.Size = new System.Drawing.Size(34, 32);
+            this.Pn_Tray_On.TabIndex = 0;
+            // 
             // Pn_Title_C
             // 
             this.Pn_Title_C.Controls.Add(this.Lb_Title_C);
@@ -92,21 +107,6 @@
             this.Pn_Control.Size = new System.Drawing.Size(418, 442);
             this.Pn_Control.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(189, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Pn_Tray_On
-            // 
-            this.Pn_Tray_On.Location = new System.Drawing.Point(23, 26);
-            this.Pn_Tray_On.Name = "Pn_Tray_On";
-            this.Pn_Tray_On.Size = new System.Drawing.Size(34, 32);
-            this.Pn_Tray_On.TabIndex = 0;
-            // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -116,15 +116,16 @@
             this.Controls.Add(this.Pn_Title_C);
             this.Controls.Add(this.Pn_monitoring);
             this.Controls.Add(this.Pn_Title_M);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fm_Test";
             this.Text = "Fm_Test";
             this.Load += new System.EventHandler(this.Fm_Test_Load);
             this.Pn_Title_M.ResumeLayout(false);
             this.Pn_Title_M.PerformLayout();
             this.Pn_monitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pn_Title_C.ResumeLayout(false);
             this.Pn_Title_C.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

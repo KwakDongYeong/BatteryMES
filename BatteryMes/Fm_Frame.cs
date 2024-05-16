@@ -12,21 +12,29 @@ namespace BatteryMes
 {
     public partial class Fm_Frame : Form
     {
+        private bool isFullScreen = false;
+        private FormBorderStyle originalFormBorderStyle;
+        private FormWindowState originalWindowState;
+
         public Fm_Frame()
         {
             InitializeComponent();
+            Load_Form(new Fm_Main());
         }
         public void Load_Form(object Form)
         {
-            if(this.Pn_Main.Controls.Count > 0)
+            if (this.Pn_Main.Controls.Count > 0)
             {
                 this.Pn_Main.Controls.RemoveAt(0);
+            }
                 Form fm = Form as Form;
                 fm.TopLevel = false;
-                this.Pn_Main.Controls.Add(fm);
+            fm.Dock = DockStyle.Fill;
+            this.Pn_Main.Controls.Add(fm);
                 this.Pn_Main.Tag = fm;
                 fm.Show();
-            }
+
+            
         }
         private void Bt_Main_Click(object sender, EventArgs e)
         {
@@ -61,6 +69,27 @@ namespace BatteryMes
         private void Bt_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Bt_Zoom_Click(object sender, EventArgs e)
+        {
+            if (isFullScreen)
+            {
+                this.FormBorderStyle = originalFormBorderStyle;
+                this.WindowState = originalWindowState;
+                this.KeyPreview = false;
+                isFullScreen = false;
+            }
+            else
+            {
+                originalFormBorderStyle = this.FormBorderStyle;
+                originalWindowState = this.WindowState;
+
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                this.KeyPreview = true;
+                isFullScreen = true;
+            }
         }
     }
 }
