@@ -73,9 +73,9 @@ namespace BatteryMes.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap battery1 {
+        internal static System.Drawing.Bitmap _5015452 {
             get {
-                object obj = ResourceManager.GetObject("battery1", resourceCulture);
+                object obj = ResourceManager.GetObject("_5015452", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
