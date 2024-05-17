@@ -34,12 +34,16 @@ namespace BatteryMes
             plc.ActLogicalStationNumber = 1;
             plc.Open();
             LightOn();
+
+            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
+            Bt_Tray_On.Image = Properties.Resources.테스트1;
            
         }
         
         private void Timer_Tick(object sender, EventArgs e)
         {
             Pn_Tray_On.Invalidate();
+            LightOn();
         }
         public void LightOn()
         {
@@ -91,11 +95,23 @@ namespace BatteryMes
             }
         }
 
-
-
-private void button1_Click(object sender, EventArgs e)
+        private void Bt_Tray_On_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
+        {
+            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
+            Bt_Tray_On.Image = Properties.Resources.PU;
+            plc.SetDevice("M1", 1);
+        }
+
+        private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
+        {
+            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
+            Bt_Tray_On.Image = Properties.Resources.테스트1;
+            plc.SetDevice("M1", 0);
         }
     }
 }
