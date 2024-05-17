@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1174, 50);
+            this.panel1.Size = new System.Drawing.Size(1329, 50);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -59,7 +59,7 @@
             this.Bt_Zoom.Dock = System.Windows.Forms.DockStyle.Right;
             this.Bt_Zoom.FlatAppearance.BorderSize = 0;
             this.Bt_Zoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Zoom.Location = new System.Drawing.Point(1060, 0);
+            this.Bt_Zoom.Location = new System.Drawing.Point(1215, 0);
             this.Bt_Zoom.Name = "Bt_Zoom";
             this.Bt_Zoom.Size = new System.Drawing.Size(57, 50);
             this.Bt_Zoom.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.Bt_Close.Dock = System.Windows.Forms.DockStyle.Right;
             this.Bt_Close.FlatAppearance.BorderSize = 0;
             this.Bt_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Close.Location = new System.Drawing.Point(1117, 0);
+            this.Bt_Close.Location = new System.Drawing.Point(1272, 0);
             this.Bt_Close.Name = "Bt_Close";
             this.Bt_Close.Size = new System.Drawing.Size(57, 50);
             this.Bt_Close.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 594);
+            this.panel2.Size = new System.Drawing.Size(250, 646);
             this.panel2.TabIndex = 1;
             // 
             // Bt_User
@@ -165,7 +165,7 @@
             this.Pn_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pn_Main.Location = new System.Drawing.Point(250, 50);
             this.Pn_Main.Name = "Pn_Main";
-            this.Pn_Main.Size = new System.Drawing.Size(924, 594);
+            this.Pn_Main.Size = new System.Drawing.Size(1079, 646);
             this.Pn_Main.TabIndex = 2;
             // 
             // Fm_Frame
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1174, 644);
+            this.ClientSize = new System.Drawing.Size(1329, 696);
             this.Controls.Add(this.Pn_Main);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

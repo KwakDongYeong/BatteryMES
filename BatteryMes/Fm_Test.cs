@@ -26,6 +26,8 @@ namespace BatteryMes
             timer.Start();
             this.DoubleBuffered = true;
 
+         
+
         }
 
         private void Fm_Test_Load(object sender, EventArgs e)
@@ -36,8 +38,10 @@ namespace BatteryMes
             LightOn();
 
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.Image = Properties.Resources.테스트1;
-           
+            Bt_Tray_On.BackgroundImage = Properties.Resources.테스트1;
+            BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.테스트1;
+
         }
         
         private void Timer_Tick(object sender, EventArgs e)
@@ -103,15 +107,41 @@ namespace BatteryMes
         private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.Image = Properties.Resources.PU;
+            Bt_Tray_On.BackgroundImage = Properties.Resources.PU;
             plc.SetDevice("M1", 1);
         }
 
         private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.Image = Properties.Resources.테스트1;
+            Bt_Tray_On.BackgroundImage = Properties.Resources.테스트1;
             plc.SetDevice("M1", 0);
         }
+
+       
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BT_Tray_OFF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT_Tray_OFF_MouseDown(object sender, MouseEventArgs e)
+        {
+            BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.PU;
+        }
+
+        private void BT_Tray_OFF_MouseUp(object sender, MouseEventArgs e)
+        {
+            BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.테스트1;
+        }
     }
+    
 }
+   
