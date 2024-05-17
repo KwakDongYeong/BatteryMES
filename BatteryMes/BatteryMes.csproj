@@ -157,6 +157,9 @@
     <EmbeddedResource Include="Fm_Frame.resx">
       <DependentUpon>Fm_Frame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Login.resx">
+      <DependentUpon>Fm_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fm_Main.resx">
       <DependentUpon>Fm_Main.cs</DependentUpon>
     </EmbeddedResource>
