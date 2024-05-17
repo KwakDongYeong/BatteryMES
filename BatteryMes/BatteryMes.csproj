@@ -151,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fm_Control.resx">
+      <DependentUpon>Fm_Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fm_Frame.resx">
       <DependentUpon>Fm_Frame.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fm_Signup.resx">
       <DependentUpon>Fm_Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_statistics.resx">
+      <DependentUpon>Fm_statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fm_Test.resx">
       <DependentUpon>Fm_Test.cs</DependentUpon>
