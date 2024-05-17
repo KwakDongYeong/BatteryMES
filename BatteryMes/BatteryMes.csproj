@@ -157,6 +157,9 @@
     <EmbeddedResource Include="Fm_Frame.resx">
       <DependentUpon>Fm_Frame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Main.resx">
+      <DependentUpon>Fm_Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fm_Signup.resx">
       <DependentUpon>Fm_Signup.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\제목 없음.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
