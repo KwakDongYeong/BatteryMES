@@ -92,7 +92,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 646);
+            this.panel2.Size = new System.Drawing.Size(250, 750);
             this.panel2.TabIndex = 1;
             // 
             // Bt_User
@@ -165,7 +165,7 @@
             this.Pn_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pn_Main.Location = new System.Drawing.Point(250, 50);
             this.Pn_Main.Name = "Pn_Main";
-            this.Pn_Main.Size = new System.Drawing.Size(1079, 646);
+            this.Pn_Main.Size = new System.Drawing.Size(1079, 750);
             this.Pn_Main.TabIndex = 2;
             // 
             // Fm_Frame
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1329, 696);
+            this.ClientSize = new System.Drawing.Size(1329, 800);
             this.Controls.Add(this.Pn_Main);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

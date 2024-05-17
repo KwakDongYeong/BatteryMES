@@ -20,19 +20,30 @@ namespace BatteryMes
         public Fm_Test()
         {
             InitializeComponent();
-            Pn_Tray_On.Paint += panel2_Paint;
+          
             timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
             this.DoubleBuffered = true;
-
-         
-
         }
 
         private void Fm_Test_Load(object sender, EventArgs e)
         {
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_Trayon.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_TrayOff.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ForkOn.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ForkOff.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_Fork.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_Right.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_Left.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST1_1.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST1_2.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST1_3.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST2_1.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST2_2.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST2_3.SizeMode = PictureBoxSizeMode.Zoom;
+            Pb_ST2_4.SizeMode = PictureBoxSizeMode.Zoom;
+            
             plc.ActLogicalStationNumber = 1;
             plc.Open();
             LightOn();
@@ -71,18 +82,11 @@ namespace BatteryMes
             Bt_Green.BackgroundImageLayout = ImageLayout .Stretch;
             Bt_Green .BackgroundImage = Properties.Resources.Button1;
 
-
-
-
-
-
-
-
         }
         
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Pn_Tray_On.Invalidate();
+           
             LightOn();
         }
         public void LightOn()
@@ -91,14 +95,14 @@ namespace BatteryMes
             plc.GetDevice("M1", out value);
             if(value == 0)
             {
-                pictureBox1.Image = Properties.Resources.제목_없음;
+                Pb_Trayon.Image = Properties.Resources.제목_없음;
             }
             else
             {
-                pictureBox1.Image = Properties.Resources._1;
+                Pb_Trayon.Image = Properties.Resources._1;
             }
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
+      /*  private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Panel Pn_Tray_On = sender as Panel;
             if (Pn_Tray_On != null)
@@ -133,15 +137,29 @@ namespace BatteryMes
                 }
                 
             }
+        }*/
+
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void Bt_Tray_On_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
         {
+
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
             Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
             plc.SetDevice("M1", 1);
@@ -154,13 +172,6 @@ namespace BatteryMes
             plc.SetDevice("M1", 0);
         }
 
-       
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void BT_Tray_OFF_Click(object sender, EventArgs e)
         {
 
@@ -168,16 +179,19 @@ namespace BatteryMes
 
         private void BT_Tray_OFF_MouseDown(object sender, MouseEventArgs e)
         {
+
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
             BT_Tray_OFF.BackgroundImage = Properties.Resources.Button2;
         }
 
         private void BT_Tray_OFF_MouseUp(object sender, MouseEventArgs e)
         {
+
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;    
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
         }
+
     }
-    
+
 }
    
