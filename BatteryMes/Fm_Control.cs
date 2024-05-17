@@ -16,5 +16,10 @@ namespace BatteryMes
         {
             InitializeComponent();
         }
+
+        private void Fm_Control_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
