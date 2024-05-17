@@ -38,9 +38,45 @@ namespace BatteryMes
             LightOn();
 
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.BackgroundImage = Properties.Resources.테스트1;
+            Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.테스트1;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
+
+            BT_Battery_On.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Battery_On.BackgroundImage = Properties.Resources.Button1;
+            BT_Battery_Off.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Battery_Off.BackgroundImage = Properties.Resources.Button1;
+
+            Bt_Left.BackgroundImageLayout = ImageLayout.Stretch;
+            Bt_Left.BackgroundImage = Properties.Resources.Button1;
+            Bt_Right.BackgroundImageLayout = ImageLayout.Stretch;
+            Bt_Right.BackgroundImage = Properties.Resources.Button1;
+
+            BT_Fork_On.BackgroundImageLayout = ImageLayout.Stretch;
+            BT_Fork_On .BackgroundImage = Properties.Resources.Button1;
+            Bt_Fork_Off.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_Fork_Off.BackgroundImage = Properties.Resources.Button1;
+
+            Bt_1ConV.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_1ConV .BackgroundImage = Properties.Resources.Button1;
+            Bt_2ConV.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_2ConV .BackgroundImage = Properties.Resources.Button1;
+
+            Bt_Alarm.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_Alarm.BackgroundImage = Properties.Resources.Button1;
+            Bt_Red.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_Red .BackgroundImage = Properties.Resources.Button1;
+            Bt_Yellow.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_Yellow .BackgroundImage = Properties.Resources.Button1;
+            Bt_Green.BackgroundImageLayout = ImageLayout .Stretch;
+            Bt_Green .BackgroundImage = Properties.Resources.Button1;
+
+
+
+
+
+
+
 
         }
         
@@ -107,14 +143,14 @@ namespace BatteryMes
         private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.BackgroundImage = Properties.Resources.PU;
+            Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
             plc.SetDevice("M1", 1);
         }
 
         private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.BackgroundImage = Properties.Resources.테스트1;
+            Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
             plc.SetDevice("M1", 0);
         }
 
@@ -133,13 +169,13 @@ namespace BatteryMes
         private void BT_Tray_OFF_MouseDown(object sender, MouseEventArgs e)
         {
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.PU;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button2;
         }
 
         private void BT_Tray_OFF_MouseUp(object sender, MouseEventArgs e)
         {
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.테스트1;
+            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;    
         }
     }
     
