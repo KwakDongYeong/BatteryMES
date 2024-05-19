@@ -20,6 +20,7 @@ namespace BatteryMes
         {
             InitializeComponent();
             Load_Form(new Fm_Main());
+            Pn_Side.BackColor = Color.FromArgb(60, 60, 60);
         }
         public void Load_Form(object Form)
         {
