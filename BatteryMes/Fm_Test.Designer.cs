@@ -30,11 +30,9 @@
         {
             this.Pn_Title_M = new System.Windows.Forms.Panel();
             this.Lb_Title_M = new System.Windows.Forms.Label();
-            this.Pb_Trayon = new System.Windows.Forms.PictureBox();
             this.Pn_Title_C = new System.Windows.Forms.Panel();
             this.Lb_Title_C = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Bt_Green = new System.Windows.Forms.Button();
             this.Bt_Yellow = new System.Windows.Forms.Button();
             this.Bt_Red = new System.Windows.Forms.Button();
@@ -50,52 +48,68 @@
             this.Bt_Tray_On = new System.Windows.Forms.Button();
             this.BT_Tray_OFF = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.Pb_TrayOff = new System.Windows.Forms.PictureBox();
-            this.Pb_Left = new System.Windows.Forms.PictureBox();
-            this.Pb_Right = new System.Windows.Forms.PictureBox();
-            this.Pb_ForkOn = new System.Windows.Forms.PictureBox();
-            this.Pb_ForkOff = new System.Windows.Forms.PictureBox();
-            this.Pb_Fork = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_1 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_2 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_3 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_1 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_2 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_3 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Pb_ST2_4 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_3 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_2 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_1 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_3 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_2 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_1 = new System.Windows.Forms.PictureBox();
+            this.Pb_Fork = new System.Windows.Forms.PictureBox();
+            this.Pb_ForkOff = new System.Windows.Forms.PictureBox();
+            this.Pb_ForkOn = new System.Windows.Forms.PictureBox();
+            this.Pb_Right = new System.Windows.Forms.PictureBox();
+            this.Pb_Left = new System.Windows.Forms.PictureBox();
+            this.Pb_TrayOff = new System.Windows.Forms.PictureBox();
+            this.Pb_Trayon = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Pn_Title_M.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).BeginInit();
             this.Pn_Title_C.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Right)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Fork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Fork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Right)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pn_Title_M
@@ -115,16 +129,6 @@
             this.Lb_Title_M.Size = new System.Drawing.Size(102, 15);
             this.Lb_Title_M.TabIndex = 0;
             this.Lb_Title_M.Text = "센서 모니터링";
-            // 
-            // Pb_Trayon
-            // 
-            this.Pb_Trayon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Trayon.Location = new System.Drawing.Point(10, 10);
-            this.Pb_Trayon.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_Trayon.Name = "Pb_Trayon";
-            this.Pb_Trayon.Size = new System.Drawing.Size(30, 22);
-            this.Pb_Trayon.TabIndex = 0;
-            this.Pb_Trayon.TabStop = false;
             // 
             // Pn_Title_C
             // 
@@ -149,60 +153,26 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Pn_Title_C, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Pn_Title_M, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1261, 682);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Green, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Yellow, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Red, 3, 2);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Alarm, 2, 2);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_2ConV, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_1ConV, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Fork_Off, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.BT_Fork_On, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Right, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Left, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.BT_Battery_Off, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BT_Battery_On, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Tray_On, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BT_Tray_OFF, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 379);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(561, 300);
-            this.tableLayoutPanel3.TabIndex = 6;
-            // 
             // Bt_Green
             // 
-            this.Bt_Green.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Green.FlatAppearance.BorderSize = 0;
             this.Bt_Green.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Green.Location = new System.Drawing.Point(140, 225);
+            this.Bt_Green.Location = new System.Drawing.Point(152, 85);
             this.Bt_Green.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Green.Name = "Bt_Green";
             this.Bt_Green.Size = new System.Drawing.Size(140, 75);
@@ -212,10 +182,9 @@
             // 
             // Bt_Yellow
             // 
-            this.Bt_Yellow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Yellow.FlatAppearance.BorderSize = 0;
             this.Bt_Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Yellow.Location = new System.Drawing.Point(0, 225);
+            this.Bt_Yellow.Location = new System.Drawing.Point(11, 96);
             this.Bt_Yellow.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Yellow.Name = "Bt_Yellow";
             this.Bt_Yellow.Size = new System.Drawing.Size(140, 75);
@@ -225,10 +194,9 @@
             // 
             // Bt_Red
             // 
-            this.Bt_Red.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Red.FlatAppearance.BorderSize = 0;
             this.Bt_Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Red.Location = new System.Drawing.Point(420, 150);
+            this.Bt_Red.Location = new System.Drawing.Point(151, 21);
             this.Bt_Red.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Red.Name = "Bt_Red";
             this.Bt_Red.Size = new System.Drawing.Size(141, 75);
@@ -238,10 +206,9 @@
             // 
             // Bt_Alarm
             // 
-            this.Bt_Alarm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Alarm.FlatAppearance.BorderSize = 0;
             this.Bt_Alarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Alarm.Location = new System.Drawing.Point(280, 150);
+            this.Bt_Alarm.Location = new System.Drawing.Point(11, 21);
             this.Bt_Alarm.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Alarm.Name = "Bt_Alarm";
             this.Bt_Alarm.Size = new System.Drawing.Size(140, 75);
@@ -251,10 +218,9 @@
             // 
             // Bt_2ConV
             // 
-            this.Bt_2ConV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_2ConV.FlatAppearance.BorderSize = 0;
             this.Bt_2ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_2ConV.Location = new System.Drawing.Point(140, 150);
+            this.Bt_2ConV.Location = new System.Drawing.Point(171, 22);
             this.Bt_2ConV.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_2ConV.Name = "Bt_2ConV";
             this.Bt_2ConV.Size = new System.Drawing.Size(140, 75);
@@ -264,10 +230,9 @@
             // 
             // Bt_1ConV
             // 
-            this.Bt_1ConV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_1ConV.FlatAppearance.BorderSize = 0;
             this.Bt_1ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_1ConV.Location = new System.Drawing.Point(0, 150);
+            this.Bt_1ConV.Location = new System.Drawing.Point(31, 22);
             this.Bt_1ConV.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_1ConV.Name = "Bt_1ConV";
             this.Bt_1ConV.Size = new System.Drawing.Size(140, 75);
@@ -277,10 +242,9 @@
             // 
             // Bt_Fork_Off
             // 
-            this.Bt_Fork_Off.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Fork_Off.FlatAppearance.BorderSize = 0;
             this.Bt_Fork_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Fork_Off.Location = new System.Drawing.Point(420, 75);
+            this.Bt_Fork_Off.Location = new System.Drawing.Point(143, 21);
             this.Bt_Fork_Off.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Fork_Off.Name = "Bt_Fork_Off";
             this.Bt_Fork_Off.Size = new System.Drawing.Size(141, 75);
@@ -290,10 +254,9 @@
             // 
             // BT_Fork_On
             // 
-            this.BT_Fork_On.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BT_Fork_On.FlatAppearance.BorderSize = 0;
             this.BT_Fork_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Fork_On.Location = new System.Drawing.Point(280, 75);
+            this.BT_Fork_On.Location = new System.Drawing.Point(3, 21);
             this.BT_Fork_On.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Fork_On.Name = "BT_Fork_On";
             this.BT_Fork_On.Size = new System.Drawing.Size(140, 75);
@@ -303,10 +266,9 @@
             // 
             // Bt_Right
             // 
-            this.Bt_Right.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Right.FlatAppearance.BorderSize = 0;
             this.Bt_Right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Right.Location = new System.Drawing.Point(140, 75);
+            this.Bt_Right.Location = new System.Drawing.Point(129, 21);
             this.Bt_Right.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Right.Name = "Bt_Right";
             this.Bt_Right.Size = new System.Drawing.Size(140, 75);
@@ -316,10 +278,9 @@
             // 
             // Bt_Left
             // 
-            this.Bt_Left.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Left.FlatAppearance.BorderSize = 0;
             this.Bt_Left.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Left.Location = new System.Drawing.Point(0, 75);
+            this.Bt_Left.Location = new System.Drawing.Point(-11, 21);
             this.Bt_Left.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Left.Name = "Bt_Left";
             this.Bt_Left.Size = new System.Drawing.Size(140, 75);
@@ -329,10 +290,9 @@
             // 
             // BT_Battery_Off
             // 
-            this.BT_Battery_Off.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BT_Battery_Off.FlatAppearance.BorderSize = 0;
             this.BT_Battery_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_Off.Location = new System.Drawing.Point(420, 0);
+            this.BT_Battery_Off.Location = new System.Drawing.Point(161, 22);
             this.BT_Battery_Off.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Battery_Off.Name = "BT_Battery_Off";
             this.BT_Battery_Off.Size = new System.Drawing.Size(141, 75);
@@ -342,10 +302,9 @@
             // 
             // BT_Battery_On
             // 
-            this.BT_Battery_On.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BT_Battery_On.FlatAppearance.BorderSize = 0;
             this.BT_Battery_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_On.Location = new System.Drawing.Point(280, 0);
+            this.BT_Battery_On.Location = new System.Drawing.Point(21, 22);
             this.BT_Battery_On.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Battery_On.Name = "BT_Battery_On";
             this.BT_Battery_On.Size = new System.Drawing.Size(140, 75);
@@ -355,10 +314,9 @@
             // 
             // Bt_Tray_On
             // 
-            this.Bt_Tray_On.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Tray_On.FlatAppearance.BorderSize = 0;
             this.Bt_Tray_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Tray_On.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Tray_On.Location = new System.Drawing.Point(14, 23);
             this.Bt_Tray_On.Margin = new System.Windows.Forms.Padding(0);
             this.Bt_Tray_On.Name = "Bt_Tray_On";
             this.Bt_Tray_On.Size = new System.Drawing.Size(140, 75);
@@ -372,10 +330,9 @@
             // BT_Tray_OFF
             // 
             this.BT_Tray_OFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BT_Tray_OFF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BT_Tray_OFF.FlatAppearance.BorderSize = 0;
             this.BT_Tray_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Tray_OFF.Location = new System.Drawing.Point(140, 0);
+            this.BT_Tray_OFF.Location = new System.Drawing.Point(154, 23);
             this.BT_Tray_OFF.Margin = new System.Windows.Forms.Padding(0);
             this.BT_Tray_OFF.Name = "BT_Tray_OFF";
             this.BT_Tray_OFF.Size = new System.Drawing.Size(140, 75);
@@ -422,7 +379,7 @@
             this.tableLayoutPanel2.Controls.Add(this.Pb_Trayon, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(30, 53);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(30, 3);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(30, 3, 20, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
@@ -433,320 +390,427 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 300);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 282);
             this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(55, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tray 전진 센서";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(55, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 38);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "포크 센서";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(55, 44);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 38);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "좌회전 센서";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(313, 2);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 38);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Tray 후진 센서";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(55, 86);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 38);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "포크 전진센서";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(313, 44);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 38);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "우회전 센서";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(313, 86);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 38);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "포크 후진 센서";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(313, 212);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(202, 38);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "ST.2 센서 2";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(313, 128);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(202, 38);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "ST.1 센서 1";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(313, 170);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 38);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "ST.1 센서 3";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(313, 254);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(202, 44);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "ST.2 센서 4";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(55, 212);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(201, 38);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "ST.2 센서 1";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(55, 170);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(201, 38);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "ST.1 센서 2";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(55, 254);
-            this.label14.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            this.label14.Location = new System.Drawing.Point(53, 242);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(201, 44);
+            this.label14.Size = new System.Drawing.Size(200, 38);
             this.label14.TabIndex = 17;
             this.label14.Text = "ST.2 센서 3";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_TrayOff
+            // label13
             // 
-            this.Pb_TrayOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_TrayOff.Location = new System.Drawing.Point(268, 10);
-            this.Pb_TrayOff.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_TrayOff.Name = "Pb_TrayOff";
-            this.Pb_TrayOff.Size = new System.Drawing.Size(30, 22);
-            this.Pb_TrayOff.TabIndex = 18;
-            this.Pb_TrayOff.TabStop = false;
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(53, 162);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(200, 36);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "ST.1 센서 2";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_Left
+            // label12
             // 
-            this.Pb_Left.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Left.Location = new System.Drawing.Point(10, 52);
-            this.Pb_Left.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_Left.Name = "Pb_Left";
-            this.Pb_Left.Size = new System.Drawing.Size(30, 22);
-            this.Pb_Left.TabIndex = 19;
-            this.Pb_Left.TabStop = false;
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(53, 202);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(200, 36);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "ST.2 센서 1";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_Right
+            // label11
             // 
-            this.Pb_Right.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Right.Location = new System.Drawing.Point(268, 52);
-            this.Pb_Right.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_Right.Name = "Pb_Right";
-            this.Pb_Right.Size = new System.Drawing.Size(30, 22);
-            this.Pb_Right.TabIndex = 20;
-            this.Pb_Right.TabStop = false;
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(308, 242);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(201, 38);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "ST.2 센서 4";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ForkOn
+            // label10
             // 
-            this.Pb_ForkOn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ForkOn.Location = new System.Drawing.Point(10, 94);
-            this.Pb_ForkOn.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ForkOn.Name = "Pb_ForkOn";
-            this.Pb_ForkOn.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ForkOn.TabIndex = 21;
-            this.Pb_ForkOn.TabStop = false;
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Location = new System.Drawing.Point(308, 162);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(201, 36);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "ST.1 센서 3";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ForkOff
+            // label9
             // 
-            this.Pb_ForkOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ForkOff.Location = new System.Drawing.Point(268, 94);
-            this.Pb_ForkOff.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ForkOff.Name = "Pb_ForkOff";
-            this.Pb_ForkOff.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ForkOff.TabIndex = 22;
-            this.Pb_ForkOff.TabStop = false;
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(308, 122);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 36);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "ST.1 센서 1";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_Fork
+            // label8
             // 
-            this.Pb_Fork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Fork.Location = new System.Drawing.Point(10, 136);
-            this.Pb_Fork.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_Fork.Name = "Pb_Fork";
-            this.Pb_Fork.Size = new System.Drawing.Size(30, 22);
-            this.Pb_Fork.TabIndex = 23;
-            this.Pb_Fork.TabStop = false;
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(308, 202);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(201, 36);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "ST.2 센서 2";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST1_1
+            // label7
             // 
-            this.Pb_ST1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_1.Location = new System.Drawing.Point(268, 136);
-            this.Pb_ST1_1.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST1_1.Name = "Pb_ST1_1";
-            this.Pb_ST1_1.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ST1_1.TabIndex = 24;
-            this.Pb_ST1_1.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(308, 82);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(201, 36);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "포크 후진 센서";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST1_2
+            // label4
             // 
-            this.Pb_ST1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_2.Location = new System.Drawing.Point(10, 178);
-            this.Pb_ST1_2.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST1_2.Name = "Pb_ST1_2";
-            this.Pb_ST1_2.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ST1_2.TabIndex = 25;
-            this.Pb_ST1_2.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(308, 42);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(201, 36);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "우회전 센서";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST1_3
+            // label3
             // 
-            this.Pb_ST1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_3.Location = new System.Drawing.Point(268, 178);
-            this.Pb_ST1_3.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST1_3.Name = "Pb_ST1_3";
-            this.Pb_ST1_3.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ST1_3.TabIndex = 26;
-            this.Pb_ST1_3.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(53, 82);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 36);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "포크 전진센서";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST2_1
+            // label6
             // 
-            this.Pb_ST2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_1.Location = new System.Drawing.Point(10, 220);
-            this.Pb_ST2_1.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST2_1.Name = "Pb_ST2_1";
-            this.Pb_ST2_1.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ST2_1.TabIndex = 27;
-            this.Pb_ST2_1.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(308, 2);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(201, 36);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Tray 후진 센서";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST2_2
+            // label5
             // 
-            this.Pb_ST2_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_2.Location = new System.Drawing.Point(268, 220);
-            this.Pb_ST2_2.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST2_2.Name = "Pb_ST2_2";
-            this.Pb_ST2_2.Size = new System.Drawing.Size(30, 22);
-            this.Pb_ST2_2.TabIndex = 28;
-            this.Pb_ST2_2.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(53, 42);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(200, 36);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "좌회전 센서";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_ST2_3
+            // label2
             // 
-            this.Pb_ST2_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_3.Location = new System.Drawing.Point(10, 262);
-            this.Pb_ST2_3.Margin = new System.Windows.Forms.Padding(10);
-            this.Pb_ST2_3.Name = "Pb_ST2_3";
-            this.Pb_ST2_3.Size = new System.Drawing.Size(30, 28);
-            this.Pb_ST2_3.TabIndex = 29;
-            this.Pb_ST2_3.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(53, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 36);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "포크 센서";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(53, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 36);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tray 전진 센서";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox6);
+            this.panel1.Controls.Add(this.groupBox5);
+            this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(570, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(688, 626);
+            this.panel1.TabIndex = 8;
             // 
             // Pb_ST2_4
             // 
             this.Pb_ST2_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_4.Location = new System.Drawing.Point(268, 262);
-            this.Pb_ST2_4.Margin = new System.Windows.Forms.Padding(10);
+            this.Pb_ST2_4.Location = new System.Drawing.Point(260, 245);
+            this.Pb_ST2_4.Margin = new System.Windows.Forms.Padding(5);
             this.Pb_ST2_4.Name = "Pb_ST2_4";
-            this.Pb_ST2_4.Size = new System.Drawing.Size(30, 28);
+            this.Pb_ST2_4.Size = new System.Drawing.Size(40, 32);
             this.Pb_ST2_4.TabIndex = 30;
             this.Pb_ST2_4.TabStop = false;
+            // 
+            // Pb_ST2_3
+            // 
+            this.Pb_ST2_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_3.Location = new System.Drawing.Point(5, 245);
+            this.Pb_ST2_3.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_3.Name = "Pb_ST2_3";
+            this.Pb_ST2_3.Size = new System.Drawing.Size(40, 32);
+            this.Pb_ST2_3.TabIndex = 29;
+            this.Pb_ST2_3.TabStop = false;
+            // 
+            // Pb_ST2_2
+            // 
+            this.Pb_ST2_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_2.Location = new System.Drawing.Point(260, 205);
+            this.Pb_ST2_2.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_2.Name = "Pb_ST2_2";
+            this.Pb_ST2_2.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST2_2.TabIndex = 28;
+            this.Pb_ST2_2.TabStop = false;
+            // 
+            // Pb_ST2_1
+            // 
+            this.Pb_ST2_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_1.Location = new System.Drawing.Point(5, 205);
+            this.Pb_ST2_1.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_1.Name = "Pb_ST2_1";
+            this.Pb_ST2_1.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST2_1.TabIndex = 27;
+            this.Pb_ST2_1.TabStop = false;
+            // 
+            // Pb_ST1_3
+            // 
+            this.Pb_ST1_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_3.Location = new System.Drawing.Point(260, 165);
+            this.Pb_ST1_3.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_3.Name = "Pb_ST1_3";
+            this.Pb_ST1_3.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_3.TabIndex = 26;
+            this.Pb_ST1_3.TabStop = false;
+            // 
+            // Pb_ST1_2
+            // 
+            this.Pb_ST1_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_2.Location = new System.Drawing.Point(5, 165);
+            this.Pb_ST1_2.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_2.Name = "Pb_ST1_2";
+            this.Pb_ST1_2.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_2.TabIndex = 25;
+            this.Pb_ST1_2.TabStop = false;
+            // 
+            // Pb_ST1_1
+            // 
+            this.Pb_ST1_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_1.Location = new System.Drawing.Point(260, 125);
+            this.Pb_ST1_1.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_1.Name = "Pb_ST1_1";
+            this.Pb_ST1_1.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_1.TabIndex = 24;
+            this.Pb_ST1_1.TabStop = false;
+            // 
+            // Pb_Fork
+            // 
+            this.Pb_Fork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Fork.Location = new System.Drawing.Point(5, 125);
+            this.Pb_Fork.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Fork.Name = "Pb_Fork";
+            this.Pb_Fork.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Fork.TabIndex = 23;
+            this.Pb_Fork.TabStop = false;
+            // 
+            // Pb_ForkOff
+            // 
+            this.Pb_ForkOff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ForkOff.Location = new System.Drawing.Point(260, 85);
+            this.Pb_ForkOff.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ForkOff.Name = "Pb_ForkOff";
+            this.Pb_ForkOff.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ForkOff.TabIndex = 22;
+            this.Pb_ForkOff.TabStop = false;
+            // 
+            // Pb_ForkOn
+            // 
+            this.Pb_ForkOn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ForkOn.Location = new System.Drawing.Point(5, 85);
+            this.Pb_ForkOn.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ForkOn.Name = "Pb_ForkOn";
+            this.Pb_ForkOn.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ForkOn.TabIndex = 21;
+            this.Pb_ForkOn.TabStop = false;
+            // 
+            // Pb_Right
+            // 
+            this.Pb_Right.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Right.Location = new System.Drawing.Point(260, 45);
+            this.Pb_Right.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Right.Name = "Pb_Right";
+            this.Pb_Right.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Right.TabIndex = 20;
+            this.Pb_Right.TabStop = false;
+            // 
+            // Pb_Left
+            // 
+            this.Pb_Left.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Left.Location = new System.Drawing.Point(5, 45);
+            this.Pb_Left.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Left.Name = "Pb_Left";
+            this.Pb_Left.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Left.TabIndex = 19;
+            this.Pb_Left.TabStop = false;
+            // 
+            // Pb_TrayOff
+            // 
+            this.Pb_TrayOff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_TrayOff.Location = new System.Drawing.Point(260, 5);
+            this.Pb_TrayOff.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_TrayOff.Name = "Pb_TrayOff";
+            this.Pb_TrayOff.Size = new System.Drawing.Size(40, 30);
+            this.Pb_TrayOff.TabIndex = 18;
+            this.Pb_TrayOff.TabStop = false;
+            // 
+            // Pb_Trayon
+            // 
+            this.Pb_Trayon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Trayon.Location = new System.Drawing.Point(5, 5);
+            this.Pb_Trayon.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Trayon.Name = "Pb_Trayon";
+            this.Pb_Trayon.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Trayon.TabIndex = 0;
+            this.Pb_Trayon.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 53);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(561, 626);
+            this.tableLayoutPanel3.TabIndex = 14;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Bt_Tray_On);
+            this.groupBox1.Controls.Add(this.BT_Tray_OFF);
+            this.groupBox1.Location = new System.Drawing.Point(43, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(290, 132);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BT_Battery_On);
+            this.groupBox2.Controls.Add(this.BT_Battery_Off);
+            this.groupBox2.Location = new System.Drawing.Point(360, 292);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(331, 100);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Bt_Left);
+            this.groupBox3.Controls.Add(this.Bt_Right);
+            this.groupBox3.Location = new System.Drawing.Point(68, 351);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(269, 100);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Bt_1ConV);
+            this.groupBox4.Controls.Add(this.Bt_2ConV);
+            this.groupBox4.Location = new System.Drawing.Point(27, 475);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(321, 100);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.BT_Fork_On);
+            this.groupBox5.Controls.Add(this.Bt_Fork_Off);
+            this.groupBox5.Location = new System.Drawing.Point(370, 25);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(281, 111);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "groupBox5";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Bt_Alarm);
+            this.groupBox6.Controls.Add(this.Bt_Red);
+            this.groupBox6.Controls.Add(this.Bt_Yellow);
+            this.groupBox6.Controls.Add(this.Bt_Green);
+            this.groupBox6.Location = new System.Drawing.Point(370, 415);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(309, 208);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "groupBox6";
             // 
             // Fm_Test
             // 
@@ -761,26 +825,33 @@
             this.Load += new System.EventHandler(this.Fm_Test_Load);
             this.Pn_Title_M.ResumeLayout(false);
             this.Pn_Title_M.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).EndInit();
             this.Pn_Title_C.ResumeLayout(false);
             this.Pn_Title_C.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Right)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_Fork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ST1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Fork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_ForkOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Right)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -793,7 +864,6 @@
         private System.Windows.Forms.Label Lb_Title_C;
         private System.Windows.Forms.PictureBox Pb_Trayon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button Bt_Green;
         private System.Windows.Forms.Button Bt_Yellow;
         private System.Windows.Forms.Button Bt_Red;
@@ -836,5 +906,13 @@
         private System.Windows.Forms.PictureBox Pb_Right;
         private System.Windows.Forms.PictureBox Pb_Left;
         private System.Windows.Forms.PictureBox Pb_TrayOff;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

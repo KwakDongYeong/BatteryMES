@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ActUtlTypeLib;
+using Google.Protobuf.WellKnownTypes;
 
 namespace BatteryMes
 {
@@ -91,7 +92,7 @@ namespace BatteryMes
         }
         public void LightOn()
         {
-             int value;
+            /* int value;
             plc.GetDevice("M1", out value);
             if(value == 0)
             {
@@ -100,8 +101,74 @@ namespace BatteryMes
             else
             {
                 Pb_Trayon.Image = Properties.Resources._1;
+            }*/
+
+            for (int i = 0; i <= 9; i++)
+            {
+                int value;
+                string deviceName = "X" + i;
+                plc.GetDevice(deviceName, out value);
+
+                switch (i)
+                {
+                    case 0:
+                        Pb_Trayon.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 1:
+                        Pb_TrayOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 2:
+                        Pb_Left.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 3:
+                        Pb_Right.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 4:
+                        Pb_ForkOn.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 5:
+                        Pb_ForkOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 6:
+                        Pb_Fork.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 7:
+                        Pb_ST1_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 8:
+                        Pb_ST1_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case 9:
+                        Pb_ST1_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                   
+                }
             }
-        }
+            string[] deviceNames = { "X0A", "X0B", "X0C", "X0D" };
+
+            foreach (string deviceName in deviceNames)
+            {
+                int value;
+                plc.GetDevice(deviceName, out value);
+
+                switch (deviceName)
+                {
+                    case "X0A":
+                        Pb_ST2_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case "X0B":
+                        Pb_ST2_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case "X0C":
+                        Pb_ST2_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                    case "X0D":
+                        Pb_ST2_4.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                        break;
+                }
+            }
+
+            }
       /*  private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Panel Pn_Tray_On = sender as Panel;
@@ -154,7 +221,7 @@ namespace BatteryMes
 
         private void Bt_Tray_On_Click(object sender, EventArgs e)
         {
-
+            plc.SetDevice("M1", 1);
         }
 
         private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
@@ -162,19 +229,19 @@ namespace BatteryMes
 
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
             Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
-            plc.SetDevice("M1", 1);
+            
         }
 
         private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
             Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
-            plc.SetDevice("M1", 0);
+            
         }
 
         private void BT_Tray_OFF_Click(object sender, EventArgs e)
         {
-
+            plc.SetDevice("M1", 0);
         }
 
         private void BT_Tray_OFF_MouseDown(object sender, MouseEventArgs e)
