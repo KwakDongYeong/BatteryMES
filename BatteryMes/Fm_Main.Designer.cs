@@ -59,8 +59,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCon = new System.Windows.Forms.Button();
+            this.btnDiscon = new System.Windows.Forms.Button();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -523,8 +523,8 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel12.Controls.Add(this.button1, 1, 1);
-            this.tableLayoutPanel12.Controls.Add(this.button2, 3, 1);
+            this.tableLayoutPanel12.Controls.Add(this.btnCon, 1, 1);
+            this.tableLayoutPanel12.Controls.Add(this.btnDiscon, 3, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -535,31 +535,31 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(318, 69);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
-            // button1
+            // btnCon
             // 
-            this.button1.BackColor = System.Drawing.Color.Chartreuse;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(45, 24);
-            this.button1.Margin = new System.Windows.Forms.Padding(20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 19);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCon.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnCon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCon.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCon.Location = new System.Drawing.Point(45, 24);
+            this.btnCon.Margin = new System.Windows.Forms.Padding(20);
+            this.btnCon.Name = "btnCon";
+            this.btnCon.Size = new System.Drawing.Size(80, 19);
+            this.btnCon.TabIndex = 0;
+            this.btnCon.Text = "Connect";
+            this.btnCon.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnDiscon
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(190, 24);
-            this.button2.Margin = new System.Windows.Forms.Padding(20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 19);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Disconnect";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDiscon.BackColor = System.Drawing.Color.Red;
+            this.btnDiscon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDiscon.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDiscon.Location = new System.Drawing.Point(190, 24);
+            this.btnDiscon.Margin = new System.Windows.Forms.Padding(20);
+            this.btnDiscon.Name = "btnDiscon";
+            this.btnDiscon.Size = new System.Drawing.Size(80, 19);
+            this.btnDiscon.TabIndex = 1;
+            this.btnDiscon.Text = "Disconnect";
+            this.btnDiscon.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel13
             // 
@@ -770,8 +770,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCon;
+        private System.Windows.Forms.Button btnDiscon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label2;
