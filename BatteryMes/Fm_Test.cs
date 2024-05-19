@@ -49,7 +49,7 @@ namespace BatteryMes
             plc.Open();
             LightOn();
 
-            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
+         /*   Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
             Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
             BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
@@ -81,7 +81,7 @@ namespace BatteryMes
             Bt_Yellow.BackgroundImageLayout = ImageLayout .Stretch;
             Bt_Yellow .BackgroundImage = Properties.Resources.Button1;
             Bt_Green.BackgroundImageLayout = ImageLayout .Stretch;
-            Bt_Green .BackgroundImage = Properties.Resources.Button1;
+            Bt_Green .BackgroundImage = Properties.Resources.Button1;*/
 
         }
         
@@ -228,14 +228,14 @@ namespace BatteryMes
         {
 
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
+          //  Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
             
         }
 
         private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
         {
             Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
+         //   Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
             
         }
 
@@ -248,14 +248,14 @@ namespace BatteryMes
         {
 
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button2;
+      //      BT_Tray_OFF.BackgroundImage = Properties.Resources.Button2;
         }
 
         private void BT_Tray_OFF_MouseUp(object sender, MouseEventArgs e)
         {
 
             BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
+         //   BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
         }
 
     }
