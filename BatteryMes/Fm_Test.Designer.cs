@@ -84,6 +84,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Bt_Tray_On = new System.Windows.Forms.Button();
             this.BT_Tray_OFF = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.Pn_Title_M.SuspendLayout();
             this.Pn_Title_C.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -110,6 +112,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pn_Title_M
@@ -172,6 +175,7 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 53);
@@ -577,7 +581,7 @@
             this.groupBox6.Controls.Add(this.Bt_Green);
             this.groupBox6.Location = new System.Drawing.Point(348, 168);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(309, 208);
+            this.groupBox6.Size = new System.Drawing.Size(309, 260);
             this.groupBox6.TabIndex = 19;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "groupBox6";
@@ -812,6 +816,24 @@
             this.BT_Tray_OFF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseDown);
             this.BT_Tray_OFF.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseUp);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 291);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(555, 44);
+            this.panel2.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(216, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 15);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "카메라";
+            // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -852,6 +874,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -914,5 +938,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label15;
     }
 }
