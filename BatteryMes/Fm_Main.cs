@@ -26,24 +26,7 @@ namespace BatteryMes
 
         private void Fm_Main_Load(object sender, EventArgs e)
         {
-            // 지정한 패널들의 Paint 이벤트에 핸들러를 연결합니다.
-            panel1.Paint += new PaintEventHandler(panel_Paint);
-            panel2.Paint += new PaintEventHandler(panel_Paint);
-            panel3.Paint += new PaintEventHandler(panel_Paint);
-            panel4.Paint += new PaintEventHandler(panel_Paint);
-            panel5.Paint += new PaintEventHandler(panel_Paint);
-            panel6.Paint += new PaintEventHandler(panel_Paint);
-            panel7.Paint += new PaintEventHandler(panel_Paint);
-            panel8.Paint += new PaintEventHandler(panel_Paint);
-            panel9.Paint += new PaintEventHandler(panel_Paint);
-            panel10.Paint += new PaintEventHandler(panel_Paint);
-            panel11.Paint += new PaintEventHandler(panel_Paint);
-            panel12.Paint += new PaintEventHandler(panel_Paint);
-            panel13.Paint += new PaintEventHandler(panel_Paint);
-            panel14.Paint += new PaintEventHandler(panel_Paint);
-            panel15.Paint += new PaintEventHandler(panel_Paint);
-            panel16.Paint += new PaintEventHandler(panel_Paint);
-            // 필요한 만큼 패널을 추가합니다.
+           
         }
 
         private void SetPanelRegionToCircle(Panel panel)
@@ -67,5 +50,12 @@ namespace BatteryMes
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }
