@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACTMULTILib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BatteryMes
 {
@@ -16,6 +17,8 @@ namespace BatteryMes
     {
         //객체 선언
         ActEasyIF PLC1 = new ActEasyIF();
+        private int prevY50 = 0;
+        private int prevY51 = 0;
 
         public Fm_Main()
         {
@@ -115,18 +118,12 @@ namespace BatteryMes
                 fork_rotatelamp.Image = (y32 == 1) ? Properties.Resources.green : (y33 == 1) ? Properties.Resources.red : null;
                 cvlamp2.Image = (y34 == 1) ? Properties.Resources.green : (y35 == 1) ? Properties.Resources.red : null;
                 vision_check.Image = (y36 == 1) ? Properties.Resources.green : (y37 == 1) ? Properties.Resources.red : null;
-                if (y50 == 1)
-                {
-                    mentbox.Text = "vision 과정에서 양품으로 판단하였습니다.";
-                }
-                else if (y51 == 1)
-                {
-                    mentbox.Text = "vision 과정에서 불량품으로 판단하였습니다.";
-                }
-                else
-                {
-                    mentbox.Text = ""; // y50, y51 외의 번호가 켜질 때 mentbox를 비웁니다.
-                }
+                if (y50 == 1 && prevY50 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 양품으로 판단하였습니다.\n");
+                else if (y51 == 1 && prevY51 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 불량품으로 판단하였습니다.\n");
+
+                // 이전 상태 업데이트
+                prevY50 = y50;
+                prevY51 = y51;
             }
             catch (Exception ex)
             {
