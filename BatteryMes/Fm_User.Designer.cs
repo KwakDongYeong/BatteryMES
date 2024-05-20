@@ -30,12 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Gv_user = new System.Windows.Forms.DataGridView();
-            this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userpw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Bt_Re = new System.Windows.Forms.Button();
             this.Bt_change = new System.Windows.Forms.Button();
@@ -49,6 +43,12 @@
             this.Lb_User = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userpw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gv_user)).BeginInit();
             this.panel3.SuspendLayout();
@@ -94,67 +94,11 @@
             this.Gv_user.Location = new System.Drawing.Point(8, 216);
             this.Gv_user.MultiSelect = false;
             this.Gv_user.Name = "Gv_user";
-            this.Gv_user.ReadOnly = true;
             this.Gv_user.RowHeadersWidth = 51;
             this.Gv_user.RowTemplate.Height = 27;
             this.Gv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Gv_user.Size = new System.Drawing.Size(1115, 393);
             this.Gv_user.TabIndex = 0;
-            // 
-            // CheckBox
-            // 
-            this.CheckBox.FillWeight = 15F;
-            this.CheckBox.HeaderText = "";
-            this.CheckBox.MinimumWidth = 15;
-            this.CheckBox.Name = "CheckBox";
-            this.CheckBox.ReadOnly = true;
-            this.CheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "name";
-            this.username.FillWeight = 71.24693F;
-            this.username.HeaderText = "이름";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            this.username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // userid
-            // 
-            this.userid.DataPropertyName = "id";
-            this.userid.FillWeight = 71.24693F;
-            this.userid.HeaderText = "ID";
-            this.userid.MinimumWidth = 6;
-            this.userid.Name = "userid";
-            this.userid.ReadOnly = true;
-            // 
-            // userpw
-            // 
-            this.userpw.DataPropertyName = "pw";
-            this.userpw.FillWeight = 71.24693F;
-            this.userpw.HeaderText = "PW";
-            this.userpw.MinimumWidth = 6;
-            this.userpw.Name = "userpw";
-            this.userpw.ReadOnly = true;
-            // 
-            // department
-            // 
-            this.department.DataPropertyName = "department";
-            this.department.FillWeight = 71.24693F;
-            this.department.HeaderText = "부서";
-            this.department.MinimumWidth = 6;
-            this.department.Name = "department";
-            this.department.ReadOnly = true;
-            // 
-            // position
-            // 
-            this.position.DataPropertyName = "position";
-            this.position.FillWeight = 71.24693F;
-            this.position.HeaderText = "직책";
-            this.position.MinimumWidth = 6;
-            this.position.Name = "position";
-            this.position.ReadOnly = true;
             // 
             // panel3
             // 
@@ -178,7 +122,7 @@
             // 
             this.Bt_Re.BackColor = System.Drawing.Color.CadetBlue;
             this.Bt_Re.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bt_Re.Location = new System.Drawing.Point(438, 30);
+            this.Bt_Re.Location = new System.Drawing.Point(453, 30);
             this.Bt_Re.Name = "Bt_Re";
             this.Bt_Re.Size = new System.Drawing.Size(92, 40);
             this.Bt_Re.TabIndex = 7;
@@ -226,7 +170,7 @@
             // 
             this.Bt_Search.BackColor = System.Drawing.Color.CadetBlue;
             this.Bt_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bt_Search.Location = new System.Drawing.Point(340, 30);
+            this.Bt_Search.Location = new System.Drawing.Point(355, 30);
             this.Bt_Search.Name = "Bt_Search";
             this.Bt_Search.Size = new System.Drawing.Size(92, 40);
             this.Bt_Search.TabIndex = 3;
@@ -240,7 +184,7 @@
             this.Tb_Search.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Tb_Search.Location = new System.Drawing.Point(199, 36);
             this.Tb_Search.Name = "Tb_Search";
-            this.Tb_Search.Size = new System.Drawing.Size(119, 27);
+            this.Tb_Search.Size = new System.Drawing.Size(137, 27);
             this.Tb_Search.TabIndex = 2;
             // 
             // Cb_Search
@@ -310,6 +254,72 @@
             this.label1.Text = "사용자 리스트";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CheckBox
+            // 
+            this.CheckBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CheckBox.FillWeight = 15F;
+            this.CheckBox.Frozen = true;
+            this.CheckBox.HeaderText = "";
+            this.CheckBox.MinimumWidth = 15;
+            this.CheckBox.Name = "CheckBox";
+            this.CheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CheckBox.Width = 42;
+            // 
+            // username
+            // 
+            this.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.username.DataPropertyName = "name";
+            this.username.FillWeight = 71.24693F;
+            this.username.Frozen = true;
+            this.username.HeaderText = "이름";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.username.Width = 204;
+            // 
+            // userid
+            // 
+            this.userid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.userid.DataPropertyName = "id";
+            this.userid.FillWeight = 71.24693F;
+            this.userid.Frozen = true;
+            this.userid.HeaderText = "ID";
+            this.userid.MinimumWidth = 6;
+            this.userid.Name = "userid";
+            this.userid.ReadOnly = true;
+            this.userid.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.userid.Width = 203;
+            // 
+            // userpw
+            // 
+            this.userpw.DataPropertyName = "pw";
+            this.userpw.FillWeight = 71.24693F;
+            this.userpw.HeaderText = "PW";
+            this.userpw.MinimumWidth = 6;
+            this.userpw.Name = "userpw";
+            this.userpw.ReadOnly = true;
+            // 
+            // department
+            // 
+            this.department.DataPropertyName = "department";
+            this.department.FillWeight = 71.24693F;
+            this.department.HeaderText = "부서";
+            this.department.MinimumWidth = 6;
+            this.department.Name = "department";
+            this.department.ReadOnly = true;
+            this.department.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // position
+            // 
+            this.position.DataPropertyName = "position";
+            this.position.FillWeight = 71.24693F;
+            this.position.HeaderText = "직책";
+            this.position.MinimumWidth = 6;
+            this.position.Name = "position";
+            this.position.ReadOnly = true;
+            this.position.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Fm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -345,15 +355,15 @@
         private System.Windows.Forms.Button Bt_change;
         private System.Windows.Forms.Button Bt_Signup;
         private System.Windows.Forms.Button Bt_Re;
+        private System.Windows.Forms.Panel Pn_User;
+        private System.Windows.Forms.Label Lb_User;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn userid;
         private System.Windows.Forms.DataGridViewTextBoxColumn userpw;
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
-        private System.Windows.Forms.Panel Pn_User;
-        private System.Windows.Forms.Label Lb_User;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
     }
 }
