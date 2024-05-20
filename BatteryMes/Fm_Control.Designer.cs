@@ -537,9 +537,13 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(21, 30);
+            this.progressBar1.MaximumSize = new System.Drawing.Size(220, 75);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(120, 37);
+            this.progressBar1.Size = new System.Drawing.Size(110, 37);
             this.progressBar1.TabIndex = 0;
             // 
             // Fm_Control
