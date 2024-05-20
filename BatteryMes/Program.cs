@@ -16,7 +16,7 @@ namespace BatteryMes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Fm_Frame());
+            Application.Run(new Fm_Login());
         }
     }
 }

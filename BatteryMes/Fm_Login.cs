@@ -30,7 +30,7 @@ namespace BatteryMes
                 string loginid = id_text.Text;
                 string loginpw = pw_text.Text;
 
-                string selectQuery = "SELECT * FROM log_in WHERE id = @id AND pw = @pw";
+                string selectQuery = "SELECT * FROM user WHERE id = @id AND pw = @pw";
 
                 MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection);
                 selectCommand.Parameters.AddWithValue("@id", loginid);
