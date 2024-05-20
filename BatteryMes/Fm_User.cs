@@ -19,11 +19,13 @@ namespace BatteryMes
         {
             InitializeComponent();
             LoadUser();
+           
         }
 
         private void Fm_User_Load(object sender, EventArgs e)
         {
             this.Cb_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        
 
         }
       
@@ -129,6 +131,8 @@ namespace BatteryMes
         private void Bt_Re_Click(object sender, EventArgs e)
         {
             LoadUser();
+            Cb_Search.SelectedIndex = -1;
+            Tb_Search.Clear();
         }
 
         private void Bt_Signup_Click(object sender, EventArgs e)
@@ -229,6 +233,11 @@ namespace BatteryMes
         {
             Fm_Test fm_Test = new Fm_Test();
             fm_Test.Show();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     
