@@ -95,12 +95,15 @@ namespace BatteryMes
                 int y20 = 0; int y21 = 0; int y22 = 0; int y23 = 0; int y24 = 0; int y25 = 0; 
                 int y26 = 0; int y27 = 0; int y28 = 0; int y29 = 0; int y30 = 0; int y31 = 0;
                 int y32 = 0; int y33 = 0; int y34 = 0; int y35 = 0; int y36 = 0; int y37 = 0;
+                int y50 = 0, y51 = 0;
                 PLC1.GetDevice("Y20", out y20); PLC1.GetDevice("Y21", out y21); PLC1.GetDevice("Y22", out y22);
                 PLC1.GetDevice("Y23", out y23); PLC1.GetDevice("Y24", out y24); PLC1.GetDevice("Y25", out y25);
                 PLC1.GetDevice("Y26", out y26); PLC1.GetDevice("Y27", out y27); PLC1.GetDevice("Y28", out y28);
                 PLC1.GetDevice("Y29", out y29); PLC1.GetDevice("Y30", out y30); PLC1.GetDevice("Y31", out y31);
                 PLC1.GetDevice("Y32", out y32); PLC1.GetDevice("Y33", out y33); PLC1.GetDevice("Y34", out y34);
                 PLC1.GetDevice("Y35", out y35); PLC1.GetDevice("Y36", out y36); PLC1.GetDevice("Y37", out y37);
+                PLC1.GetDevice("Y50", out y50); PLC1.GetDevice("Y51", out y51);
+
 
                 // PictureBox 이미지 변경
                 case_cylamp.Image = (y20 == 1) ? Properties.Resources.green : (y21 == 1) ? Properties.Resources.red : null;
@@ -112,11 +115,28 @@ namespace BatteryMes
                 fork_rotatelamp.Image = (y32 == 1) ? Properties.Resources.green : (y33 == 1) ? Properties.Resources.red : null;
                 cvlamp2.Image = (y34 == 1) ? Properties.Resources.green : (y35 == 1) ? Properties.Resources.red : null;
                 vision_check.Image = (y36 == 1) ? Properties.Resources.green : (y37 == 1) ? Properties.Resources.red : null;
+                if (y50 == 1)
+                {
+                    mentbox.Text = "vision 과정에서 양품으로 판단하였습니다.";
+                }
+                else if (y51 == 1)
+                {
+                    mentbox.Text = "vision 과정에서 불량품으로 판단하였습니다.";
+                }
+                else
+                {
+                    mentbox.Text = ""; // y50, y51 외의 번호가 켜질 때 mentbox를 비웁니다.
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("PLC 통신 오류: " + ex.Message);
             }
+        }
+
+        private void mentbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
