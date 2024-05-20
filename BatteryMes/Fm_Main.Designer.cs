@@ -672,6 +672,7 @@
             this.mentbox.Name = "mentbox";
             this.mentbox.Size = new System.Drawing.Size(185, 182);
             this.mentbox.TabIndex = 0;
+            this.mentbox.SelectedIndexChanged += new System.EventHandler(this.mentbox_SelectedIndexChanged);
             // 
             // tableLayoutPanel15
             // 
