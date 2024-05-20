@@ -65,7 +65,8 @@
             this.Gr_Process = new System.Windows.Forms.GroupBox();
             this.Bt_ProcessOff = new System.Windows.Forms.Button();
             this.Bt_ProcessOn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.Pn_pro_1_4 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -94,7 +95,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1230, 668);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1079, 750);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -150,168 +151,169 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(814, 589);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(663, 671);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // Pn_4_1
             // 
             this.Pn_4_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_4_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_1.Location = new System.Drawing.Point(612, 453);
+            this.Pn_4_1.Location = new System.Drawing.Point(498, 513);
             this.Pn_4_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_4_1.Name = "Pn_4_1";
-            this.Pn_4_1.Size = new System.Drawing.Size(199, 122);
+            this.Pn_4_1.Size = new System.Drawing.Size(162, 144);
             this.Pn_4_1.TabIndex = 14;
             // 
             // Pn_3_1
             // 
             this.Pn_3_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_3_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_1.Location = new System.Drawing.Point(409, 453);
+            this.Pn_3_1.Location = new System.Drawing.Point(333, 513);
             this.Pn_3_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_3_1.Name = "Pn_3_1";
-            this.Pn_3_1.Size = new System.Drawing.Size(197, 122);
+            this.Pn_3_1.Size = new System.Drawing.Size(159, 144);
             this.Pn_3_1.TabIndex = 13;
             // 
             // Pn_2_1
             // 
             this.Pn_2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_1.Location = new System.Drawing.Point(206, 453);
+            this.Pn_2_1.Location = new System.Drawing.Point(168, 513);
             this.Pn_2_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_1.Name = "Pn_2_1";
-            this.Pn_2_1.Size = new System.Drawing.Size(197, 122);
+            this.Pn_2_1.Size = new System.Drawing.Size(159, 144);
             this.Pn_2_1.TabIndex = 12;
             // 
             // Pn_1_1
             // 
             this.Pn_1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_1.Location = new System.Drawing.Point(3, 453);
+            this.Pn_1_1.Location = new System.Drawing.Point(3, 513);
             this.Pn_1_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_1.Name = "Pn_1_1";
-            this.Pn_1_1.Size = new System.Drawing.Size(197, 122);
+            this.Pn_1_1.Size = new System.Drawing.Size(159, 144);
             this.Pn_1_1.TabIndex = 11;
             // 
             // Pn_4_2
             // 
             this.Pn_4_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_4_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_2.Location = new System.Drawing.Point(612, 306);
+            this.Pn_4_2.Location = new System.Drawing.Point(498, 346);
             this.Pn_4_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_4_2.Name = "Pn_4_2";
-            this.Pn_4_2.Size = new System.Drawing.Size(199, 121);
+            this.Pn_4_2.Size = new System.Drawing.Size(162, 141);
             this.Pn_4_2.TabIndex = 10;
             // 
             // Pn_3_2
             // 
             this.Pn_3_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_3_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_2.Location = new System.Drawing.Point(409, 306);
+            this.Pn_3_2.Location = new System.Drawing.Point(333, 346);
             this.Pn_3_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_3_2.Name = "Pn_3_2";
-            this.Pn_3_2.Size = new System.Drawing.Size(197, 121);
+            this.Pn_3_2.Size = new System.Drawing.Size(159, 141);
             this.Pn_3_2.TabIndex = 9;
             // 
             // Pn_2_2
             // 
             this.Pn_2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_2_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_2.Location = new System.Drawing.Point(206, 306);
+            this.Pn_2_2.Location = new System.Drawing.Point(168, 346);
             this.Pn_2_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_2.Name = "Pn_2_2";
-            this.Pn_2_2.Size = new System.Drawing.Size(197, 121);
+            this.Pn_2_2.Size = new System.Drawing.Size(159, 141);
             this.Pn_2_2.TabIndex = 8;
             // 
             // Pn_1_2
             // 
             this.Pn_1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_2.Location = new System.Drawing.Point(3, 306);
+            this.Pn_1_2.Location = new System.Drawing.Point(3, 346);
             this.Pn_1_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_2.Name = "Pn_1_2";
-            this.Pn_1_2.Size = new System.Drawing.Size(197, 121);
+            this.Pn_1_2.Size = new System.Drawing.Size(159, 141);
             this.Pn_1_2.TabIndex = 7;
             // 
             // Pn_4_3
             // 
             this.Pn_4_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_4_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_3.Location = new System.Drawing.Point(612, 159);
+            this.Pn_4_3.Location = new System.Drawing.Point(498, 179);
             this.Pn_4_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_4_3.Name = "Pn_4_3";
-            this.Pn_4_3.Size = new System.Drawing.Size(199, 121);
+            this.Pn_4_3.Size = new System.Drawing.Size(162, 141);
             this.Pn_4_3.TabIndex = 6;
             // 
             // Pn_3_3
             // 
             this.Pn_3_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_3_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_3.Location = new System.Drawing.Point(409, 159);
+            this.Pn_3_3.Location = new System.Drawing.Point(333, 179);
             this.Pn_3_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_3_3.Name = "Pn_3_3";
-            this.Pn_3_3.Size = new System.Drawing.Size(197, 121);
+            this.Pn_3_3.Size = new System.Drawing.Size(159, 141);
             this.Pn_3_3.TabIndex = 5;
             // 
             // Pn_2_3
             // 
             this.Pn_2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_2_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_3.Location = new System.Drawing.Point(206, 159);
+            this.Pn_2_3.Location = new System.Drawing.Point(168, 179);
             this.Pn_2_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_3.Name = "Pn_2_3";
-            this.Pn_2_3.Size = new System.Drawing.Size(197, 121);
+            this.Pn_2_3.Size = new System.Drawing.Size(159, 141);
             this.Pn_2_3.TabIndex = 4;
             // 
             // Pn_1_3
             // 
             this.Pn_1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_3.Location = new System.Drawing.Point(3, 159);
+            this.Pn_1_3.Location = new System.Drawing.Point(3, 179);
             this.Pn_1_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_3.Name = "Pn_1_3";
-            this.Pn_1_3.Size = new System.Drawing.Size(197, 121);
+            this.Pn_1_3.Size = new System.Drawing.Size(159, 141);
             this.Pn_1_3.TabIndex = 3;
             // 
             // Pn_4_4
             // 
             this.Pn_4_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_4_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_4.Location = new System.Drawing.Point(612, 12);
+            this.Pn_4_4.Location = new System.Drawing.Point(498, 12);
             this.Pn_4_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_4_4.Name = "Pn_4_4";
-            this.Pn_4_4.Size = new System.Drawing.Size(199, 121);
+            this.Pn_4_4.Size = new System.Drawing.Size(162, 141);
             this.Pn_4_4.TabIndex = 2;
             // 
             // Pn_3_4
             // 
             this.Pn_3_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_3_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_4.Location = new System.Drawing.Point(409, 12);
+            this.Pn_3_4.Location = new System.Drawing.Point(333, 12);
             this.Pn_3_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_3_4.Name = "Pn_3_4";
-            this.Pn_3_4.Size = new System.Drawing.Size(197, 121);
+            this.Pn_3_4.Size = new System.Drawing.Size(159, 141);
             this.Pn_3_4.TabIndex = 1;
             // 
             // Pn_2_4
             // 
             this.Pn_2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pn_2_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_4.Location = new System.Drawing.Point(206, 12);
+            this.Pn_2_4.Location = new System.Drawing.Point(168, 12);
             this.Pn_2_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_4.Name = "Pn_2_4";
-            this.Pn_2_4.Size = new System.Drawing.Size(197, 121);
+            this.Pn_2_4.Size = new System.Drawing.Size(159, 141);
             this.Pn_2_4.TabIndex = 0;
             // 
             // Pn_1_4
             // 
             this.Pn_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_1_4.Controls.Add(this.panel3);
+            this.Pn_1_4.Controls.Add(this.progressBar1);
+            this.Pn_1_4.Controls.Add(this.Pn_pro_1_4);
             this.Pn_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pn_1_4.Location = new System.Drawing.Point(3, 12);
             this.Pn_1_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_4.Name = "Pn_1_4";
-            this.Pn_1_4.Size = new System.Drawing.Size(197, 121);
+            this.Pn_1_4.Size = new System.Drawing.Size(159, 141);
             this.Pn_1_4.TabIndex = 0;
             // 
             // panel1
@@ -323,7 +325,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(7, 3, 7, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.panel1.Size = new System.Drawing.Size(806, 49);
+            this.panel1.Size = new System.Drawing.Size(655, 49);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -355,7 +357,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(394, 582);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(394, 664);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupBox3
@@ -363,10 +365,10 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 293);
+            this.groupBox3.Location = new System.Drawing.Point(3, 335);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(385, 132);
+            this.groupBox3.Size = new System.Drawing.Size(385, 153);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "현재 위치";
@@ -390,10 +392,10 @@
             this.Gb_Tem.Controls.Add(this.Bt_SetTem);
             this.Gb_Tem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gb_Tem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Gb_Tem.Location = new System.Drawing.Point(3, 438);
+            this.Gb_Tem.Location = new System.Drawing.Point(3, 501);
             this.Gb_Tem.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gb_Tem.Name = "Gb_Tem";
-            this.Gb_Tem.Size = new System.Drawing.Size(385, 134);
+            this.Gb_Tem.Size = new System.Drawing.Size(385, 153);
             this.Gb_Tem.TabIndex = 2;
             this.Gb_Tem.TabStop = false;
             this.Gb_Tem.Text = "온도 설정";
@@ -451,10 +453,10 @@
             this.Gb_Rack.Controls.Add(this.Bt_RackOn);
             this.Gb_Rack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gb_Rack.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Gb_Rack.Location = new System.Drawing.Point(3, 148);
+            this.Gb_Rack.Location = new System.Drawing.Point(3, 169);
             this.Gb_Rack.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gb_Rack.Name = "Gb_Rack";
-            this.Gb_Rack.Size = new System.Drawing.Size(385, 132);
+            this.Gb_Rack.Size = new System.Drawing.Size(385, 153);
             this.Gb_Rack.TabIndex = 1;
             this.Gb_Rack.TabStop = false;
             this.Gb_Rack.Text = "랙 가동 신호";
@@ -486,7 +488,7 @@
             this.Gr_Process.Location = new System.Drawing.Point(3, 3);
             this.Gr_Process.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gr_Process.Name = "Gr_Process";
-            this.Gr_Process.Size = new System.Drawing.Size(385, 132);
+            this.Gr_Process.Size = new System.Drawing.Size(385, 153);
             this.Gr_Process.TabIndex = 0;
             this.Gr_Process.TabStop = false;
             this.Gr_Process.Text = "공정 가동 신호";
@@ -499,7 +501,7 @@
             this.Bt_ProcessOff.Location = new System.Drawing.Point(209, 60);
             this.Bt_ProcessOff.MaximumSize = new System.Drawing.Size(95, 50);
             this.Bt_ProcessOff.Name = "Bt_ProcessOff";
-            this.Bt_ProcessOff.Size = new System.Drawing.Size(95, 34);
+            this.Bt_ProcessOff.Size = new System.Drawing.Size(95, 50);
             this.Bt_ProcessOff.TabIndex = 1;
             this.Bt_ProcessOff.Text = "OFF";
             this.Bt_ProcessOff.UseVisualStyleBackColor = true;
@@ -513,29 +515,38 @@
             this.Bt_ProcessOn.Location = new System.Drawing.Point(59, 60);
             this.Bt_ProcessOn.MaximumSize = new System.Drawing.Size(95, 50);
             this.Bt_ProcessOn.Name = "Bt_ProcessOn";
-            this.Bt_ProcessOn.Size = new System.Drawing.Size(95, 34);
+            this.Bt_ProcessOn.Size = new System.Drawing.Size(95, 50);
             this.Bt_ProcessOn.TabIndex = 0;
             this.Bt_ProcessOn.Text = "ON";
             this.Bt_ProcessOn.UseVisualStyleBackColor = true;
             this.Bt_ProcessOn.Click += new System.EventHandler(this.Bt_ProcessOn_Click);
             // 
-            // panel3
+            // Pn_pro_1_4
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Pn_pro_1_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(34, 50);
-            this.panel3.MaximumSize = new System.Drawing.Size(200, 50);
-            this.panel3.MinimumSize = new System.Drawing.Size(110, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(110, 40);
-            this.panel3.TabIndex = 0;
+            this.Pn_pro_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_pro_1_4.Location = new System.Drawing.Point(21, 80);
+            this.Pn_pro_1_4.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.Pn_pro_1_4.MaximumSize = new System.Drawing.Size(220, 75);
+            this.Pn_pro_1_4.MinimumSize = new System.Drawing.Size(120, 40);
+            this.Pn_pro_1_4.Name = "Pn_pro_1_4";
+            this.Pn_pro_1_4.Size = new System.Drawing.Size(120, 40);
+            this.Pn_pro_1_4.TabIndex = 0;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(21, 30);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(120, 37);
+            this.progressBar1.TabIndex = 0;
             // 
             // Fm_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 668);
+            this.ClientSize = new System.Drawing.Size(1079, 750);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fm_Control";
@@ -598,6 +609,7 @@
         private System.Windows.Forms.Panel Pn_3_4;
         private System.Windows.Forms.Panel Pn_2_4;
         private System.Windows.Forms.Panel Pn_1_4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel Pn_pro_1_4;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

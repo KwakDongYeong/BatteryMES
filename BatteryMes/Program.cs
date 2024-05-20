@@ -14,9 +14,9 @@ namespace BatteryMes
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+       //     Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Fm_Login());
+            Application.Run(new Fm_Frame());
         }
     }
 }
