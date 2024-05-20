@@ -148,6 +148,7 @@
             this.pw_text.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pw_text.Location = new System.Drawing.Point(48, 3);
             this.pw_text.Name = "pw_text";
+            this.pw_text.PasswordChar = '•';
             this.pw_text.Size = new System.Drawing.Size(177, 25);
             this.pw_text.TabIndex = 1;
             // 
