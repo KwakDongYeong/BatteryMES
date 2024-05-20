@@ -83,6 +83,7 @@
             this.Gv_user.Location = new System.Drawing.Point(3, 186);
             this.Gv_user.MultiSelect = false;
             this.Gv_user.Name = "Gv_user";
+            this.Gv_user.ReadOnly = true;
             this.Gv_user.RowHeadersWidth = 51;
             this.Gv_user.RowTemplate.Height = 27;
             this.Gv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -95,6 +96,7 @@
             this.CheckBox.HeaderText = "";
             this.CheckBox.MinimumWidth = 15;
             this.CheckBox.Name = "CheckBox";
+            this.CheckBox.ReadOnly = true;
             this.CheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // username

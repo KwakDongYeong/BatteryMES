@@ -115,5 +115,15 @@ namespace BatteryMes
                 }
             }
         }
+
+        private void Cb_Deparment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lb_name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
