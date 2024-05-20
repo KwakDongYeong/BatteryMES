@@ -17,12 +17,7 @@ namespace BatteryMes
     {
         public ActUtlType plc = new ActUtlType();
         private Timer timer = new Timer();
-
-        private Timer colorTimer;
-
-        private int progressBarValue = 0;
         
-
         public Fm_Control()
         {
             InitializeComponent();
@@ -58,7 +53,7 @@ namespace BatteryMes
             if (value == 1)
             {
                 progressBar1.Visible = true;
-                Pn_pro_1_4.Visible = true;
+                progressBar1.BackColor = SystemColors.Control;
                 
                 if (timevalue > 0 && timevalue < 300)
                 {
@@ -100,10 +95,7 @@ namespace BatteryMes
             {
                 Pn_1_4.BackColor = SystemColors.ControlDark;
                 progressBar1.Value = 0;
-                progressBarValue = 0;
                 progressBar1.Visible = false;
-                Pn_pro_1_4.Visible = false;
-
             }
         }
       
@@ -128,5 +120,9 @@ namespace BatteryMes
             plc.Close();
         }
 
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,7 +47,6 @@
             this.Pn_4_4 = new System.Windows.Forms.Panel();
             this.Pn_3_4 = new System.Windows.Forms.Panel();
             this.Pn_2_4 = new System.Windows.Forms.Panel();
-            this.Pn_1_4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,18 +64,20 @@
             this.Gr_Process = new System.Windows.Forms.GroupBox();
             this.Bt_ProcessOff = new System.Windows.Forms.Button();
             this.Bt_ProcessOn = new System.Windows.Forms.Button();
-            this.Pn_pro_1_4 = new System.Windows.Forms.Panel();
+            this.Pn_1_4 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.Pn_1_4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.Gb_Tem.SuspendLayout();
             this.Gb_Rack.SuspendLayout();
             this.Gr_Process.SuspendLayout();
+            this.Pn_1_4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -304,18 +305,6 @@
             this.Pn_2_4.Size = new System.Drawing.Size(159, 141);
             this.Pn_2_4.TabIndex = 0;
             // 
-            // Pn_1_4
-            // 
-            this.Pn_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_1_4.Controls.Add(this.progressBar1);
-            this.Pn_1_4.Controls.Add(this.Pn_pro_1_4);
-            this.Pn_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_4.Location = new System.Drawing.Point(3, 12);
-            this.Pn_1_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_1_4.Name = "Pn_1_4";
-            this.Pn_1_4.Size = new System.Drawing.Size(159, 141);
-            this.Pn_1_4.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
@@ -521,30 +510,41 @@
             this.Bt_ProcessOn.UseVisualStyleBackColor = true;
             this.Bt_ProcessOn.Click += new System.EventHandler(this.Bt_ProcessOn_Click);
             // 
-            // Pn_pro_1_4
+            // Pn_1_4
             // 
-            this.Pn_pro_1_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Pn_pro_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_pro_1_4.Location = new System.Drawing.Point(21, 80);
-            this.Pn_pro_1_4.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.Pn_pro_1_4.MaximumSize = new System.Drawing.Size(220, 75);
-            this.Pn_pro_1_4.MinimumSize = new System.Drawing.Size(120, 40);
-            this.Pn_pro_1_4.Name = "Pn_pro_1_4";
-            this.Pn_pro_1_4.Size = new System.Drawing.Size(120, 40);
-            this.Pn_pro_1_4.TabIndex = 0;
+            this.Pn_1_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pn_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_1_4.Controls.Add(this.panel3);
+            this.Pn_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_1_4.Location = new System.Drawing.Point(3, 12);
+            this.Pn_1_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_1_4.Name = "Pn_1_4";
+            this.Pn_1_4.Size = new System.Drawing.Size(159, 141);
+            this.Pn_1_4.TabIndex = 0;
             // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(21, 30);
-            this.progressBar1.MaximumSize = new System.Drawing.Size(220, 75);
+            this.progressBar1.Location = new System.Drawing.Point(14, 44);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.progressBar1.MaximumSize = new System.Drawing.Size(210, 80);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(110, 37);
+            this.progressBar1.Size = new System.Drawing.Size(127, 51);
             this.progressBar1.TabIndex = 0;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::BatteryMes.Properties.Resources.battery1;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.progressBar1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(157, 139);
+            this.panel3.TabIndex = 0;
             // 
             // Fm_Control
             // 
@@ -560,7 +560,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.Pn_1_4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -570,6 +569,8 @@
             this.Gb_Tem.PerformLayout();
             this.Gb_Rack.ResumeLayout(false);
             this.Gr_Process.ResumeLayout(false);
+            this.Pn_1_4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -613,7 +614,7 @@
         private System.Windows.Forms.Panel Pn_3_4;
         private System.Windows.Forms.Panel Pn_2_4;
         private System.Windows.Forms.Panel Pn_1_4;
-        private System.Windows.Forms.Panel Pn_pro_1_4;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
