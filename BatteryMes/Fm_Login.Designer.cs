@@ -39,17 +39,17 @@
             this.id_text = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -220,6 +220,22 @@
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel8.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 205);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(228, 20);
+            this.tableLayoutPanel8.TabIndex = 7;
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -263,22 +279,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(700, 500);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 205);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(228, 20);
-            this.tableLayoutPanel8.TabIndex = 7;
-            // 
             // Fm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -296,8 +296,8 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
