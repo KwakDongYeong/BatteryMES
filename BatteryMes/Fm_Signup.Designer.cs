@@ -98,20 +98,21 @@
             // 
             // Cb_Position
             // 
+            this.Cb_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cb_Position.FormattingEnabled = true;
             this.Cb_Position.Items.AddRange(new object[] {
             "사원",
             "대리",
             "부장"});
-            this.Cb_Position.Location = new System.Drawing.Point(157, 261);
+            this.Cb_Position.Location = new System.Drawing.Point(137, 231);
             this.Cb_Position.Name = "Cb_Position";
-            this.Cb_Position.Size = new System.Drawing.Size(121, 23);
+            this.Cb_Position.Size = new System.Drawing.Size(127, 23);
             this.Cb_Position.TabIndex = 23;
             // 
             // Lb_Position
             // 
             this.Lb_Position.AutoSize = true;
-            this.Lb_Position.Location = new System.Drawing.Point(92, 264);
+            this.Lb_Position.Location = new System.Drawing.Point(78, 234);
             this.Lb_Position.Name = "Lb_Position";
             this.Lb_Position.Size = new System.Drawing.Size(47, 15);
             this.Lb_Position.TabIndex = 22;
@@ -125,15 +126,16 @@
             "생산팀",
             "인사팀",
             "품질관리팀"});
-            this.Cb_Deparment.Location = new System.Drawing.Point(157, 208);
+            this.Cb_Deparment.Location = new System.Drawing.Point(137, 183);
             this.Cb_Deparment.Name = "Cb_Deparment";
-            this.Cb_Deparment.Size = new System.Drawing.Size(121, 23);
+            this.Cb_Deparment.Size = new System.Drawing.Size(127, 23);
             this.Cb_Deparment.TabIndex = 21;
+            this.Cb_Deparment.SelectedIndexChanged += new System.EventHandler(this.Cb_Deparment_SelectedIndexChanged);
             // 
             // Lb_department
             // 
             this.Lb_department.AutoSize = true;
-            this.Lb_department.Location = new System.Drawing.Point(92, 208);
+            this.Lb_department.Location = new System.Drawing.Point(78, 186);
             this.Lb_department.Name = "Lb_department";
             this.Lb_department.Size = new System.Drawing.Size(47, 15);
             this.Lb_department.TabIndex = 20;
@@ -142,15 +144,15 @@
             // Lb_Pw
             // 
             this.Lb_Pw.AutoSize = true;
-            this.Lb_Pw.Location = new System.Drawing.Point(92, 151);
+            this.Lb_Pw.Location = new System.Drawing.Point(79, 134);
             this.Lb_Pw.Name = "Lb_Pw";
-            this.Lb_Pw.Size = new System.Drawing.Size(41, 15);
+            this.Lb_Pw.Size = new System.Drawing.Size(46, 15);
             this.Lb_Pw.TabIndex = 19;
-            this.Lb_Pw.Text = "PW :";
+            this.Lb_Pw.Text = "P W :";
             // 
             // Tb_Pw
             // 
-            this.Tb_Pw.Location = new System.Drawing.Point(157, 141);
+            this.Tb_Pw.Location = new System.Drawing.Point(137, 131);
             this.Tb_Pw.Name = "Tb_Pw";
             this.Tb_Pw.Size = new System.Drawing.Size(127, 25);
             this.Tb_Pw.TabIndex = 18;
@@ -158,15 +160,16 @@
             // Lb_Id
             // 
             this.Lb_Id.AutoSize = true;
-            this.Lb_Id.Location = new System.Drawing.Point(92, 86);
+            this.Lb_Id.Location = new System.Drawing.Point(80, 86);
             this.Lb_Id.Name = "Lb_Id";
-            this.Lb_Id.Size = new System.Drawing.Size(30, 15);
+            this.Lb_Id.Size = new System.Drawing.Size(45, 15);
             this.Lb_Id.TabIndex = 17;
-            this.Lb_Id.Text = "ID :";
+            this.Lb_Id.Text = "I   D :";
+            this.Lb_Id.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Tb_Id
             // 
-            this.Tb_Id.Location = new System.Drawing.Point(157, 83);
+            this.Tb_Id.Location = new System.Drawing.Point(137, 83);
             this.Tb_Id.Name = "Tb_Id";
             this.Tb_Id.Size = new System.Drawing.Size(127, 25);
             this.Tb_Id.TabIndex = 16;
@@ -174,15 +177,16 @@
             // Lb_name
             // 
             this.Lb_name.AutoSize = true;
-            this.Lb_name.Location = new System.Drawing.Point(61, 36);
+            this.Lb_name.Location = new System.Drawing.Point(78, 39);
             this.Lb_name.Name = "Lb_name";
             this.Lb_name.Size = new System.Drawing.Size(47, 15);
             this.Lb_name.TabIndex = 15;
             this.Lb_name.Text = "이름 :";
+            this.Lb_name.Click += new System.EventHandler(this.Lb_name_Click);
             // 
             // Tb_Name
             // 
-            this.Tb_Name.Location = new System.Drawing.Point(157, 36);
+            this.Tb_Name.Location = new System.Drawing.Point(137, 36);
             this.Tb_Name.Name = "Tb_Name";
             this.Tb_Name.Size = new System.Drawing.Size(127, 25);
             this.Tb_Name.TabIndex = 14;
@@ -257,9 +261,7 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox Cb_Position;
         private System.Windows.Forms.Label Lb_Position;
-        private System.Windows.Forms.ComboBox Cb_Deparment;
         private System.Windows.Forms.Label Lb_department;
         private System.Windows.Forms.Label Lb_Pw;
         private System.Windows.Forms.TextBox Tb_Pw;
@@ -271,5 +273,7 @@
         private System.Windows.Forms.Button Bt_Close;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Lb_Title;
+        private System.Windows.Forms.ComboBox Cb_Position;
+        private System.Windows.Forms.ComboBox Cb_Deparment;
     }
 }
