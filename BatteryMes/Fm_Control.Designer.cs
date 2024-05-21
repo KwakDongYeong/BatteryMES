@@ -63,6 +63,7 @@
             this.Pn_3_4 = new System.Windows.Forms.Panel();
             this.Bar_3_4 = new System.Windows.Forms.ProgressBar();
             this.Pn_4_4 = new System.Windows.Forms.Panel();
+            this.Bar_4_4 = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,7 +81,6 @@
             this.Gr_Process = new System.Windows.Forms.GroupBox();
             this.Bt_ProcessOff = new System.Windows.Forms.Button();
             this.Bt_ProcessOn = new System.Windows.Forms.Button();
-            this.Bar_4_4 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -199,7 +199,7 @@
             this.Bar_1_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bar_1_1.Location = new System.Drawing.Point(13, 40);
+            this.Bar_1_1.Location = new System.Drawing.Point(7, 40);
             this.Bar_1_1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
             this.Bar_1_1.MaximumSize = new System.Drawing.Size(218, 72);
             this.Bar_1_1.Name = "Bar_1_1";
@@ -556,6 +556,19 @@
             this.Pn_4_4.Size = new System.Drawing.Size(159, 141);
             this.Pn_4_4.TabIndex = 0;
             // 
+            // Bar_4_4
+            // 
+            this.Bar_4_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_4_4.Location = new System.Drawing.Point(8, 44);
+            this.Bar_4_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_4_4.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_4_4.Name = "Bar_4_4";
+            this.Bar_4_4.Size = new System.Drawing.Size(143, 48);
+            this.Bar_4_4.Step = 20;
+            this.Bar_4_4.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
@@ -686,6 +699,7 @@
             this.Bt_SetTem.TabIndex = 0;
             this.Bt_SetTem.Text = "SET";
             this.Bt_SetTem.UseVisualStyleBackColor = true;
+            this.Bt_SetTem.Click += new System.EventHandler(this.Bt_SetTem_Click);
             // 
             // Gb_Rack
             // 
@@ -709,6 +723,7 @@
             this.Bt_RackOff.TabIndex = 1;
             this.Bt_RackOff.Text = "OFF";
             this.Bt_RackOff.UseVisualStyleBackColor = true;
+            this.Bt_RackOff.Click += new System.EventHandler(this.Bt_RackOff_Click);
             // 
             // Bt_RackOn
             // 
@@ -761,19 +776,6 @@
             this.Bt_ProcessOn.Text = "ON";
             this.Bt_ProcessOn.UseVisualStyleBackColor = true;
             this.Bt_ProcessOn.Click += new System.EventHandler(this.Bt_ProcessOn_Click);
-            // 
-            // Bar_4_4
-            // 
-            this.Bar_4_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bar_4_4.Location = new System.Drawing.Point(8, 44);
-            this.Bar_4_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
-            this.Bar_4_4.MaximumSize = new System.Drawing.Size(218, 72);
-            this.Bar_4_4.Name = "Bar_4_4";
-            this.Bar_4_4.Size = new System.Drawing.Size(143, 48);
-            this.Bar_4_4.Step = 20;
-            this.Bar_4_4.TabIndex = 1;
             // 
             // Fm_Control
             // 
