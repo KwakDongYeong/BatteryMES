@@ -29,7 +29,12 @@ namespace BatteryMes
 
             ChargeBattery();
             this.DoubleBuffered = true;
-            
+
+            int Temvalue;
+            plc.GetDevice("D1513", out Temvalue);
+            Tb_CurTem.Text = Temvalue.ToString();
+
+
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -191,7 +196,8 @@ namespace BatteryMes
     
         private void Bt_ProcessOn_Click(object sender, EventArgs e)
         {
-
+            
+            plc.SetDevice("X8", 1);
         }
 
         private void Bt_ProcessOff_Click(object sender, EventArgs e)
@@ -211,6 +217,32 @@ namespace BatteryMes
         }
 
         private void Bt_RackOn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bt_SetTem_Click(object sender, EventArgs e)
+        {
+            int value;
+
+            // 텍스트박스에서 입력된 값이 숫자인지 확인
+            if (int.TryParse(Tb_SetTem.Text, out value))
+            {
+                // 입력된 값에 10을 곱함
+                value *= 10;
+
+                // PLC 장치에 값 설정
+                plc.SetDevice("D1613", value);
+                plc.SetDevice("D1614.0", 1);
+            }
+            else
+            {
+                // 숫자가 아닌 경우 사용자에게 알림 (예: 메시지 박스)
+                MessageBox.Show("유효한 숫자를 입력해주세요.", "입력 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Bt_RackOff_Click(object sender, EventArgs e)
         {
 
         }
