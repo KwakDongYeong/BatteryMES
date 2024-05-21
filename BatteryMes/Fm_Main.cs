@@ -116,6 +116,14 @@ namespace BatteryMes
                 PLC1.GetDevice("Y41", out y41); PLC1.GetDevice("Y42", out y42); PLC1.GetDevice("Y43", out y43);
                 PLC1.GetDevice("Y50", out y50); PLC1.GetDevice("Y51", out y51);
 
+                int d100 = 0;
+                int d110 = 0;
+                PLC1.GetDevice("D100", out d100);
+                PLC1.GetDevice("D110", out d110);
+
+                // Label 업데이트
+                label18.Text = d110.ToString();
+                label19.Text = d100.ToString();
 
                 // PictureBox 이미지 변경
                 case_cylamp.Image = (y20 == 1) ? Properties.Resources.green : (y21 == 1) ? Properties.Resources.red : null;
