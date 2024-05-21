@@ -15,6 +15,12 @@ namespace BatteryMes
         public Fm_statistics()
         {
             InitializeComponent();
+            defectchart();
+        }
+
+        private void defectchart()
+        {
+
         }
     }
 }
