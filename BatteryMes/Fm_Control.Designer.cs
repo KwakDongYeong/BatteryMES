@@ -32,21 +32,37 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Pn_4_1 = new System.Windows.Forms.Panel();
-            this.Pn_3_1 = new System.Windows.Forms.Panel();
-            this.Pn_2_1 = new System.Windows.Forms.Panel();
             this.Pn_1_1 = new System.Windows.Forms.Panel();
-            this.Pn_4_2 = new System.Windows.Forms.Panel();
-            this.Pn_3_2 = new System.Windows.Forms.Panel();
-            this.Pn_2_2 = new System.Windows.Forms.Panel();
+            this.Bar_1_1 = new System.Windows.Forms.ProgressBar();
+            this.Pn_2_1 = new System.Windows.Forms.Panel();
+            this.Bar_2_1 = new System.Windows.Forms.ProgressBar();
+            this.Pn_3_1 = new System.Windows.Forms.Panel();
+            this.Bar_3_1 = new System.Windows.Forms.ProgressBar();
+            this.Pn_4_1 = new System.Windows.Forms.Panel();
+            this.Bar_4_1 = new System.Windows.Forms.ProgressBar();
             this.Pn_1_2 = new System.Windows.Forms.Panel();
-            this.Pn_4_3 = new System.Windows.Forms.Panel();
-            this.Pn_3_3 = new System.Windows.Forms.Panel();
-            this.Pn_2_3 = new System.Windows.Forms.Panel();
+            this.Bar_1_2 = new System.Windows.Forms.ProgressBar();
+            this.Pn_2_2 = new System.Windows.Forms.Panel();
+            this.Bar_2_2 = new System.Windows.Forms.ProgressBar();
+            this.Pn_3_2 = new System.Windows.Forms.Panel();
+            this.Bar_3_2 = new System.Windows.Forms.ProgressBar();
+            this.Pn_4_2 = new System.Windows.Forms.Panel();
+            this.Bar_4_2 = new System.Windows.Forms.ProgressBar();
             this.Pn_1_3 = new System.Windows.Forms.Panel();
-            this.Pn_4_4 = new System.Windows.Forms.Panel();
-            this.Pn_3_4 = new System.Windows.Forms.Panel();
+            this.Bar_1_3 = new System.Windows.Forms.ProgressBar();
+            this.Pn_2_3 = new System.Windows.Forms.Panel();
+            this.Bar_2_3 = new System.Windows.Forms.ProgressBar();
+            this.Pn_3_3 = new System.Windows.Forms.Panel();
+            this.Bar_3_3 = new System.Windows.Forms.ProgressBar();
+            this.Pn_4_3 = new System.Windows.Forms.Panel();
+            this.Bar_4_3 = new System.Windows.Forms.ProgressBar();
+            this.Pn_1_4 = new System.Windows.Forms.Panel();
+            this.Bar_1_4 = new System.Windows.Forms.ProgressBar();
             this.Pn_2_4 = new System.Windows.Forms.Panel();
+            this.Bar_2_4 = new System.Windows.Forms.ProgressBar();
+            this.Pn_3_4 = new System.Windows.Forms.Panel();
+            this.Bar_3_4 = new System.Windows.Forms.ProgressBar();
+            this.Pn_4_4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,20 +80,32 @@
             this.Gr_Process = new System.Windows.Forms.GroupBox();
             this.Bt_ProcessOff = new System.Windows.Forms.Button();
             this.Bt_ProcessOn = new System.Windows.Forms.Button();
-            this.Pn_1_4 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.Bar_4_4 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.Pn_1_1.SuspendLayout();
+            this.Pn_2_1.SuspendLayout();
+            this.Pn_3_1.SuspendLayout();
+            this.Pn_4_1.SuspendLayout();
+            this.Pn_1_2.SuspendLayout();
+            this.Pn_2_2.SuspendLayout();
+            this.Pn_3_2.SuspendLayout();
+            this.Pn_4_2.SuspendLayout();
+            this.Pn_1_3.SuspendLayout();
+            this.Pn_2_3.SuspendLayout();
+            this.Pn_3_3.SuspendLayout();
+            this.Pn_4_3.SuspendLayout();
+            this.Pn_1_4.SuspendLayout();
+            this.Pn_2_4.SuspendLayout();
+            this.Pn_3_4.SuspendLayout();
+            this.Pn_4_4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.Gb_Tem.SuspendLayout();
             this.Gb_Rack.SuspendLayout();
             this.Gr_Process.SuspendLayout();
-            this.Pn_1_4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -128,22 +156,22 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.Pn_4_1, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_3_1, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_2_1, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_1_1, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_4_2, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_3_2, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_2_2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_1_2, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_4_3, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_3_3, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_2_3, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_1_3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_4_4, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_3_4, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_2_4, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Pn_1_4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_1_1, 3, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_2_1, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_3_1, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_4_1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_1_2, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_2_2, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_3_2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_4_2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_1_3, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_2_3, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_3_3, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_4_3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_1_4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_2_4, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_3_4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Pn_4_4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(408, 71);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -155,155 +183,378 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(663, 671);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // Pn_4_1
+            // Pn_1_1
             // 
-            this.Pn_4_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_4_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_1.Location = new System.Drawing.Point(498, 513);
-            this.Pn_4_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_4_1.Name = "Pn_4_1";
-            this.Pn_4_1.Size = new System.Drawing.Size(162, 144);
-            this.Pn_4_1.TabIndex = 14;
+            this.Pn_1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_1_1.Controls.Add(this.Bar_1_1);
+            this.Pn_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_1_1.Location = new System.Drawing.Point(498, 513);
+            this.Pn_1_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_1_1.Name = "Pn_1_1";
+            this.Pn_1_1.Size = new System.Drawing.Size(162, 144);
+            this.Pn_1_1.TabIndex = 14;
             // 
-            // Pn_3_1
+            // Bar_1_1
             // 
-            this.Pn_3_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_3_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_1.Location = new System.Drawing.Point(333, 513);
-            this.Pn_3_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_3_1.Name = "Pn_3_1";
-            this.Pn_3_1.Size = new System.Drawing.Size(159, 144);
-            this.Pn_3_1.TabIndex = 13;
+            this.Bar_1_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_1_1.Location = new System.Drawing.Point(13, 40);
+            this.Bar_1_1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_1_1.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_1_1.Name = "Bar_1_1";
+            this.Bar_1_1.Size = new System.Drawing.Size(143, 48);
+            this.Bar_1_1.Step = 20;
+            this.Bar_1_1.TabIndex = 1;
             // 
             // Pn_2_1
             // 
             this.Pn_2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_2_1.Controls.Add(this.Bar_2_1);
             this.Pn_2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_1.Location = new System.Drawing.Point(168, 513);
+            this.Pn_2_1.Location = new System.Drawing.Point(333, 513);
             this.Pn_2_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_1.Name = "Pn_2_1";
             this.Pn_2_1.Size = new System.Drawing.Size(159, 144);
-            this.Pn_2_1.TabIndex = 12;
+            this.Pn_2_1.TabIndex = 13;
             // 
-            // Pn_1_1
+            // Bar_2_1
             // 
-            this.Pn_1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_1.Location = new System.Drawing.Point(3, 513);
-            this.Pn_1_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_1_1.Name = "Pn_1_1";
-            this.Pn_1_1.Size = new System.Drawing.Size(159, 144);
-            this.Pn_1_1.TabIndex = 11;
+            this.Bar_2_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_2_1.Location = new System.Drawing.Point(7, 40);
+            this.Bar_2_1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_2_1.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_2_1.Name = "Bar_2_1";
+            this.Bar_2_1.Size = new System.Drawing.Size(143, 48);
+            this.Bar_2_1.Step = 20;
+            this.Bar_2_1.TabIndex = 4;
             // 
-            // Pn_4_2
+            // Pn_3_1
             // 
-            this.Pn_4_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_4_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_2.Location = new System.Drawing.Point(498, 346);
-            this.Pn_4_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_4_2.Name = "Pn_4_2";
-            this.Pn_4_2.Size = new System.Drawing.Size(162, 141);
-            this.Pn_4_2.TabIndex = 10;
+            this.Pn_3_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_3_1.Controls.Add(this.Bar_3_1);
+            this.Pn_3_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_3_1.Location = new System.Drawing.Point(168, 513);
+            this.Pn_3_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_3_1.Name = "Pn_3_1";
+            this.Pn_3_1.Size = new System.Drawing.Size(159, 144);
+            this.Pn_3_1.TabIndex = 12;
             // 
-            // Pn_3_2
+            // Bar_3_1
             // 
-            this.Pn_3_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_3_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_2.Location = new System.Drawing.Point(333, 346);
-            this.Pn_3_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_3_2.Name = "Pn_3_2";
-            this.Pn_3_2.Size = new System.Drawing.Size(159, 141);
-            this.Pn_3_2.TabIndex = 9;
+            this.Bar_3_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_3_1.Location = new System.Drawing.Point(6, 40);
+            this.Bar_3_1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_3_1.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_3_1.Name = "Bar_3_1";
+            this.Bar_3_1.Size = new System.Drawing.Size(143, 48);
+            this.Bar_3_1.Step = 20;
+            this.Bar_3_1.TabIndex = 5;
             // 
-            // Pn_2_2
+            // Pn_4_1
             // 
-            this.Pn_2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_2_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_2.Location = new System.Drawing.Point(168, 346);
-            this.Pn_2_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_2_2.Name = "Pn_2_2";
-            this.Pn_2_2.Size = new System.Drawing.Size(159, 141);
-            this.Pn_2_2.TabIndex = 8;
+            this.Pn_4_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_4_1.Controls.Add(this.Bar_4_1);
+            this.Pn_4_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_4_1.Location = new System.Drawing.Point(3, 513);
+            this.Pn_4_1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_4_1.Name = "Pn_4_1";
+            this.Pn_4_1.Size = new System.Drawing.Size(159, 144);
+            this.Pn_4_1.TabIndex = 11;
+            // 
+            // Bar_4_1
+            // 
+            this.Bar_4_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_4_1.Location = new System.Drawing.Point(7, 40);
+            this.Bar_4_1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_4_1.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_4_1.Name = "Bar_4_1";
+            this.Bar_4_1.Size = new System.Drawing.Size(143, 48);
+            this.Bar_4_1.Step = 20;
+            this.Bar_4_1.TabIndex = 7;
             // 
             // Pn_1_2
             // 
             this.Pn_1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_1_2.Controls.Add(this.Bar_1_2);
             this.Pn_1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_2.Location = new System.Drawing.Point(3, 346);
+            this.Pn_1_2.Location = new System.Drawing.Point(498, 346);
             this.Pn_1_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_2.Name = "Pn_1_2";
-            this.Pn_1_2.Size = new System.Drawing.Size(159, 141);
-            this.Pn_1_2.TabIndex = 7;
+            this.Pn_1_2.Size = new System.Drawing.Size(162, 141);
+            this.Pn_1_2.TabIndex = 10;
             // 
-            // Pn_4_3
+            // Bar_1_2
             // 
-            this.Pn_4_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_4_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_3.Location = new System.Drawing.Point(498, 179);
-            this.Pn_4_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_4_3.Name = "Pn_4_3";
-            this.Pn_4_3.Size = new System.Drawing.Size(162, 141);
-            this.Pn_4_3.TabIndex = 6;
+            this.Bar_1_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_1_2.Location = new System.Drawing.Point(10, 49);
+            this.Bar_1_2.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_1_2.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_1_2.Name = "Bar_1_2";
+            this.Bar_1_2.Size = new System.Drawing.Size(143, 48);
+            this.Bar_1_2.Step = 20;
+            this.Bar_1_2.TabIndex = 2;
             // 
-            // Pn_3_3
+            // Pn_2_2
             // 
-            this.Pn_3_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_3_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_3.Location = new System.Drawing.Point(333, 179);
-            this.Pn_3_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_3_3.Name = "Pn_3_3";
-            this.Pn_3_3.Size = new System.Drawing.Size(159, 141);
-            this.Pn_3_3.TabIndex = 5;
+            this.Pn_2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_2_2.Controls.Add(this.Bar_2_2);
+            this.Pn_2_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_2_2.Location = new System.Drawing.Point(333, 346);
+            this.Pn_2_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_2_2.Name = "Pn_2_2";
+            this.Pn_2_2.Size = new System.Drawing.Size(159, 141);
+            this.Pn_2_2.TabIndex = 9;
             // 
-            // Pn_2_3
+            // Bar_2_2
             // 
-            this.Pn_2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_2_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_3.Location = new System.Drawing.Point(168, 179);
-            this.Pn_2_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_2_3.Name = "Pn_2_3";
-            this.Pn_2_3.Size = new System.Drawing.Size(159, 141);
-            this.Pn_2_3.TabIndex = 4;
+            this.Bar_2_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_2_2.Location = new System.Drawing.Point(4, 49);
+            this.Bar_2_2.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_2_2.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_2_2.Name = "Bar_2_2";
+            this.Bar_2_2.Size = new System.Drawing.Size(143, 48);
+            this.Bar_2_2.Step = 20;
+            this.Bar_2_2.TabIndex = 3;
+            // 
+            // Pn_3_2
+            // 
+            this.Pn_3_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_3_2.Controls.Add(this.Bar_3_2);
+            this.Pn_3_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_3_2.Location = new System.Drawing.Point(168, 346);
+            this.Pn_3_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_3_2.Name = "Pn_3_2";
+            this.Pn_3_2.Size = new System.Drawing.Size(159, 141);
+            this.Pn_3_2.TabIndex = 8;
+            // 
+            // Bar_3_2
+            // 
+            this.Bar_3_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_3_2.Location = new System.Drawing.Point(6, 49);
+            this.Bar_3_2.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_3_2.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_3_2.Name = "Bar_3_2";
+            this.Bar_3_2.Size = new System.Drawing.Size(143, 48);
+            this.Bar_3_2.Step = 20;
+            this.Bar_3_2.TabIndex = 8;
+            // 
+            // Pn_4_2
+            // 
+            this.Pn_4_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_4_2.Controls.Add(this.Bar_4_2);
+            this.Pn_4_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_4_2.Location = new System.Drawing.Point(3, 346);
+            this.Pn_4_2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_4_2.Name = "Pn_4_2";
+            this.Pn_4_2.Size = new System.Drawing.Size(159, 141);
+            this.Pn_4_2.TabIndex = 7;
+            // 
+            // Bar_4_2
+            // 
+            this.Bar_4_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_4_2.Location = new System.Drawing.Point(7, 49);
+            this.Bar_4_2.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_4_2.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_4_2.Name = "Bar_4_2";
+            this.Bar_4_2.Size = new System.Drawing.Size(143, 48);
+            this.Bar_4_2.Step = 20;
+            this.Bar_4_2.TabIndex = 10;
             // 
             // Pn_1_3
             // 
             this.Pn_1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_1_3.Controls.Add(this.Bar_1_3);
             this.Pn_1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_3.Location = new System.Drawing.Point(3, 179);
+            this.Pn_1_3.Location = new System.Drawing.Point(498, 179);
             this.Pn_1_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_1_3.Name = "Pn_1_3";
-            this.Pn_1_3.Size = new System.Drawing.Size(159, 141);
-            this.Pn_1_3.TabIndex = 3;
+            this.Pn_1_3.Size = new System.Drawing.Size(162, 141);
+            this.Pn_1_3.TabIndex = 6;
             // 
-            // Pn_4_4
+            // Bar_1_3
             // 
-            this.Pn_4_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_4_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_4_4.Location = new System.Drawing.Point(498, 12);
-            this.Pn_4_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_4_4.Name = "Pn_4_4";
-            this.Pn_4_4.Size = new System.Drawing.Size(162, 141);
-            this.Pn_4_4.TabIndex = 2;
+            this.Bar_1_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_1_3.Location = new System.Drawing.Point(10, 51);
+            this.Bar_1_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_1_3.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_1_3.Name = "Bar_1_3";
+            this.Bar_1_3.Size = new System.Drawing.Size(143, 48);
+            this.Bar_1_3.Step = 20;
+            this.Bar_1_3.TabIndex = 15;
             // 
-            // Pn_3_4
+            // Pn_2_3
             // 
-            this.Pn_3_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_3_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_3_4.Location = new System.Drawing.Point(333, 12);
-            this.Pn_3_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_3_4.Name = "Pn_3_4";
-            this.Pn_3_4.Size = new System.Drawing.Size(159, 141);
-            this.Pn_3_4.TabIndex = 1;
+            this.Pn_2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_2_3.Controls.Add(this.Bar_2_3);
+            this.Pn_2_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_2_3.Location = new System.Drawing.Point(333, 179);
+            this.Pn_2_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_2_3.Name = "Pn_2_3";
+            this.Pn_2_3.Size = new System.Drawing.Size(159, 141);
+            this.Pn_2_3.TabIndex = 5;
+            // 
+            // Bar_2_3
+            // 
+            this.Bar_2_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_2_3.Location = new System.Drawing.Point(16, 51);
+            this.Bar_2_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_2_3.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_2_3.Name = "Bar_2_3";
+            this.Bar_2_3.Size = new System.Drawing.Size(143, 48);
+            this.Bar_2_3.Step = 20;
+            this.Bar_2_3.TabIndex = 9;
+            // 
+            // Pn_3_3
+            // 
+            this.Pn_3_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_3_3.Controls.Add(this.Bar_3_3);
+            this.Pn_3_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_3_3.Location = new System.Drawing.Point(168, 179);
+            this.Pn_3_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_3_3.Name = "Pn_3_3";
+            this.Pn_3_3.Size = new System.Drawing.Size(159, 141);
+            this.Pn_3_3.TabIndex = 4;
+            // 
+            // Bar_3_3
+            // 
+            this.Bar_3_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_3_3.Location = new System.Drawing.Point(6, 43);
+            this.Bar_3_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_3_3.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_3_3.Name = "Bar_3_3";
+            this.Bar_3_3.Size = new System.Drawing.Size(143, 48);
+            this.Bar_3_3.Step = 20;
+            this.Bar_3_3.TabIndex = 14;
+            // 
+            // Pn_4_3
+            // 
+            this.Pn_4_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_4_3.Controls.Add(this.Bar_4_3);
+            this.Pn_4_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_4_3.Location = new System.Drawing.Point(3, 179);
+            this.Pn_4_3.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_4_3.Name = "Pn_4_3";
+            this.Pn_4_3.Size = new System.Drawing.Size(159, 141);
+            this.Pn_4_3.TabIndex = 3;
+            // 
+            // Bar_4_3
+            // 
+            this.Bar_4_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_4_3.Location = new System.Drawing.Point(7, 43);
+            this.Bar_4_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_4_3.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_4_3.Name = "Bar_4_3";
+            this.Bar_4_3.Size = new System.Drawing.Size(143, 48);
+            this.Bar_4_3.Step = 20;
+            this.Bar_4_3.TabIndex = 11;
+            // 
+            // Pn_1_4
+            // 
+            this.Pn_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_1_4.Controls.Add(this.Bar_1_4);
+            this.Pn_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_1_4.Location = new System.Drawing.Point(498, 12);
+            this.Pn_1_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_1_4.Name = "Pn_1_4";
+            this.Pn_1_4.Size = new System.Drawing.Size(162, 141);
+            this.Pn_1_4.TabIndex = 2;
+            // 
+            // Bar_1_4
+            // 
+            this.Bar_1_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_1_4.Location = new System.Drawing.Point(10, 44);
+            this.Bar_1_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_1_4.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_1_4.Name = "Bar_1_4";
+            this.Bar_1_4.Size = new System.Drawing.Size(143, 48);
+            this.Bar_1_4.Step = 20;
+            this.Bar_1_4.TabIndex = 0;
+            this.Bar_1_4.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Pn_2_4
             // 
             this.Pn_2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_2_4.Controls.Add(this.Bar_2_4);
             this.Pn_2_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_2_4.Location = new System.Drawing.Point(168, 12);
+            this.Pn_2_4.Location = new System.Drawing.Point(333, 12);
             this.Pn_2_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
             this.Pn_2_4.Name = "Pn_2_4";
             this.Pn_2_4.Size = new System.Drawing.Size(159, 141);
-            this.Pn_2_4.TabIndex = 0;
+            this.Pn_2_4.TabIndex = 1;
+            // 
+            // Bar_2_4
+            // 
+            this.Bar_2_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_2_4.Location = new System.Drawing.Point(6, 44);
+            this.Bar_2_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_2_4.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_2_4.Name = "Bar_2_4";
+            this.Bar_2_4.Size = new System.Drawing.Size(143, 48);
+            this.Bar_2_4.Step = 20;
+            this.Bar_2_4.TabIndex = 12;
+            // 
+            // Pn_3_4
+            // 
+            this.Pn_3_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_3_4.Controls.Add(this.Bar_3_4);
+            this.Pn_3_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_3_4.Location = new System.Drawing.Point(168, 12);
+            this.Pn_3_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_3_4.Name = "Pn_3_4";
+            this.Pn_3_4.Size = new System.Drawing.Size(159, 141);
+            this.Pn_3_4.TabIndex = 0;
+            // 
+            // Bar_3_4
+            // 
+            this.Bar_3_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bar_3_4.Location = new System.Drawing.Point(8, 49);
+            this.Bar_3_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_3_4.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_3_4.Name = "Bar_3_4";
+            this.Bar_3_4.Size = new System.Drawing.Size(143, 48);
+            this.Bar_3_4.Step = 20;
+            this.Bar_3_4.TabIndex = 13;
+            // 
+            // Pn_4_4
+            // 
+            this.Pn_4_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pn_4_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pn_4_4.Controls.Add(this.Bar_4_4);
+            this.Pn_4_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_4_4.Location = new System.Drawing.Point(3, 12);
+            this.Pn_4_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
+            this.Pn_4_4.Name = "Pn_4_4";
+            this.Pn_4_4.Size = new System.Drawing.Size(159, 141);
+            this.Pn_4_4.TabIndex = 0;
             // 
             // panel1
             // 
@@ -320,7 +571,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(369, 20);
+            this.label1.Location = new System.Drawing.Point(326, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 0;
@@ -366,7 +617,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(108, 60);
+            this.label5.Location = new System.Drawing.Point(112, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 37);
             this.label5.TabIndex = 0;
@@ -392,7 +643,7 @@
             // Tb_SetTem
             // 
             this.Tb_SetTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Tb_SetTem.Location = new System.Drawing.Point(139, 92);
+            this.Tb_SetTem.Location = new System.Drawing.Point(139, 104);
             this.Tb_SetTem.Name = "Tb_SetTem";
             this.Tb_SetTem.Size = new System.Drawing.Size(100, 28);
             this.Tb_SetTem.TabIndex = 4;
@@ -401,7 +652,7 @@
             // 
             this.Tb_CurTem.Enabled = false;
             this.Tb_CurTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Tb_CurTem.Location = new System.Drawing.Point(139, 34);
+            this.Tb_CurTem.Location = new System.Drawing.Point(139, 53);
             this.Tb_CurTem.Name = "Tb_CurTem";
             this.Tb_CurTem.Size = new System.Drawing.Size(100, 28);
             this.Tb_CurTem.TabIndex = 3;
@@ -411,7 +662,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(28, 95);
+            this.label4.Location = new System.Drawing.Point(28, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 18);
             this.label4.TabIndex = 2;
@@ -421,7 +672,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(28, 37);
+            this.label3.Location = new System.Drawing.Point(28, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 18);
             this.label3.TabIndex = 1;
@@ -429,7 +680,7 @@
             // 
             // Bt_SetTem
             // 
-            this.Bt_SetTem.Location = new System.Drawing.Point(262, 92);
+            this.Bt_SetTem.Location = new System.Drawing.Point(262, 104);
             this.Bt_SetTem.Name = "Bt_SetTem";
             this.Bt_SetTem.Size = new System.Drawing.Size(71, 28);
             this.Bt_SetTem.TabIndex = 0;
@@ -467,6 +718,7 @@
             this.Bt_RackOn.TabIndex = 0;
             this.Bt_RackOn.Text = "ON";
             this.Bt_RackOn.UseVisualStyleBackColor = true;
+            this.Bt_RackOn.Click += new System.EventHandler(this.Bt_RackOn_Click);
             // 
             // Gr_Process
             // 
@@ -510,41 +762,18 @@
             this.Bt_ProcessOn.UseVisualStyleBackColor = true;
             this.Bt_ProcessOn.Click += new System.EventHandler(this.Bt_ProcessOn_Click);
             // 
-            // Pn_1_4
+            // Bar_4_4
             // 
-            this.Pn_1_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pn_1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pn_1_4.Controls.Add(this.panel3);
-            this.Pn_1_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_1_4.Location = new System.Drawing.Point(3, 12);
-            this.Pn_1_4.Margin = new System.Windows.Forms.Padding(3, 12, 3, 14);
-            this.Pn_1_4.Name = "Pn_1_4";
-            this.Pn_1_4.Size = new System.Drawing.Size(159, 141);
-            this.Pn_1_4.TabIndex = 0;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Bar_4_4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(14, 44);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
-            this.progressBar1.MaximumSize = new System.Drawing.Size(210, 80);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(127, 51);
-            this.progressBar1.TabIndex = 0;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::BatteryMes.Properties.Resources.battery1;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.progressBar1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(157, 139);
-            this.panel3.TabIndex = 0;
+            this.Bar_4_4.Location = new System.Drawing.Point(8, 44);
+            this.Bar_4_4.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
+            this.Bar_4_4.MaximumSize = new System.Drawing.Size(218, 72);
+            this.Bar_4_4.Name = "Bar_4_4";
+            this.Bar_4_4.Size = new System.Drawing.Size(143, 48);
+            this.Bar_4_4.Step = 20;
+            this.Bar_4_4.TabIndex = 1;
             // 
             // Fm_Control
             // 
@@ -560,6 +789,22 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.Pn_1_1.ResumeLayout(false);
+            this.Pn_2_1.ResumeLayout(false);
+            this.Pn_3_1.ResumeLayout(false);
+            this.Pn_4_1.ResumeLayout(false);
+            this.Pn_1_2.ResumeLayout(false);
+            this.Pn_2_2.ResumeLayout(false);
+            this.Pn_3_2.ResumeLayout(false);
+            this.Pn_4_2.ResumeLayout(false);
+            this.Pn_1_3.ResumeLayout(false);
+            this.Pn_2_3.ResumeLayout(false);
+            this.Pn_3_3.ResumeLayout(false);
+            this.Pn_4_3.ResumeLayout(false);
+            this.Pn_1_4.ResumeLayout(false);
+            this.Pn_2_4.ResumeLayout(false);
+            this.Pn_3_4.ResumeLayout(false);
+            this.Pn_4_4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -569,8 +814,6 @@
             this.Gb_Tem.PerformLayout();
             this.Gb_Rack.ResumeLayout(false);
             this.Gr_Process.ResumeLayout(false);
-            this.Pn_1_4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -598,23 +841,37 @@
         private System.Windows.Forms.Button Bt_RackOff;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel Pn_4_1;
-        private System.Windows.Forms.Panel Pn_3_1;
-        private System.Windows.Forms.Panel Pn_2_1;
         private System.Windows.Forms.Panel Pn_1_1;
-        private System.Windows.Forms.Panel Pn_4_2;
-        private System.Windows.Forms.Panel Pn_3_2;
-        private System.Windows.Forms.Panel Pn_2_2;
+        private System.Windows.Forms.Panel Pn_2_1;
+        private System.Windows.Forms.Panel Pn_3_1;
+        private System.Windows.Forms.Panel Pn_4_1;
         private System.Windows.Forms.Panel Pn_1_2;
-        private System.Windows.Forms.Panel Pn_4_3;
-        private System.Windows.Forms.Panel Pn_3_3;
-        private System.Windows.Forms.Panel Pn_2_3;
+        private System.Windows.Forms.Panel Pn_2_2;
+        private System.Windows.Forms.Panel Pn_3_2;
+        private System.Windows.Forms.Panel Pn_4_2;
         private System.Windows.Forms.Panel Pn_1_3;
-        private System.Windows.Forms.Panel Pn_4_4;
-        private System.Windows.Forms.Panel Pn_3_4;
-        private System.Windows.Forms.Panel Pn_2_4;
+        private System.Windows.Forms.Panel Pn_2_3;
+        private System.Windows.Forms.Panel Pn_3_3;
+        private System.Windows.Forms.Panel Pn_4_3;
         private System.Windows.Forms.Panel Pn_1_4;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel Pn_2_4;
+        private System.Windows.Forms.Panel Pn_3_4;
+        private System.Windows.Forms.ProgressBar Bar_1_4;
+        private System.Windows.Forms.Panel Pn_4_4;
+        private System.Windows.Forms.ProgressBar Bar_3_1;
+        private System.Windows.Forms.ProgressBar Bar_2_1;
+        private System.Windows.Forms.ProgressBar Bar_1_1;
+        private System.Windows.Forms.ProgressBar Bar_4_1;
+        private System.Windows.Forms.ProgressBar Bar_3_2;
+        private System.Windows.Forms.ProgressBar Bar_2_2;
+        private System.Windows.Forms.ProgressBar Bar_1_2;
+        private System.Windows.Forms.ProgressBar Bar_4_2;
+        private System.Windows.Forms.ProgressBar Bar_2_3;
+        private System.Windows.Forms.ProgressBar Bar_3_3;
+        private System.Windows.Forms.ProgressBar Bar_1_3;
+        private System.Windows.Forms.ProgressBar Bar_4_3;
+        private System.Windows.Forms.ProgressBar Bar_2_4;
+        private System.Windows.Forms.ProgressBar Bar_3_4;
+        private System.Windows.Forms.ProgressBar Bar_4_4;
     }
 }
