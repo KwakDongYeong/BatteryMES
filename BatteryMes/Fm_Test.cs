@@ -204,23 +204,35 @@ namespace BatteryMes
         {
             try
             {
-                byte[] imageData = File.ReadAllBytes(filePath);
                 string imageName = Path.GetFileName(filePath);
 
-                string query = "INSERT INTO images (ImageName, ImageData) VALUES (@imageName, @imageData)";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                // 이미지 이름 중복 확인
+                string checkQuery = "SELECT COUNT(*) FROM images WHERE ImageName = @imageName";
+                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
                 {
-                    cmd.Parameters.AddWithValue("@imageName", imageName);
-                    cmd.Parameters.AddWithValue("@imageData", imageData);
+                    checkCmd.Parameters.AddWithValue("@imageName", imageName);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show($"Image {imageName} uploaded successfully.");
+                    
+                }
+
+                // 이미지 파일 데이터를 읽습니다.
+                byte[] imageData = File.ReadAllBytes(filePath);
+
+                // 이미지 업로드 쿼리
+                string uploadQuery = "INSERT INTO images (ImageName, ImageData) VALUES (@imageName, @imageData)";
+                using (MySqlCommand uploadCmd = new MySqlCommand(uploadQuery, conn))
+                {
+                    uploadCmd.Parameters.AddWithValue("@imageName", imageName);
+                    uploadCmd.Parameters.AddWithValue("@imageData", imageData);
+
+                    uploadCmd.ExecuteNonQuery();
+                    Console.WriteLine($"Image {imageName} uploaded successfully.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while uploading {filePath}: " + ex.Message);
+                Console.WriteLine($"An error occurred while uploading {filePath}: " + ex.Message);
             }
         }
         /*  private void panel2_Paint(object sender, PaintEventArgs e)
