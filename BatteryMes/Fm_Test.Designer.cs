@@ -66,30 +66,30 @@
             this.Pb_Trayon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Bt_1ConV = new System.Windows.Forms.Button();
+            this.Bt_2ConV = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Bt_Tray_On = new System.Windows.Forms.Button();
+            this.BT_Tray_OFF = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BT_Battery_On = new System.Windows.Forms.Button();
+            this.BT_Battery_Off = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.Bt_Cam = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.BT_Fork_On = new System.Windows.Forms.Button();
+            this.Bt_Fork_Off = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Bt_Left = new System.Windows.Forms.Button();
+            this.Bt_Right = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Bt_Alarm = new System.Windows.Forms.Button();
             this.Bt_Red = new System.Windows.Forms.Button();
             this.Bt_Yellow = new System.Windows.Forms.Button();
             this.Bt_Green = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.BT_Fork_On = new System.Windows.Forms.Button();
-            this.Bt_Fork_Off = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Bt_1ConV = new System.Windows.Forms.Button();
-            this.Bt_2ConV = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Bt_Left = new System.Windows.Forms.Button();
-            this.Bt_Right = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BT_Battery_On = new System.Windows.Forms.Button();
-            this.BT_Battery_Off = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Bt_Tray_On = new System.Windows.Forms.Button();
-            this.BT_Tray_OFF = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.Bt_Cam = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Pn_Title_M.SuspendLayout();
             this.Pn_Title_C.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -111,15 +111,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pn_Title_M
@@ -193,6 +193,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(561, 626);
             this.tableLayoutPanel3.TabIndex = 14;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // panel2
             // 
@@ -593,6 +594,254 @@
             this.panel1.Size = new System.Drawing.Size(688, 626);
             this.panel1.TabIndex = 8;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox6, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(688, 626);
+            this.tableLayoutPanel4.TabIndex = 9;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox7, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox3, 1, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.332F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.329F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.339F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 469);
+            this.tableLayoutPanel5.TabIndex = 19;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Bt_1ConV);
+            this.groupBox4.Controls.Add(this.Bt_2ConV);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 315);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(338, 151);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // Bt_1ConV
+            // 
+            this.Bt_1ConV.FlatAppearance.BorderSize = 0;
+            this.Bt_1ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_1ConV.Location = new System.Drawing.Point(31, 22);
+            this.Bt_1ConV.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_1ConV.Name = "Bt_1ConV";
+            this.Bt_1ConV.Size = new System.Drawing.Size(140, 75);
+            this.Bt_1ConV.TabIndex = 8;
+            this.Bt_1ConV.Text = "1컨베ON";
+            this.Bt_1ConV.UseVisualStyleBackColor = true;
+            // 
+            // Bt_2ConV
+            // 
+            this.Bt_2ConV.FlatAppearance.BorderSize = 0;
+            this.Bt_2ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_2ConV.Location = new System.Drawing.Point(171, 22);
+            this.Bt_2ConV.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_2ConV.Name = "Bt_2ConV";
+            this.Bt_2ConV.Size = new System.Drawing.Size(140, 75);
+            this.Bt_2ConV.TabIndex = 9;
+            this.Bt_2ConV.Text = "2컨베ON";
+            this.Bt_2ConV.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Bt_Tray_On);
+            this.groupBox1.Controls.Add(this.BT_Tray_OFF);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(338, 150);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // Bt_Tray_On
+            // 
+            this.Bt_Tray_On.FlatAppearance.BorderSize = 0;
+            this.Bt_Tray_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Tray_On.Location = new System.Drawing.Point(14, 23);
+            this.Bt_Tray_On.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_Tray_On.Name = "Bt_Tray_On";
+            this.Bt_Tray_On.Size = new System.Drawing.Size(140, 75);
+            this.Bt_Tray_On.TabIndex = 0;
+            this.Bt_Tray_On.Text = "Tray전진";
+            this.Bt_Tray_On.UseVisualStyleBackColor = true;
+            this.Bt_Tray_On.Click += new System.EventHandler(this.Bt_Tray_On_Click);
+            this.Bt_Tray_On.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseDown);
+            this.Bt_Tray_On.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseUp);
+            // 
+            // BT_Tray_OFF
+            // 
+            this.BT_Tray_OFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BT_Tray_OFF.FlatAppearance.BorderSize = 0;
+            this.BT_Tray_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Tray_OFF.Location = new System.Drawing.Point(154, 23);
+            this.BT_Tray_OFF.Margin = new System.Windows.Forms.Padding(0);
+            this.BT_Tray_OFF.Name = "BT_Tray_OFF";
+            this.BT_Tray_OFF.Size = new System.Drawing.Size(140, 75);
+            this.BT_Tray_OFF.TabIndex = 1;
+            this.BT_Tray_OFF.Text = "Tray후진";
+            this.BT_Tray_OFF.UseVisualStyleBackColor = true;
+            this.BT_Tray_OFF.Click += new System.EventHandler(this.BT_Tray_OFF_Click);
+            this.BT_Tray_OFF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseDown);
+            this.BT_Tray_OFF.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseUp);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BT_Battery_On);
+            this.groupBox2.Controls.Add(this.BT_Battery_Off);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(347, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(338, 150);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // BT_Battery_On
+            // 
+            this.BT_Battery_On.FlatAppearance.BorderSize = 0;
+            this.BT_Battery_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Battery_On.Location = new System.Drawing.Point(21, 22);
+            this.BT_Battery_On.Margin = new System.Windows.Forms.Padding(0);
+            this.BT_Battery_On.Name = "BT_Battery_On";
+            this.BT_Battery_On.Size = new System.Drawing.Size(140, 75);
+            this.BT_Battery_On.TabIndex = 2;
+            this.BT_Battery_On.Text = "배터리전진";
+            this.BT_Battery_On.UseVisualStyleBackColor = true;
+            // 
+            // BT_Battery_Off
+            // 
+            this.BT_Battery_Off.FlatAppearance.BorderSize = 0;
+            this.BT_Battery_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Battery_Off.Location = new System.Drawing.Point(161, 22);
+            this.BT_Battery_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.BT_Battery_Off.Name = "BT_Battery_Off";
+            this.BT_Battery_Off.Size = new System.Drawing.Size(141, 75);
+            this.BT_Battery_Off.TabIndex = 3;
+            this.BT_Battery_Off.Text = "배터리후진";
+            this.BT_Battery_Off.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.Bt_Cam);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(347, 315);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(338, 151);
+            this.groupBox7.TabIndex = 18;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "groupBox7";
+            // 
+            // Bt_Cam
+            // 
+            this.Bt_Cam.FlatAppearance.BorderSize = 0;
+            this.Bt_Cam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Cam.Location = new System.Drawing.Point(31, 22);
+            this.Bt_Cam.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_Cam.Name = "Bt_Cam";
+            this.Bt_Cam.Size = new System.Drawing.Size(140, 75);
+            this.Bt_Cam.TabIndex = 8;
+            this.Bt_Cam.Text = "촬영";
+            this.Bt_Cam.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.BT_Fork_On);
+            this.groupBox5.Controls.Add(this.Bt_Fork_Off);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 159);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(338, 150);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "groupBox5";
+            // 
+            // BT_Fork_On
+            // 
+            this.BT_Fork_On.FlatAppearance.BorderSize = 0;
+            this.BT_Fork_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Fork_On.Location = new System.Drawing.Point(3, 21);
+            this.BT_Fork_On.Margin = new System.Windows.Forms.Padding(0);
+            this.BT_Fork_On.Name = "BT_Fork_On";
+            this.BT_Fork_On.Size = new System.Drawing.Size(140, 75);
+            this.BT_Fork_On.TabIndex = 6;
+            this.BT_Fork_On.Text = "포크전진";
+            this.BT_Fork_On.UseVisualStyleBackColor = true;
+            // 
+            // Bt_Fork_Off
+            // 
+            this.Bt_Fork_Off.FlatAppearance.BorderSize = 0;
+            this.Bt_Fork_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Fork_Off.Location = new System.Drawing.Point(143, 21);
+            this.Bt_Fork_Off.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_Fork_Off.Name = "Bt_Fork_Off";
+            this.Bt_Fork_Off.Size = new System.Drawing.Size(141, 75);
+            this.Bt_Fork_Off.TabIndex = 7;
+            this.Bt_Fork_Off.Text = "포크후진";
+            this.Bt_Fork_Off.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Bt_Left);
+            this.groupBox3.Controls.Add(this.Bt_Right);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(347, 159);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(338, 150);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // Bt_Left
+            // 
+            this.Bt_Left.FlatAppearance.BorderSize = 0;
+            this.Bt_Left.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Left.Location = new System.Drawing.Point(-11, 21);
+            this.Bt_Left.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_Left.Name = "Bt_Left";
+            this.Bt_Left.Size = new System.Drawing.Size(140, 75);
+            this.Bt_Left.TabIndex = 4;
+            this.Bt_Left.Text = "좌회전";
+            this.Bt_Left.UseVisualStyleBackColor = true;
+            // 
+            // Bt_Right
+            // 
+            this.Bt_Right.FlatAppearance.BorderSize = 0;
+            this.Bt_Right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Right.Location = new System.Drawing.Point(129, 21);
+            this.Bt_Right.Margin = new System.Windows.Forms.Padding(0);
+            this.Bt_Right.Name = "Bt_Right";
+            this.Bt_Right.Size = new System.Drawing.Size(140, 75);
+            this.Bt_Right.TabIndex = 5;
+            this.Bt_Right.Text = "우회전";
+            this.Bt_Right.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.Bt_Alarm);
@@ -655,254 +904,6 @@
             this.Bt_Green.Text = "녹색램프ON";
             this.Bt_Green.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.BT_Fork_On);
-            this.groupBox5.Controls.Add(this.Bt_Fork_Off);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 159);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(338, 150);
-            this.groupBox5.TabIndex = 18;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // BT_Fork_On
-            // 
-            this.BT_Fork_On.FlatAppearance.BorderSize = 0;
-            this.BT_Fork_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Fork_On.Location = new System.Drawing.Point(3, 21);
-            this.BT_Fork_On.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Fork_On.Name = "BT_Fork_On";
-            this.BT_Fork_On.Size = new System.Drawing.Size(140, 75);
-            this.BT_Fork_On.TabIndex = 6;
-            this.BT_Fork_On.Text = "포크전진";
-            this.BT_Fork_On.UseVisualStyleBackColor = true;
-            // 
-            // Bt_Fork_Off
-            // 
-            this.Bt_Fork_Off.FlatAppearance.BorderSize = 0;
-            this.Bt_Fork_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Fork_Off.Location = new System.Drawing.Point(143, 21);
-            this.Bt_Fork_Off.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Fork_Off.Name = "Bt_Fork_Off";
-            this.Bt_Fork_Off.Size = new System.Drawing.Size(141, 75);
-            this.Bt_Fork_Off.TabIndex = 7;
-            this.Bt_Fork_Off.Text = "포크후진";
-            this.Bt_Fork_Off.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.Bt_1ConV);
-            this.groupBox4.Controls.Add(this.Bt_2ConV);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 315);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(338, 151);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // Bt_1ConV
-            // 
-            this.Bt_1ConV.FlatAppearance.BorderSize = 0;
-            this.Bt_1ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_1ConV.Location = new System.Drawing.Point(31, 22);
-            this.Bt_1ConV.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_1ConV.Name = "Bt_1ConV";
-            this.Bt_1ConV.Size = new System.Drawing.Size(140, 75);
-            this.Bt_1ConV.TabIndex = 8;
-            this.Bt_1ConV.Text = "1컨베ON";
-            this.Bt_1ConV.UseVisualStyleBackColor = true;
-            // 
-            // Bt_2ConV
-            // 
-            this.Bt_2ConV.FlatAppearance.BorderSize = 0;
-            this.Bt_2ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_2ConV.Location = new System.Drawing.Point(171, 22);
-            this.Bt_2ConV.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_2ConV.Name = "Bt_2ConV";
-            this.Bt_2ConV.Size = new System.Drawing.Size(140, 75);
-            this.Bt_2ConV.TabIndex = 9;
-            this.Bt_2ConV.Text = "2컨베ON";
-            this.Bt_2ConV.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.Bt_Left);
-            this.groupBox3.Controls.Add(this.Bt_Right);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(347, 159);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(338, 150);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // Bt_Left
-            // 
-            this.Bt_Left.FlatAppearance.BorderSize = 0;
-            this.Bt_Left.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Left.Location = new System.Drawing.Point(-11, 21);
-            this.Bt_Left.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Left.Name = "Bt_Left";
-            this.Bt_Left.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Left.TabIndex = 4;
-            this.Bt_Left.Text = "좌회전";
-            this.Bt_Left.UseVisualStyleBackColor = true;
-            // 
-            // Bt_Right
-            // 
-            this.Bt_Right.FlatAppearance.BorderSize = 0;
-            this.Bt_Right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Right.Location = new System.Drawing.Point(129, 21);
-            this.Bt_Right.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Right.Name = "Bt_Right";
-            this.Bt_Right.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Right.TabIndex = 5;
-            this.Bt_Right.Text = "우회전";
-            this.Bt_Right.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BT_Battery_On);
-            this.groupBox2.Controls.Add(this.BT_Battery_Off);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(347, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 150);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // BT_Battery_On
-            // 
-            this.BT_Battery_On.FlatAppearance.BorderSize = 0;
-            this.BT_Battery_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_On.Location = new System.Drawing.Point(21, 22);
-            this.BT_Battery_On.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Battery_On.Name = "BT_Battery_On";
-            this.BT_Battery_On.Size = new System.Drawing.Size(140, 75);
-            this.BT_Battery_On.TabIndex = 2;
-            this.BT_Battery_On.Text = "배터리전진";
-            this.BT_Battery_On.UseVisualStyleBackColor = true;
-            // 
-            // BT_Battery_Off
-            // 
-            this.BT_Battery_Off.FlatAppearance.BorderSize = 0;
-            this.BT_Battery_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_Off.Location = new System.Drawing.Point(161, 22);
-            this.BT_Battery_Off.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Battery_Off.Name = "BT_Battery_Off";
-            this.BT_Battery_Off.Size = new System.Drawing.Size(141, 75);
-            this.BT_Battery_Off.TabIndex = 3;
-            this.BT_Battery_Off.Text = "배터리후진";
-            this.BT_Battery_Off.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Bt_Tray_On);
-            this.groupBox1.Controls.Add(this.BT_Tray_OFF);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 150);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // Bt_Tray_On
-            // 
-            this.Bt_Tray_On.FlatAppearance.BorderSize = 0;
-            this.Bt_Tray_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Tray_On.Location = new System.Drawing.Point(14, 23);
-            this.Bt_Tray_On.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Tray_On.Name = "Bt_Tray_On";
-            this.Bt_Tray_On.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Tray_On.TabIndex = 0;
-            this.Bt_Tray_On.Text = "Tray전진";
-            this.Bt_Tray_On.UseVisualStyleBackColor = true;
-            this.Bt_Tray_On.Click += new System.EventHandler(this.Bt_Tray_On_Click);
-            this.Bt_Tray_On.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseDown);
-            this.Bt_Tray_On.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseUp);
-            // 
-            // BT_Tray_OFF
-            // 
-            this.BT_Tray_OFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BT_Tray_OFF.FlatAppearance.BorderSize = 0;
-            this.BT_Tray_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Tray_OFF.Location = new System.Drawing.Point(154, 23);
-            this.BT_Tray_OFF.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Tray_OFF.Name = "BT_Tray_OFF";
-            this.BT_Tray_OFF.Size = new System.Drawing.Size(140, 75);
-            this.BT_Tray_OFF.TabIndex = 1;
-            this.BT_Tray_OFF.Text = "Tray후진";
-            this.BT_Tray_OFF.UseVisualStyleBackColor = true;
-            this.BT_Tray_OFF.Click += new System.EventHandler(this.BT_Tray_OFF_Click);
-            this.BT_Tray_OFF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseDown);
-            this.BT_Tray_OFF.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseUp);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.Bt_Cam);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(347, 315);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(338, 151);
-            this.groupBox7.TabIndex = 18;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
-            // 
-            // Bt_Cam
-            // 
-            this.Bt_Cam.FlatAppearance.BorderSize = 0;
-            this.Bt_Cam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Cam.Location = new System.Drawing.Point(31, 22);
-            this.Bt_Cam.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Cam.Name = "Bt_Cam";
-            this.Bt_Cam.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Cam.TabIndex = 8;
-            this.Bt_Cam.Text = "촬영";
-            this.Bt_Cam.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.groupBox6, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(688, 626);
-            this.tableLayoutPanel4.TabIndex = 9;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox7, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox5, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox3, 1, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.332F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.329F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.339F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 469);
-            this.tableLayoutPanel5.TabIndex = 19;
-            // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -939,15 +940,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
