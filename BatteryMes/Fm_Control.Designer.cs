@@ -68,6 +68,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lb_Rack = new System.Windows.Forms.Label();
             this.Gb_Tem = new System.Windows.Forms.GroupBox();
             this.Tb_SetTem = new System.Windows.Forms.TextBox();
@@ -81,7 +82,6 @@
             this.Gr_Process = new System.Windows.Forms.GroupBox();
             this.Bt_ConnectOff = new System.Windows.Forms.Button();
             this.Bt_ConnectOn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -628,15 +628,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "현재 위치";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(248, 101);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 28);
+            this.textBox1.TabIndex = 5;
+            // 
             // Lb_Rack
             // 
+            this.Lb_Rack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lb_Rack.AutoSize = true;
             this.Lb_Rack.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Lb_Rack.Location = new System.Drawing.Point(112, 61);
+            this.Lb_Rack.Location = new System.Drawing.Point(68, 61);
             this.Lb_Rack.Name = "Lb_Rack";
-            this.Lb_Rack.Size = new System.Drawing.Size(150, 37);
+            this.Lb_Rack.Size = new System.Drawing.Size(47, 37);
             this.Lb_Rack.TabIndex = 0;
-            this.Lb_Rack.Text = "0연 0단";
+            this.Lb_Rack.Text = "\"\"";
+            this.Lb_Rack.Click += new System.EventHandler(this.Lb_Rack_Click);
             // 
             // Gb_Tem
             // 
@@ -778,14 +789,6 @@
             this.Bt_ConnectOn.Text = "ON";
             this.Bt_ConnectOn.UseVisualStyleBackColor = true;
             this.Bt_ConnectOn.Click += new System.EventHandler(this.Bt_Bt_ConnectOn_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(248, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 28);
-            this.textBox1.TabIndex = 5;
             // 
             // Fm_Control
             // 
