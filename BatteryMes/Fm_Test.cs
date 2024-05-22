@@ -51,7 +51,7 @@ namespace BatteryMes
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    MessageBox.Show("데이터베이스 연결 성공!");
+                    Console.WriteLine("데이터베이스 연결 성공!");
 
                     // 폴더 내의 모든 이미지 파일을 처리
                     foreach (string filePath in Directory.GetFiles(imageFolderPath, "*.jpg"))
@@ -60,12 +60,12 @@ namespace BatteryMes
                     }
 
                     conn.Close();
-                    MessageBox.Show("All images uploaded successfully.");
+                    //MessageBox.Show("All images uploaded successfully.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                //MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
 
@@ -182,7 +182,7 @@ namespace BatteryMes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                //MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
         private void LoadImageToPictureBox(string imagePath)
@@ -193,7 +193,7 @@ namespace BatteryMes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to load image: {ex.Message}");
+                //MessageBox.Show($"Failed to load image: {ex.Message}");
             }
         }
 
@@ -228,7 +228,7 @@ namespace BatteryMes
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    MessageBox.Show("데이터베이스 연결 성공!");
+                    Console.WriteLine("데이터베이스 연결 성공!");
 
                     foreach (string filePath in Directory.GetFiles(imageFolderPath, "*.jpg"))
                     {
@@ -236,12 +236,12 @@ namespace BatteryMes
                     }
 
                     conn.Close();
-                    MessageBox.Show("All images uploaded successfully.");
+                    Console.WriteLine("All images uploaded successfully.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
 

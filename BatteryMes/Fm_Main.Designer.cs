@@ -138,7 +138,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
@@ -159,6 +159,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.label1.Name = "label1";
@@ -586,7 +587,7 @@
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(284, 44);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(284, 35);
             this.tableLayoutPanel18.TabIndex = 1;
             // 
             // rackplace
@@ -597,7 +598,7 @@
             this.rackplace.Location = new System.Drawing.Point(47, 0);
             this.rackplace.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.rackplace.Name = "rackplace";
-            this.rackplace.Size = new System.Drawing.Size(74, 39);
+            this.rackplace.Size = new System.Drawing.Size(74, 30);
             this.rackplace.TabIndex = 0;
             this.rackplace.Text = "6";
             this.rackplace.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -610,7 +611,7 @@
             this.label15.Location = new System.Drawing.Point(126, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 39);
+            this.label15.Size = new System.Drawing.Size(35, 30);
             this.label15.TabIndex = 1;
             this.label15.Text = "/";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -622,7 +623,7 @@
             this.label14.Location = new System.Drawing.Point(166, 0);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 39);
+            this.label14.Size = new System.Drawing.Size(111, 30);
             this.label14.TabIndex = 1;
             this.label14.Text = "16";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -635,6 +636,7 @@
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblStatus.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(35, 0);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblStatus.Name = "lblStatus";
@@ -648,6 +650,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel15);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(607, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(399, 225);
@@ -700,7 +703,8 @@
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel21);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox5.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(290, 96);
@@ -717,12 +721,12 @@
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 1, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 30);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 34);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 1;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(284, 63);
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(284, 59);
             this.tableLayoutPanel21.TabIndex = 0;
             // 
             // tableLayoutPanel23
@@ -739,7 +743,7 @@
             this.tableLayoutPanel23.RowCount = 2;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(142, 63);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(142, 59);
             this.tableLayoutPanel23.TabIndex = 1;
             // 
             // label16
@@ -753,7 +757,7 @@
             this.label16.Location = new System.Drawing.Point(1, 1);
             this.label16.Margin = new System.Windows.Forms.Padding(1);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(140, 10);
+            this.label16.Size = new System.Drawing.Size(140, 9);
             this.label16.TabIndex = 0;
             this.label16.Text = "현재온도";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -766,12 +770,12 @@
             this.tableLayoutPanel24.Controls.Add(this.label21, 1, 0);
             this.tableLayoutPanel24.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 12);
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 11);
             this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 1;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(142, 51);
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(142, 48);
             this.tableLayoutPanel24.TabIndex = 1;
             // 
             // label21
@@ -782,7 +786,7 @@
             this.label21.Location = new System.Drawing.Point(99, 3);
             this.label21.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 28);
+            this.label21.Size = new System.Drawing.Size(40, 25);
             this.label21.TabIndex = 7;
             this.label21.Text = "°C";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -795,7 +799,7 @@
             this.label18.Location = new System.Drawing.Point(0, 0);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 51);
+            this.label18.Size = new System.Drawing.Size(99, 48);
             this.label18.TabIndex = 1;
             this.label18.Text = "26";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -814,7 +818,7 @@
             this.tableLayoutPanel22.RowCount = 2;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(142, 63);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(142, 59);
             this.tableLayoutPanel22.TabIndex = 0;
             // 
             // tableLayoutPanel25
@@ -825,12 +829,12 @@
             this.tableLayoutPanel25.Controls.Add(this.label22, 1, 0);
             this.tableLayoutPanel25.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 12);
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 11);
             this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 1;
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(142, 51);
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(142, 48);
             this.tableLayoutPanel25.TabIndex = 2;
             // 
             // label22
@@ -841,7 +845,7 @@
             this.label22.Location = new System.Drawing.Point(99, 3);
             this.label22.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(40, 28);
+            this.label22.Size = new System.Drawing.Size(40, 25);
             this.label22.TabIndex = 7;
             this.label22.Text = "°C";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -854,7 +858,7 @@
             this.label19.Location = new System.Drawing.Point(0, 0);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 51);
+            this.label19.Size = new System.Drawing.Size(99, 48);
             this.label19.TabIndex = 2;
             this.label19.Text = "34";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -869,7 +873,7 @@
             this.label17.Location = new System.Drawing.Point(1, 1);
             this.label17.Margin = new System.Windows.Forms.Padding(1);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 10);
+            this.label17.Size = new System.Drawing.Size(140, 9);
             this.label17.TabIndex = 1;
             this.label17.Text = "적정온도";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -927,7 +931,8 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label20.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(1, 1);
             this.label20.Margin = new System.Windows.Forms.Padding(1);
             this.label20.Name = "label20";
@@ -989,21 +994,22 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel18, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 30);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 39);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 3;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(284, 64);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(284, 55);
             this.tableLayoutPanel12.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel12);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 97);
