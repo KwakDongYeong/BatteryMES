@@ -68,7 +68,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Lb_Rack = new System.Windows.Forms.Label();
             this.Gb_Tem = new System.Windows.Forms.GroupBox();
             this.Tb_SetTem = new System.Windows.Forms.TextBox();
             this.Tb_CurTem = new System.Windows.Forms.TextBox();
@@ -79,8 +79,9 @@
             this.Bt_RackOff = new System.Windows.Forms.Button();
             this.Bt_RackOn = new System.Windows.Forms.Button();
             this.Gr_Process = new System.Windows.Forms.GroupBox();
-            this.Bt_ProcessOff = new System.Windows.Forms.Button();
-            this.Bt_ProcessOn = new System.Windows.Forms.Button();
+            this.Bt_ConnectOff = new System.Windows.Forms.Button();
+            this.Bt_ConnectOn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -615,7 +616,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.Lb_Rack);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(3, 335);
@@ -626,15 +628,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "현재 위치";
             // 
-            // label5
+            // Lb_Rack
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(112, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 37);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "0연 0단";
+            this.Lb_Rack.AutoSize = true;
+            this.Lb_Rack.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Rack.Location = new System.Drawing.Point(112, 61);
+            this.Lb_Rack.Name = "Lb_Rack";
+            this.Lb_Rack.Size = new System.Drawing.Size(150, 37);
+            this.Lb_Rack.TabIndex = 0;
+            this.Lb_Rack.Text = "0연 0단";
             // 
             // Gb_Tem
             // 
@@ -737,8 +739,8 @@
             // 
             // Gr_Process
             // 
-            this.Gr_Process.Controls.Add(this.Bt_ProcessOff);
-            this.Gr_Process.Controls.Add(this.Bt_ProcessOn);
+            this.Gr_Process.Controls.Add(this.Bt_ConnectOff);
+            this.Gr_Process.Controls.Add(this.Bt_ConnectOn);
             this.Gr_Process.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gr_Process.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Gr_Process.Location = new System.Drawing.Point(3, 3);
@@ -747,35 +749,43 @@
             this.Gr_Process.Size = new System.Drawing.Size(385, 153);
             this.Gr_Process.TabIndex = 0;
             this.Gr_Process.TabStop = false;
-            this.Gr_Process.Text = "공정 가동 신호";
+            this.Gr_Process.Text = "PLC 통신 연결";
             // 
-            // Bt_ProcessOff
+            // Bt_ConnectOff
             // 
-            this.Bt_ProcessOff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Bt_ConnectOff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bt_ProcessOff.Location = new System.Drawing.Point(209, 60);
-            this.Bt_ProcessOff.MaximumSize = new System.Drawing.Size(95, 50);
-            this.Bt_ProcessOff.Name = "Bt_ProcessOff";
-            this.Bt_ProcessOff.Size = new System.Drawing.Size(95, 50);
-            this.Bt_ProcessOff.TabIndex = 1;
-            this.Bt_ProcessOff.Text = "OFF";
-            this.Bt_ProcessOff.UseVisualStyleBackColor = true;
-            this.Bt_ProcessOff.Click += new System.EventHandler(this.Bt_ProcessOff_Click);
+            this.Bt_ConnectOff.Location = new System.Drawing.Point(209, 60);
+            this.Bt_ConnectOff.MaximumSize = new System.Drawing.Size(95, 50);
+            this.Bt_ConnectOff.Name = "Bt_ConnectOff";
+            this.Bt_ConnectOff.Size = new System.Drawing.Size(95, 50);
+            this.Bt_ConnectOff.TabIndex = 1;
+            this.Bt_ConnectOff.Text = "OFF";
+            this.Bt_ConnectOff.UseVisualStyleBackColor = true;
+            this.Bt_ConnectOff.Click += new System.EventHandler(this.Bt_ConnectOff_Click);
             // 
-            // Bt_ProcessOn
+            // Bt_ConnectOn
             // 
-            this.Bt_ProcessOn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Bt_ConnectOn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bt_ProcessOn.Location = new System.Drawing.Point(59, 60);
-            this.Bt_ProcessOn.MaximumSize = new System.Drawing.Size(95, 50);
-            this.Bt_ProcessOn.Name = "Bt_ProcessOn";
-            this.Bt_ProcessOn.Size = new System.Drawing.Size(95, 50);
-            this.Bt_ProcessOn.TabIndex = 0;
-            this.Bt_ProcessOn.Text = "ON";
-            this.Bt_ProcessOn.UseVisualStyleBackColor = true;
-            this.Bt_ProcessOn.Click += new System.EventHandler(this.Bt_ProcessOn_Click);
+            this.Bt_ConnectOn.Location = new System.Drawing.Point(59, 60);
+            this.Bt_ConnectOn.MaximumSize = new System.Drawing.Size(95, 50);
+            this.Bt_ConnectOn.Name = "Bt_ConnectOn";
+            this.Bt_ConnectOn.Size = new System.Drawing.Size(95, 50);
+            this.Bt_ConnectOn.TabIndex = 0;
+            this.Bt_ConnectOn.Text = "ON";
+            this.Bt_ConnectOn.UseVisualStyleBackColor = true;
+            this.Bt_ConnectOn.Click += new System.EventHandler(this.Bt_Bt_ConnectOn_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(248, 101);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 28);
+            this.textBox1.TabIndex = 5;
             // 
             // Fm_Control
             // 
@@ -830,19 +840,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox Gr_Process;
-        private System.Windows.Forms.Button Bt_ProcessOn;
+        private System.Windows.Forms.Button Bt_ConnectOn;
         private System.Windows.Forms.GroupBox Gb_Tem;
         private System.Windows.Forms.Button Bt_SetTem;
         private System.Windows.Forms.GroupBox Gb_Rack;
         private System.Windows.Forms.Button Bt_RackOn;
-        private System.Windows.Forms.Button Bt_ProcessOff;
+        private System.Windows.Forms.Button Bt_ConnectOff;
         private System.Windows.Forms.TextBox Tb_SetTem;
         private System.Windows.Forms.TextBox Tb_CurTem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Bt_RackOff;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Lb_Rack;
         private System.Windows.Forms.Panel Pn_1_1;
         private System.Windows.Forms.Panel Pn_2_1;
         private System.Windows.Forms.Panel Pn_3_1;
@@ -875,5 +885,6 @@
         private System.Windows.Forms.ProgressBar Bar_2_4;
         private System.Windows.Forms.ProgressBar Bar_3_4;
         private System.Windows.Forms.ProgressBar Bar_4_4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
