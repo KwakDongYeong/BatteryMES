@@ -391,7 +391,7 @@
             this.Bar_1_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bar_1_3.Location = new System.Drawing.Point(10, 51);
+            this.Bar_1_3.Location = new System.Drawing.Point(7, 43);
             this.Bar_1_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
             this.Bar_1_3.MaximumSize = new System.Drawing.Size(218, 72);
             this.Bar_1_3.Name = "Bar_1_3";
@@ -415,7 +415,7 @@
             this.Bar_2_3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Bar_2_3.Location = new System.Drawing.Point(16, 51);
+            this.Bar_2_3.Location = new System.Drawing.Point(7, 43);
             this.Bar_2_3.Margin = new System.Windows.Forms.Padding(7, 30, 7, 20);
             this.Bar_2_3.MaximumSize = new System.Drawing.Size(218, 72);
             this.Bar_2_3.Name = "Bar_2_3";
