@@ -90,6 +90,7 @@
             this.Bt_Red = new System.Windows.Forms.Button();
             this.Bt_Yellow = new System.Windows.Forms.Button();
             this.Bt_Green = new System.Windows.Forms.Button();
+            this.visionpicture = new System.Windows.Forms.PictureBox();
             this.Pn_Title_M.SuspendLayout();
             this.Pn_Title_C.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -120,6 +121,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).BeginInit();
             this.SuspendLayout();
             // 
             // Pn_Title_M
@@ -184,6 +186,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.visionpicture, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -904,6 +907,15 @@
             this.Bt_Green.Text = "녹색램프ON";
             this.Bt_Green.UseVisualStyleBackColor = true;
             // 
+            // visionpicture
+            // 
+            this.visionpicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visionpicture.Location = new System.Drawing.Point(3, 341);
+            this.visionpicture.Name = "visionpicture";
+            this.visionpicture.Size = new System.Drawing.Size(555, 282);
+            this.visionpicture.TabIndex = 9;
+            this.visionpicture.TabStop = false;
+            // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -949,6 +961,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1017,5 +1030,6 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button Bt_Cam;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.PictureBox visionpicture;
     }
 }
