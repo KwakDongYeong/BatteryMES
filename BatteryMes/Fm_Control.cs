@@ -20,14 +20,14 @@ namespace BatteryMes
         private Timer timer = new Timer();
         int Plc_on_value;
         int Pc_on_value;
-        
+      
         public Fm_Control()
         {
             InitializeComponent();
-            plc.ActLogicalStationNumber = 1;
+            plc.ActLogicalStationNumber = 0;
             plc.Open();
 
-            timer.Interval = 900;
+            timer.Interval = 700;
             timer.Tick += Timer_Tick;
             timer.Start();
 
@@ -92,6 +92,7 @@ namespace BatteryMes
                     }
                 }*/
             // Lb_Rack.Text에 텍스트 누적
+          
             Lb_Rack.Text = ""; // 초기화
 
             for (int i = 0; i < 32; i++)
@@ -122,38 +123,92 @@ namespace BatteryMes
                     }
                 }
 
-                // plc.getdevice를 호출하여 value 값 획득
                 int value;
                 plc.GetDevice(RackDevice, out value);
 
-                // value 값에 따라 다른 텍스트 할당
                 string textToDisplay = "";
                 if (value == 1)
                 {
-                    // RackDevice가 D1601.x 일 때
                     if (RackDevice.StartsWith("D1601"))
                     {
-                        // D1601.x 에 따라 다른 텍스트 할당
-                        int x = int.Parse(RackDevice.Split('.')[1]);
-                        textToDisplay = $"1연 {x + 1}단 배출";
+                        string[] parts = RackDevice.Split('.');
+                        if (parts.Length == 2)
+                        {
+                            int row;
+                            int col;
+                            int x;
+                            if (int.TryParse(parts[1], out x))
+                            {
+                                // 10진수로 해석하여 연과 단을 계산합니다.
+                                row = (x / 4) + 1;
+                                col = (x % 4) + 1;
+                                textToDisplay = $"{row}연 {col}단 배출";
+                            }
+                            else
+                            {
+                                // 16진수로 변환하여 다시 시도합니다.
+                                if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
+                                {
+                                    row = (x / 4) + 1;
+                                    col = (x % 4) + 1;
+                                    textToDisplay = $"{row}연 {col}단 투입";
+                                }
+                                else
+                                {
+                                    textToDisplay = "유효하지 않은 RackDevice 값입니다.";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            textToDisplay = "유효하지 않은 RackDevice 값입니다.";
+                        }
                     }
                     else
-                    {
-                        // M1600.x 에 따라 다른 텍스트 할당
+                    {/*
                         int x = int.Parse(RackDevice.Split('.')[1]);
-                        int row = x / 4 + 1;
-                        int col = x % 4 + 1;
+                        int row = (x / 4) + 1;  
+                        int col = (x % 4) + 1;  
                         textToDisplay = $"{row}연 {col}단 투입";
+                        */
+                        string[] parts = RackDevice.Split('.');
+                        if (parts.Length == 2)
+                        {
+                            int row;
+                            int col;
+
+                            int x;
+                            if (int.TryParse(parts[1], out x))
+                            {
+                                row = (x / 4) + 1;
+                                col = (x % 4) + 1;
+                                textToDisplay = $"{row}연 {col}단 투입";
+                            }
+                            else
+                            {
+                                // 16진수로 변환하여 다시 시도합니다.
+                                if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
+                                {
+                                    row = (x / 4) + 1;
+                                    col = (x % 4) + 1;
+                                    textToDisplay = $"{row}연 {col}단 투입";
+                                }
+                                else
+                                {
+                                    textToDisplay = "유효하지 않은 RackDevice 값입니다.";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            textToDisplay = "유효하지 않은 RackDevice 값입니다.";
+                        }
                     }
 
-                    // 이전 값과 함께 현재 값 추가
                     Lb_Rack.Text += $"{textToDisplay}\n";
                 }
                 else
                 {
-                    // value가 1이 아닌 경우, 다른 처리를 할 수 있습니다.
-                    
-                    
                 }
             }
 
@@ -251,7 +306,7 @@ namespace BatteryMes
 
         }
 
-        private void UpdateProgressBarAndPanel(int senvalue, int timevalue, int chargevalue, ProgressBar bar, Panel panel)
+      /*  private void UpdateProgressBarAndPanel(int senvalue, int timevalue, int chargevalue, ProgressBar bar, Panel panel)
         {
             if (senvalue == 1)
             {
@@ -300,7 +355,7 @@ namespace BatteryMes
                 bar.Value = 0;
                 bar.Visible = false;
             }
-        }
+        }*/
 
 
 
@@ -325,28 +380,6 @@ namespace BatteryMes
 
         private void Bt_RackOn_Click(object sender, EventArgs e)
         {
-            //  plc.SetDevice("M1600", 1);
-            //int m1540;
-            /* plc.GetDevice("M1540", out m1540);
-             if(m1540 == 1)
-             {
-                 plc.SetDevice("M1600", 0);
-             }*/
-            int value;
-            plc.GetDevice("M1540", out value);
-            if(value == 0)
-            {
-                plc.SetDevice("M1600", 1);
-
-
-            }
-            else if(value == 1)
-            {
-                plc.SetDevice("M1600", 0);
-            }
-            
-
-
         }
 
         private void Bt_SetTem_Click(object sender, EventArgs e)
@@ -406,6 +439,11 @@ namespace BatteryMes
                     Bt_ConnectOn.BackColor = SystemColors.Control;
                 }
             }
+        }
+
+        private void Lb_Rack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
