@@ -96,7 +96,7 @@ namespace BatteryMes
                 int m1546 = 0; int m1547 = 0; int m1548 = 0; int m1549 = 0; int m1550 = 0; int m1551 = 0;
                 int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; int m1534 = 0; int m1535 = 0;
                 int m1560 = 0; int m1561 = 0; int m1562 = 0; int m1563 = 0; int m1564 = 0; int m1565 = 0;
-                int m1566 = 0; int m1567 = 0; int m1568 = 0; int m1569 = 0;
+                int m1566 = 0; int m1567 = 0; int m1568 = 0; int m1569 = 0; int m1578 = 0;
 
                 int y38 = 0; int y39 = 0; int y40 = 0; int y41 = 0; int y42 = 0; int y43 = 0;
                 int y50 = 0, y51 = 0; int y1001 = 0;
@@ -109,7 +109,7 @@ namespace BatteryMes
                 PLC1.GetDevice("m1560", out m1560); PLC1.GetDevice("m1561", out m1561); PLC1.GetDevice("m1562", out m1562);
                 PLC1.GetDevice("m1563", out m1563); PLC1.GetDevice("m1564", out m1564); PLC1.GetDevice("m1565", out m1565);
                 PLC1.GetDevice("m1566", out m1566); PLC1.GetDevice("m1567", out m1567); PLC1.GetDevice("m1568", out m1568);
-                PLC1.GetDevice("m1569", out m1569);
+                PLC1.GetDevice("m1569", out m1569); PLC1.GetDevice("m1578", out m1578);
                 PLC1.GetDevice("Y38", out y38); PLC1.GetDevice("Y39", out y39); PLC1.GetDevice("Y40", out y40);
                 PLC1.GetDevice("Y41", out y41); PLC1.GetDevice("Y42", out y42); PLC1.GetDevice("Y43", out y43);
                 PLC1.GetDevice("Y50", out y50); PLC1.GetDevice("Y51", out y51); PLC1.GetDevice("Y1001", out y1001);
@@ -133,6 +133,7 @@ namespace BatteryMes
                 fork_rotatelamp.Image = (m1564 == 1) ? Properties.Resources.green : (m1565 == 1) ? Properties.Resources.red : null;
                 cvlamp2.Image = (m1569 == 1) ? Properties.Resources.green : null;
                 vision_check.Image = (m1534 == 1) ? Properties.Resources.green : (m1535 == 1) ? Properties.Resources.red : null;
+
                 
                 if (y50 == 1 && prevY50 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 양품으로 판단하였습니다.\n");
                 else if (y51 == 1 && prevY51 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 불량품으로 판단하였습니다.\n");

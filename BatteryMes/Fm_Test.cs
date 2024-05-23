@@ -21,7 +21,7 @@ namespace BatteryMes
         public ActUtlType plc = new ActUtlType();
         private Timer timer = new Timer();
         private FileSystemWatcher watcher;
-        private string imageFolderPath = @"C:\Users\user\Desktop\final_pjt_t1\fail\169.254.191.2";
+        private string imageFolderPath = @"C:\Users\user\Desktop\비전결과";
         private string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
 
         public Fm_Test()

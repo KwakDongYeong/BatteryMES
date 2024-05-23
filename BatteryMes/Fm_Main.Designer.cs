@@ -93,7 +93,7 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.autosignal = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1034,7 +1034,7 @@
             // 
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel13.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.autosignal, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 20);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
@@ -1044,19 +1044,19 @@
             this.tableLayoutPanel13.Size = new System.Drawing.Size(302, 75);
             this.tableLayoutPanel13.TabIndex = 6;
             // 
-            // label2
+            // autosignal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(1, 1);
-            this.label2.Margin = new System.Windows.Forms.Padding(1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 73);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Auto running!";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.autosignal.AutoSize = true;
+            this.autosignal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.autosignal.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.autosignal.ForeColor = System.Drawing.Color.Red;
+            this.autosignal.Location = new System.Drawing.Point(1, 1);
+            this.autosignal.Margin = new System.Windows.Forms.Padding(1);
+            this.autosignal.Name = "autosignal";
+            this.autosignal.Size = new System.Drawing.Size(300, 73);
+            this.autosignal.TabIndex = 0;
+            this.autosignal.Text = "Auto running!";
+            this.autosignal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel14
             // 
@@ -1211,7 +1211,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label autosignal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
     }
 }
