@@ -18,6 +18,7 @@ namespace BatteryMes
     {
         public ActUtlType plc = new ActUtlType();
         private Timer timer = new Timer();
+
         int Plc_on_value;
         int Pc_on_value;
       
@@ -50,9 +51,9 @@ namespace BatteryMes
         private void CurrentRack()
         {
 
-            int gg;
-            plc.GetDevice("D1600", out gg);
-            textBox1.Text = gg.ToString();
+            int Temvalue;
+            plc.GetDevice("D1600", out Temvalue);
+            textBox1.Text = Temvalue.ToString();
 
 
             /*    for (int i = 0; i < 32; i++)
