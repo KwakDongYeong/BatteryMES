@@ -29,14 +29,9 @@ namespace BatteryMes
         {
             InitializeComponent();
             this.Load += new EventHandler(Fm_Main_Load);
-            PLC1.ActLogicalStationNumber = 0; //로지컬 스테이션 넘버 넣기
+            PLC1.ActLogicalStationNumber = 1; //로지컬 스테이션 넘버 넣기
             int conErr = 0;
             conErr = PLC1.Open();
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -66,47 +61,26 @@ namespace BatteryMes
                 panel.Region = new Region(path);
             }
         }
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-            Panel panel = sender as Panel;
-            SetPanelRegionToCircle(panel);
-        }
-        private void tableLayoutPanel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void btnCon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDiscon_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
             {
 
-                int m1522 = 0; int m1523 = 0; int m1534 = 0; int m1535 = 0; 
+                int m1520 = 0; int m1521 = 0; int m1522 = 0; int m1523 = 0; int m1524 = 0; int m1525 = 0;
+                int m1534 = 0; int m1535 = 0; int m1568 = 0; int m1569 = 0; int m1578 = 0; int m1579 = 0;
                 int m1540 = 0; int m1541 = 0; int m1542 = 0; int m1543 = 0; int m1544 = 0; int m1545 = 0; 
                 int m1546 = 0; int m1547 = 0; int m1548 = 0; int m1549 = 0; int m1550 = 0; int m1551 = 0;
                 int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; 
-                int m1520 = 0; int m1521 = 0; int m1562 = 0; int m1563 = 0; int m1564 = 0; int m1565 = 0;
-                int m1524 = 0; int m1525 = 0; int m1568 = 0; int m1569 = 0; int m1578 = 0;
-                int m1581 = 0; int m1582 = 0; int m1583 = 0; int m1584 = 0;
+                int m1580 = 0; int m1581 = 0; int m1582 = 0; int m1583 = 0; int m1584 = 0;
+                int y1001 = 0;
 
-                int y38 = 0; int y39 = 0; int y40 = 0; int y41 = 0; int y42 = 0; int y43 = 0;
-                int y50 = 0, y51 = 0; int y1001 = 0;
+                PLC1.GetDevice("m1520", out m1520); PLC1.GetDevice("m1521", out m1521);
                 PLC1.GetDevice("M1522", out m1522); PLC1.GetDevice("M1523", out m1523);
+                PLC1.GetDevice("m1524", out m1524); PLC1.GetDevice("m1525", out m1525);
                 PLC1.GetDevice("M1534", out m1534); PLC1.GetDevice("M1535", out m1535);
                 PLC1.GetDevice("M1540", out m1540); PLC1.GetDevice("m1541", out m1541); PLC1.GetDevice("m1542", out m1542);
                 PLC1.GetDevice("m1543", out m1543); PLC1.GetDevice("m1544", out m1544); PLC1.GetDevice("m1545", out m1545);
@@ -114,15 +88,11 @@ namespace BatteryMes
                 PLC1.GetDevice("m1549", out m1549); PLC1.GetDevice("m1550", out m1550); PLC1.GetDevice("m1551", out m1551);
                 PLC1.GetDevice("m1552", out m1552); PLC1.GetDevice("m1553", out m1553); PLC1.GetDevice("m1554", out m1554);
                 PLC1.GetDevice("m1555", out m1555);
-                PLC1.GetDevice("m1520", out m1520); PLC1.GetDevice("m1521", out m1521); PLC1.GetDevice("m1562", out m1562);
-                PLC1.GetDevice("m1563", out m1563); PLC1.GetDevice("m1564", out m1564); PLC1.GetDevice("m1565", out m1565);
-                PLC1.GetDevice("m1524", out m1524); PLC1.GetDevice("m1525", out m1525); PLC1.GetDevice("m1568", out m1568);
-                PLC1.GetDevice("m1569", out m1569); PLC1.GetDevice("m1578", out m1578);
+                PLC1.GetDevice("m1568", out m1568); PLC1.GetDevice("m1569", out m1569);
+                PLC1.GetDevice("m1578", out m1578); PLC1.GetDevice("m1579", out m1579); PLC1.GetDevice("m1580", out m1580);
                 PLC1.GetDevice("m1581", out m1581); PLC1.GetDevice("m1582", out m1582); PLC1.GetDevice("m1583", out m1583);
                 PLC1.GetDevice("m1584", out m1584);
-                PLC1.GetDevice("Y38", out y38); PLC1.GetDevice("Y39", out y39); PLC1.GetDevice("Y40", out y40);
-                PLC1.GetDevice("Y41", out y41); PLC1.GetDevice("Y42", out y42); PLC1.GetDevice("Y43", out y43);
-                PLC1.GetDevice("Y50", out y50); PLC1.GetDevice("Y51", out y51); PLC1.GetDevice("Y1001", out y1001);
+                PLC1.GetDevice("Y1001", out y1001);
 
 
                 int d1513 = 0;
@@ -136,11 +106,11 @@ namespace BatteryMes
 
                 // PictureBox 이미지 변경
                 case_cylamp.Image = (m1520 == 1) ? Properties.Resources.green : (m1521 == 1) ? Properties.Resources.red : null;
-                battery_cylamp.Image = (m1562 == 1) ? Properties.Resources.green : (m1563 == 1) ? Properties.Resources.red : null;
+                //battery_cylamp.Image = (m15 == 1) ? Properties.Resources.green : (m15 == 1) ? Properties.Resources.red : null;
                 cvlamp1.Image = (1568 == 1) ? Properties.Resources.green : null;
                 fork_xlamp.Image = (m1524 == 1) ? Properties.Resources.green : (m1525 == 1) ? Properties.Resources.red : null;
-                fork_ylamp.Image = (y38 == 1) ? Properties.Resources.green : (y39 == 1) ? Properties.Resources.red : null;
-                fork_zlamp.Image = (y40 == 1) ? Properties.Resources.green : (y41 == 1) ? Properties.Resources.red : null;
+                fork_ylamp.Image = (m1579 == 1) ? Properties.Resources.green : null;
+                fork_zlamp.Image = (m1580 == 1) ? Properties.Resources.green : null;
                 fork_rotatelamp.Image = (m1522 == 1) ? Properties.Resources.green : (m1523 == 1) ? Properties.Resources.red : null;
                 cvlamp2.Image = (m1569 == 1) ? Properties.Resources.green : null;
                 vision_check.Image = (m1534 == 1) ? Properties.Resources.green : (m1535 == 1) ? Properties.Resources.red : null;
