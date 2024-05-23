@@ -20,7 +20,6 @@ namespace BatteryMes
         {
             InitializeComponent();
             Load_Form(new Fm_Main());
-            Pn_Side.BackColor = Color.FromArgb(60, 60, 60);
         }
         public void Load_Form(object Form)
         {
@@ -91,6 +90,11 @@ namespace BatteryMes
                 this.KeyPreview = true;
                 isFullScreen = true;
             }
+        }
+
+        private void Pn_Side_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

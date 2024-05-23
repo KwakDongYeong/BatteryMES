@@ -133,6 +133,7 @@
             this.Lb_Title_M.AutoSize = true;
             this.Lb_Title_M.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lb_Title_M.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Title_M.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.Lb_Title_M.Location = new System.Drawing.Point(142, 1);
             this.Lb_Title_M.Margin = new System.Windows.Forms.Padding(1);
             this.Lb_Title_M.Name = "Lb_Title_M";
@@ -202,6 +203,7 @@
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label15.Location = new System.Drawing.Point(186, 1);
             this.label15.Margin = new System.Windows.Forms.Padding(1);
             this.label15.Name = "label15";
