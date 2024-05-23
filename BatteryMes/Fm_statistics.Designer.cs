@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
@@ -39,8 +39,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Chart_defect = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.Chart_defect, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -70,6 +76,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 400);
             this.panel4.Name = "panel4";
@@ -104,6 +111,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(542, 48);
             this.panel2.Name = "panel2";
@@ -121,17 +129,17 @@
             // 
             // Chart_defect
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Chart_defect.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.Chart_defect.ChartAreas.Add(chartArea4);
             this.Chart_defect.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.Chart_defect.Legends.Add(legend2);
+            legend4.Name = "Legend1";
+            this.Chart_defect.Legends.Add(legend4);
             this.Chart_defect.Location = new System.Drawing.Point(3, 88);
             this.Chart_defect.Name = "Chart_defect";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.Chart_defect.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.Chart_defect.Series.Add(series4);
             this.Chart_defect.Size = new System.Drawing.Size(533, 306);
             this.Chart_defect.TabIndex = 4;
             this.Chart_defect.Text = "chart1";
@@ -146,6 +154,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "불량률";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(227, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "에러 리스트";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(204, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "작업 진행률";
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 440);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(533, 307);
+            this.panel5.TabIndex = 5;
+            // 
             // Fm_statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -156,8 +191,12 @@
             this.Name = "Fm_statistics";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,5 +212,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_defect;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
     }
 }
