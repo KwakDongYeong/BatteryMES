@@ -67,6 +67,7 @@
             this.Bt_Zoom.Dock = System.Windows.Forms.DockStyle.Right;
             this.Bt_Zoom.FlatAppearance.BorderSize = 0;
             this.Bt_Zoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bt_Zoom.ForeColor = System.Drawing.Color.White;
             this.Bt_Zoom.Location = new System.Drawing.Point(1259, 0);
             this.Bt_Zoom.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.Bt_Zoom.Name = "Bt_Zoom";
@@ -132,10 +133,11 @@
             // 
             // Bt_Test
             // 
+            this.Bt_Test.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Test.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Test.FlatAppearance.BorderSize = 0;
             this.Bt_Test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Test.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bt_Test.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_Test.ForeColor = System.Drawing.Color.White;
             this.Bt_Test.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bt_Test.Location = new System.Drawing.Point(3, 187);
@@ -148,10 +150,11 @@
             // 
             // Bt_Control
             // 
+            this.Bt_Control.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Control.FlatAppearance.BorderSize = 0;
             this.Bt_Control.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Control.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bt_Control.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_Control.ForeColor = System.Drawing.Color.White;
             this.Bt_Control.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bt_Control.Location = new System.Drawing.Point(3, 115);
@@ -164,10 +167,11 @@
             // 
             // Bt_Static
             // 
+            this.Bt_Static.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Static.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Static.FlatAppearance.BorderSize = 0;
             this.Bt_Static.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Static.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bt_Static.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_Static.ForeColor = System.Drawing.Color.White;
             this.Bt_Static.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bt_Static.Location = new System.Drawing.Point(3, 259);
@@ -180,10 +184,11 @@
             // 
             // Bt_Main
             // 
+            this.Bt_Main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Main.FlatAppearance.BorderSize = 0;
             this.Bt_Main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bt_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_Main.ForeColor = System.Drawing.Color.White;
             this.Bt_Main.Location = new System.Drawing.Point(3, 43);
             this.Bt_Main.Name = "Bt_Main";
@@ -195,10 +200,11 @@
             // 
             // Bt_User
             // 
+            this.Bt_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_User.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_User.FlatAppearance.BorderSize = 0;
             this.Bt_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_User.ForeColor = System.Drawing.Color.White;
             this.Bt_User.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bt_User.Location = new System.Drawing.Point(3, 331);
