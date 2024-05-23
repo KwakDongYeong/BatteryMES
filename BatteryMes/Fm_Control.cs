@@ -528,11 +528,11 @@ namespace BatteryMes
                     if (chargeCompleteSignal == 1)
                     {
                         canDischarge = true;
-                        dischargeWarehouse = 1617 + (i - 1500); // chargeCompleteSignal의 인덱스를 기반으로 dischargeWarehouse를 계산합니다.
+                        dischargeWarehouse = 1616 + (i - 1500); // chargeCompleteSignal의 인덱스를 기반으로 dischargeWarehouse를 계산합니다.
                         break;
                     }
                 }
-
+                
                 if (!canDischarge)
                 {
                     Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
