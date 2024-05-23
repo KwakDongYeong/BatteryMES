@@ -96,5 +96,10 @@ namespace BatteryMes
         {
 
         }
+
+        private void Bt_Mini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
