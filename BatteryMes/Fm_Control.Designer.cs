@@ -68,7 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lb_Rack = new System.Windows.Forms.Label();
             this.Gb_Tem = new System.Windows.Forms.GroupBox();
             this.Tb_SetTem = new System.Windows.Forms.TextBox();
@@ -616,7 +615,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.Lb_Rack);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -627,14 +625,6 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "현재 위치";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(248, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 28);
-            this.textBox1.TabIndex = 5;
             // 
             // Lb_Rack
             // 
@@ -888,6 +878,5 @@
         private System.Windows.Forms.ProgressBar Bar_2_4;
         private System.Windows.Forms.ProgressBar Bar_3_4;
         private System.Windows.Forms.ProgressBar Bar_4_4;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

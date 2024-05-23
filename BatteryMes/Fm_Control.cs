@@ -62,17 +62,9 @@ namespace BatteryMes
         {
             ChargeBattery();
             CurrentRack();
-
-
         }
         private void CurrentRack()
         {
-
-            int Temvalue;
-            plc.GetDevice("D1600", out Temvalue);
-            textBox1.Text = Temvalue.ToString();
-
-
             /*    for (int i = 0; i < 32; i++)
                 {
                     string RackDevice;
@@ -111,12 +103,10 @@ namespace BatteryMes
                 }*/
             // Lb_Rack.Text에 텍스트 누적
           
-            Lb_Rack.Text = ""; // 초기화
-
+            Lb_Rack.Text = "";
             for (int i = 0; i < 32; i++)
             {
                 string RackDevice;
-                // RackDevice 값에 따라 다른 텍스트 할당
                 if (i < 16)
                 {
                     if (i < 10)
@@ -140,7 +130,6 @@ namespace BatteryMes
                         RackDevice = $"D1601.{(char)('A' + (newI - 10))}";
                     }
                 }
-
                 int value;
                 plc.GetDevice(RackDevice, out value);
 
@@ -157,14 +146,12 @@ namespace BatteryMes
                             int x;
                             if (int.TryParse(parts[1], out x))
                             {
-                                // 10진수로 해석하여 연과 단을 계산합니다.
                                 row = (x / 4) + 1;
                                 col = (x % 4) + 1;
                                 textToDisplay = $"{row}연 {col}단 배출";
                             }
                             else
                             {
-                                // 16진수로 변환하여 다시 시도합니다.
                                 if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
                                 {
                                     row = (x / 4) + 1;
@@ -183,12 +170,7 @@ namespace BatteryMes
                         }
                     }
                     else
-                    {/*
-                        int x = int.Parse(RackDevice.Split('.')[1]);
-                        int row = (x / 4) + 1;  
-                        int col = (x % 4) + 1;  
-                        textToDisplay = $"{row}연 {col}단 투입";
-                        */
+                    {
                         string[] parts = RackDevice.Split('.');
                         if (parts.Length == 2)
                         {
@@ -204,7 +186,7 @@ namespace BatteryMes
                             }
                             else
                             {
-                                // 16진수로 변환하여 다시 시도합니다.
+                               
                                 if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
                                 {
                                     row = (x / 4) + 1;
@@ -229,9 +211,6 @@ namespace BatteryMes
                 {
                 }
             }
-
-
-
         }
 
         private void ChargeBattery()
@@ -395,8 +374,6 @@ namespace BatteryMes
         {
 
         }
-         
-
         private void Bt_RackOn_Click(object sender, EventArgs e)
         {
             if (taskThread == null || !taskThread.IsAlive)
@@ -604,8 +581,6 @@ namespace BatteryMes
                 MessageBox.Show("유효한 숫자를 입력해주세요.", "입력 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-   
         private void Bt_Bt_ConnectOn_Click(object sender, EventArgs e)
         {
             plc.GetDevice("M1001", out Plc_on_value);

@@ -18,8 +18,9 @@ namespace BatteryMes
         public Fm_statistics()
         {
             InitializeComponent();
-       //     defectchart();
+            defectchart();
             TimePicker.Value = DateTime.Today;
+            Errorchart();
         }
 
         private void defectchart()
@@ -90,7 +91,10 @@ namespace BatteryMes
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+        private void Errorchart()
+        {
 
+        }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
             defectchart();
