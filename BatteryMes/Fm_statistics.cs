@@ -22,6 +22,7 @@ namespace BatteryMes
        //     defectchart();
             TimePicker.Value = DateTime.Today;
             Errorchart();
+            progresschart();
         }
 
         /*private void defectchart()
@@ -95,6 +96,7 @@ namespace BatteryMes
         private void Errorchart()
         {
             // 차트 객체 생성 및 설정
+            
             Chart errorchart = new Chart();
             errorchart.Dock = DockStyle.Fill;
 
@@ -156,11 +158,76 @@ namespace BatteryMes
                 MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void progresschart()
+        {
+       /*     Chart prochart = new Chart();
+            prochart.Dock = DockStyle.Fill;
+
+            ChartArea chartArea = new ChartArea("ChartArea");
+            prochart.ChartAreas.Add(chartArea);
+
+            Series proSeries = new Series("Series");
+            proSeries.ChartType = SeriesChartType.Doughnut;
+
+         
+            proSeries.XValueType = ChartValueType.String;
+            proSeries.YValueType = ChartValueType.Int32;
+            prochart.Series.Add(proSeries);
+
+
+           // string prostring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+             string prostring = "Server = localhost; Database=batterymes; Uid=root;Pwd=kwak123";
+            try
+            {
+                using (MySqlConnection procon = new MySqlConnection(prostring))
+                {
+                    procon.Open();
+                    DateTime selectedDate = TimePicker.Value.Date;
+                    string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+
+                    string proquery = $@"
+                SELECT * FROM outcome
+                WHERE DATE(date) = '{formattedDate}';
+
+                    using (MySqlCommand command = new MySqlCommand(errorquery, procon))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int errorCount = reader.GetInt32("error_count");
+                                string errorCode = reader.GetString("error_code");
+                                proSeries.Points.AddXY(errorCode, errorCount);
+                            }
+                        }
+                    }
+                }
+
+                // Additional chart settings (optional)
+                prochart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                prochart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                prochart.ChartAreas[0].AxisX.Title = "Error Code";
+                prochart.ChartAreas[0].AxisY.Title = "Error Count";
+                prochart.Titles.Add("Error Code Frequency");
+
+                // Add the chart to the form
+                Pn_progress.Controls.Clear();
+                Pn_progress.Controls.Add(prochart);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+        }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
             //defectchart();
             Errorchart();
+            progresschart();
         }
+        
+
     }
 }
 

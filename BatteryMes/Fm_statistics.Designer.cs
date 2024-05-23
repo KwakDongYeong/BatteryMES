@@ -43,11 +43,13 @@
             this.Chart_defect = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Pn_Error = new System.Windows.Forms.Panel();
+            this.Pn_progress = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -181,6 +183,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.Pn_progress);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 440);
             this.panel5.Name = "panel5";
@@ -194,6 +197,14 @@
             this.Pn_Error.Name = "Pn_Error";
             this.Pn_Error.Size = new System.Drawing.Size(534, 306);
             this.Pn_Error.TabIndex = 6;
+            // 
+            // Pn_progress
+            // 
+            this.Pn_progress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_progress.Location = new System.Drawing.Point(0, 0);
+            this.Pn_progress.Name = "Pn_progress";
+            this.Pn_progress.Size = new System.Drawing.Size(533, 307);
+            this.Pn_progress.TabIndex = 0;
             // 
             // Fm_statistics
             // 
@@ -209,6 +220,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +239,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel Pn_Error;
+        private System.Windows.Forms.Panel Pn_progress;
     }
 }
