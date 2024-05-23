@@ -644,9 +644,8 @@
             this.Lb_Rack.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Lb_Rack.Location = new System.Drawing.Point(68, 61);
             this.Lb_Rack.Name = "Lb_Rack";
-            this.Lb_Rack.Size = new System.Drawing.Size(47, 37);
+            this.Lb_Rack.Size = new System.Drawing.Size(0, 37);
             this.Lb_Rack.TabIndex = 0;
-            this.Lb_Rack.Text = "\"\"";
             this.Lb_Rack.Click += new System.EventHandler(this.Lb_Rack_Click);
             // 
             // Gb_Tem
