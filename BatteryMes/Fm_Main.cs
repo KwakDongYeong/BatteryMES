@@ -17,9 +17,13 @@ namespace BatteryMes
     {
         //객체 선언
         ActEasyIF PLC1 = new ActEasyIF();
-        private int prevY50 = 0;
-        private int prevY51 = 0;
+        
         private int blinkCount = 0;
+        private bool alarm1581Displayed = false;
+        private bool alarm1582Displayed = false;
+        private bool alarm1583Displayed = false;
+        private bool alarm1584Displayed = false;
+        private List<string> alarmsDisplayed = new List<string>();
 
         public Fm_Main()
         {
@@ -91,29 +95,34 @@ namespace BatteryMes
         {
             try
             {
-                // PLC에서 Y20과 Y21 상태 읽기
                 
+                int m1534 = 0; int m1535 = 0; 
                 int m1540 = 0; int m1541 = 0; int m1542 = 0; int m1543 = 0; int m1544 = 0; int m1545 = 0; 
                 int m1546 = 0; int m1547 = 0; int m1548 = 0; int m1549 = 0; int m1550 = 0; int m1551 = 0;
-                int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; int m1534 = 0; int m1535 = 0;
+                int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; 
                 int m1560 = 0; int m1561 = 0; int m1562 = 0; int m1563 = 0; int m1564 = 0; int m1565 = 0;
                 int m1566 = 0; int m1567 = 0; int m1568 = 0; int m1569 = 0; int m1578 = 0;
+                int m1581 = 0; int m1582 = 0; int m1583 = 0; int m1584 = 0;
 
                 int y38 = 0; int y39 = 0; int y40 = 0; int y41 = 0; int y42 = 0; int y43 = 0;
                 int y50 = 0, y51 = 0; int y1001 = 0;
+                PLC1.GetDevice("M1534", out m1534); PLC1.GetDevice("M1535", out m1535);
                 PLC1.GetDevice("M1540", out m1540); PLC1.GetDevice("m1541", out m1541); PLC1.GetDevice("m1542", out m1542);
                 PLC1.GetDevice("m1543", out m1543); PLC1.GetDevice("m1544", out m1544); PLC1.GetDevice("m1545", out m1545);
                 PLC1.GetDevice("m1546", out m1546); PLC1.GetDevice("m1547", out m1547); PLC1.GetDevice("m1548", out m1548);
                 PLC1.GetDevice("m1549", out m1549); PLC1.GetDevice("m1550", out m1550); PLC1.GetDevice("m1551", out m1551);
                 PLC1.GetDevice("m1552", out m1552); PLC1.GetDevice("m1553", out m1553); PLC1.GetDevice("m1554", out m1554);
-                PLC1.GetDevice("m1555", out m1555); PLC1.GetDevice("m1534", out m1534); PLC1.GetDevice("m1535", out m1535);
+                PLC1.GetDevice("m1555", out m1555);
                 PLC1.GetDevice("m1560", out m1560); PLC1.GetDevice("m1561", out m1561); PLC1.GetDevice("m1562", out m1562);
                 PLC1.GetDevice("m1563", out m1563); PLC1.GetDevice("m1564", out m1564); PLC1.GetDevice("m1565", out m1565);
                 PLC1.GetDevice("m1566", out m1566); PLC1.GetDevice("m1567", out m1567); PLC1.GetDevice("m1568", out m1568);
                 PLC1.GetDevice("m1569", out m1569); PLC1.GetDevice("m1578", out m1578);
+                PLC1.GetDevice("m1581", out m1581); PLC1.GetDevice("m1582", out m1582); PLC1.GetDevice("m1583", out m1583);
+                PLC1.GetDevice("m1584", out m1584);
                 PLC1.GetDevice("Y38", out y38); PLC1.GetDevice("Y39", out y39); PLC1.GetDevice("Y40", out y40);
                 PLC1.GetDevice("Y41", out y41); PLC1.GetDevice("Y42", out y42); PLC1.GetDevice("Y43", out y43);
                 PLC1.GetDevice("Y50", out y50); PLC1.GetDevice("Y51", out y51); PLC1.GetDevice("Y1001", out y1001);
+
 
                 int d1513 = 0;
                 int d1613 = 0;
@@ -135,15 +144,23 @@ namespace BatteryMes
                 cvlamp2.Image = (m1569 == 1) ? Properties.Resources.green : null;
                 vision_check.Image = (m1534 == 1) ? Properties.Resources.green : (m1535 == 1) ? Properties.Resources.red : null;
 
-                
-                if (y50 == 1 && prevY50 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 양품으로 판단하였습니다.\n");
-                else if (y51 == 1 && prevY51 == 0) mentbox.AppendText($"[{DateTime.Now:HH:mm}] vision 검사과정에서 불량품으로 판단하였습니다.\n");
+                try
+                {
+                    // m1581, m1582, m1583, m1584
+                    CheckAndDisplayAlarm(m1581, "서보알람 에러");
+                    CheckAndDisplayAlarm(m1582, "이중격납 알람");
+                    CheckAndDisplayAlarm(m1583, "공출고 알람");
+                    CheckAndDisplayAlarm(m1584, "포크전진 기동알람");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("PLC 통신 오류: " + ex.Message);
+                }
+
+
 
                 panel18.BackColor = (y1001 ==1) ? Color.Lime : Color.Red ;
                 lblStatus.Text = (y1001 == 1) ? " ● PLC와의 연결이 확인되었습니다.●" : " ❌ PLC 와 연결되어 있지않습니다.❌ \n  제어창에서 PLC connect를 진행하세요.";
-                // 이전 상태 업데이트
-                prevY50 = y50;
-                prevY51 = y51;
 
                 // M1540 ~ M1555 상태 읽기
                 int[] mBits = new int[16];
@@ -179,7 +196,19 @@ namespace BatteryMes
                 MessageBox.Show("PLC 통신 오류: " + ex.Message);
             }
         }
-
+        private void CheckAndDisplayAlarm(int mValue, string alarmMessage)
+        {
+            if (mValue == 1 && !alarmsDisplayed.Contains(alarmMessage))
+            {
+                mentbox.AppendText($"[{DateTime.Now:HH:mm}] {alarmMessage} 발생하였습니다.\n");
+                alarmsDisplayed.Add(alarmMessage);
+            }
+            else if (mValue == 0 && alarmsDisplayed.Contains(alarmMessage))
+            {
+                mentbox.AppendText($"[{DateTime.Now:HH:mm}] {alarmMessage} 해제되었습니다.\n");
+                alarmsDisplayed.Remove(alarmMessage);
+            }
+        }
         private void mentbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 

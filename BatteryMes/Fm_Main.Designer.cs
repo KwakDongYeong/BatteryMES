@@ -162,7 +162,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::BatteryMes.Properties.Resources.main_1;
+            this.panel1.BackgroundImage = global::BatteryMes.Properties.Resources.main_2;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.tableLayoutPanel7);
             this.panel1.Controls.Add(this.tableLayoutPanel6);
@@ -187,7 +187,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.vision_check, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(500, 280);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(355, 328);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
@@ -225,7 +225,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.cvlamp2, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(723, 88);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(644, 166);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -263,7 +263,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.battery_cylamp, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(607, 267);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(677, 267);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -301,7 +301,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.case_cylamp, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(342, 343);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(279, 343);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -339,7 +339,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.cvlamp1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 95);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 166);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -376,7 +376,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(224, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(164, 1);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
