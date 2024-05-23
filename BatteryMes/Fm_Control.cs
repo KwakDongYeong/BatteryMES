@@ -517,16 +517,18 @@ namespace BatteryMes
             try
             {
                 bool canDischarge = false;
-                int chargeCompleteSignal = 0; Console.WriteLine("아웃풋 신호 시작");
+                int dischargeWarehouse = 0; ; Console.WriteLine("아웃풋 신호 시작");
 
                 for (int i = 1500; i <= 1515; i++)
                 {
+                    int chargeCompleteSignal;
                     plc.GetDevice($"M{i}", out chargeCompleteSignal);
                     Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
 
                     if (chargeCompleteSignal == 1)
                     {
                         canDischarge = true;
+                        dischargeWarehouse = 1617 + (i - 1500); // chargeCompleteSignal의 인덱스를 기반으로 dischargeWarehouse를 계산합니다.
                         break;
                     }
                 }
@@ -538,7 +540,6 @@ namespace BatteryMes
                     return;
                 }
 
-                int dischargeWarehouse = 1617 + (chargeCompleteSignal - 1500);
                 int dischargeSignal;
                 plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
                 Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
