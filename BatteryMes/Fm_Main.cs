@@ -19,6 +19,7 @@ namespace BatteryMes
         ActEasyIF PLC1 = new ActEasyIF();
         private int prevY50 = 0;
         private int prevY51 = 0;
+        private int blinkCount = 0;
 
         public Fm_Main()
         {
@@ -159,6 +160,19 @@ namespace BatteryMes
                 }
                 rackplace.Text = $"{activeCount}";
 
+                if (m1578 == 1)
+                {
+                    // "autoSignal" 라벨이 깜박이도록 타이머 시작
+                    blinkTimer.Start();
+                    durationTimer.Start();
+                }
+                else
+                {
+                    // "autoSignal" 라벨이 깜박이는 타이머 중지
+                    blinkTimer.Stop();
+                    durationTimer.Stop();
+                    autosignal.Text = ": Stopped";
+                }
             }
             catch (Exception ex)
             {
@@ -174,6 +188,35 @@ namespace BatteryMes
         private void groupBox5_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void blinkTimer_Tick(object sender, EventArgs e)
+        {
+            autosignal.Visible = !autosignal.Visible;
+            // 깜박임 횟수 증가
+            blinkCount++;
+            // 3번 깜박였을 때
+            if (blinkCount == 3)
+            {
+                // "blinkTimer" 중지
+                blinkTimer.Stop();
+                // "autoSignal" 라벨이 깜박임을 멈추고 "running"으로 설정
+                autosignal.Visible = true;
+                autosignal.Text = ": Running";
+                // 깜박임 횟수 초기화
+                blinkCount = 0;
+            }
+        }
+
+        private void durationTimer_Tick(object sender, EventArgs e)
+        {
+            // "blinkTimer" 중지
+            blinkTimer.Stop();
+            // "autoSignal" 라벨이 깜박임을 멈추고 "running"으로 설정
+            autosignal.Visible = true;
+            autosignal.Text = ": Running";
+            // 깜박임 횟수 초기화
+            blinkCount = 0;
         }
     }
 }
