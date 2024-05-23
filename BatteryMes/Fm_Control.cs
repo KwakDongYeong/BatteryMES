@@ -401,7 +401,7 @@ namespace BatteryMes
         {
             if (taskThread == null || !taskThread.IsAlive)
             {
-                stopSignal.Reset(); // 이전 작업이 완료되었을 때만 새 작업을 시작합니다.
+                stopSignal.Reset(); // 이전 작업이 완료되었을 때만 새 작업
                 taskThread = new Thread(TaskRunner);
                 taskThread.Start();
             }
@@ -412,10 +412,10 @@ namespace BatteryMes
             {
                 if (stopSignal.WaitOne(0))
                 {
-                    break; // stopSignal이 설정되면 루프를 종료합니다.
+                    break; // 루프를 종료
                 }
 
-                int randomNumber = random.Next(2); // 0 또는 1을 무작위로 생성
+                int randomNumber = random.Next(2);
 
                 if (randomNumber == 0)
                 {
@@ -426,7 +426,7 @@ namespace BatteryMes
                     OutputTask();
                 }
 
-                Thread.Sleep(1000); // 작업 간의 짧은 대기 시간
+                Thread.Sleep(500); // 작업 간 잠깐 대기 시간
             }
         }
 
@@ -446,7 +446,7 @@ namespace BatteryMes
                 if (inputEnd != 1)
                 {
                     Console.WriteLine("InputTask: Input end signal not received.");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                     return;
                 }
 
@@ -479,7 +479,6 @@ namespace BatteryMes
                             plc.SetDevice($"M{inputSignal}", 0);
                             Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
                         }
-
                         break;
                     }
                 }
@@ -516,8 +515,18 @@ namespace BatteryMes
 
             try
             {
+                int m1578Value;
+                plc.GetDevice("M1578", out m1578Value);
+                if (m1578Value != 1)
+                {
+                    Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
+                    return;
+                }
+
+
                 bool canDischarge = false;
-                int dischargeWarehouse = 0; ; Console.WriteLine("아웃풋 신호 시작");
+                int dischargeWarehouse = 0;
+                Console.WriteLine("아웃풋 신호 시작");
 
                 for (int i = 1500; i <= 1515; i++)
                 {
@@ -528,7 +537,7 @@ namespace BatteryMes
                     if (chargeCompleteSignal == 1)
                     {
                         canDischarge = true;
-                        dischargeWarehouse = 1616 + (i - 1500); // chargeCompleteSignal의 인덱스를 기반으로 dischargeWarehouse를 계산합니다.
+                        dischargeWarehouse = 1616 + (i - 1500); 
                         break;
                     }
                 }
