@@ -740,6 +740,7 @@
             // 
             // Bt_RackOn
             // 
+            this.Bt_RackOn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Bt_RackOn.Location = new System.Drawing.Point(59, 62);
             this.Bt_RackOn.Name = "Bt_RackOn";
             this.Bt_RackOn.Size = new System.Drawing.Size(95, 43);

@@ -21,10 +21,11 @@ namespace BatteryMes
         public ActUtlType plc = new ActUtlType();
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
-        static Random random = new Random();
-        static object lockObject = new object();
-        static AutoResetEvent stopSignal = new AutoResetEvent(false);
-        static bool isWorking = false;
+        private bool isWorking = false;
+        private AutoResetEvent stopSignal = new AutoResetEvent(false);
+        private Random random = new Random();
+        private object lockObject = new object();
+        private Thread taskThread;
 
         int Plc_on_value;
         int Pc_on_value;
@@ -33,7 +34,7 @@ namespace BatteryMes
         public Fm_Control()
         {
             InitializeComponent();
-            plc.ActLogicalStationNumber = 2;
+            plc.ActLogicalStationNumber = 0;
             plc.Open();
 
             timer.Interval = 700;
@@ -47,6 +48,15 @@ namespace BatteryMes
             plc.GetDevice("D1513", out Temvalue);
             Tb_CurTem.Text = Temvalue.ToString();
 
+            plc.GetDevice("M1002", out Pc_on_value);
+            if (Pc_on_value == 1)
+            {
+                Bt_ConnectOn.BackColor = Color.Red;
+            }
+            else
+            {
+                Bt_ConnectOn.BackColor = SystemColors.Control;
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -385,41 +395,74 @@ namespace BatteryMes
         {
 
         }
+         
 
         private void Bt_RackOn_Click(object sender, EventArgs e)
         {
-            Thread inputThread = new Thread(InputTask);
-            inputThread.Start();
-
-            // 창고에서 배출하는 스레드 시작
-            Thread outputThread = new Thread(OutputTask);
-            outputThread.Start();
-
+            if (taskThread == null || !taskThread.IsAlive)
+            {
+                stopSignal.Reset(); // 이전 작업이 완료되었을 때만 새 작업을 시작합니다.
+                taskThread = new Thread(TaskRunner);
+                taskThread.Start();
+            }
         }
+        void TaskRunner()
+        {
+            while (true)
+            {
+                if (stopSignal.WaitOne(0))
+                {
+                    break; // stopSignal이 설정되면 루프를 종료합니다.
+                }
+
+                int randomNumber = random.Next(2); // 0 또는 1을 무작위로 생성
+
+                if (randomNumber == 0)
+                {
+                    InputTask();
+                }
+                else
+                {
+                    OutputTask();
+                }
+
+                Thread.Sleep(1000); // 작업 간의 짧은 대기 시간
+            }
+        }
+
         void InputTask()
         {
-            while (!stopSignal.WaitOne(0)) // 정지 신호가 보내질 때까지 반복
+            lock (lockObject)
+            {
+                if (isWorking) return;
+                isWorking = true;
+                Console.WriteLine("인풋 신호 시작");
+            }
+
+            try
             {
                 int inputEnd;
                 plc.GetDevice("M1529", out inputEnd);
-                if (inputEnd != 1) // 센서 신호가 1이 아니면 작업 불가
+                if (inputEnd != 1)
                 {
+                    Console.WriteLine("InputTask: Input end signal not received.");
                     Thread.Sleep(1000);
-                    continue;
+                    return;
                 }
 
-                int startWarehouse = 1540; // 시작 창고 번호
-                int endWarehouse = 1555; // 끝 창고 번호
-                int inputStartWarehouse = 1600; // 투입 작업 시작 창고 번호
-                int inputEndWarehouse = 1615; // 투입 작업 끝 창고 번호
-                int currentWarehouse = startWarehouse; // 현재 작업 중인 창고 번호 초기화
+                int startWarehouse = 1540;
+                int endWarehouse = 1555;
+                int inputStartWarehouse = 1600;
+                int inputEndWarehouse = 1615;
+                int currentWarehouse = startWarehouse;
 
-                while (currentWarehouse <= endWarehouse) // 시작 창고부터 끝 창고까지 반복
+                while (currentWarehouse <= endWarehouse)
                 {
                     int warehouseValue;
                     plc.GetDevice($"M{currentWarehouse}", out warehouseValue);
+                    Console.WriteLine($"InputTask: Warehouse M{currentWarehouse} value: {warehouseValue}");
 
-                    if (warehouseValue == 1) // 창고에 물건이 있으면 다음 창고로 넘어감
+                    if (warehouseValue == 1)
                     {
                         currentWarehouse++;
                         continue;
@@ -427,45 +470,59 @@ namespace BatteryMes
 
                     if (warehouseValue == 0)
                     {
-                        string warehouseSensor = $"M{currentWarehouse}"; // 해당 창고의 센서 디바이스 변수에 저장
-
                         int inputSignal = currentWarehouse + (inputStartWarehouse - startWarehouse);
                         if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
                         {
-                            // 해당 창고에 투입 신호를 설정합니다.
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
                             plc.SetDevice($"M{inputSignal}", 1);
+                            Thread.Sleep(1000);
+                            plc.SetDevice($"M{inputSignal}", 0);
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
                         }
 
-                        isWorking = true; // 작업 중임을 표시
-                        break; // 작업 시작 후 루프 종료
+                        break;
                     }
                 }
-                if (isWorking)
-                {
-                    int m1576Value;
-                    do
-                    {
-                        Thread.Sleep(1000);
-                        plc.GetDevice("M1576", out m1576Value);
-                    } while (m1576Value != 1); // M1576이 1이 될 때까지 반복
 
-                    plc.SetDevice($"M{inputStartWarehouse}", 0); // 해당 창고에 물건을 넣는 작업 완료
-                    isWorking = false; // 작업 완료를 표시
+                int m1576Value;
+                do
+                {
+                    Thread.Sleep(1000);
+                    plc.GetDevice("M1576", out m1576Value);
+                    Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
+                } while (m1576Value != 1);
+
+                plc.SetDevice($"M{inputStartWarehouse}", 0);
+                Console.WriteLine($"InputTask: Setting device {inputStartWarehouse} to 0");
+            }
+            finally
+            {
+                lock (lockObject)
+                {
+                    isWorking = false;
+                    Console.WriteLine("InputTask: Finished.");
                 }
             }
         }
 
         void OutputTask()
         {
-            while (!stopSignal.WaitOne(0))
+            lock (lockObject)
             {
-                // 충전 완료 신호를 확인하여 배출 가능 여부 판단
+                if (isWorking) return;
+                isWorking = true;
+
+            }
+
+            try
+            {
                 bool canDischarge = false;
-                int chargeCompleteSignal = 0;
+                int chargeCompleteSignal = 0; Console.WriteLine("아웃풋 신호 시작");
 
                 for (int i = 1500; i <= 1515; i++)
                 {
                     plc.GetDevice($"M{i}", out chargeCompleteSignal);
+                    Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
 
                     if (chargeCompleteSignal == 1)
                     {
@@ -476,34 +533,45 @@ namespace BatteryMes
 
                 if (!canDischarge)
                 {
-                    Thread.Sleep(1000); // 충전 완료 신호를 기다림
-                    continue;
+                    Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
+                    Thread.Sleep(1000);
+                    return;
                 }
 
                 int dischargeWarehouse = 1617 + (chargeCompleteSignal - 1500);
                 int dischargeSignal;
                 plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
+                Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
 
                 if (dischargeSignal == 0)
                 {
-                    // 해당 창고의 배출 신호를 켬
+                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
                     plc.SetDevice($"M{dischargeWarehouse}", 1);
+                    Thread.Sleep(1000);
+                    plc.SetDevice($"M{dischargeWarehouse}", 0);
+                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
 
-                    // 배출 작업 완료를 기다림
                     int dischargeCompleteSignal;
                     do
                     {
                         Thread.Sleep(1000);
                         plc.GetDevice("M1577", out dischargeCompleteSignal);
-                    } while (dischargeCompleteSignal != 1); // M1577이 1이 될 때까지 반복
+                        Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
+                    } while (dischargeCompleteSignal != 1);
 
-                    // 해당 창고의 배출 신호를 끔
                     plc.SetDevice($"M{dischargeWarehouse}", 0);
+                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
+                }
+            }
+            finally
+            {
+                lock (lockObject)
+                {
+                    isWorking = false;
+                    Console.WriteLine("OutputTask: Finished.");
                 }
             }
         }
-
-
 
         private void Bt_RackOff_Click(object sender, EventArgs e)
         {
@@ -516,7 +584,7 @@ namespace BatteryMes
 
             if (int.TryParse(Tb_SetTem.Text, out value))
             {
-                value *= 10;
+              //  value *= 10;
                 plc.SetDevice("D1613", value);
                 plc.SetDevice("D1614.0", 1);
                 MessageBox.Show("설정 완료", "온도 설정", MessageBoxButtons.OK);
@@ -538,7 +606,6 @@ namespace BatteryMes
                 if (msgresult == DialogResult.Yes)
                 {
                     plc.SetDevice("M1002", 1);
-                    Bt_ConnectOn.BackColor = Color.Red;
                 }
             }
             else if (Plc_on_value == 0)
