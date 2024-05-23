@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,12 +19,13 @@ namespace BatteryMes
         public Fm_statistics()
         {
             InitializeComponent();
-            defectchart();
+       //     defectchart();
             TimePicker.Value = DateTime.Today;
             Errorchart();
+            progresschart();
         }
 
-        private void defectchart()
+        /*private void defectchart()
         {
             Chart_defect.Series.Clear();
             Chart_defect.Legends.Clear();
@@ -90,15 +92,142 @@ namespace BatteryMes
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }
+        }*/
         private void Errorchart()
         {
+            // 차트 객체 생성 및 설정
+            
+            Chart errorchart = new Chart();
+            errorchart.Dock = DockStyle.Fill;
 
+            // 차트 영역 추가
+            ChartArea chartArea = new ChartArea("ChartArea");
+            errorchart.ChartAreas.Add(chartArea);
+
+            // 시리즈 추가 및 설정
+            Series errorSeries = new Series("Series");
+            errorSeries.ChartType = SeriesChartType.Column;
+            errorSeries.XValueType = ChartValueType.String;
+            errorSeries.YValueType = ChartValueType.Int32;
+            errorchart.Series.Add(errorSeries);
+
+
+             string errorstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+           // string errorstring = "Server = localhost; Database=batterymes; Uid=root;Pwd=kwak123";
+            try
+            {
+                using (MySqlConnection errorcon = new MySqlConnection(errorstring))
+                {
+                    errorcon.Open();
+                    DateTime selectedDate = TimePicker.Value.Date;
+                    string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+
+                    string errorquery = $@"
+                SELECT COUNT(*) AS error_count, error_code 
+                FROM error 
+                WHERE DATE(date) = '{formattedDate}' 
+                GROUP BY error_code";
+
+                    using (MySqlCommand command = new MySqlCommand(errorquery, errorcon))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int errorCount = reader.GetInt32("error_count");
+                                string errorCode = reader.GetString("error_code");
+                                errorSeries.Points.AddXY(errorCode, errorCount);
+                            }
+                        }
+                    }
+                }
+
+                // Additional chart settings (optional)
+                errorchart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                errorchart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                errorchart.ChartAreas[0].AxisX.Title = "Error Code";
+                errorchart.ChartAreas[0].AxisY.Title = "Error Count";
+                errorchart.Titles.Add("Error Code Frequency");
+
+                // Add the chart to the form
+                Pn_Error.Controls.Clear();
+                Pn_Error.Controls.Add(errorchart);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void progresschart()
+        {
+       /*     Chart prochart = new Chart();
+            prochart.Dock = DockStyle.Fill;
+
+            ChartArea chartArea = new ChartArea("ChartArea");
+            prochart.ChartAreas.Add(chartArea);
+
+            Series proSeries = new Series("Series");
+            proSeries.ChartType = SeriesChartType.Doughnut;
+
+         
+            proSeries.XValueType = ChartValueType.String;
+            proSeries.YValueType = ChartValueType.Int32;
+            prochart.Series.Add(proSeries);
+
+
+           // string prostring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+             string prostring = "Server = localhost; Database=batterymes; Uid=root;Pwd=kwak123";
+            try
+            {
+                using (MySqlConnection procon = new MySqlConnection(prostring))
+                {
+                    procon.Open();
+                    DateTime selectedDate = TimePicker.Value.Date;
+                    string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+
+                    string proquery = $@"
+                SELECT * FROM outcome
+                WHERE DATE(date) = '{formattedDate}';
+
+                    using (MySqlCommand command = new MySqlCommand(errorquery, procon))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int errorCount = reader.GetInt32("error_count");
+                                string errorCode = reader.GetString("error_code");
+                                proSeries.Points.AddXY(errorCode, errorCount);
+                            }
+                        }
+                    }
+                }
+
+                // Additional chart settings (optional)
+                prochart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                prochart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                prochart.ChartAreas[0].AxisX.Title = "Error Code";
+                prochart.ChartAreas[0].AxisY.Title = "Error Count";
+                prochart.Titles.Add("Error Code Frequency");
+
+                // Add the chart to the form
+                Pn_progress.Controls.Clear();
+                Pn_progress.Controls.Add(prochart);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
-            defectchart();
+            //defectchart();
+            Errorchart();
+            progresschart();
         }
+        
+
     }
 }
 
