@@ -19,13 +19,13 @@ namespace BatteryMes
         public Fm_statistics()
         {
             InitializeComponent();
-       //     defectchart();
+            defectchart();
             TimePicker.Value = DateTime.Today;
             Errorchart();
             progresschart();
         }
 
-        /*private void defectchart()
+        private void defectchart()
         {
             Chart_defect.Series.Clear();
             Chart_defect.Legends.Clear();
@@ -92,7 +92,7 @@ namespace BatteryMes
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }*/
+        }
         private void Errorchart()
         {
             // 차트 객체 생성 및 설정
@@ -222,7 +222,7 @@ namespace BatteryMes
         }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
-            //defectchart();
+            defectchart();
             Errorchart();
             progresschart();
         }
