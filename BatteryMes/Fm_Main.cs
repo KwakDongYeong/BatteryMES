@@ -218,5 +218,10 @@ namespace BatteryMes
             // 깜박임 횟수 초기화
             blinkCount = 0;
         }
+
+        private void mentbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

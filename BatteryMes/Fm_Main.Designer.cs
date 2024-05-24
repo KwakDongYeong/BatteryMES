@@ -61,6 +61,7 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.autosignal = new System.Windows.Forms.Label();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
@@ -97,7 +98,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.blinkTimer = new System.Windows.Forms.Timer(this.components);
             this.durationTimer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -579,6 +579,21 @@
             this.tableLayoutPanel13.Size = new System.Drawing.Size(302, 75);
             this.tableLayoutPanel13.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 75);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Auto\r\nmode";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // autosignal
             // 
             this.autosignal.AutoSize = true;
@@ -754,6 +769,7 @@
             this.mentbox.Size = new System.Drawing.Size(393, 186);
             this.mentbox.TabIndex = 0;
             this.mentbox.Text = "";
+            this.mentbox.TextChanged += new System.EventHandler(this.mentbox_TextChanged);
             // 
             // tableLayoutPanel16
             // 
@@ -1089,21 +1105,6 @@
             // 
             this.durationTimer.Interval = 1000;
             this.durationTimer.Tick += new System.EventHandler(this.durationTimer_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 75);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Auto\r\nmode";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Fm_Main
             // 
