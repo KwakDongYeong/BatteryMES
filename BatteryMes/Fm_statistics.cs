@@ -30,7 +30,7 @@ namespace BatteryMes
             Chart_defect.Series.Clear();
             Chart_defect.Legends.Clear();
             string defectstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
-            Series DefectSeries = Chart_defect.Series.Add("DefectRate");
+        Series DefectSeries = Chart_defect.Series.Add("DefectRate");
             DefectSeries.ChartType = SeriesChartType.Doughnut;
 
             try

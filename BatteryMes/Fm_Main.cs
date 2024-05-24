@@ -30,6 +30,7 @@ namespace BatteryMes
             InitializeComponent();
             this.Load += new EventHandler(Fm_Main_Load);
             PLC1.ActLogicalStationNumber = 1; //로지컬 스테이션 넘버 넣기
+            //PLC1.ActLogicalStationNumber = 0;
             int conErr = 0;
             conErr = PLC1.Open();
 
@@ -96,13 +97,13 @@ namespace BatteryMes
 
 
                 int d1513 = 0;
-                int d1613 = 0;
+                int d1514 = 0;
                 PLC1.GetDevice("D1513", out d1513);
-                PLC1.GetDevice("D1613", out d1613);
+                PLC1.GetDevice("D1514", out d1514);
 
                 // Label 업데이트
                 label18.Text = d1513.ToString();
-                label19.Text = d1613.ToString();
+                label19.Text = d1514.ToString();
 
                 // PictureBox 이미지 변경
                 case_cylamp.Image = (m1520 == 1) ? Properties.Resources.green : (m1521 == 1) ? Properties.Resources.red : null;

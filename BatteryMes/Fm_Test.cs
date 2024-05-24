@@ -23,6 +23,7 @@ namespace BatteryMes
         private FileSystemWatcher watcher;
         private string imageFolderPath = @"C:\Users\user\Desktop\비전결과";
         private string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+        //private string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
 
         public Fm_Test()
         {
