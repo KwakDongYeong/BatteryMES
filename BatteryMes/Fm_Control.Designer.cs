@@ -660,19 +660,19 @@
             // 
             // Tb_SetTem
             // 
-            this.Tb_SetTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Tb_SetTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Tb_SetTem.Location = new System.Drawing.Point(139, 104);
             this.Tb_SetTem.Name = "Tb_SetTem";
-            this.Tb_SetTem.Size = new System.Drawing.Size(100, 28);
+            this.Tb_SetTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_SetTem.TabIndex = 4;
             // 
             // Tb_CurTem
             // 
             this.Tb_CurTem.Enabled = false;
-            this.Tb_CurTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Tb_CurTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Tb_CurTem.Location = new System.Drawing.Point(139, 53);
             this.Tb_CurTem.Name = "Tb_CurTem";
-            this.Tb_CurTem.Size = new System.Drawing.Size(100, 28);
+            this.Tb_CurTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_CurTem.TabIndex = 3;
             this.Tb_CurTem.TabStop = false;
             // 
@@ -699,9 +699,9 @@
             // Bt_SetTem
             // 
             this.Bt_SetTem.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Bt_SetTem.Location = new System.Drawing.Point(262, 104);
+            this.Bt_SetTem.Location = new System.Drawing.Point(272, 104);
             this.Bt_SetTem.Name = "Bt_SetTem";
-            this.Bt_SetTem.Size = new System.Drawing.Size(71, 28);
+            this.Bt_SetTem.Size = new System.Drawing.Size(83, 34);
             this.Bt_SetTem.TabIndex = 0;
             this.Bt_SetTem.Text = "SET";
             this.Bt_SetTem.UseVisualStyleBackColor = true;
