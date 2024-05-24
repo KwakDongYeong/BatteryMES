@@ -30,7 +30,6 @@ namespace BatteryMes
         int Plc_on_value;
         int Pc_on_value;
 
-      
         public Fm_Control()
         {
             InitializeComponent();
@@ -206,6 +205,12 @@ namespace BatteryMes
                     }
 
                     Lb_Rack.Text += $"{textToDisplay}\n";
+                    int m1576;
+                    plc.GetDevice("M1576", out m1576);
+                    if(m1576 == 1)
+                    {
+                        Lb_Rack.Text = "";
+                    }
                 }
                 else
                 {
