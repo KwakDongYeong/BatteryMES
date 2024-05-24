@@ -492,9 +492,9 @@ namespace BatteryMes
 
             try
             {
-                int m1578Value;
-                plc.GetDevice("M1578", out m1578Value);
-                if (m1578Value != 1)
+                int m1585Value;
+                plc.GetDevice("M1585", out m1585Value);
+                if (m1585Value != 1)
                 {
                     Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
                     return;
