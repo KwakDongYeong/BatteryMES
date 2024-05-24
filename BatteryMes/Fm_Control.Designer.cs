@@ -141,13 +141,14 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(167, 17);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.Size = new System.Drawing.Size(387, 49);
             this.label2.TabIndex = 0;
             this.label2.Text = "조작";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -583,12 +584,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(326, 20);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(649, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "랙 현황";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -617,7 +620,7 @@
             // 
             this.groupBox3.Controls.Add(this.Lb_Rack);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(3, 335);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.groupBox3.Name = "groupBox3";
@@ -631,10 +634,10 @@
             this.Lb_Rack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lb_Rack.AutoSize = true;
-            this.Lb_Rack.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Rack.Font = new System.Drawing.Font("맑은 고딕", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Lb_Rack.Location = new System.Drawing.Point(68, 61);
             this.Lb_Rack.Name = "Lb_Rack";
-            this.Lb_Rack.Size = new System.Drawing.Size(0, 37);
+            this.Lb_Rack.Size = new System.Drawing.Size(0, 46);
             this.Lb_Rack.TabIndex = 0;
             this.Lb_Rack.Click += new System.EventHandler(this.Lb_Rack_Click);
             // 
@@ -646,7 +649,7 @@
             this.Gb_Tem.Controls.Add(this.label3);
             this.Gb_Tem.Controls.Add(this.Bt_SetTem);
             this.Gb_Tem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Gb_Tem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Gb_Tem.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Gb_Tem.Location = new System.Drawing.Point(3, 501);
             this.Gb_Tem.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gb_Tem.Name = "Gb_Tem";
@@ -657,47 +660,48 @@
             // 
             // Tb_SetTem
             // 
-            this.Tb_SetTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Tb_SetTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Tb_SetTem.Location = new System.Drawing.Point(139, 104);
             this.Tb_SetTem.Name = "Tb_SetTem";
-            this.Tb_SetTem.Size = new System.Drawing.Size(100, 28);
+            this.Tb_SetTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_SetTem.TabIndex = 4;
             // 
             // Tb_CurTem
             // 
             this.Tb_CurTem.Enabled = false;
-            this.Tb_CurTem.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Tb_CurTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Tb_CurTem.Location = new System.Drawing.Point(139, 53);
             this.Tb_CurTem.Name = "Tb_CurTem";
-            this.Tb_CurTem.Size = new System.Drawing.Size(100, 28);
+            this.Tb_CurTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_CurTem.TabIndex = 3;
             this.Tb_CurTem.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(28, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 18);
+            this.label4.Size = new System.Drawing.Size(101, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "설정 온도 :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(28, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 18);
+            this.label3.Size = new System.Drawing.Size(101, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "현재 온도 :";
             // 
             // Bt_SetTem
             // 
-            this.Bt_SetTem.Location = new System.Drawing.Point(262, 104);
+            this.Bt_SetTem.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Bt_SetTem.Location = new System.Drawing.Point(272, 104);
             this.Bt_SetTem.Name = "Bt_SetTem";
-            this.Bt_SetTem.Size = new System.Drawing.Size(71, 28);
+            this.Bt_SetTem.Size = new System.Drawing.Size(83, 34);
             this.Bt_SetTem.TabIndex = 0;
             this.Bt_SetTem.Text = "SET";
             this.Bt_SetTem.UseVisualStyleBackColor = true;
@@ -708,7 +712,7 @@
             this.Gb_Rack.Controls.Add(this.Bt_RackOff);
             this.Gb_Rack.Controls.Add(this.Bt_RackOn);
             this.Gb_Rack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Gb_Rack.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Gb_Rack.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Gb_Rack.Location = new System.Drawing.Point(3, 169);
             this.Gb_Rack.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gb_Rack.Name = "Gb_Rack";
@@ -719,6 +723,7 @@
             // 
             // Bt_RackOff
             // 
+            this.Bt_RackOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOff.Location = new System.Drawing.Point(209, 62);
             this.Bt_RackOff.Name = "Bt_RackOff";
             this.Bt_RackOff.Size = new System.Drawing.Size(95, 43);
@@ -730,6 +735,7 @@
             // Bt_RackOn
             // 
             this.Bt_RackOn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bt_RackOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOn.Location = new System.Drawing.Point(59, 62);
             this.Bt_RackOn.Name = "Bt_RackOn";
             this.Bt_RackOn.Size = new System.Drawing.Size(95, 43);
@@ -743,7 +749,7 @@
             this.Gr_Process.Controls.Add(this.Bt_ConnectOff);
             this.Gr_Process.Controls.Add(this.Bt_ConnectOn);
             this.Gr_Process.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Gr_Process.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Gr_Process.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Gr_Process.Location = new System.Drawing.Point(3, 3);
             this.Gr_Process.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.Gr_Process.Name = "Gr_Process";
@@ -757,6 +763,7 @@
             this.Bt_ConnectOff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_ConnectOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOff.Location = new System.Drawing.Point(209, 60);
             this.Bt_ConnectOff.MaximumSize = new System.Drawing.Size(95, 50);
             this.Bt_ConnectOff.Name = "Bt_ConnectOff";
@@ -771,6 +778,7 @@
             this.Bt_ConnectOn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_ConnectOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOn.Location = new System.Drawing.Point(59, 60);
             this.Bt_ConnectOn.MaximumSize = new System.Drawing.Size(95, 50);
             this.Bt_ConnectOn.Name = "Bt_ConnectOn";
@@ -792,7 +800,6 @@
             this.Load += new System.EventHandler(this.Fm_Control_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Pn_1_1.ResumeLayout(false);
             this.Pn_2_1.ResumeLayout(false);
@@ -811,7 +818,6 @@
             this.Pn_3_4.ResumeLayout(false);
             this.Pn_4_4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
