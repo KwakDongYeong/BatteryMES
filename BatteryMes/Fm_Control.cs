@@ -188,84 +188,35 @@ namespace BatteryMes
 
         private void ChargeBattery()
         {
-
-            /* int senvalue;
-             plc.GetDevice("X10", out senvalue); //센서 신호 
-             int timevalue; //충전시간
-             plc.GetDevice("T1", out timevalue);
-             int chargevalue;
-             plc.GetDevice("M200", out chargevalue); //충전완료 신호
-
-             if (senvalue == 1)
-             {
-                 Bar_1_1.Visible = true;
-                 Bar_1_1.BackColor = SystemColors.Control;
-
-                 if (timevalue > 0 && timevalue < 300)
-                 {
-                     Bar_1_1.ForeColor = (Bar_1_1.ForeColor == Color.FromArgb(206, 240, 19)) ? Color.FromArgb(230, 220, 10) : Color.FromArgb(206, 240, 19);
-
-                     if (timevalue >= 1 && timevalue < 60)
-                     {
-                         Bar_1_1.Value = 20;
-                     }
-                     else if (timevalue >= 60 && timevalue < 120)
-                     {
-                         Bar_1_1.Value = 40;
-                     }
-                     else if (timevalue >= 120 && timevalue < 180)
-                     {
-                         Bar_1_1.Value = 60;
-                     }
-                     else if (timevalue >= 180 && timevalue < 240)
-                     {
-                         Bar_1_1.Value = 80;
-                     }
-                     else if (timevalue >= 240 && timevalue < 300)
-                     {
-                         Bar_1_1.Value = 100;
-                     }
-                 }
-                 else if (chargevalue == 1)
-                 {
-                     Bar_1_1.ForeColor = Color.FromArgb(230, 220, 10);
-                     Bar_1_1.Value = 100;
-                 }
-
-                 else
-                 {
-                     Bar_1_1.Value = 0;
-                 }
-             }
-             else
-             {
-                 Pn_1_1.BackColor = SystemColors.ControlDark;
-                 Bar_1_1.Value = 0;
-                 Bar_1_1.Visible = false;
-             }*/
-         /*   for (int i = 0; i < 16; i++)
+            for(int i = 1540; i<=1555; i++)
             {
                 int senvalue;
-                int timevalue;
                 int chargevalue;
 
-                string senDevice;
-                if (i < 10)
-                {
-                    senDevice = $"X{10 + i}";
-                }
-                else
-                {
-                    senDevice = $"X1{(char)('A' + (i - 10))}";
-                }
+                string sendevice = $"M{i}";
+                string chargedevice = $"M{i - 40}";
+                plc.GetDevice(sendevice, out senvalue);
+                plc.GetDevice(chargedevice, out chargevalue);
+                string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
 
-                string timeDevice = $"T{i + 1}";
-                string chargeDevice = $"M{200 + i}";
-
-                // PLC 디바이스 값 가져오기
-                plc.GetDevice(senDevice, out senvalue);
-                plc.GetDevice(timeDevice, out timevalue);
-                plc.GetDevice(chargeDevice, out chargevalue);
+                if (panel != null)
+                {
+                    if (senvalue == 0)
+                    {
+                        panel.BackColor = SystemColors.ControlDark;
+                       
+                        panel.BackgroundImage = null;
+                    }
+                    else if (senvalue == 1)
+                    {
+                        panel.BackColor = SystemColors.Control;
+                        panel.BackgroundImage = Properties.Resources.battery; 
+                    }
+                }
+            }
+        }
+         /*  
 
                 // 각 ProgressBar와 Panel 이름 설정
                 ProgressBar bar = Controls.Find($"Bar_{(i / 4) + 1}_{(i % 4) + 1}", true).FirstOrDefault() as ProgressBar;
@@ -275,68 +226,12 @@ namespace BatteryMes
                 UpdateProgressBarAndPanel(senvalue, timevalue, chargevalue, bar, panel);
             }*/
 
-        }
-
-      /*  private void UpdateProgressBarAndPanel(int senvalue, int timevalue, int chargevalue, ProgressBar bar, Panel panel)
-        {
-            if (senvalue == 1)
-            {
-                panel.BackColor = SystemColors.Control;
-                bar.Visible = true;
-                bar.BackColor = SystemColors.Control;
-                
-                if (timevalue > 0 && timevalue < 300)
-                {
-                    bar.ForeColor = (bar.ForeColor == Color.FromArgb(206, 240, 19)) ? Color.FromArgb(230, 220, 10) : Color.FromArgb(206, 240, 19);
-
-                    if (timevalue >= 1 && timevalue < 60)
-                    {
-                        bar.Value = 20;
-                    }
-                    else if (timevalue >= 60 && timevalue < 120)
-                    {
-                        bar.Value = 40;
-                    }
-                    else if (timevalue >= 120 && timevalue < 180)
-                    {
-                        bar.Value = 60;
-                    }
-                    else if (timevalue >= 180 && timevalue < 240)
-                    {
-                        bar.Value = 80;
-                    }
-                    else if (timevalue >= 240 && timevalue < 300)
-                    {
-                        bar.Value = 100;
-                    }
-                }
-                else if (chargevalue == 1)
-                {
-                    bar.ForeColor = Color.FromArgb(230, 225, 8);
-                    bar.Value = 100;
-                }
-                else
-                {
-                    bar.Value = 0;
-                }
-            }
-            else
-            {
-                panel.BackColor = SystemColors.ControlDark;
-                bar.Value = 0;
-                bar.Visible = false;
-            }
-        }*/
-
-
+        
 
         private void Fm_Control_Load(object sender, EventArgs e)
         {
            
         }
-      
-      
-
         private void Fm_Controls_Closing(object sender, FormClosingEventArgs e)
         {
             timer.Stop();
@@ -436,48 +331,48 @@ namespace BatteryMes
 
             try
             {
+                /*   int inputEnd;
+                   plc.GetDevice("M1529", out inputEnd);
+                   Console.WriteLine("get.");
+
+                   if (inputEnd != 1)
+                   {
+                       Console.WriteLine("InputTask: Input end signal not received.");
+                       Thread.Sleep(500);
+                       return;
+                   }
+                */
                 int startWarehouse = 1540;
                 int endWarehouse = 1555;
                 int inputStartWarehouse = 1600;
                 int inputEndWarehouse = 1615;
+                int currentWarehouse = startWarehouse;
 
-                // 병렬로 모든 warehouse를 확인
-                var warehouseValues = new ConcurrentDictionary<int, int>();
-                Console.WriteLine("병렬 작업 시작");
-
-                Parallel.For(startWarehouse, endWarehouse + 1, currentWarehouse =>
+                while (currentWarehouse <= endWarehouse)
                 {
-                    Console.WriteLine($"스레드 시작: Warehouse M{currentWarehouse}");
-                    if (stopSignal.WaitOne(0)) // 종료 신호를 확인
-                    {
-                        Console.WriteLine("InputTask: Stopped.");
-                        return;
-                    }
-
                     int warehouseValue;
                     plc.GetDevice($"M{currentWarehouse}", out warehouseValue);
-                    warehouseValues[currentWarehouse] = warehouseValue;
-                    Console.WriteLine($"스레드 종료: Warehouse M{currentWarehouse}, value: {warehouseValue}");
-                });
+                    Console.WriteLine($"InputTask: Warehouse M{currentWarehouse} value: {warehouseValue}");
 
-                Console.WriteLine("병렬 작업 종료");
-
-                // 0인 warehouse 위치 찾기
-                var targetWarehouse = warehouseValues.FirstOrDefault(kvp => kvp.Value == 0).Key;
-                Console.WriteLine($"Target Warehouse: M{targetWarehouse}");
-
-                // 찾은 위치 처리
-                if (targetWarehouse != 0)
-                {
-                    int inputSignal = targetWarehouse + (inputStartWarehouse - startWarehouse);
-                    if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
+                    if (warehouseValue == 1)
                     {
-                        Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
-                        plc.SetDevice($"M{inputSignal}", 1);
-                        Thread.Sleep(1000);
-                        plc.SetDevice($"M{inputSignal}", 0);
-                        Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
-                        Thread.Sleep(2000);
+                        currentWarehouse++;
+                        continue;
+                    }
+
+                    if (warehouseValue == 0)
+                    {
+                        int inputSignal = currentWarehouse + (inputStartWarehouse - startWarehouse);
+                        if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
+                        {
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
+                            plc.SetDevice($"M{inputSignal}", 1);
+                            Thread.Sleep(1000);
+                            plc.SetDevice($"M{inputSignal}", 0);
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
+                            Thread.Sleep(2000);
+                        }
+                        break;
                     }
                 }
 
@@ -494,7 +389,7 @@ namespace BatteryMes
                     Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
                 } while (m1576Value != 1);
 
-                Console.WriteLine("인풋 종료신호 받음");
+                Console.WriteLine($"인풋 종료신호 받음");
             }
             finally
             {
@@ -505,8 +400,6 @@ namespace BatteryMes
                 }
             }
         }
-
-
         void OutputTask()
         {
             lock (lockObject)
