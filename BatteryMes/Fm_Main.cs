@@ -29,8 +29,7 @@ namespace BatteryMes
         {
             InitializeComponent();
             this.Load += new EventHandler(Fm_Main_Load);
-            PLC1.ActLogicalStationNumber = 1; //로지컬 스테이션 넘버 넣기
-            //PLC1.ActLogicalStationNumber = 0;
+            PLC1.ActLogicalStationNumber = 0; //로지컬 스테이션 넘버 넣기
             int conErr = 0;
             conErr = PLC1.Open();
 
