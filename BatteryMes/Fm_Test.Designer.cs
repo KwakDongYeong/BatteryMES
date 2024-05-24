@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Lb_Title_M = new System.Windows.Forms.Label();
             this.Pn_Title_C = new System.Windows.Forms.Panel();
-            this.Lb_Title_C = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Pb_ST2_4 = new System.Windows.Forms.PictureBox();
@@ -63,39 +67,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Pb_Trayon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.visionpicture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Bt_1ConV = new System.Windows.Forms.Button();
-            this.Bt_2ConV = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Bt_Tray_On = new System.Windows.Forms.Button();
-            this.BT_Tray_OFF = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BT_Battery_On = new System.Windows.Forms.Button();
-            this.BT_Battery_Off = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.Bt_Cam = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.BT_Fork_On = new System.Windows.Forms.Button();
-            this.Bt_Fork_Off = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Bt_Left = new System.Windows.Forms.Button();
-            this.Bt_Right = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Bt_Alarm = new System.Windows.Forms.Button();
             this.Bt_Red = new System.Windows.Forms.Button();
             this.Bt_Yellow = new System.Windows.Forms.Button();
             this.Bt_Green = new System.Windows.Forms.Button();
-            this.visionpicture = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Lb_Title_C = new System.Windows.Forms.Label();
+            this.rack_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Pn_Title_C.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).BeginInit();
@@ -111,21 +100,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).BeginInit();
             this.SuspendLayout();
             // 
             // Lb_Title_M
@@ -144,21 +126,12 @@
             // 
             // Pn_Title_C
             // 
-            this.Pn_Title_C.Controls.Add(this.Lb_Title_C);
+            this.Pn_Title_C.Controls.Add(this.tableLayoutPanel5);
             this.Pn_Title_C.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pn_Title_C.Location = new System.Drawing.Point(570, 3);
             this.Pn_Title_C.Name = "Pn_Title_C";
             this.Pn_Title_C.Size = new System.Drawing.Size(688, 44);
             this.Pn_Title_C.TabIndex = 1;
-            // 
-            // Lb_Title_C
-            // 
-            this.Lb_Title_C.AutoSize = true;
-            this.Lb_Title_C.Location = new System.Drawing.Point(330, 14);
-            this.Lb_Title_C.Name = "Lb_Title_C";
-            this.Lb_Title_C.Size = new System.Drawing.Size(37, 15);
-            this.Lb_Title_C.TabIndex = 0;
-            this.Lb_Title_C.Text = "조작";
             // 
             // tableLayoutPanel1
             // 
@@ -197,6 +170,30 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(561, 626);
             this.tableLayoutPanel3.TabIndex = 14;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tableLayoutPanel6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 291);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(555, 44);
+            this.panel2.TabIndex = 8;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.label15, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(555, 44);
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label15
             // 
@@ -586,6 +583,27 @@
             this.label1.Text = "Tray 전진 센서";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Controls.Add(this.visionpicture);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(15, 343);
+            this.panel3.Margin = new System.Windows.Forms.Padding(15, 5, 15, 15);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(531, 268);
+            this.panel3.TabIndex = 9;
+            // 
+            // visionpicture
+            // 
+            this.visionpicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visionpicture.Location = new System.Drawing.Point(0, 0);
+            this.visionpicture.Margin = new System.Windows.Forms.Padding(2);
+            this.visionpicture.Name = "visionpicture";
+            this.visionpicture.Size = new System.Drawing.Size(531, 268);
+            this.visionpicture.TabIndex = 9;
+            this.visionpicture.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel4);
@@ -599,8 +617,8 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.groupBox6, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.rack_chart, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -609,239 +627,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(688, 626);
             this.tableLayoutPanel4.TabIndex = 9;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox7, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox5, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox3, 1, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.332F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.329F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.339F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 469);
-            this.tableLayoutPanel5.TabIndex = 19;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.Bt_1ConV);
-            this.groupBox4.Controls.Add(this.Bt_2ConV);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 315);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(338, 151);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // Bt_1ConV
-            // 
-            this.Bt_1ConV.FlatAppearance.BorderSize = 0;
-            this.Bt_1ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_1ConV.Location = new System.Drawing.Point(31, 22);
-            this.Bt_1ConV.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_1ConV.Name = "Bt_1ConV";
-            this.Bt_1ConV.Size = new System.Drawing.Size(140, 75);
-            this.Bt_1ConV.TabIndex = 8;
-            this.Bt_1ConV.Text = "1컨베ON";
-            this.Bt_1ConV.UseVisualStyleBackColor = true;
-            // 
-            // Bt_2ConV
-            // 
-            this.Bt_2ConV.FlatAppearance.BorderSize = 0;
-            this.Bt_2ConV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_2ConV.Location = new System.Drawing.Point(171, 22);
-            this.Bt_2ConV.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_2ConV.Name = "Bt_2ConV";
-            this.Bt_2ConV.Size = new System.Drawing.Size(140, 75);
-            this.Bt_2ConV.TabIndex = 9;
-            this.Bt_2ConV.Text = "2컨베ON";
-            this.Bt_2ConV.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Bt_Tray_On);
-            this.groupBox1.Controls.Add(this.BT_Tray_OFF);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 150);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // Bt_Tray_On
-            // 
-            this.Bt_Tray_On.FlatAppearance.BorderSize = 0;
-            this.Bt_Tray_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Tray_On.Location = new System.Drawing.Point(14, 23);
-            this.Bt_Tray_On.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Tray_On.Name = "Bt_Tray_On";
-            this.Bt_Tray_On.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Tray_On.TabIndex = 0;
-            this.Bt_Tray_On.Text = "Tray전진";
-            this.Bt_Tray_On.UseVisualStyleBackColor = true;
-            this.Bt_Tray_On.Click += new System.EventHandler(this.Bt_Tray_On_Click);
-            this.Bt_Tray_On.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseDown);
-            this.Bt_Tray_On.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Bt_Tray_On_MouseUp);
-            // 
-            // BT_Tray_OFF
-            // 
-            this.BT_Tray_OFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BT_Tray_OFF.FlatAppearance.BorderSize = 0;
-            this.BT_Tray_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Tray_OFF.Location = new System.Drawing.Point(154, 23);
-            this.BT_Tray_OFF.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Tray_OFF.Name = "BT_Tray_OFF";
-            this.BT_Tray_OFF.Size = new System.Drawing.Size(140, 75);
-            this.BT_Tray_OFF.TabIndex = 1;
-            this.BT_Tray_OFF.Text = "Tray후진";
-            this.BT_Tray_OFF.UseVisualStyleBackColor = true;
-            this.BT_Tray_OFF.Click += new System.EventHandler(this.BT_Tray_OFF_Click);
-            this.BT_Tray_OFF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseDown);
-            this.BT_Tray_OFF.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Tray_OFF_MouseUp);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BT_Battery_On);
-            this.groupBox2.Controls.Add(this.BT_Battery_Off);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(347, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 150);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // BT_Battery_On
-            // 
-            this.BT_Battery_On.FlatAppearance.BorderSize = 0;
-            this.BT_Battery_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_On.Location = new System.Drawing.Point(21, 22);
-            this.BT_Battery_On.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Battery_On.Name = "BT_Battery_On";
-            this.BT_Battery_On.Size = new System.Drawing.Size(140, 75);
-            this.BT_Battery_On.TabIndex = 2;
-            this.BT_Battery_On.Text = "배터리전진";
-            this.BT_Battery_On.UseVisualStyleBackColor = true;
-            // 
-            // BT_Battery_Off
-            // 
-            this.BT_Battery_Off.FlatAppearance.BorderSize = 0;
-            this.BT_Battery_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Battery_Off.Location = new System.Drawing.Point(161, 22);
-            this.BT_Battery_Off.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Battery_Off.Name = "BT_Battery_Off";
-            this.BT_Battery_Off.Size = new System.Drawing.Size(141, 75);
-            this.BT_Battery_Off.TabIndex = 3;
-            this.BT_Battery_Off.Text = "배터리후진";
-            this.BT_Battery_Off.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.Bt_Cam);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(347, 315);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(338, 151);
-            this.groupBox7.TabIndex = 18;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
-            // 
-            // Bt_Cam
-            // 
-            this.Bt_Cam.FlatAppearance.BorderSize = 0;
-            this.Bt_Cam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Cam.Location = new System.Drawing.Point(31, 22);
-            this.Bt_Cam.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Cam.Name = "Bt_Cam";
-            this.Bt_Cam.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Cam.TabIndex = 8;
-            this.Bt_Cam.Text = "촬영";
-            this.Bt_Cam.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.BT_Fork_On);
-            this.groupBox5.Controls.Add(this.Bt_Fork_Off);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 159);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(338, 150);
-            this.groupBox5.TabIndex = 18;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // BT_Fork_On
-            // 
-            this.BT_Fork_On.FlatAppearance.BorderSize = 0;
-            this.BT_Fork_On.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Fork_On.Location = new System.Drawing.Point(3, 21);
-            this.BT_Fork_On.Margin = new System.Windows.Forms.Padding(0);
-            this.BT_Fork_On.Name = "BT_Fork_On";
-            this.BT_Fork_On.Size = new System.Drawing.Size(140, 75);
-            this.BT_Fork_On.TabIndex = 6;
-            this.BT_Fork_On.Text = "포크전진";
-            this.BT_Fork_On.UseVisualStyleBackColor = true;
-            // 
-            // Bt_Fork_Off
-            // 
-            this.Bt_Fork_Off.FlatAppearance.BorderSize = 0;
-            this.Bt_Fork_Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Fork_Off.Location = new System.Drawing.Point(143, 21);
-            this.Bt_Fork_Off.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Fork_Off.Name = "Bt_Fork_Off";
-            this.Bt_Fork_Off.Size = new System.Drawing.Size(141, 75);
-            this.Bt_Fork_Off.TabIndex = 7;
-            this.Bt_Fork_Off.Text = "포크후진";
-            this.Bt_Fork_Off.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.Bt_Left);
-            this.groupBox3.Controls.Add(this.Bt_Right);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(347, 159);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(338, 150);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // Bt_Left
-            // 
-            this.Bt_Left.FlatAppearance.BorderSize = 0;
-            this.Bt_Left.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Left.Location = new System.Drawing.Point(-11, 21);
-            this.Bt_Left.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Left.Name = "Bt_Left";
-            this.Bt_Left.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Left.TabIndex = 4;
-            this.Bt_Left.Text = "좌회전";
-            this.Bt_Left.UseVisualStyleBackColor = true;
-            // 
-            // Bt_Right
-            // 
-            this.Bt_Right.FlatAppearance.BorderSize = 0;
-            this.Bt_Right.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Right.Location = new System.Drawing.Point(129, 21);
-            this.Bt_Right.Margin = new System.Windows.Forms.Padding(0);
-            this.Bt_Right.Name = "Bt_Right";
-            this.Bt_Right.Size = new System.Drawing.Size(140, 75);
-            this.Bt_Right.TabIndex = 5;
-            this.Bt_Right.Text = "우회전";
-            this.Bt_Right.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -905,51 +690,6 @@
             this.Bt_Green.Text = "녹색램프ON";
             this.Bt_Green.UseVisualStyleBackColor = true;
             // 
-            // visionpicture
-            // 
-            this.visionpicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.visionpicture.Location = new System.Drawing.Point(0, 0);
-            this.visionpicture.Margin = new System.Windows.Forms.Padding(2);
-            this.visionpicture.Name = "visionpicture";
-            this.visionpicture.Size = new System.Drawing.Size(531, 268);
-            this.visionpicture.TabIndex = 9;
-            this.visionpicture.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.visionpicture);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(15, 343);
-            this.panel3.Margin = new System.Windows.Forms.Padding(15, 5, 15, 15);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(531, 268);
-            this.panel3.TabIndex = 9;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Controls.Add(this.label15, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(555, 44);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tableLayoutPanel6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 291);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(555, 44);
-            this.panel2.TabIndex = 8;
-            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 3;
@@ -966,6 +706,57 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(567, 50);
             this.tableLayoutPanel7.TabIndex = 15;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Controls.Add(this.Lb_Title_C, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 44);
+            this.tableLayoutPanel5.TabIndex = 16;
+            // 
+            // Lb_Title_C
+            // 
+            this.Lb_Title_C.AutoSize = true;
+            this.Lb_Title_C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lb_Title_C.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Title_C.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Lb_Title_C.Location = new System.Drawing.Point(173, 1);
+            this.Lb_Title_C.Margin = new System.Windows.Forms.Padding(1);
+            this.Lb_Title_C.Name = "Lb_Title_C";
+            this.Lb_Title_C.Size = new System.Drawing.Size(342, 42);
+            this.Lb_Title_C.TabIndex = 0;
+            this.Lb_Title_C.Text = "Rack 사용 빈도 현황";
+            this.Lb_Title_C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rack_chart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.rack_chart.ChartAreas.Add(chartArea1);
+            this.rack_chart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.rack_chart.Legends.Add(legend1);
+            this.rack_chart.Location = new System.Drawing.Point(3, 3);
+            this.rack_chart.Name = "rack_chart";
+            this.rack_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.LegendText = "Count";
+            series1.Name = "Series1";
+            this.rack_chart.Series.Add(series1);
+            this.rack_chart.Size = new System.Drawing.Size(682, 463);
+            this.rack_chart.TabIndex = 20;
+            this.rack_chart.Text = "chart1";
+            // 
             // Fm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -978,9 +769,11 @@
             this.Text = "Fm_Test";
             this.Load += new System.EventHandler(this.Fm_Test_Load);
             this.Pn_Title_C.ResumeLayout(false);
-            this.Pn_Title_C.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).EndInit();
@@ -997,23 +790,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1021,23 +807,12 @@
         #endregion
         private System.Windows.Forms.Label Lb_Title_M;
         private System.Windows.Forms.Panel Pn_Title_C;
-        private System.Windows.Forms.Label Lb_Title_C;
         private System.Windows.Forms.PictureBox Pb_Trayon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button Bt_Green;
         private System.Windows.Forms.Button Bt_Yellow;
         private System.Windows.Forms.Button Bt_Red;
         private System.Windows.Forms.Button Bt_Alarm;
-        private System.Windows.Forms.Button Bt_2ConV;
-        private System.Windows.Forms.Button Bt_1ConV;
-        private System.Windows.Forms.Button Bt_Fork_Off;
-        private System.Windows.Forms.Button BT_Fork_On;
-        private System.Windows.Forms.Button Bt_Right;
-        private System.Windows.Forms.Button Bt_Left;
-        private System.Windows.Forms.Button BT_Battery_Off;
-        private System.Windows.Forms.Button BT_Battery_On;
-        private System.Windows.Forms.Button Bt_Tray_On;
-        private System.Windows.Forms.Button BT_Tray_OFF;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
@@ -1069,20 +844,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button Bt_Cam;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.PictureBox visionpicture;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label Lb_Title_C;
+        private System.Windows.Forms.DataVisualization.Charting.Chart rack_chart;
     }
 }

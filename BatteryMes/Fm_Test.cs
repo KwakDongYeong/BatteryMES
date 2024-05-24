@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using ActUtlTypeLib;
 using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient; // SQL 연동을 위함
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Collections;
 
 namespace BatteryMes
 {
@@ -22,8 +24,8 @@ namespace BatteryMes
         private Timer timer = new Timer();
         private FileSystemWatcher watcher;
         private string imageFolderPath = @"C:\Users\user\Desktop\비전결과";
-        private string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
-        //private string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+        //private string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+        private string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
 
         public Fm_Test()
         {
@@ -41,13 +43,11 @@ namespace BatteryMes
         private void Fm_Test_Load(object sender, EventArgs e)
         {
             InitializePictureBoxes();
-            
-            
-
             SetupFileSystemWatcher();
             UploadAllImagesToDatabase();
 
             visionpicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            string query = "SELECT rack, count FROM rack";
 
             try
             {
@@ -55,6 +55,9 @@ namespace BatteryMes
                 {
                     conn.Open();
                     Console.WriteLine("데이터베이스 연결 성공!");
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
 
                     foreach (string filePath in Directory.GetFiles(imageFolderPath, "*.jpg"))
                     {
@@ -63,20 +66,65 @@ namespace BatteryMes
 
                     conn.Close();
                     //MessageBox.Show("All images uploaded successfully.");
+
+                    try
+                    {
+                        conn.Open();
+                        adapter.Fill(dataTable);
+                        CreateChart(dataTable);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 //MessageBox.Show("An error occurred: " + ex.Message);
             }
+
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             CheckPLCSignal();
             LightOn();
+            UpdateChart();
         }
+        private void UpdateChart()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
 
+                    // 데이터베이스에서 쿼리 실행하여 데이터 가져오기
+                    string query = "SELECT rack, count FROM rack";
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // 차트 업데이트
+                    rack_chart.Series[0].Points.Clear(); // 기존 데이터 지우기
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        int rack = Convert.ToInt32(row["rack"]);
+                        int count = Convert.ToInt32(row["count"]);
+                        rack_chart.Series[0].Points.AddXY(rack, count); // 새로운 데이터 추가
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
         private void LightOn()
         {
             for (int i = 1520; i <= 1533; i++)
@@ -133,7 +181,26 @@ namespace BatteryMes
             }
         }
 
+        private void CreateChart(DataTable dataTable)
+        {
+            rack_chart.Series.Clear();
+            rack_chart.ChartAreas.Clear();
 
+            ChartArea chartArea = new ChartArea();
+            rack_chart.ChartAreas.Add(chartArea);
+
+            Series series = new Series
+            {
+                Name = "Rack Count",
+                ChartType = SeriesChartType.Bar,
+                XValueMember = "rack",
+                YValueMembers = "count"
+            };
+
+            rack_chart.Series.Add(series);
+            rack_chart.DataSource = dataTable;
+            rack_chart.DataBind();
+        }
 
         private void SetupFileSystemWatcher()
         {
@@ -299,34 +366,8 @@ namespace BatteryMes
             plc.SetDevice("M1", 1);
         }
 
-        private void Bt_Tray_On_MouseDown(object sender, MouseEventArgs e)
-        {
-            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            // Bt_Tray_On.BackgroundImage = Properties.Resources.Button2;
-        }
-
-        private void Bt_Tray_On_MouseUp(object sender, MouseEventArgs e)
-        {
-            Bt_Tray_On.BackgroundImageLayout = ImageLayout.Stretch;
-            // Bt_Tray_On.BackgroundImage = Properties.Resources.Button1;
-        }
-
-        private void BT_Tray_OFF_Click(object sender, EventArgs e)
-        {
-            plc.SetDevice("M1", 0);
-        }
-
-        private void BT_Tray_OFF_MouseDown(object sender, MouseEventArgs e)
-        {
-            BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            // BT_Tray_OFF.BackgroundImage = Properties.Resources.Button2;
-        }
-
-        private void BT_Tray_OFF_MouseUp(object sender, MouseEventArgs e)
-        {
-            BT_Tray_OFF.BackgroundImageLayout = ImageLayout.Stretch;
-            // BT_Tray_OFF.BackgroundImage = Properties.Resources.Button1;
-        }
+        
+       
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
