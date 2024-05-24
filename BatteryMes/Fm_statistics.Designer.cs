@@ -42,8 +42,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Chart_defect = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Pn_Error = new System.Windows.Forms.Panel();
             this.Pn_progress = new System.Windows.Forms.Panel();
+            this.Pn_Error = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,14 +190,6 @@
             this.panel5.Size = new System.Drawing.Size(533, 307);
             this.panel5.TabIndex = 5;
             // 
-            // Pn_Error
-            // 
-            this.Pn_Error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pn_Error.Location = new System.Drawing.Point(542, 88);
-            this.Pn_Error.Name = "Pn_Error";
-            this.Pn_Error.Size = new System.Drawing.Size(534, 306);
-            this.Pn_Error.TabIndex = 6;
-            // 
             // Pn_progress
             // 
             this.Pn_progress.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -205,6 +197,14 @@
             this.Pn_progress.Name = "Pn_progress";
             this.Pn_progress.Size = new System.Drawing.Size(533, 307);
             this.Pn_progress.TabIndex = 0;
+            // 
+            // Pn_Error
+            // 
+            this.Pn_Error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pn_Error.Location = new System.Drawing.Point(542, 88);
+            this.Pn_Error.Name = "Pn_Error";
+            this.Pn_Error.Size = new System.Drawing.Size(534, 306);
+            this.Pn_Error.TabIndex = 6;
             // 
             // Fm_statistics
             // 
