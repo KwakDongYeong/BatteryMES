@@ -64,6 +64,10 @@ namespace BatteryMes
         }
         private void CurrentRack()
         {
+
+
+
+
             /*    for (int i = 0; i < 32; i++)
                 {
                     string RackDevice;
@@ -220,6 +224,7 @@ namespace BatteryMes
 
         private void ChargeBattery()
         {
+
             /* int senvalue;
              plc.GetDevice("X10", out senvalue); //센서 신호 
              int timevalue; //충전시간
