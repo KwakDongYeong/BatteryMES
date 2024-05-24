@@ -203,6 +203,7 @@ namespace BatteryMes
             rack_chart.ChartAreas[0].AxisX.IsLabelAutoFit = false;
             rack_chart.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
             rack_chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Sans-serif", 9, FontStyle.Bold);
+            rack_chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Sans-serif", 9, FontStyle.Bold);
         }
 
         private void SetupFileSystemWatcher()
