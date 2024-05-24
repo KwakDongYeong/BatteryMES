@@ -112,12 +112,11 @@ namespace BatteryMes
                     rack_chart.Series[0].Points.Clear(); // 기존 데이터 지우기
                     foreach (DataRow row in dataTable.Rows)
                     {
-                        int rack = Convert.ToInt32(row["rack"]);
+                        string rack = row["rack"].ToString();
                         int count = Convert.ToInt32(row["count"]);
-                        rack_chart.Series[0].Points.AddXY(rack, count); // 새로운 데이터 추가
+                        // 여기서 rack과 count 값을 사용하여 그래프를 업데이트합니다.
                     }
-
-                    conn.Close();
+                    CreateChart(dataTable);
                 }
             }
             catch (Exception ex)
@@ -200,6 +199,10 @@ namespace BatteryMes
             rack_chart.Series.Add(series);
             rack_chart.DataSource = dataTable;
             rack_chart.DataBind();
+
+            rack_chart.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+            rack_chart.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
+            rack_chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Sans-serif", 9, FontStyle.Bold);
         }
 
         private void SetupFileSystemWatcher()
