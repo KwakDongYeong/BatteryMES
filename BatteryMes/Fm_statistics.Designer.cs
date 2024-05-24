@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,10 +44,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.Pn_progress = new System.Windows.Forms.Panel();
             this.Pn_Error = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).BeginInit();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +160,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(542, 400);
             this.panel3.Name = "panel3";
@@ -166,17 +169,17 @@
             // 
             // Chart_defect
             // 
-            chartArea1.Name = "ChartArea1";
-            this.Chart_defect.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.Chart_defect.ChartAreas.Add(chartArea4);
             this.Chart_defect.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.Chart_defect.Legends.Add(legend1);
+            legend4.Name = "Legend1";
+            this.Chart_defect.Legends.Add(legend4);
             this.Chart_defect.Location = new System.Drawing.Point(3, 88);
             this.Chart_defect.Name = "Chart_defect";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.Chart_defect.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.Chart_defect.Series.Add(series4);
             this.Chart_defect.Size = new System.Drawing.Size(533, 306);
             this.Chart_defect.TabIndex = 4;
             this.Chart_defect.Text = "chart1";
@@ -206,6 +209,16 @@
             this.Pn_Error.Size = new System.Drawing.Size(534, 306);
             this.Pn_Error.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(534, 34);
+            this.label4.TabIndex = 3;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Fm_statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -219,6 +232,7 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).EndInit();
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -240,5 +254,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel Pn_Error;
         private System.Windows.Forms.Panel Pn_progress;
+        private System.Windows.Forms.Label label4;
     }
 }
