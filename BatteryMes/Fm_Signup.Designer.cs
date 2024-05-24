@@ -193,7 +193,7 @@
             // 
             // Bt_Sign
             // 
-            this.Bt_Sign.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Bt_Sign.BackColor = System.Drawing.Color.CadetBlue;
             this.Bt_Sign.Location = new System.Drawing.Point(53, 301);
             this.Bt_Sign.Name = "Bt_Sign";
             this.Bt_Sign.Size = new System.Drawing.Size(105, 39);
@@ -204,7 +204,7 @@
             // 
             // Bt_Close
             // 
-            this.Bt_Close.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Bt_Close.BackColor = System.Drawing.Color.CadetBlue;
             this.Bt_Close.Location = new System.Drawing.Point(202, 301);
             this.Bt_Close.Name = "Bt_Close";
             this.Bt_Close.Size = new System.Drawing.Size(105, 39);
@@ -227,15 +227,15 @@
             // 
             // Lb_Title
             // 
-            this.Lb_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lb_Title.AutoSize = true;
+            this.Lb_Title.BackColor = System.Drawing.Color.CadetBlue;
+            this.Lb_Title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Lb_Title.Font = new System.Drawing.Font("굴림", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Lb_Title.Location = new System.Drawing.Point(73, 16);
+            this.Lb_Title.Location = new System.Drawing.Point(0, 0);
             this.Lb_Title.Name = "Lb_Title";
-            this.Lb_Title.Size = new System.Drawing.Size(220, 37);
+            this.Lb_Title.Size = new System.Drawing.Size(344, 68);
             this.Lb_Title.TabIndex = 24;
             this.Lb_Title.Text = "사용자 등록";
+            this.Lb_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Lb_Title.Click += new System.EventHandler(this.Lb_Title_Click);
             // 
             // Fm_Signup
@@ -253,7 +253,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

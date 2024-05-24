@@ -399,9 +399,7 @@ namespace BatteryMes
                 taskThread.Start();
             }
         }
-        void TaskRunner()
-        {
-            /* while (true)
+        /* while (true)
              {
                  if (stopSignal.WaitOne(0))
                  {
@@ -421,8 +419,8 @@ namespace BatteryMes
 
                  Thread.Sleep(500); // 작업 간 잠깐 대기 시간
              }*/
-
-            
+        void TaskRunner()
+        {
                 while (true)
                 {
                     if (stopSignal.WaitOne(0))
@@ -484,15 +482,17 @@ namespace BatteryMes
 
             try
             {
-                int inputEnd;
+             /*   int inputEnd;
                 plc.GetDevice("M1529", out inputEnd);
+                Console.WriteLine("get.");
+
                 if (inputEnd != 1)
                 {
                     Console.WriteLine("InputTask: Input end signal not received.");
                     Thread.Sleep(500);
                     return;
                 }
-
+             */
                 int startWarehouse = 1540;
                 int endWarehouse = 1555;
                 int inputStartWarehouse = 1600;
@@ -518,7 +518,7 @@ namespace BatteryMes
                         {
                             Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
                             plc.SetDevice($"M{inputSignal}", 1);
-                            Thread.Sleep(1500);
+                            Thread.Sleep(1000);
                             plc.SetDevice($"M{inputSignal}", 0);
                             Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
                             Thread.Sleep(2000);
@@ -530,6 +530,11 @@ namespace BatteryMes
                 int m1576Value;
                 do
                 {
+                    if (stopSignal.WaitOne(0)) // 종료 신호를 확인
+                    {
+                        Console.WriteLine("InputTask: Stopped.");
+                        return;
+                    }
                     Thread.Sleep(1000);
                     plc.GetDevice("M1576", out m1576Value);
                     Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
@@ -600,13 +605,19 @@ namespace BatteryMes
                 {
                     Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
                     plc.SetDevice($"M{dischargeWarehouse}", 1);
-                    Thread.Sleep(1500);
+                    Thread.Sleep(1000);
                     plc.SetDevice($"M{dischargeWarehouse}", 0);
                     Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
+                    Thread.Sleep(2000);
 
                     int dischargeCompleteSignal;
                     do
                     {
+                        if (stopSignal.WaitOne(0)) // 종료 신호를 확인
+                        {
+                            Console.WriteLine("InputTask: Stopped.");
+                            return;
+                        }
                         Thread.Sleep(1000);
                         plc.GetDevice("M1577", out dischargeCompleteSignal);
                         Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
