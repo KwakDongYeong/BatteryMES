@@ -292,6 +292,7 @@ namespace BatteryMes
                     }
 
                     int m1576Value;
+                    DateTime startTime = DateTime.Now;
                     do
                     {
                         if (stopSignal.WaitOne(0)) // 종료 신호를 확인
@@ -302,6 +303,11 @@ namespace BatteryMes
                         Thread.Sleep(700);
                         plc.GetDevice("M1576", out m1576Value);
                         Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
+                        if ((DateTime.Now - startTime).TotalSeconds > 15)
+                        {
+                            Console.WriteLine("InputTask: Timeout occurred, exiting...");
+                            return;
+                        }
                     } while (m1576Value != 1);
                     UpdateLabel(Lb_Rack, "");
                     Console.WriteLine($"인풋 종료신호 받음");
@@ -491,7 +497,11 @@ namespace BatteryMes
         }
         private void Bt_RackOff_Click(object sender, EventArgs e)
         {
+            DialogResult stopmsg = MessageBox.Show("작업을 정지하시겠습니까?", "창고 작업 종료", MessageBoxButtons.YesNo);
+            if (stopmsg == DialogResult.Yes)
+            { 
             stopSignal.Set();
+            }
         }
 
         private void Bt_SetTem_Click(object sender, EventArgs e)
