@@ -19,7 +19,7 @@ namespace BatteryMes
         public Fm_Frame()
         {
             InitializeComponent();
-            Load_Form(new Fm_Main());
+            Load_Form(new Fm_Control());
         }
         public void Load_Form(object Form)
         {

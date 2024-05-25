@@ -260,9 +260,6 @@
     <None Include="Resources\full.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\battery.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\battery2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
