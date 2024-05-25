@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +49,8 @@
             this.Pn_progress = new System.Windows.Forms.Panel();
             this.Pn_Error = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.tp_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,6 +58,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,6 +74,7 @@
             this.tableLayoutPanel1.Controls.Add(this.Chart_defect, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.Pn_Error, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tp_chart, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -169,17 +177,17 @@
             // 
             // Chart_defect
             // 
-            chartArea4.Name = "ChartArea1";
-            this.Chart_defect.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.Chart_defect.ChartAreas.Add(chartArea1);
             this.Chart_defect.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.Chart_defect.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.Chart_defect.Legends.Add(legend1);
             this.Chart_defect.Location = new System.Drawing.Point(3, 88);
             this.Chart_defect.Name = "Chart_defect";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.Chart_defect.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Chart_defect.Series.Add(series1);
             this.Chart_defect.Size = new System.Drawing.Size(533, 306);
             this.Chart_defect.TabIndex = 4;
             this.Chart_defect.Text = "chart1";
@@ -217,7 +225,30 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(534, 34);
             this.label4.TabIndex = 3;
+            this.label4.Text = "화성공정 site Temperature";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tp_chart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.tp_chart.ChartAreas.Add(chartArea2);
+            this.tp_chart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.Name = "Legend1";
+            this.tp_chart.Legends.Add(legend2);
+            this.tp_chart.Location = new System.Drawing.Point(542, 440);
+            this.tp_chart.Name = "tp_chart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.tp_chart.Series.Add(series2);
+            this.tp_chart.Size = new System.Drawing.Size(534, 307);
+            this.tp_chart.TabIndex = 7;
+            this.tp_chart.Text = "chart1";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
             // 
             // Fm_statistics
             // 
@@ -235,6 +266,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).EndInit();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +287,7 @@
         private System.Windows.Forms.Panel Pn_Error;
         private System.Windows.Forms.Panel Pn_progress;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart tp_chart;
+        private System.Windows.Forms.Timer timer1;
     }
 }
