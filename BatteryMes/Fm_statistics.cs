@@ -352,7 +352,7 @@ namespace BatteryMes
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
-
+        
     }
 }
 
