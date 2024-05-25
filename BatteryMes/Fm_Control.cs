@@ -66,126 +66,8 @@ namespace BatteryMes
         private void Timer_Tick(object sender, EventArgs e)
         {
             ChargeBattery();
-            CurrentRack();
         }
-        private void CurrentRack()
-        {
-          /*  Lb_Rack.Text = "";
-            for (int i = 0; i < 32; i++)
-            {
-                string RackDevice;
-                if (i < 16)
-                {
-                    if (i < 10)
-                    {
-                        RackDevice = $"D1600.{i}";
-                    }
-                    else
-                    {
-                        RackDevice = $"D1600.{(char)('A' + (i - 10))}";
-                    }
-                }
-                else
-                {
-                    int newI = i - 16;
-                    if (newI < 10)
-                    {
-                        RackDevice = $"D1601.{newI}";
-                    }
-                    else
-                    {
-                        RackDevice = $"D1601.{(char)('A' + (newI - 10))}";
-                    }
-                }
-                int value;
-                plc.GetDevice(RackDevice, out value);
-
-                string textToDisplay = "";
-                if (value == 1)
-                {
-                    if (RackDevice.StartsWith("D1601"))
-                    {
-                        string[] parts = RackDevice.Split('.');
-                        if (parts.Length == 2)
-                        {
-                            int row;
-                            int col;
-                            int x;
-                            if (int.TryParse(parts[1], out x))
-                            {
-                                row = (x / 4) + 1;
-                                col = (x % 4) + 1;
-                                textToDisplay = $"{row}연 {col}단 배출";
-                            }
-                            else
-                            {
-                                if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
-                                {
-                                    row = (x / 4) + 1;
-                                    col = (x % 4) + 1;
-                                    textToDisplay = $"{row}연 {col}단 투입";
-                                }
-                                else
-                                {
-                                    textToDisplay = "유효하지 않은 RackDevice 값입니다.";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            textToDisplay = "유효하지 않은 RackDevice 값입니다.";
-                        }
-                    }
-                    else
-                    {
-                        string[] parts = RackDevice.Split('.');
-                        if (parts.Length == 2)
-                        {
-                            int row;
-                            int col;
-
-                            int x;
-                            if (int.TryParse(parts[1], out x))
-                            {
-                                row = (x / 4) + 1;
-                                col = (x % 4) + 1;
-                                textToDisplay = $"{row}연 {col}단 투입";
-                            }
-                            else
-                            {
-                               
-                                if (int.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out x))
-                                {
-                                    row = (x / 4) + 1;
-                                    col = (x % 4) + 1;
-                                    textToDisplay = $"{row}연 {col}단 투입";
-                                }
-                                else
-                                {
-                                    textToDisplay = "유효하지 않은 RackDevice 값입니다.";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            textToDisplay = "유효하지 않은 RackDevice 값입니다.";
-                        }
-                    }
-
-                    Lb_Rack.Text += $"{textToDisplay}\n";
-                    int m1576;
-                    plc.GetDevice("M1576", out m1576);
-                    if(m1576 == 1)
-                    {
-                        Lb_Rack.Text = "";
-                    }
-                }
-                else
-                {
-                }
-            }*/
-        }
-
+  
         private void ChargeBattery()
         {
             for(int i = 1540; i<=1555; i++)
@@ -235,47 +117,47 @@ namespace BatteryMes
         {
             if (taskThread == null || !taskThread.IsAlive)
             {
-                stopSignal.Reset(); // 이전 작업이 완료되었을 때만 새 작업
+                stopSignal.Reset();
                 taskThread = new Thread(TaskRunner);
                 taskThread.Start();
             }
         }
         void TaskRunner()
         {
-                while (true)
+            while (true)
+            {
+                if (stopSignal.WaitOne(0))
                 {
-                    if (stopSignal.WaitOne(0))
-                    {
-                        break; 
-                    }
-                   int randomNumber = -1;
+                    break;
+                }
+                int randomNumber = -1;
 
-                   int m1529Value;
-                    plc.GetDevice("M1529", out m1529Value); //인풋 하려는 신호
+                int m1529Value;
+                plc.GetDevice("M1529", out m1529Value); //인풋 하려는 신호
 
-                    int m1585Value;
-                    plc.GetDevice("M1585", out m1585Value); //충전완료 된거 1개라도 있으면
+                int m1585Value;
+                plc.GetDevice("M1585", out m1585Value); //충전완료 된거 1개라도 있으면
 
-                    if (m1529Value ==1 && m1585Value ==1)
-                    {
-                      randomNumber = random.Next(2); //둘다 물건 있으면 랜덤
-                    }
-                    else if (m1585Value != 1) //충전완료된거 없으면 랜덤 0로 인풋
-                    {
-                        randomNumber = 0;
-                    }
-                    else if(m1529Value != 1) //컨베이어에 물건없으면 랜덤1 아웃풋
-                    {
-                       randomNumber = 1;
-                     }
-                  else if (m1529Value == 0 && m1585Value == 0) // 두 조건이 모두 0인 경우
-                  {
-                    
-                    Thread.Sleep(100); 
-                   }
+                if (m1529Value == 1 && m1585Value == 1)
+                {
+                    randomNumber = random.Next(2); //둘다 물건 있으면 랜덤
+                }
+                else if (m1585Value != 1) //충전완료된거 없으면 랜덤 0로 인풋
+                {
+                    randomNumber = 0;
+                }
+                else if (m1529Value != 1) //컨베이어에 물건없으면 랜덤1 아웃풋
+                {
+                    randomNumber = 1;
+                }
+                else if (m1529Value == 0 && m1585Value == 0) // 두 조건이 모두 0인 경우
+                {
 
-                  if (randomNumber != -1)
-                  {
+                    Thread.Sleep(100);
+                }
+
+                if (randomNumber != -1)
+                {
                     if (randomNumber == 0)
                     {
                         InputTask();
@@ -284,9 +166,9 @@ namespace BatteryMes
                     {
                         OutputTask();
                     }
-                  }
-
                 }
+
+            }
         }
         void InputTask()
         {
@@ -296,49 +178,54 @@ namespace BatteryMes
                 isWorking = true;
                 Console.WriteLine("인풋 신호 시작");
             }
+            int inputEnd;
+            plc.GetDevice("M1529", out inputEnd);
+            Console.WriteLine("get.");
 
+            if (inputEnd != 1)
+            {
+                Console.WriteLine("InputTask: Input end signal not received.");
+                Thread.Sleep(500);
+                return;
+            }
             try
             {
-                /*   int inputEnd;
-                   plc.GetDevice("M1529", out inputEnd);
-                   Console.WriteLine("get.");
+                int startWarehouse = 1540; //창고 센서 1번째 어드레스
+                int endWarehouse = 1555;  //창고 16번 어드레스
+                int inputStartWarehouse = 1600;  // 수납 1번 어드레스
+                int inputEndWarehouse = 1615; //수납 16번 어드레스
 
-                   if (inputEnd != 1)
-                   {
-                       Console.WriteLine("InputTask: Input end signal not received.");
-                       Thread.Sleep(500);
-                       return;
-                   }
-                */
-                int startWarehouse = 1540;
-                int endWarehouse = 1555;
-                int inputStartWarehouse = 1600;
-                int inputEndWarehouse = 1615;
-                int currentWarehouse = startWarehouse;
-
-                while (currentWarehouse <= endWarehouse)
+                // Warehouse 상태를 한 번에 읽어옴
+                Dictionary<string, int> warehouseValues = new Dictionary<string, int>();
+                for (int i = startWarehouse; i <= endWarehouse; i++)
                 {
-                    int warehouseValue;
-                    plc.GetDevice($"M{currentWarehouse}", out warehouseValue);
-                    Console.WriteLine($"InputTask: Warehouse M{currentWarehouse} value: {warehouseValue}");
+                    int value;
+                    plc.GetDevice($"M{i}", out value);
+                    warehouseValues[$"M{i}"] = value;
+                }
 
-                    if (warehouseValue == 1)
-                    {
-                        currentWarehouse++;
-                        continue;
-                    }
+                // 작업할 Warehouse를 랜덤하게 선택하여 작업 수행
+                int[] warehouseIndexes = Enumerable.Range(startWarehouse, endWarehouse - startWarehouse + 1).ToArray();
+                Shuffle(warehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 Warehouse를 선택
+
+                foreach (int i in warehouseIndexes)
+                {
+                    int warehouseValue = warehouseValues[$"M{i}"];
+                    Console.WriteLine($"InputTask: Warehouse M{i} value: {warehouseValue}");
 
                     if (warehouseValue == 0)
                     {
-                        int inputSignal = currentWarehouse + (inputStartWarehouse - startWarehouse);
+                        int inputSignal = i + (inputStartWarehouse - startWarehouse);
                         if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
                         {
+                            string rackText = GetRackText(inputSignal);
                             Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
                             plc.SetDevice($"M{inputSignal}", 1);
-                            Thread.Sleep(1000);
+                            UpdateLabel(Lb_Rack, rackText);
+                            Thread.Sleep(2500);
                             plc.SetDevice($"M{inputSignal}", 0);
                             Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
-                            Thread.Sleep(2000);
+                            Thread.Sleep(7000);
                         }
                         break;
                     }
@@ -352,11 +239,11 @@ namespace BatteryMes
                         Console.WriteLine("InputTask: Stopped.");
                         return;
                     }
-                    Thread.Sleep(500);
+                    Thread.Sleep(700);
                     plc.GetDevice("M1576", out m1576Value);
                     Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
                 } while (m1576Value != 1);
-
+                UpdateLabel(Lb_Rack, "");
                 Console.WriteLine($"인풋 종료신호 받음");
             }
             finally
@@ -368,7 +255,40 @@ namespace BatteryMes
                 }
             }
         }
-
+        void UpdateLabel(Label label, string text)
+        {
+            if (label.InvokeRequired)
+            {
+                label.Invoke(new Action(() => label.Text = text));
+            }
+            else
+            {
+                label.Text = text;
+            }
+        }
+        string GetRackText(int inputSignal)
+        {
+            switch (inputSignal)
+            {
+                case 1600: return "1연 1단 투입";
+                case 1601: return "1연 2단 투입";
+                case 1602: return "1연 3단 투입";
+                case 1603: return "1연 4단 투입";
+                case 1604: return "2연 1단 투입";
+                case 1605: return "2연 2단 투입";
+                case 1606: return "2연 3단 투입";
+                case 1607: return "2연 4단 투입";
+                case 1608: return "3연 1단 투입";
+                case 1609: return "3연 2단 투입";
+                case 1610: return "3연 3단 투입";
+                case 1611: return "3연 4단 투입";
+                case 1612: return "4연 1단 투입";
+                case 1613: return "4연 2단 투입";
+                case 1614: return "4연 3단 투입";
+                case 1615: return "4연 4단 투입";
+                default: return "";
+            }
+        }
         void OutputTask()
         {
             lock (lockObject)
@@ -376,36 +296,48 @@ namespace BatteryMes
                 if (isWorking) return;
                 isWorking = true;
             }
-
+            int m1585Value;
+            plc.GetDevice("M1585", out m1585Value);
+            if (m1585Value != 1)
+            {
+                Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
+                return;
+            }
             try
             {
-               /* int m1585Value;
-                plc.GetDevice("M1585", out m1585Value);
-                if (m1585Value != 1)
+                int startChargeWarehouse = 1500;
+                int endChargeWarehouse = 1515;
+                int dischargeStartWarehouse = 1616;
+                int dischargeEndWarehouse = 1631;
+
+                // Charge 상태를 한 번에 읽어옴
+                Dictionary<string, int> chargeValues = new Dictionary<string, int>();
+                for (int i = startChargeWarehouse; i <= endChargeWarehouse; i++)
                 {
-                    Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
-                    return;
+                    int value;
+                    plc.GetDevice($"M{i}", out value);
+                    chargeValues[$"M{i}"] = value;
                 }
 
-                */
+                // 작업 가능한 창고를 랜덤하게 선택하여 작업 수행
                 bool canDischarge = false;
                 int dischargeWarehouse = 0;
-                Console.WriteLine("아웃풋 신호 시작");
+                int[] chargeWarehouseIndexes = Enumerable.Range(startChargeWarehouse, endChargeWarehouse - startChargeWarehouse + 1).ToArray();
+                Shuffle(chargeWarehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 창고를 선택
 
-                for (int i = 1500; i <= 1515; i++)
+                foreach (int i in chargeWarehouseIndexes)
                 {
-                    int chargeCompleteSignal;
-                    plc.GetDevice($"M{i}", out chargeCompleteSignal);
+                    int chargeCompleteSignal = chargeValues[$"M{i}"];
                     Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
 
                     if (chargeCompleteSignal == 1)
                     {
                         canDischarge = true;
-                        dischargeWarehouse = 1616 + (i - 1500); 
+                        dischargeWarehouse = dischargeStartWarehouse + (i - startChargeWarehouse);
                         break;
                     }
                 }
-                
+
                 if (!canDischarge)
                 {
                     Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
@@ -413,32 +345,36 @@ namespace BatteryMes
                     return;
                 }
 
+                // Discharge Warehouse의 신호를 확인하고 작업 수행
                 int dischargeSignal;
                 plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
                 Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
 
                 if (dischargeSignal == 0)
                 {
+                    string rackText = GetDischargeRackText(dischargeWarehouse);
                     Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
                     plc.SetDevice($"M{dischargeWarehouse}", 1);
-                    Thread.Sleep(1000);
+                    UpdateLabel(Lb_Rack, rackText);
+                    Thread.Sleep(2500);
                     plc.SetDevice($"M{dischargeWarehouse}", 0);
                     Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(6000);
 
+                    // Discharge 완료 신호를 확인
                     int dischargeCompleteSignal;
                     do
                     {
-                        if (stopSignal.WaitOne(0)) 
+                        if (stopSignal.WaitOne(0))
                         {
                             Console.WriteLine("InputTask: Stopped.");
                             return;
                         }
-                        Thread.Sleep(500);
+                        Thread.Sleep(600);
                         plc.GetDevice("M1577", out dischargeCompleteSignal);
                         Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
                     } while (dischargeCompleteSignal != 1);
-
+                    UpdateLabel(Lb_Rack, "");
                     plc.SetDevice($"M{dischargeWarehouse}", 0);
                     Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
                 }
@@ -452,7 +388,42 @@ namespace BatteryMes
                 }
             }
         }
-
+        string GetDischargeRackText(int dischargeSignal)
+        {
+            switch (dischargeSignal)
+            {
+                case 1616: return "1연 1단 배출";
+                case 1617: return "1연 2단 배출";
+                case 1618: return "1연 3단 배출";
+                case 1619: return "1연 4단 배출";
+                case 1620: return "2연 1단 배출";
+                case 1621: return "2연 2단 배출";
+                case 1622: return "2연 3단 배출";
+                case 1623: return "2연 4단 배출";
+                case 1624: return "3연 1단 배출";
+                case 1625: return "3연 2단 배출";
+                case 1626: return "3연 3단 배출";
+                case 1627: return "3연 4단 배출";
+                case 1628: return "4연 1단 배출";
+                case 1629: return "4연 2단 배출";
+                case 1630: return "4연 3단 배출";
+                case 1631: return "4연 4단 배출";
+                default: return "";
+            }
+        }
+        void Shuffle<T>(T[] array)
+        {
+            Random rng = new Random();
+            int n = array.Length;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = array[k];
+                array[k] = array[n];
+                array[n] = value;
+            }
+        }
         private void Bt_RackOff_Click(object sender, EventArgs e)
         {
             stopSignal.Set();
