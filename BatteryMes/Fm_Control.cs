@@ -45,7 +45,7 @@ namespace BatteryMes
                 Console.WriteLine("plc 연결완");
                   }
 
-            timer.Interval = 700;
+            timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
 
@@ -126,14 +126,32 @@ namespace BatteryMes
                 {
                     if (senvalue == 1)
                     {
-                        Color backColor = (panel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
-                        UpdatePanel(overlayPanel, backColor, null);
+                        Color backColor = (overlayPanel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
+                        overlayPanel.BackColor = backColor;
                         overlayPanel.Visible = true;
                     }
                     else
                     {
                         overlayPanel.Visible = false;
                     }
+
+                    // M1500부터 M1515까지의 신호가 모두 1이면 충전 완료로 판단하여 패널의 색을 빨간색으로 변경
+                  
+                    for (int j = 1500; j <= 1515; j++)
+                    {
+                        string completeSignalDevice = $"M{j}";
+                        int completeSignal;
+                        plc.GetDevice(completeSignalDevice, out completeSignal);
+                        if (completeSignal == 1)
+                        {
+                            string panelName1 = $"Pn_Sen_{((j - 1500) / 4) + 1}_{((j - 1500) % 4) + 1}";
+                            if (chargepanel.TryGetValue(panelName1, out Panel completePanel))
+                            {
+                                completePanel.BackColor = Color.Red;
+                            }
+                        }
+                    }
+
                 }
             }
         }
