@@ -31,8 +31,8 @@ namespace BatteryMes
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            temperaturechart(); // 온도 차트 업데이트
-                                // 다른 차트들도 필요한 경우 여기서 업데이트
+            temperaturechart();
+            progresschart();
         }
 
         private void defectchart()
@@ -172,64 +172,69 @@ namespace BatteryMes
 
         private void progresschart()
         {
-       /*     Chart prochart = new Chart();
-            prochart.Dock = DockStyle.Fill;
+            //string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+            string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+            DateTime selectedDate = TimePicker.Value.Date;
+            string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+            string query = $"SELECT item_count, date FROM outcome WHERE DATE(date) = '{formattedDate}'";
 
-            ChartArea chartArea = new ChartArea("ChartArea");
-            prochart.ChartAreas.Add(chartArea);
-
-            Series proSeries = new Series("Series");
-            proSeries.ChartType = SeriesChartType.Doughnut;
-
-         
-            proSeries.XValueType = ChartValueType.String;
-            proSeries.YValueType = ChartValueType.Int32;
-            prochart.Series.Add(proSeries);
-
-
-           // string prostring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
-             string prostring = "Server = localhost; Database=batterymes; Uid=root;Pwd=kwak123";
             try
             {
-                using (MySqlConnection procon = new MySqlConnection(prostring))
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    procon.Open();
-                    DateTime selectedDate = TimePicker.Value.Date;
-                    string formattedDate = selectedDate.ToString("yyyy-MM-dd");
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                    string proquery = $@"
-                SELECT * FROM outcome
-                WHERE DATE(date) = '{formattedDate}';
+                    // item_count의 기준 값 (50)
+                    double baseItemCount = 50.0;
 
-                    using (MySqlCommand command = new MySqlCommand(errorquery, procon))
+                    // 데이터가 없는 경우 메시지 출력
+                    if (dataTable.Rows.Count == 0)
                     {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int errorCount = reader.GetInt32("error_count");
-                                string errorCode = reader.GetString("error_code");
-                                proSeries.Points.AddXY(errorCode, errorCount);
-                            }
-                        }
+                        MessageBox.Show("선택한 날짜에 데이터가 없습니다.");
+                        return;
                     }
+
+                    // 원형 차트를 초기화
+                    pg_chart.Series.Clear();
+                    Series pieSeries = new Series
+                    {
+                        Name = "작업 진행률",
+                        ChartType = SeriesChartType.Pie
+                    };
+                    pg_chart.Series.Add(pieSeries);
+
+                    // 데이터 행에서 item_count를 가져와 퍼센티지 계산
+                    double itemCount = dataTable.Rows[0].Field<int>("item_count");
+                    double percentage = itemCount / baseItemCount * 100;
+                    double remainingPercentage = 100 - percentage;
+
+                    // 원형 차트 데이터 포인트 추가
+                    pieSeries.Points.AddXY("작업 진행률", percentage);
+                    pieSeries.Points.AddXY("", remainingPercentage);
+
+                    // 차트 스타일 설정
+                    pieSeries.Points[0].LegendText = $"작업 진행률";
+                    pieSeries.Points[1].LegendText = "남은 작업량";
+                    pieSeries.Points[0].Label = $"{percentage:F2}%";
+                    pieSeries.Points[1].Label = "";
+
+                    pg_chart.Series[0]["PieStartAngle"] = "270";
+
+                    pg_chart.Legends.Clear();
+                    pg_chart.Legends.Add(new Legend("Legend1"));
+                    pg_chart.Legends[0].Docking = Docking.Bottom;
+                    pg_chart.Legends[0].Alignment = StringAlignment.Center;
+                    pg_chart.Legends[0].LegendStyle = LegendStyle.Row;
                 }
-
-                // Additional chart settings (optional)
-                prochart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-                prochart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-                prochart.ChartAreas[0].AxisX.Title = "Error Code";
-                prochart.ChartAreas[0].AxisY.Title = "Error Count";
-                prochart.Titles.Add("Error Code Frequency");
-
-                // Add the chart to the form
-                Pn_progress.Controls.Clear();
-                Pn_progress.Controls.Add(prochart);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
         {
