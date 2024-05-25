@@ -67,10 +67,26 @@ namespace BatteryMes
         {
             ChargeBattery();
         }
-  
+
+        private Dictionary<string, Panel> panelCache = new Dictionary<string, Panel>();
+
         private void ChargeBattery()
         {
-            for(int i = 1540; i<=1555; i++)
+            // 패널 캐시 초기화
+            if (panelCache.Count == 0)
+            {
+                for (int i = 1540; i <= 1555; i++)
+                {
+                    string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                    Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
+                    if (panel != null)
+                    {
+                        panelCache[panelName] = panel;
+                    }
+                }
+            }
+
+            Parallel.For(1540, 1556, i =>
             {
                 int senvalue;
                 int chargevalue;
@@ -80,24 +96,38 @@ namespace BatteryMes
                 plc.GetDevice(sendevice, out senvalue);
                 plc.GetDevice(chargedevice, out chargevalue);
                 string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
-                Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
 
-                if (panel != null)
+                if (panelCache.TryGetValue(panelName, out Panel panel))
                 {
                     if (senvalue == 0)
                     {
-                        panel.BackColor = SystemColors.ControlDark;
-                       
-                        panel.BackgroundImage = null;
+                        UpdatePanel(panel, SystemColors.ControlDark, null);
                     }
                     else if (senvalue == 1)
                     {
-                        panel.BackColor = SystemColors.Control;
-                        panel.BackgroundImage = Properties.Resources.battery; 
+                        UpdatePanel(panel, SystemColors.Control, Properties.Resources.battery);
                     }
                 }
+            });
+        }
+
+        private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
+        {
+            if (panel.InvokeRequired)
+            {
+                panel.Invoke(new Action(() =>
+                {
+                    panel.BackColor = backColor;
+                    panel.BackgroundImage = backgroundImage;
+                }));
+            }
+            else
+            {
+                panel.BackColor = backColor;
+                panel.BackgroundImage = backgroundImage;
             }
         }
+
         private void Fm_Control_Load(object sender, EventArgs e)
         {
            
