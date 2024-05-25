@@ -39,8 +39,8 @@ namespace BatteryMes
         {
             Chart_defect.Series.Clear();
             Chart_defect.Legends.Clear();
-            //string defectstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
-            string defectstring = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+            string defectstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+            //string defectstring = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
             Series DefectSeries = Chart_defect.Series.Add("DefectRate");
             DefectSeries.ChartType = SeriesChartType.Doughnut;
 
@@ -122,8 +122,8 @@ namespace BatteryMes
             errorSeries.YValueType = ChartValueType.Int32;
             errorchart.Series.Add(errorSeries);
 
-            string errorstring = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
-            //string errorstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+            //string errorstring = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+            string errorstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
            // string errorstring = "Server = localhost; Database=batterymes; Uid=root;Pwd=kwak123";
             try
             {
@@ -241,7 +241,8 @@ namespace BatteryMes
 
         private void temperaturechart()
         {
-            string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+            //string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
+            string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
             DateTime selectedDate = TimePicker.Value.Date;
             string formattedDate = selectedDate.ToString("yyyy-MM-dd");
             string query = $"SELECT temperature, datetime FROM tp WHERE DATE(datetime) = '{formattedDate}'";
