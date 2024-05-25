@@ -32,12 +32,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,10 +51,10 @@
             this.Chart_defect = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Pn_progress = new System.Windows.Forms.Panel();
+            this.pg_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Pn_Error = new System.Windows.Forms.Panel();
             this.tp_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pg_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,8 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).BeginInit();
             this.panel5.SuspendLayout();
             this.Pn_progress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pg_chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -227,6 +227,25 @@
             this.Pn_progress.Size = new System.Drawing.Size(533, 307);
             this.Pn_progress.TabIndex = 0;
             // 
+            // pg_chart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.pg_chart.ChartAreas.Add(chartArea2);
+            this.pg_chart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            legend2.Name = "Legend1";
+            this.pg_chart.Legends.Add(legend2);
+            this.pg_chart.Location = new System.Drawing.Point(0, 0);
+            this.pg_chart.Name = "pg_chart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.pg_chart.Series.Add(series2);
+            this.pg_chart.Size = new System.Drawing.Size(533, 307);
+            this.pg_chart.TabIndex = 0;
+            this.pg_chart.Text = "chart1";
+            // 
             // Pn_Error
             // 
             this.Pn_Error.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -257,25 +276,6 @@
             // 
             this.timer1.Interval = 5000;
             // 
-            // pg_chart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.pg_chart.ChartAreas.Add(chartArea2);
-            this.pg_chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            legend2.Name = "Legend1";
-            this.pg_chart.Legends.Add(legend2);
-            this.pg_chart.Location = new System.Drawing.Point(0, 0);
-            this.pg_chart.Name = "pg_chart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.pg_chart.Series.Add(series2);
-            this.pg_chart.Size = new System.Drawing.Size(533, 307);
-            this.pg_chart.TabIndex = 0;
-            this.pg_chart.Text = "chart1";
-            // 
             // Fm_statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -293,8 +293,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chart_defect)).EndInit();
             this.panel5.ResumeLayout(false);
             this.Pn_progress.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pg_chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_chart)).EndInit();
             this.ResumeLayout(false);
 
         }
