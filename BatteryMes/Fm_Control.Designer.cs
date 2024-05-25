@@ -390,7 +390,7 @@
             // Lb_Rack
             // 
             this.Lb_Rack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lb_Rack.Font = new System.Drawing.Font("맑은 고딕", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Rack.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Lb_Rack.Location = new System.Drawing.Point(3, 27);
             this.Lb_Rack.Name = "Lb_Rack";
             this.Lb_Rack.Size = new System.Drawing.Size(379, 160);
@@ -418,7 +418,7 @@
             // Tb_SetTem
             // 
             this.Tb_SetTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Tb_SetTem.Location = new System.Drawing.Point(145, 120);
+            this.Tb_SetTem.Location = new System.Drawing.Point(143, 115);
             this.Tb_SetTem.Name = "Tb_SetTem";
             this.Tb_SetTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_SetTem.TabIndex = 4;
@@ -427,7 +427,7 @@
             // 
             this.Tb_CurTem.Enabled = false;
             this.Tb_CurTem.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Tb_CurTem.Location = new System.Drawing.Point(145, 69);
+            this.Tb_CurTem.Location = new System.Drawing.Point(143, 64);
             this.Tb_CurTem.Name = "Tb_CurTem";
             this.Tb_CurTem.Size = new System.Drawing.Size(100, 34);
             this.Tb_CurTem.TabIndex = 3;
@@ -437,7 +437,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(34, 123);
+            this.label4.Location = new System.Drawing.Point(32, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 25);
             this.label4.TabIndex = 2;
@@ -447,7 +447,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(34, 72);
+            this.label3.Location = new System.Drawing.Point(32, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 25);
             this.label3.TabIndex = 1;
@@ -456,7 +456,7 @@
             // Bt_SetTem
             // 
             this.Bt_SetTem.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Bt_SetTem.Location = new System.Drawing.Point(278, 120);
+            this.Bt_SetTem.Location = new System.Drawing.Point(276, 115);
             this.Bt_SetTem.Name = "Bt_SetTem";
             this.Bt_SetTem.Size = new System.Drawing.Size(83, 34);
             this.Bt_SetTem.TabIndex = 0;
@@ -483,7 +483,7 @@
             this.Bt_RackOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOff.Location = new System.Drawing.Point(224, 82);
             this.Bt_RackOff.Name = "Bt_RackOff";
-            this.Bt_RackOff.Size = new System.Drawing.Size(108, 43);
+            this.Bt_RackOff.Size = new System.Drawing.Size(108, 50);
             this.Bt_RackOff.TabIndex = 1;
             this.Bt_RackOff.Text = "OFF";
             this.Bt_RackOff.UseVisualStyleBackColor = true;
@@ -495,7 +495,7 @@
             this.Bt_RackOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOn.Location = new System.Drawing.Point(59, 82);
             this.Bt_RackOn.Name = "Bt_RackOn";
-            this.Bt_RackOn.Size = new System.Drawing.Size(108, 43);
+            this.Bt_RackOn.Size = new System.Drawing.Size(108, 50);
             this.Bt_RackOn.TabIndex = 0;
             this.Bt_RackOn.Text = "ON";
             this.Bt_RackOn.UseVisualStyleBackColor = true;
@@ -517,9 +517,7 @@
             // 
             // Bt_ConnectOff
             // 
-            this.Bt_ConnectOff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_ConnectOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Bt_ConnectOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOff.Location = new System.Drawing.Point(224, 76);
             this.Bt_ConnectOff.Name = "Bt_ConnectOff";
@@ -531,9 +529,7 @@
             // 
             // Bt_ConnectOn
             // 
-            this.Bt_ConnectOn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bt_ConnectOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Bt_ConnectOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOn.Location = new System.Drawing.Point(59, 76);
             this.Bt_ConnectOn.Name = "Bt_ConnectOn";

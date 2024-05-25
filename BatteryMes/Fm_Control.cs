@@ -65,7 +65,7 @@ namespace BatteryMes
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            ChargeBattery();
+          ChargeBattery();
         }
 
         private Dictionary<string, Panel> panelCache = new Dictionary<string, Panel>();
@@ -113,20 +113,10 @@ namespace BatteryMes
 
         private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
         {
-            if (panel.InvokeRequired)
-            {
-                panel.Invoke(new Action(() =>
-                {
-                    panel.BackColor = backColor;
-                    panel.BackgroundImage = backgroundImage;
-                }));
-            }
-            else
-            {
-                panel.BackColor = backColor;
-                panel.BackgroundImage = backgroundImage;
-            }
+            panel.BackColor = backColor;
+            panel.BackgroundImage = backgroundImage;
         }
+
 
         private void Fm_Control_Load(object sender, EventArgs e)
         {
@@ -137,22 +127,24 @@ namespace BatteryMes
             timer.Stop();
             timer.Dispose();
             plc.Close();
+            stopSignal.Set();
+            taskThread?.Join();
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
-        private void Bt_RackOn_Click(object sender, EventArgs e)
+        private async void Bt_RackOn_Click(object sender, EventArgs e)
         {
             if (taskThread == null || !taskThread.IsAlive)
             {
                 stopSignal.Reset();
-                taskThread = new Thread(TaskRunner);
-                taskThread.Start();
+                await Task.Run(TaskRunner);
             }
         }
-        void TaskRunner()
+
+        private async Task TaskRunner()
         {
             while (true)
             {
@@ -160,131 +152,135 @@ namespace BatteryMes
                 {
                     break;
                 }
-                int randomNumber = -1;
 
                 int m1529Value;
-                plc.GetDevice("M1529", out m1529Value); //인풋 하려는 신호
-
                 int m1585Value;
-                plc.GetDevice("M1585", out m1585Value); //충전완료 된거 1개라도 있으면
 
+                plc.GetDevice("M1529", out m1529Value);
+                plc.GetDevice("M1585", out m1585Value);
+
+                // m1529Value가 1이고 m1585Value가 1이면 랜덤으로 InputTask 또는 OutputTask를 선택하여 실행
                 if (m1529Value == 1 && m1585Value == 1)
                 {
-                    randomNumber = random.Next(2); //둘다 물건 있으면 랜덤
-                }
-                else if (m1585Value != 1) //충전완료된거 없으면 랜덤 0로 인풋
-                {
-                    randomNumber = 0;
-                }
-                else if (m1529Value != 1) //컨베이어에 물건없으면 랜덤1 아웃풋
-                {
-                    randomNumber = 1;
-                }
-                else if (m1529Value == 0 && m1585Value == 0) // 두 조건이 모두 0인 경우
-                {
+                    Random random = new Random();
+                    int randomNumber = random.Next(2);
 
-                    Thread.Sleep(100);
-                }
-
-                if (randomNumber != -1)
-                {
                     if (randomNumber == 0)
                     {
-                        InputTask();
+                        await InputTask();
                     }
                     else
                     {
-                        OutputTask();
+                        await OutputTask();
                     }
                 }
+                // m1529Value가 1이 아니면 InputTask 실행
+                else if (m1529Value == 1)
+                {
+                    await InputTask();
+                }
+                // m1585Value가 1이 아니면 OutputTask 실행
+                else if (m1585Value == 1)
+                {
+                    await OutputTask();
+                }
 
+                // 작업 후 잠시 대기
+                await Task.Delay(500);
             }
         }
-        void InputTask()
+
+        private async Task InputTask()
         {
-            lock (lockObject)
-            {
-                if (isWorking) return;
-                isWorking = true;
-                Console.WriteLine("인풋 신호 시작");
-            }
-            int inputEnd;
-            plc.GetDevice("M1529", out inputEnd);
-            Console.WriteLine("get.");
-
-            if (inputEnd != 1)
-            {
-                Console.WriteLine("InputTask: Input end signal not received.");
-                Thread.Sleep(500);
-                return;
-            }
-            try
-            {
-                int startWarehouse = 1540; //창고 센서 1번째 어드레스
-                int endWarehouse = 1555;  //창고 16번 어드레스
-                int inputStartWarehouse = 1600;  // 수납 1번 어드레스
-                int inputEndWarehouse = 1615; //수납 16번 어드레스
-
-                // Warehouse 상태를 한 번에 읽어옴
-                Dictionary<string, int> warehouseValues = new Dictionary<string, int>();
-                for (int i = startWarehouse; i <= endWarehouse; i++)
-                {
-                    int value;
-                    plc.GetDevice($"M{i}", out value);
-                    warehouseValues[$"M{i}"] = value;
-                }
-
-                // 작업할 Warehouse를 랜덤하게 선택하여 작업 수행
-                int[] warehouseIndexes = Enumerable.Range(startWarehouse, endWarehouse - startWarehouse + 1).ToArray();
-                Shuffle(warehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 Warehouse를 선택
-
-                foreach (int i in warehouseIndexes)
-                {
-                    int warehouseValue = warehouseValues[$"M{i}"];
-                    Console.WriteLine($"InputTask: Warehouse M{i} value: {warehouseValue}");
-
-                    if (warehouseValue == 0)
-                    {
-                        int inputSignal = i + (inputStartWarehouse - startWarehouse);
-                        if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
-                        {
-                            string rackText = GetRackText(inputSignal);
-                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
-                            plc.SetDevice($"M{inputSignal}", 1);
-                            UpdateLabel(Lb_Rack, rackText);
-                            Thread.Sleep(2500);
-                            plc.SetDevice($"M{inputSignal}", 0);
-                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
-                            Thread.Sleep(7000);
-                        }
-                        break;
-                    }
-                }
-
-                int m1576Value;
-                do
-                {
-                    if (stopSignal.WaitOne(0)) // 종료 신호를 확인
-                    {
-                        Console.WriteLine("InputTask: Stopped.");
-                        return;
-                    }
-                    Thread.Sleep(700);
-                    plc.GetDevice("M1576", out m1576Value);
-                    Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
-                } while (m1576Value != 1);
-                UpdateLabel(Lb_Rack, "");
-                Console.WriteLine($"인풋 종료신호 받음");
-            }
-            finally
+            await Task.Run(() =>
             {
                 lock (lockObject)
                 {
-                    isWorking = false;
-                    Console.WriteLine("InputTask: Finished.");
+                    if (isWorking) return;
+                    isWorking = true;
+                    Console.WriteLine("인풋 신호 시작");
                 }
-            }
+
+                int inputEnd;
+                plc.GetDevice("M1529", out inputEnd);
+                Console.WriteLine("get.");
+
+                if (inputEnd != 1)
+                {
+                    Console.WriteLine("InputTask: Input end signal not received.");
+                    Thread.Sleep(500);
+                    return;
+                }
+
+                try
+                {
+                    int startWarehouse = 1540; //창고 센서 1번째 어드레스
+                    int endWarehouse = 1555;  //창고 16번 어드레스
+                    int inputStartWarehouse = 1600;  // 수납 1번 어드레스
+                    int inputEndWarehouse = 1615; //수납 16번 어드레스
+
+                    // Warehouse 상태를 한 번에 읽어옴
+                    Dictionary<string, int> warehouseValues = new Dictionary<string, int>();
+                    for (int i = startWarehouse; i <= endWarehouse; i++)
+                    {
+                        int value;
+                        plc.GetDevice($"M{i}", out value);
+                        warehouseValues[$"M{i}"] = value;
+                    }
+
+                    // 작업할 Warehouse를 랜덤하게 선택하여 작업 수행
+                    int[] warehouseIndexes = Enumerable.Range(startWarehouse, endWarehouse - startWarehouse + 1).ToArray();
+                    Shuffle(warehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 Warehouse를 선택
+
+                    foreach (int i in warehouseIndexes)
+                    {
+                        int warehouseValue = warehouseValues[$"M{i}"];
+                        Console.WriteLine($"투입 창고 빈칸 M{i} value: {warehouseValue}");
+
+                        if (warehouseValue == 0)
+                        {
+                            int inputSignal = i + (inputStartWarehouse - startWarehouse);
+                            if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
+                            {
+                                string rackText = GetRackText(inputSignal);
+                                Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
+                                plc.SetDevice($"M{inputSignal}", 1);
+                                UpdateLabel(Lb_Rack, rackText);
+                                Thread.Sleep(2500);
+                                plc.SetDevice($"M{inputSignal}", 0);
+                                Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
+                                Thread.Sleep(7000);
+                            }
+                            break;
+                        }
+                    }
+
+                    int m1576Value;
+                    do
+                    {
+                        if (stopSignal.WaitOne(0)) // 종료 신호를 확인
+                        {
+                            Console.WriteLine("InputTask: Stopped.");
+                            return;
+                        }
+                        Thread.Sleep(700);
+                        plc.GetDevice("M1576", out m1576Value);
+                        Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
+                    } while (m1576Value != 1);
+                    UpdateLabel(Lb_Rack, "");
+                    Console.WriteLine($"인풋 종료신호 받음");
+                }
+                finally
+                {
+                    lock (lockObject)
+                    {
+                        isWorking = false;
+                        Console.WriteLine("InputTask: Finished.");
+                    }
+                }
+            });
         }
+
         void UpdateLabel(Label label, string text)
         {
             if (label.InvokeRequired)
@@ -319,105 +315,108 @@ namespace BatteryMes
                 default: return "";
             }
         }
-        void OutputTask()
+        private async Task OutputTask()
         {
-            lock (lockObject)
-            {
-                if (isWorking) return;
-                isWorking = true;
-            }
-            int m1585Value;
-            plc.GetDevice("M1585", out m1585Value);
-            if (m1585Value != 1)
-            {
-                Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
-                return;
-            }
-            try
-            {
-                int startChargeWarehouse = 1500;
-                int endChargeWarehouse = 1515;
-                int dischargeStartWarehouse = 1616;
-                int dischargeEndWarehouse = 1631;
-
-                // Charge 상태를 한 번에 읽어옴
-                Dictionary<string, int> chargeValues = new Dictionary<string, int>();
-                for (int i = startChargeWarehouse; i <= endChargeWarehouse; i++)
-                {
-                    int value;
-                    plc.GetDevice($"M{i}", out value);
-                    chargeValues[$"M{i}"] = value;
-                }
-
-                // 작업 가능한 창고를 랜덤하게 선택하여 작업 수행
-                bool canDischarge = false;
-                int dischargeWarehouse = 0;
-                int[] chargeWarehouseIndexes = Enumerable.Range(startChargeWarehouse, endChargeWarehouse - startChargeWarehouse + 1).ToArray();
-                Shuffle(chargeWarehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 창고를 선택
-
-                foreach (int i in chargeWarehouseIndexes)
-                {
-                    int chargeCompleteSignal = chargeValues[$"M{i}"];
-                    Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
-
-                    if (chargeCompleteSignal == 1)
-                    {
-                        canDischarge = true;
-                        dischargeWarehouse = dischargeStartWarehouse + (i - startChargeWarehouse);
-                        break;
-                    }
-                }
-
-                if (!canDischarge)
-                {
-                    Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
-                    Thread.Sleep(1000);
-                    return;
-                }
-
-                // Discharge Warehouse의 신호를 확인하고 작업 수행
-                int dischargeSignal;
-                plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
-                Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
-
-                if (dischargeSignal == 0)
-                {
-                    string rackText = GetDischargeRackText(dischargeWarehouse);
-                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
-                    plc.SetDevice($"M{dischargeWarehouse}", 1);
-                    UpdateLabel(Lb_Rack, rackText);
-                    Thread.Sleep(2500);
-                    plc.SetDevice($"M{dischargeWarehouse}", 0);
-                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
-                    Thread.Sleep(6000);
-
-                    // Discharge 완료 신호를 확인
-                    int dischargeCompleteSignal;
-                    do
-                    {
-                        if (stopSignal.WaitOne(0))
-                        {
-                            Console.WriteLine("InputTask: Stopped.");
-                            return;
-                        }
-                        Thread.Sleep(600);
-                        plc.GetDevice("M1577", out dischargeCompleteSignal);
-                        Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
-                    } while (dischargeCompleteSignal != 1);
-                    UpdateLabel(Lb_Rack, "");
-                    plc.SetDevice($"M{dischargeWarehouse}", 0);
-                    Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
-                }
-            }
-            finally
+            await Task.Run(() =>
             {
                 lock (lockObject)
                 {
-                    isWorking = false;
-                    Console.WriteLine("OutputTask: Finished.");
+                    if (isWorking) return;
+                    isWorking = true;
                 }
-            }
+
+                try
+                {
+                    int m1585Value;
+                    plc.GetDevice("M1585", out m1585Value);
+                    if (m1585Value != 1)
+                    {
+                        Console.WriteLine("OutputTask: M1578 is not 1. Exiting.");
+                        return;
+                    }
+
+                    int startChargeWarehouse = 1500;
+                    int endChargeWarehouse = 1515;
+                    int dischargeStartWarehouse = 1616;
+                    int dischargeEndWarehouse = 1631;
+
+                    Dictionary<string, int> chargeValues = new Dictionary<string, int>();
+                    for (int i = startChargeWarehouse; i <= endChargeWarehouse; i++)
+                    {
+                        int value;
+                        plc.GetDevice($"M{i}", out value);
+                        chargeValues[$"M{i}"] = value;
+                    }
+
+                    bool canDischarge = false;
+                    int dischargeWarehouse = 0;
+                    int[] chargeWarehouseIndexes = Enumerable.Range(startChargeWarehouse, endChargeWarehouse - startChargeWarehouse + 1).ToArray();
+                    Shuffle(chargeWarehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤 창고를 선택
+
+                    foreach (int i in chargeWarehouseIndexes)
+                    {
+                        int chargeCompleteSignal = chargeValues[$"M{i}"];
+                        Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
+
+                        if (chargeCompleteSignal == 1)
+                        {
+                            canDischarge = true;
+                            dischargeWarehouse = dischargeStartWarehouse + (i - startChargeWarehouse);
+                            break;
+                        }
+                    }
+
+                    if (!canDischarge)
+                    {
+                        Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
+                        Thread.Sleep(1000);
+                        return;
+                    }
+
+                    // Discharge Warehouse의 신호를 확인하고 작업 수행
+                    int dischargeSignal;
+                    plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
+                    Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
+
+                    if (dischargeSignal == 0)
+                    {
+                        string rackText = GetDischargeRackText(dischargeWarehouse);
+                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
+                        plc.SetDevice($"M{dischargeWarehouse}", 1);
+                        UpdateLabel(Lb_Rack, rackText);
+                        Thread.Sleep(2500);
+                        plc.SetDevice($"M{dischargeWarehouse}", 0);
+                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
+                        Thread.Sleep(6000);
+
+                        int dischargeCompleteSignal;
+                        do
+                        {
+                            if (stopSignal.WaitOne(0))
+                            {
+                                Console.WriteLine("InputTask: Stopped.");
+                                return;
+                            }
+                            Thread.Sleep(600);
+                            plc.GetDevice("M1577", out dischargeCompleteSignal);
+                            Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
+                        } while (dischargeCompleteSignal != 1);
+                        UpdateLabel(Lb_Rack, "");
+                        plc.SetDevice($"M{dischargeWarehouse}", 0);
+                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
+                    }
+                }
+                finally
+                {
+                    lock (lockObject)
+                    {
+                        isWorking = false;
+                        Console.WriteLine("OutputTask: Finished.");
+                    }
+                }
+            });
         }
+
         string GetDischargeRackText(int dischargeSignal)
         {
             switch (dischargeSignal)
@@ -481,19 +480,22 @@ namespace BatteryMes
             plc.GetDevice("M1002", out Pc_on_value);
             if (Plc_on_value == 1)
             {
-                DialogResult msgresult = MessageBox.Show("PLC와 통신 하시겠습니까?", "연결 확인", MessageBoxButtons.YesNo);
-                if (msgresult == DialogResult.Yes)
+                if (Pc_on_value == 1)
                 {
-                    plc.SetDevice("M1002", 1);
+                    MessageBox.Show("이미 통신 중입니다.", "연결", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    DialogResult msgresult = MessageBox.Show("PLC와 통신 하시겠습니까?", "연결 확인", MessageBoxButtons.YesNo);
+                    if (msgresult == DialogResult.Yes)
+                    {
+                        plc.SetDevice("M1002", 1);
+                    }
                 }
             }
             else if (Plc_on_value == 0)
             {
                 MessageBox.Show("PLC 통신 요청을 확인하세요", "통신 확인", MessageBoxButtons.OK);
-            }
-            else if (Pc_on_value == 1)
-            {
-                MessageBox.Show("이미 통신 중입니다.", "연결", MessageBoxButtons.OK);
             }
         }
 
@@ -510,7 +512,6 @@ namespace BatteryMes
                 }
             }
         }
-
         private void Lb_Rack_Click(object sender, EventArgs e)
         {
 
