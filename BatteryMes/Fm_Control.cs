@@ -216,18 +216,6 @@ namespace BatteryMes
                 }
             }
         }
-         /*  
-
-                // 각 ProgressBar와 Panel 이름 설정
-                ProgressBar bar = Controls.Find($"Bar_{(i / 4) + 1}_{(i % 4) + 1}", true).FirstOrDefault() as ProgressBar;
-                Panel panel = Controls.Find($"Pn_{(i / 4) + 1}_{(i % 4) + 1}", true).FirstOrDefault() as Panel;
-
-                // ProgressBar와 Panel 업데이트
-                UpdateProgressBarAndPanel(senvalue, timevalue, chargevalue, bar, panel);
-            }*/
-
-        
-
         private void Fm_Control_Load(object sender, EventArgs e)
         {
            
@@ -252,26 +240,6 @@ namespace BatteryMes
                 taskThread.Start();
             }
         }
-        /* while (true)
-             {
-                 if (stopSignal.WaitOne(0))
-                 {
-                     break; // 루프를 종료
-                 }
-
-                 int randomNumber = random.Next(2);
-
-                 if (randomNumber == 0)
-                 {
-                     InputTask();
-                 }
-                 else
-                 {
-                     OutputTask();
-                 }
-
-                 Thread.Sleep(500); // 작업 간 잠깐 대기 시간
-             }*/
         void TaskRunner()
         {
                 while (true)
@@ -331,48 +299,48 @@ namespace BatteryMes
 
             try
             {
+                /*   int inputEnd;
+                   plc.GetDevice("M1529", out inputEnd);
+                   Console.WriteLine("get.");
+
+                   if (inputEnd != 1)
+                   {
+                       Console.WriteLine("InputTask: Input end signal not received.");
+                       Thread.Sleep(500);
+                       return;
+                   }
+                */
                 int startWarehouse = 1540;
                 int endWarehouse = 1555;
                 int inputStartWarehouse = 1600;
                 int inputEndWarehouse = 1615;
+                int currentWarehouse = startWarehouse;
 
-                // 병렬로 모든 warehouse를 확인
-                var warehouseValues = new ConcurrentDictionary<int, int>();
-                Console.WriteLine("병렬 작업 시작");
-
-                Parallel.For(startWarehouse, endWarehouse + 1, currentWarehouse =>
+                while (currentWarehouse <= endWarehouse)
                 {
-                    Console.WriteLine($"스레드 시작: Warehouse M{currentWarehouse}");
-                    if (stopSignal.WaitOne(0)) // 종료 신호를 확인
-                    {
-                        Console.WriteLine("InputTask: Stopped.");
-                        return;
-                    }
-
                     int warehouseValue;
                     plc.GetDevice($"M{currentWarehouse}", out warehouseValue);
-                    warehouseValues[currentWarehouse] = warehouseValue;
-                    Console.WriteLine($"스레드 종료: Warehouse M{currentWarehouse}, value: {warehouseValue}");
-                });
+                    Console.WriteLine($"InputTask: Warehouse M{currentWarehouse} value: {warehouseValue}");
 
-                Console.WriteLine("병렬 작업 종료");
-
-                // 0인 warehouse 위치 찾기
-                var targetWarehouse = warehouseValues.FirstOrDefault(kvp => kvp.Value == 0).Key;
-                Console.WriteLine($"Target Warehouse: M{targetWarehouse}");
-
-                // 찾은 위치 처리
-                if (targetWarehouse != 0)
-                {
-                    int inputSignal = targetWarehouse + (inputStartWarehouse - startWarehouse);
-                    if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
+                    if (warehouseValue == 1)
                     {
-                        Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
-                        plc.SetDevice($"M{inputSignal}", 1);
-                        Thread.Sleep(1000);
-                        plc.SetDevice($"M{inputSignal}", 0);
-                        Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
-                        Thread.Sleep(2000);
+                        currentWarehouse++;
+                        continue;
+                    }
+
+                    if (warehouseValue == 0)
+                    {
+                        int inputSignal = currentWarehouse + (inputStartWarehouse - startWarehouse);
+                        if (inputSignal >= inputStartWarehouse && inputSignal <= inputEndWarehouse)
+                        {
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 1");
+                            plc.SetDevice($"M{inputSignal}", 1);
+                            Thread.Sleep(1000);
+                            plc.SetDevice($"M{inputSignal}", 0);
+                            Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
+                            Thread.Sleep(2000);
+                        }
+                        break;
                     }
                 }
 
@@ -389,7 +357,7 @@ namespace BatteryMes
                     Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
                 } while (m1576Value != 1);
 
-                Console.WriteLine("인풋 종료신호 받음");
+                Console.WriteLine($"인풋 종료신호 받음");
             }
             finally
             {
