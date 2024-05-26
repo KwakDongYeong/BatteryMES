@@ -33,52 +33,81 @@ namespace BatteryMes
         private Dictionary<string, Panel> panelCache = new Dictionary<string, Panel>();
         private Dictionary<string, Panel> chargepanel = new Dictionary<string, Panel>();
 
-
         public Fm_Control()
         {
             InitializeComponent();
             plc.ActLogicalStationNumber = 0;
-            plc.Open();
-            int result;
-                if((result = plc.Open()) != 0)
-                {
-                Console.WriteLine("plc 연결완");
-                  }
+            int result = plc.Open();
+            if (result == 0)
+            {
+                Console.WriteLine("PLC 연결 완료");
+            }
+            else
+            {
+                Console.WriteLine($"PLC 연결 실패: {result}");
+            }
 
             timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
 
-         //   ChargeBattery();
-            this.DoubleBuffered = true;
+            // 온도 값 초기화
+            int temValue;
+            plc.GetDevice("D1513", out temValue);
+            Tb_CurTem.Text = temValue.ToString();
 
-            int Temvalue; //현재 온도 값 받아오기
-            plc.GetDevice("D1513", out Temvalue);
-            Tb_CurTem.Text = Temvalue.ToString();
-
+            // 초기 상태 설정
             plc.GetDevice("M1002", out Pc_on_value);
-            if (Pc_on_value == 1)
-            {
-                Bt_ConnectOn.BackColor = Color.Red;
-            }
-            else
-            {
-                Bt_ConnectOn.BackColor = SystemColors.Control;
-            }
-
+            Bt_ConnectOn.BackColor = (Pc_on_value == 1) ? Color.Red : SystemColors.Control;
         }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
-         //   ChargeBattery();
+            ChargeBattery();
+        }
+        private void ChargeBattery()
+        {
+            InitializePanelCache();
+            InitializeChargePanel();
+
+            for (int i = 1540; i <= 1555; i++)
+            {
+                int senvalue, chargevalue;
+                string sendevice = $"M{i}";
+                string chargedevice = $"M{i - 40}";
+                plc.GetDevice(sendevice, out senvalue);
+                plc.GetDevice(chargedevice, out chargevalue);
+                string panelName = GetPanelName(i);
+                string overlayPanelName = GetOverlayPanelName(i);
+
+                if (panelCache.TryGetValue(panelName, out Panel panel))
+                {
+                    UpdatePanel(panel, senvalue == 1 ? SystemColors.Control : SystemColors.ControlDark, senvalue == 1 ? Properties.Resources.battery : null);
+                }
+
+                if (chargepanel.TryGetValue(overlayPanelName, out Panel overlayPanel))
+                {
+                    if (senvalue == 1)
+                    {
+                        overlayPanel.BackColor = (overlayPanel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
+                        overlayPanel.Visible = true;
+                    }
+                    else
+                    {
+                        overlayPanel.Visible = false;
+                    }
+                    UpdateCompleteSignalPanels();
+                }
+            }
         }
 
-      /*  private void ChargeBattery()
+        private void InitializePanelCache()
         {
             if (panelCache.Count == 0)
             {
                 for (int i = 1540; i <= 1555; i++)
                 {
-                    string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                    string panelName = GetPanelName(i);
                     Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
                     if (panel != null)
                     {
@@ -86,11 +115,15 @@ namespace BatteryMes
                     }
                 }
             }
+        }
+
+        private void InitializeChargePanel()
+        {
             if (chargepanel.Count == 0)
             {
                 for (int i = 1540; i <= 1555; i++)
                 {
-                    string overlayPanelName = $"Pn_Sen_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                    string overlayPanelName = GetOverlayPanelName(i);
                     Panel overlayPanel = Controls.Find(overlayPanelName, true).FirstOrDefault() as Panel;
                     if (overlayPanel != null)
                     {
@@ -98,69 +131,52 @@ namespace BatteryMes
                     }
                 }
             }
+        }
 
-            for (int i = 1540; i <= 1555; i++)
+        private void UpdateCompleteSignalPanels()
+        {
+            for (int j = 1500; j <= 1515; j++)
             {
-                int senvalue;
-                int chargevalue;
-
-                string sendevice = $"M{i}";
-                string chargedevice = $"M{i - 40}";
-                plc.GetDevice(sendevice, out senvalue);
-                plc.GetDevice(chargedevice, out chargevalue);
-                string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
-                string overlayPanelName = $"Pn_Sen_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
-
-                if (panelCache.TryGetValue(panelName, out Panel panel))
+                string completeSignalDevice = $"M{j}";
+                plc.GetDevice(completeSignalDevice, out int completeSignal);
+                if (completeSignal == 1)
                 {
-                    if (senvalue == 1)
+                    string panelName = GetOverlayPanelName(j);
+                    if (chargepanel.TryGetValue(panelName, out Panel completePanel))
                     {
-                        UpdatePanel(panel, SystemColors.Control, Properties.Resources.battery);
+                        completePanel.BackColor = Color.Red;
                     }
-                    else
-                    {
-                        UpdatePanel(panel, SystemColors.ControlDark, null);
-                    }
-                }
-
-                if (chargepanel.TryGetValue(overlayPanelName, out Panel overlayPanel))
-                {
-                    if (senvalue == 1)
-                    {
-                        Color backColor = (overlayPanel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
-                        overlayPanel.BackColor = backColor;
-                        overlayPanel.Visible = true;
-                    }
-                    else
-                    {
-                        overlayPanel.Visible = false;
-                    }
-
-                    // M1500부터 M1515까지의 신호가 모두 1이면 충전 완료로 판단하여 패널의 색을 빨간색으로 변경
-                  
-                    for (int j = 1500; j <= 1515; j++)
-                    {
-                        string completeSignalDevice = $"M{j}";
-                        int completeSignal;
-                        plc.GetDevice(completeSignalDevice, out completeSignal);
-                        if (completeSignal == 1)
-                        {
-                            string panelName1 = $"Pn_Sen_{((j - 1500) / 4) + 1}_{((j - 1500) % 4) + 1}";
-                            if (chargepanel.TryGetValue(panelName1, out Panel completePanel))
-                            {
-                                completePanel.BackColor = Color.Red;
-                            }
-                        }
-                    }
-
                 }
             }
         }
+
         private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
         {
-            panel.BackColor = backColor;
-            panel.BackgroundImage = backgroundImage;
-        }*/
+            if (panel.InvokeRequired)
+            {
+                panel.Invoke(new Action(() =>
+                {
+                    panel.BackColor = backColor;
+                    panel.BackgroundImage = backgroundImage;
+                }));
+            }
+            else
+            {
+                panel.BackColor = backColor;
+                panel.BackgroundImage = backgroundImage;
+            }
+        }
+
+        private string GetPanelName(int index)
+        {
+            return $"Pn_{((index - 1540) / 4) + 1}_{((index - 1540) % 4) + 1}";
+        }
+
+        private string GetOverlayPanelName(int index)
+        {
+            return $"Pn_Sen_{((index - 1540) / 4) + 1}_{((index - 1540) % 4) + 1}";
+        }
+
         private void Fm_Control_Load(object sender, EventArgs e)
         {
            
@@ -169,23 +185,55 @@ namespace BatteryMes
         {
             timer.Stop();
             timer.Dispose();
+            StopTask();
             plc.Close();
-            stopSignal.Set();
-            taskThread?.Join();
         }
-        private void progressBar1_Click(object sender, EventArgs e)
+        private void StopTask()
         {
-
-        }
-        private async void Bt_RackOn_Click(object sender, EventArgs e)
-        {
-            if (taskThread == null || !taskThread.IsAlive)
+            if (taskThread != null && taskThread.IsAlive)
             {
-                stopSignal.Reset();
-                await Task.Run(TaskRunner);
+                stopSignal.Set();
+                taskThread.Join();
+                taskThread = null;
             }
         }
-
+        private void Bt_RackOn_Click(object sender, EventArgs e)
+        {
+            int autovalue;
+            plc.GetDevice("M1588", out autovalue);
+            if (autovalue == 1)
+            {
+                DialogResult auto = MessageBox.Show("렉 작업 가동을 하시겠습니까?", "자동화 확인", MessageBoxButtons.YesNo);
+                if (auto == DialogResult.Yes)
+                {
+                    if (taskThread == null || !taskThread.IsAlive)
+                    {
+                        stopSignal.Reset();
+                        taskThread = new Thread(() =>
+                        {
+                            try
+                            {
+                                TaskRunner().GetAwaiter().GetResult();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"예외 발생: {ex.Message}");
+                                MessageBox.Show($"작업 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        });
+                        taskThread.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show("작업이 이미 진행 중입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Auto 신호를 확인해주세요", "Auto 확인", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private async Task TaskRunner()
         {
             while (true)
@@ -194,33 +242,41 @@ namespace BatteryMes
                 {
                     break;
                 }
-                int m1529Value;
-                int m1585Value;
 
-                plc.GetDevice("M1529", out m1529Value);
-                plc.GetDevice("M1585", out m1585Value);
-
-                if (m1529Value == 1 && m1585Value == 1)
+                try
                 {
-                    Random random = new Random();
-                    int randomNumber = random.Next(2);
+                    int m1529Value;
+                    int m1585Value;
 
-                    if (randomNumber == 0)
+                    plc.GetDevice("M1529", out m1529Value);
+                    plc.GetDevice("M1585", out m1585Value);
+
+                    if (m1529Value == 1 && m1585Value == 1)
+                    {
+                        Random random = new Random();
+                        int randomNumber = random.Next(2);
+
+                        if (randomNumber == 0)
+                        {
+                            await InputTask();
+                        }
+                        else
+                        {
+                            await OutputTask();
+                        }
+                    }
+                    else if (m1529Value == 1)
                     {
                         await InputTask();
                     }
-                    else
+                    else if (m1585Value == 1)
                     {
                         await OutputTask();
                     }
                 }
-                else if (m1529Value == 1)
+                catch (Exception ex)
                 {
-                    await InputTask();
-                }
-                else if (m1585Value == 1)
-                {
-                    await OutputTask();
+                    Console.WriteLine($"TaskRunner 예외 발생: {ex.Message}");
                 }
                 await Task.Delay(500);
             }
@@ -241,7 +297,7 @@ namespace BatteryMes
                 Console.WriteLine("get.");
                 if (inputEnd != 1)
                 {
-                    Console.WriteLine("InputTask: Input end signal not received.");
+                    Console.WriteLine("부품 도착 X.");
                     Thread.Sleep(500);
                     return;
                 }
@@ -260,9 +316,8 @@ namespace BatteryMes
                         warehouseValues[$"M{i}"] = value;
                     }
 
-                    // 작업할 Warehouse를 랜덤하게 선택하여 작업 수행
                     int[] warehouseIndexes = Enumerable.Range(startWarehouse, endWarehouse - startWarehouse + 1).ToArray();
-                    Shuffle(warehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤한 순서로 작업할 Warehouse를 선택
+                    Shuffle(warehouseIndexes); // 배열을 섞는 함수를 호출
 
                     foreach (int i in warehouseIndexes)
                     {
@@ -281,7 +336,7 @@ namespace BatteryMes
                                 Thread.Sleep(2500);
                                 plc.SetDevice($"M{inputSignal}", 0);
                                 Console.WriteLine($"InputTask: Setting device {inputSignal} to 0");
-                                Thread.Sleep(7000);
+                                Thread.Sleep(8000);
                             }
                             break;
                         }
@@ -296,7 +351,7 @@ namespace BatteryMes
                             Console.WriteLine("InputTask: Stopped.");
                             return;
                         }
-                        Thread.Sleep(700);
+                        Thread.Sleep(800);
                         plc.GetDevice("M1576", out m1576Value);
                         Console.WriteLine($"InputTask: Device M1576 value: {m1576Value}");
                         if ((DateTime.Now - startTime).TotalSeconds > 15)
@@ -307,6 +362,7 @@ namespace BatteryMes
                     } while (m1576Value != 1);
                     UpdateLabel(Lb_Rack, "");
                     Console.WriteLine($"인풋 종료신호 받음");
+                    Thread.Sleep(300);
                 }
                 finally
                 {
@@ -319,40 +375,6 @@ namespace BatteryMes
             });
         }
 
-        void UpdateLabel(Label label, string text)
-        {
-            if (label.InvokeRequired)
-            {
-                label.Invoke(new Action(() => label.Text = text));
-            }
-            else
-            {
-                label.Text = text;
-            }
-        }
-        string GetRackText(int inputSignal)
-        {
-            switch (inputSignal)
-            {
-                case 1600: return "1연 1단 투입";
-                case 1601: return "1연 2단 투입";
-                case 1602: return "1연 3단 투입";
-                case 1603: return "1연 4단 투입";
-                case 1604: return "2연 1단 투입";
-                case 1605: return "2연 2단 투입";
-                case 1606: return "2연 3단 투입";
-                case 1607: return "2연 4단 투입";
-                case 1608: return "3연 1단 투입";
-                case 1609: return "3연 2단 투입";
-                case 1610: return "3연 3단 투입";
-                case 1611: return "3연 4단 투입";
-                case 1612: return "4연 1단 투입";
-                case 1613: return "4연 2단 투입";
-                case 1614: return "4연 3단 투입";
-                case 1615: return "4연 4단 투입";
-                default: return "";
-            }
-        }
         private async Task OutputTask()
         {
             await Task.Run(() =>
@@ -388,13 +410,14 @@ namespace BatteryMes
 
                     bool canDischarge = false;
                     int dischargeWarehouse = 0;
+
                     int[] chargeWarehouseIndexes = Enumerable.Range(startChargeWarehouse, endChargeWarehouse - startChargeWarehouse + 1).ToArray();
                     Shuffle(chargeWarehouseIndexes); // 배열을 섞는 함수를 호출하여 랜덤 창고를 선택
 
                     foreach (int i in chargeWarehouseIndexes)
                     {
                         int chargeCompleteSignal = chargeValues[$"M{i}"];
-                        Console.WriteLine($"OutputTask: Charge complete signal M{i} value: {chargeCompleteSignal}");
+                        Console.WriteLine($"배출: 충전완료된 창고 찾음  M{i} value: {chargeCompleteSignal}");
 
                         if (chargeCompleteSignal == 1)
                         {
@@ -406,7 +429,7 @@ namespace BatteryMes
 
                     if (!canDischarge)
                     {
-                        Console.WriteLine("OutputTask: Cannot discharge yet. Waiting...");
+                        Console.WriteLine("배출 : 충전 완료 창고 없음");
                         Thread.Sleep(1000);
                         return;
                     }
@@ -414,34 +437,39 @@ namespace BatteryMes
                     //신호를 확인
                     int dischargeSignal;
                     plc.GetDevice($"M{dischargeWarehouse}", out dischargeSignal);
-                    Console.WriteLine($"OutputTask: Discharge signal M{dischargeWarehouse} value: {dischargeSignal}");
 
                     if (dischargeSignal == 0)
                     {
                         string rackText = GetDischargeRackText(dischargeWarehouse);
-                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 1");
+                        Console.WriteLine($"배출 : 시작할 신호 M{dischargeWarehouse} to 1");
                         plc.SetDevice($"M{dischargeWarehouse}", 1);
                         UpdateLabel(Lb_Rack, rackText);
                         Thread.Sleep(2500);
                         plc.SetDevice($"M{dischargeWarehouse}", 0);
-                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
-                        Thread.Sleep(5000);
+                        Console.WriteLine($"배출 신호 끄기 M{dischargeWarehouse} to 0");
+                        Thread.Sleep(7000);
 
-                        int dischargeCompleteSignal;
+                        int m1577Value;
+                        DateTime startTime = DateTime.Now;
                         do
                         {
-                            if (stopSignal.WaitOne(0))
+                            if (stopSignal.WaitOne(0)) // 종료 신호를 확인
                             {
-                                Console.WriteLine("InputTask: Stopped.");
+                                Console.WriteLine("자동 배출 종료");
                                 return;
                             }
-                            Thread.Sleep(600);
-                            plc.GetDevice("M1577", out dischargeCompleteSignal);
-                            Console.WriteLine($"OutputTask: Discharge complete signal M1577 value: {dischargeCompleteSignal}");
-                        } while (dischargeCompleteSignal != 1);
+                            Thread.Sleep(800);
+                            plc.GetDevice("M1577", out m1577Value);
+                            Console.WriteLine($"OutputTask: Device M1595 value: {m1577Value}");
+                            if ((DateTime.Now - startTime).TotalSeconds > 15)
+                            {
+                                Console.WriteLine("강제 배출 종료.");
+                                return;
+                            }
+                        } while (m1577Value != 1);
                         UpdateLabel(Lb_Rack, "");
-                        plc.SetDevice($"M{dischargeWarehouse}", 0);
-                        Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
+                        Console.WriteLine($"배출 완료 신호 받음");
+                        Thread.Sleep(300);
                     }
                 }
                 finally
@@ -449,10 +477,57 @@ namespace BatteryMes
                     lock (lockObject)
                     {
                         isWorking = false;
-                        Console.WriteLine("OutputTask: Finished.");
+                        Console.WriteLine("배출 완료");
                     }
                 }
             });
+        }
+        private void UpdateLabel(Label label, string text)
+        {
+            if (label.InvokeRequired)
+            {
+                label.Invoke(new Action(() => label.Text = text));
+            }
+            else
+            {
+                label.Text = text;
+            }
+        }
+
+        private void Shuffle<T>(T[] array)
+        {
+            Random random = new Random();
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = random.Next(i + 1);
+                T temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        string GetRackText(int inputSignal)
+        {
+            switch (inputSignal)
+            {
+                case 1600: return "1연 1단 투입";
+                case 1601: return "1연 2단 투입";
+                case 1602: return "1연 3단 투입";
+                case 1603: return "1연 4단 투입";
+                case 1604: return "2연 1단 투입";
+                case 1605: return "2연 2단 투입";
+                case 1606: return "2연 3단 투입";
+                case 1607: return "2연 4단 투입";
+                case 1608: return "3연 1단 투입";
+                case 1609: return "3연 2단 투입";
+                case 1610: return "3연 3단 투입";
+                case 1611: return "3연 4단 투입";
+                case 1612: return "4연 1단 투입";
+                case 1613: return "4연 2단 투입";
+                case 1614: return "4연 3단 투입";
+                case 1615: return "4연 4단 투입";
+                default: return "";
+            }
         }
 
         string GetDischargeRackText(int dischargeSignal)
@@ -478,25 +553,14 @@ namespace BatteryMes
                 default: return "";
             }
         }
-        void Shuffle<T>(T[] array)
-        {
-            Random rng = new Random();
-            int n = array.Length;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                T value = array[k];
-                array[k] = array[n];
-                array[n] = value;
-            }
-        }
         private void Bt_RackOff_Click(object sender, EventArgs e)
         {
             DialogResult stopmsg = MessageBox.Show("작업을 정지하시겠습니까?", "창고 작업 종료", MessageBoxButtons.YesNo);
             if (stopmsg == DialogResult.Yes)
-            { 
-            stopSignal.Set();
+            {
+                stopSignal.Set();
+                taskThread.Join();
+                Console.WriteLine("작업이 중지되었습니다.");
             }
         }
 

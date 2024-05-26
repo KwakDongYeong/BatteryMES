@@ -641,7 +641,7 @@
             // Bt_RackOff
             // 
             this.Bt_RackOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Bt_RackOff.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Bt_RackOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_RackOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOff.Location = new System.Drawing.Point(224, 82);
             this.Bt_RackOff.Name = "Bt_RackOff";
@@ -654,7 +654,7 @@
             // Bt_RackOn
             // 
             this.Bt_RackOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Bt_RackOn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Bt_RackOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_RackOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_RackOn.Location = new System.Drawing.Point(59, 82);
             this.Bt_RackOn.Name = "Bt_RackOn";
@@ -682,7 +682,7 @@
             // 
             this.Bt_ConnectOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Bt_ConnectOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Bt_ConnectOff.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Bt_ConnectOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_ConnectOff.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOff.Location = new System.Drawing.Point(224, 82);
             this.Bt_ConnectOff.Name = "Bt_ConnectOff";
@@ -696,7 +696,7 @@
             // 
             this.Bt_ConnectOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Bt_ConnectOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Bt_ConnectOn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Bt_ConnectOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_ConnectOn.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Bt_ConnectOn.Location = new System.Drawing.Point(59, 82);
             this.Bt_ConnectOn.Name = "Bt_ConnectOn";
