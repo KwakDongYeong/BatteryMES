@@ -33,170 +33,147 @@ namespace BatteryMes
         private Dictionary<string, Panel> panelCache = new Dictionary<string, Panel>();
         private Dictionary<string, Panel> chargepanel = new Dictionary<string, Panel>();
 
+
         public Fm_Control()
         {
             InitializeComponent();
             plc.ActLogicalStationNumber = 0;
-            int result = plc.Open();
-            if (result == 0)
+            plc.Open();
+            int result;
+            if ((result = plc.Open()) != 0)
             {
-                Console.WriteLine("PLC 연결 완료");
-            }
-            else
-            {
-                Console.WriteLine($"PLC 연결 실패: {result}");
+                Console.WriteLine("plc 연결완");
             }
 
             timer.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            // 온도 값 초기화
-            int temValue;
-            plc.GetDevice("D1513", out temValue);
-            Tb_CurTem.Text = temValue.ToString();
+            //   ChargeBattery();
+            this.DoubleBuffered = true;
 
-            // 초기 상태 설정
+            int Temvalue; //현재 온도 값 받아오기
+            plc.GetDevice("D1513", out Temvalue);
+            Tb_CurTem.Text = Temvalue.ToString();
+
             plc.GetDevice("M1002", out Pc_on_value);
-            Bt_ConnectOn.BackColor = (Pc_on_value == 1) ? Color.Red : SystemColors.Control;
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            ChargeBattery();
-        }
-        private void ChargeBattery()
-        {
-            InitializePanelCache();
-            InitializeChargePanel();
-
-            for (int i = 1540; i <= 1555; i++)
+            if (Pc_on_value == 1)
             {
-                int senvalue, chargevalue;
-                string sendevice = $"M{i}";
-                string chargedevice = $"M{i - 40}";
-                plc.GetDevice(sendevice, out senvalue);
-                plc.GetDevice(chargedevice, out chargevalue);
-                string panelName = GetPanelName(i);
-                string overlayPanelName = GetOverlayPanelName(i);
-
-                if (panelCache.TryGetValue(panelName, out Panel panel))
-                {
-                    UpdatePanel(panel, senvalue == 1 ? SystemColors.Control : SystemColors.ControlDark, senvalue == 1 ? Properties.Resources.battery : null);
-                }
-
-                if (chargepanel.TryGetValue(overlayPanelName, out Panel overlayPanel))
-                {
-                    if (senvalue == 1)
-                    {
-                        overlayPanel.BackColor = (overlayPanel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
-                        overlayPanel.Visible = true;
-                    }
-                    else
-                    {
-                        overlayPanel.Visible = false;
-                    }
-                    UpdateCompleteSignalPanels();
-                }
-            }
-        }
-
-        private void InitializePanelCache()
-        {
-            if (panelCache.Count == 0)
-            {
-                for (int i = 1540; i <= 1555; i++)
-                {
-                    string panelName = GetPanelName(i);
-                    Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
-                    if (panel != null)
-                    {
-                        panelCache[panelName] = panel;
-                    }
-                }
-            }
-        }
-
-        private void InitializeChargePanel()
-        {
-            if (chargepanel.Count == 0)
-            {
-                for (int i = 1540; i <= 1555; i++)
-                {
-                    string overlayPanelName = GetOverlayPanelName(i);
-                    Panel overlayPanel = Controls.Find(overlayPanelName, true).FirstOrDefault() as Panel;
-                    if (overlayPanel != null)
-                    {
-                        chargepanel[overlayPanelName] = overlayPanel;
-                    }
-                }
-            }
-        }
-
-        private void UpdateCompleteSignalPanels()
-        {
-            for (int j = 1500; j <= 1515; j++)
-            {
-                string completeSignalDevice = $"M{j}";
-                plc.GetDevice(completeSignalDevice, out int completeSignal);
-                if (completeSignal == 1)
-                {
-                    string panelName = GetOverlayPanelName(j);
-                    if (chargepanel.TryGetValue(panelName, out Panel completePanel))
-                    {
-                        completePanel.BackColor = Color.Red;
-                    }
-                }
-            }
-        }
-
-        private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
-        {
-            if (panel.InvokeRequired)
-            {
-                panel.Invoke(new Action(() =>
-                {
-                    panel.BackColor = backColor;
-                    panel.BackgroundImage = backgroundImage;
-                }));
+                Bt_ConnectOn.BackColor = Color.Red;
             }
             else
             {
-                panel.BackColor = backColor;
-                panel.BackgroundImage = backgroundImage;
+                Bt_ConnectOn.BackColor = SystemColors.Control;
             }
-        }
 
-        private string GetPanelName(int index)
+        }
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            return $"Pn_{((index - 1540) / 4) + 1}_{((index - 1540) % 4) + 1}";
+            //   ChargeBattery();
         }
 
-        private string GetOverlayPanelName(int index)
-        {
-            return $"Pn_Sen_{((index - 1540) / 4) + 1}_{((index - 1540) % 4) + 1}";
-        }
+        /*  private void ChargeBattery()
+          {
+              if (panelCache.Count == 0)
+              {
+                  for (int i = 1540; i <= 1555; i++)
+                  {
+                      string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                      Panel panel = Controls.Find(panelName, true).FirstOrDefault() as Panel;
+                      if (panel != null)
+                      {
+                          panelCache[panelName] = panel;
+                      }
+                  }
+              }
+              if (chargepanel.Count == 0)
+              {
+                  for (int i = 1540; i <= 1555; i++)
+                  {
+                      string overlayPanelName = $"Pn_Sen_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                      Panel overlayPanel = Controls.Find(overlayPanelName, true).FirstOrDefault() as Panel;
+                      if (overlayPanel != null)
+                      {
+                          chargepanel[overlayPanelName] = overlayPanel;
+                      }
+                  }
+              }
 
+              for (int i = 1540; i <= 1555; i++)
+              {
+                  int senvalue;
+                  int chargevalue;
+
+                  string sendevice = $"M{i}";
+                  string chargedevice = $"M{i - 40}";
+                  plc.GetDevice(sendevice, out senvalue);
+                  plc.GetDevice(chargedevice, out chargevalue);
+                  string panelName = $"Pn_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+                  string overlayPanelName = $"Pn_Sen_{((i - 1540) / 4) + 1}_{((i - 1540) % 4) + 1}";
+
+                  if (panelCache.TryGetValue(panelName, out Panel panel))
+                  {
+                      if (senvalue == 1)
+                      {
+                          UpdatePanel(panel, SystemColors.Control, Properties.Resources.battery);
+                      }
+                      else
+                      {
+                          UpdatePanel(panel, SystemColors.ControlDark, null);
+                      }
+                  }
+
+                  if (chargepanel.TryGetValue(overlayPanelName, out Panel overlayPanel))
+                  {
+                      if (senvalue == 1)
+                      {
+                          Color backColor = (overlayPanel.BackColor == Color.Green) ? Color.Yellow : Color.Green;
+                          overlayPanel.BackColor = backColor;
+                          overlayPanel.Visible = true;
+                      }
+                      else
+                      {
+                          overlayPanel.Visible = false;
+                      }
+
+                      // M1500부터 M1515까지의 신호가 모두 1이면 충전 완료로 판단하여 패널의 색을 빨간색으로 변경
+
+                      for (int j = 1500; j <= 1515; j++)
+                      {
+                          string completeSignalDevice = $"M{j}";
+                          int completeSignal;
+                          plc.GetDevice(completeSignalDevice, out completeSignal);
+                          if (completeSignal == 1)
+                          {
+                              string panelName1 = $"Pn_Sen_{((j - 1500) / 4) + 1}_{((j - 1500) % 4) + 1}";
+                              if (chargepanel.TryGetValue(panelName1, out Panel completePanel))
+                              {
+                                  completePanel.BackColor = Color.Red;
+                              }
+                          }
+                      }
+
+                  }
+              }
+          }
+          private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
+          {
+              panel.BackColor = backColor;
+              panel.BackgroundImage = backgroundImage;
+          }*/
         private void Fm_Control_Load(object sender, EventArgs e)
         {
-           
+
         }
         private void Fm_Controls_Closing(object sender, FormClosingEventArgs e)
         {
             timer.Stop();
             timer.Dispose();
-            StopTask();
             plc.Close();
+            stopSignal.Set();
+            taskThread?.Join();
         }
-        private void StopTask()
-        {
-            if (taskThread != null && taskThread.IsAlive)
-            {
-                stopSignal.Set();
-                taskThread.Join();
-                taskThread = null;
-            }
-        }
+
         private void Bt_RackOn_Click(object sender, EventArgs e)
         {
             int autovalue;
@@ -482,6 +459,7 @@ namespace BatteryMes
                 }
             });
         }
+
         private void UpdateLabel(Label label, string text)
         {
             if (label.InvokeRequired)
@@ -570,7 +548,7 @@ namespace BatteryMes
 
             if (int.TryParse(Tb_SetTem.Text, out value))
             {
-              //  value *= 10;
+                //  value *= 10;
                 plc.SetDevice("D1613", value);
                 plc.SetDevice("D1614.0", 1);
                 MessageBox.Show("설정 완료", "온도 설정", MessageBoxButtons.OK);
