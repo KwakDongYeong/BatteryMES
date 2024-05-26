@@ -92,7 +92,7 @@ namespace BatteryMes
                                 }
                                 else
                                 {
-                                    MessageBox.Show("오늘의 데이터가 없습니다.");
+                                    Console.WriteLine("오늘의 데이터가 없습니다.");
                                 }
                             }
                         }
@@ -101,7 +101,7 @@ namespace BatteryMes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
         private void Errorchart()
@@ -132,13 +132,19 @@ namespace BatteryMes
                     errorcon.Open();
                     DateTime selectedDate = TimePicker.Value.Date;
                     string formattedDate = selectedDate.ToString("yyyy-MM-dd");
-
+                    //DataTable dataTable = new DataTable();
                     string errorquery = $@"
                 SELECT COUNT(*) AS error_count, error_code 
                 FROM error 
                 WHERE DATE(date) = '{formattedDate}' 
                 GROUP BY error_code";
 
+                    /*if (dataTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("선택한 날짜에 작업진행률 데이터가 없습니다.");
+                        return;
+                    }
+                    */
                     using (MySqlCommand command = new MySqlCommand(errorquery, errorcon))
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -194,7 +200,7 @@ namespace BatteryMes
                     // 데이터가 없는 경우 메시지 출력
                     if (dataTable.Rows.Count == 0)
                     {
-                        MessageBox.Show("선택한 날짜에 데이터가 없습니다.");
+                        MessageBox.Show("선택한 날짜에 작업진행률 데이터가 없습니다.");
                         return;
                     }
 
@@ -233,7 +239,7 @@ namespace BatteryMes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
         private void TimePicker_ValueChanged(object sender, EventArgs e)
@@ -263,11 +269,11 @@ namespace BatteryMes
                     adapter.Fill(dataTable);
 
                     // 선택한 날짜에 데이터가 없는 경우 메시지 출력
-                    if (dataTable.Rows.Count == 0)
+                    /*if (dataTable.Rows.Count == 0)
                     {
-                        MessageBox.Show("선택한 날짜에 데이터가 없습니다.");
+                        MessageBox.Show("선택한 날짜에 온도 데이터가 없습니다.");
                         return;
-                    }
+                    }*/
 
                     // 가장 최근 시간 가져오기
                     DateTime maxTime = dataTable.AsEnumerable().Max(row => row.Field<DateTime>("datetime"));
@@ -354,7 +360,7 @@ namespace BatteryMes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
         
