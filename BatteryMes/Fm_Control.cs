@@ -49,7 +49,7 @@ namespace BatteryMes
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            ChargeBattery();
+         //   ChargeBattery();
             this.DoubleBuffered = true;
 
             int Temvalue; //현재 온도 값 받아오기
@@ -65,13 +65,14 @@ namespace BatteryMes
             {
                 Bt_ConnectOn.BackColor = SystemColors.Control;
             }
+
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            ChargeBattery();
+         //   ChargeBattery();
         }
 
-        private void ChargeBattery()
+      /*  private void ChargeBattery()
         {
             if (panelCache.Count == 0)
             {
@@ -155,15 +156,11 @@ namespace BatteryMes
                 }
             }
         }
-
         private void UpdatePanel(Panel panel, Color backColor, Image backgroundImage)
         {
             panel.BackColor = backColor;
             panel.BackgroundImage = backgroundImage;
-        }
-
-
-
+        }*/
         private void Fm_Control_Load(object sender, EventArgs e)
         {
            
@@ -176,7 +173,6 @@ namespace BatteryMes
             stopSignal.Set();
             taskThread?.Join();
         }
-
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
@@ -429,7 +425,7 @@ namespace BatteryMes
                         Thread.Sleep(2500);
                         plc.SetDevice($"M{dischargeWarehouse}", 0);
                         Console.WriteLine($"OutputTask: Setting device M{dischargeWarehouse} to 0");
-                        Thread.Sleep(6000);
+                        Thread.Sleep(5000);
 
                         int dischargeCompleteSignal;
                         do
