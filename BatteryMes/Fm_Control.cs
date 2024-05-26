@@ -49,13 +49,19 @@ namespace BatteryMes
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            //   ChargeBattery();
+              ChargeBattery();
             this.DoubleBuffered = true;
-
-            int Temvalue; //현재 온도 값 받아오기
-            plc.GetDevice("D1513", out Temvalue);
-            Tb_CurTem.Text = Temvalue.ToString();
-
+            
+            ConnectOn();
+       
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+               ChargeBattery();
+            ConnectOn();
+        }
+        private void ConnectOn()
+        {
             plc.GetDevice("M1002", out Pc_on_value);
             if (Pc_on_value == 1)
             {
@@ -65,14 +71,11 @@ namespace BatteryMes
             {
                 Bt_ConnectOn.BackColor = SystemColors.Control;
             }
-
+            int Temvalue; //현재 온도 값 받아오기
+            plc.GetDevice("D1513", out Temvalue);
+            Tb_CurTem.Text = Temvalue.ToString();
         }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            //   ChargeBattery();
-        }
-
-        /*  private void ChargeBattery()
+       private void ChargeBattery()
           {
               if (panelCache.Count == 0)
               {
@@ -160,7 +163,7 @@ namespace BatteryMes
           {
               panel.BackColor = backColor;
               panel.BackgroundImage = backgroundImage;
-          }*/
+          }
         private void Fm_Control_Load(object sender, EventArgs e)
         {
 
