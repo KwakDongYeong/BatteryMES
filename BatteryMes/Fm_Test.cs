@@ -15,6 +15,7 @@ using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient; // SQL 연동을 위함
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Collections;
+using MySqlX.XDevAPI.Common;
 
 namespace BatteryMes
 {
@@ -26,6 +27,7 @@ namespace BatteryMes
         private string imageFolderPath = @"C:\Users\user\Desktop\비전결과";
         //private string connectionString = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
         private string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
+        private PictureBox[] pictureBoxes;
 
         public Fm_Test()
         {
@@ -35,16 +37,18 @@ namespace BatteryMes
             timer.Start();
             this.DoubleBuffered = true;
 
-       /*     plc.ActLogicalStationNumber = 0;
+            plc.ActLogicalStationNumber = 0;
             plc.Open();
-            LightOn();*/
-        }
+            LightOn();
+           
+    }
 
         private void Fm_Test_Load(object sender, EventArgs e)
         {
-            InitializePictureBoxes();
+            InitializePictureSize();
             SetupFileSystemWatcher();
             UploadAllImagesToDatabase();
+            InitializePictureBoxes();
 
             visionpicture.SizeMode = PictureBoxSizeMode.StretchImage;
             string query = "SELECT rack, count FROM rack";
@@ -87,7 +91,7 @@ namespace BatteryMes
         private void Timer_Tick(object sender, EventArgs e)
         {
             CheckPLCSignal();
-         //   LightOn();
+            LightOn();
             UpdateChart();
         }
         private void UpdateChart()
@@ -121,61 +125,104 @@ namespace BatteryMes
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-     /*   private void LightOn()
+        private void InitializePictureBoxes()
         {
-            for (int i = 1520; i <= 1533; i++)
+            pictureBoxes = new PictureBox[]
             {
-                int value;
-                string deviceName = "M" + i;
-                plc.GetDevice(deviceName, out value);
+            Pb_Trayon, Pb_TrayOff, Pb_Left, Pb_Right,
+            Pb_ForkOn, Pb_ForkOff, Pb_Fork, Pb_ST1_1,
+            Pb_ST1_2, Pb_ST1_3, Pb_ST2_1, Pb_ST2_2,
+            Pb_ST2_3, Pb_ST2_4
+            };
+        }
 
-                switch (i)
-                {
-                    case 1520:
-                        Pb_Trayon.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1521:
-                        Pb_TrayOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1522:
-                        Pb_Left.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1523:
-                        Pb_Right.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1524:
-                        Pb_ForkOn.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1525:
-                        Pb_ForkOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1526:
-                        Pb_Fork.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1527:
-                        Pb_ST1_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1528:
-                        Pb_ST1_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1529:
-                        Pb_ST1_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1530:
-                        Pb_ST2_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1531:
-                        Pb_ST2_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1532:
-                        Pb_ST2_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                    case 1533:
-                        Pb_ST2_4.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
-                        break;
-                }
+        private void LightOn()
+        {
+            string startAddress = "M1520"; // 시작 주소 설정
+            int length = 14; // 읽어올 디바이스 수 설정 (M1520 ~ M1533)
+
+            // 데이터를 저장할 배열 생성
+            short[] data = new short[(length + 15) / 16]; // 비트를 읽기 위한 배열 크기
+
+            // ReadDeviceBlock2 메서드를 사용하여 디바이스 블록 읽기
+            string readResult = plc.ReadDeviceBlock2(startAddress, data.Length, out data[0]).ToString();
+
+
+            // 비트 단위로 데이터를 처리
+            for (int i = 0; i < length; i++)
+            {
+                int arrayIndex = i / 16;
+                int bitIndex = i % 16;
+                int bitValue = (data[arrayIndex] >> bitIndex) & 1;
+                UpdateImage(i, bitValue);
+                Console.WriteLine($"Address M{1520 + i} = {bitValue}");
             }
-        }*/
+
+        }
+
+        private void UpdateImage(int index, int value)
+        {
+            if (index >= 0 && index < pictureBoxes.Length)
+            {
+                pictureBoxes[index].Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+            }
+        }
+        /* private void LightOn()
+         {
+
+          for (int i = 1520; i <= 1533; i++)
+          {
+              int value;
+              string deviceName = "M" + i;
+              plc.GetDevice(deviceName, out value);
+
+              switch (i)
+              {
+                  case 1520:
+                      Pb_Trayon.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1521:
+                      Pb_TrayOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1522:
+                      Pb_Left.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1523:
+                      Pb_Right.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1524:
+                      Pb_ForkOn.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1525:
+                      Pb_ForkOff.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1526:
+                      Pb_Fork.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1527:
+                      Pb_ST1_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1528:
+                      Pb_ST1_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1529:
+                      Pb_ST1_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1530:
+                      Pb_ST2_1.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1531:
+                      Pb_ST2_2.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1532:
+                      Pb_ST2_3.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+                  case 1533:
+                      Pb_ST2_4.Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
+                      break;
+              }
+          }
+         }*/
 
         private void CreateChart(DataTable dataTable)
         {
@@ -344,7 +391,7 @@ namespace BatteryMes
             }
         }
 
-        private void InitializePictureBoxes()
+        private void InitializePictureSize()
         {
             Pb_Trayon.SizeMode = PictureBoxSizeMode.Zoom;
             Pb_TrayOff.SizeMode = PictureBoxSizeMode.Zoom;
