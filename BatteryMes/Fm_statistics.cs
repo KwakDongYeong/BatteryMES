@@ -121,6 +121,7 @@ namespace BatteryMes
             errorSeries.XValueType = ChartValueType.String;
             errorSeries.YValueType = ChartValueType.Int32;
             errorchart.Series.Add(errorSeries);
+            errorchart.Series["Series"]["PixelPointWidth"] = "55";
 
             //string errorstring = "Server=localhost;Port=3306;Database=login_hjc;Uid=root;Pwd=0000;";
             string errorstring = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";

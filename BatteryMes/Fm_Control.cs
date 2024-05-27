@@ -30,6 +30,7 @@ namespace BatteryMes
 
         int Plc_on_value;
         int Pc_on_value;
+
         private Dictionary<string, Panel> panelCache = new Dictionary<string, Panel>();
         private Dictionary<string, Panel> chargepanel = new Dictionary<string, Panel>();
 
