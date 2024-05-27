@@ -138,17 +138,10 @@ namespace BatteryMes
 
         private void LightOn()
         {
-            string startAddress = "M1520"; // 시작 주소 설정
-            int length = 14; // 읽어올 디바이스 수 설정 (M1520 ~ M1533)
-
-            // 데이터를 저장할 배열 생성
-            short[] data = new short[(length + 15) / 16]; // 비트를 읽기 위한 배열 크기
-
-            // ReadDeviceBlock2 메서드를 사용하여 디바이스 블록 읽기
+            string startAddress = "M1520"; 
+            int length = 14; 
+            short[] data = new short[(length + 15) / 16]; 
             string readResult = plc.ReadDeviceBlock2(startAddress, data.Length, out data[0]).ToString();
-
-
-            // 비트 단위로 데이터를 처리
             for (int i = 0; i < length; i++)
             {
                 int arrayIndex = i / 16;
@@ -157,9 +150,7 @@ namespace BatteryMes
                 UpdateImage(i, bitValue);
                 Console.WriteLine($"Address M{1520 + i} = {bitValue}");
             }
-
         }
-
         private void UpdateImage(int index, int value)
         {
             if (index >= 0 && index < pictureBoxes.Length)
