@@ -267,7 +267,7 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Teal;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.MidnightBlue;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel1, 0, 0);

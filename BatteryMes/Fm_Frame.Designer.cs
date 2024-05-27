@@ -67,7 +67,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 0, 5);
@@ -107,7 +107,7 @@
             // 
             // Bt_User
             // 
-            this.Bt_User.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Bt_User.BackColor = System.Drawing.Color.MidnightBlue;
             this.Bt_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_User.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_User.FlatAppearance.BorderSize = 0;
@@ -140,7 +140,7 @@
             // 
             // Bt_Static
             // 
-            this.Bt_Static.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Bt_Static.BackColor = System.Drawing.Color.MidnightBlue;
             this.Bt_Static.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Static.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Static.FlatAppearance.BorderSize = 0;
@@ -173,7 +173,7 @@
             // 
             // Bt_Test
             // 
-            this.Bt_Test.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Bt_Test.BackColor = System.Drawing.Color.MidnightBlue;
             this.Bt_Test.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Test.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Test.FlatAppearance.BorderSize = 0;
@@ -206,7 +206,7 @@
             // 
             // Bt_Control
             // 
-            this.Bt_Control.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Bt_Control.BackColor = System.Drawing.Color.MidnightBlue;
             this.Bt_Control.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Control.FlatAppearance.BorderSize = 0;
@@ -239,7 +239,7 @@
             // 
             // Bt_Main
             // 
-            this.Bt_Main.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Bt_Main.BackColor = System.Drawing.Color.MidnightBlue;
             this.Bt_Main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bt_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Main.FlatAppearance.BorderSize = 0;
@@ -288,7 +288,7 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
@@ -308,7 +308,7 @@
             // 
             // Bt_Mini
             // 
-            this.Bt_Mini.BackgroundImage = global::BatteryMes.Properties.Resources.mini;
+            this.Bt_Mini.BackgroundImage = global::BatteryMes.Properties.Resources.minimize;
             this.Bt_Mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Bt_Mini.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Mini.FlatAppearance.BorderSize = 0;
@@ -324,7 +324,7 @@
             // 
             // Bt_Close
             // 
-            this.Bt_Close.BackgroundImage = global::BatteryMes.Properties.Resources.close2;
+            this.Bt_Close.BackgroundImage = global::BatteryMes.Properties.Resources.close3;
             this.Bt_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Bt_Close.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Bt_Close.FlatAppearance.BorderSize = 0;
