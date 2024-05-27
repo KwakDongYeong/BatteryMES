@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -203,17 +203,17 @@
             // 
             // Chart_defect
             // 
-            chartArea7.Name = "ChartArea1";
-            this.Chart_defect.ChartAreas.Add(chartArea7);
+            chartArea1.Name = "ChartArea1";
+            this.Chart_defect.ChartAreas.Add(chartArea1);
             this.Chart_defect.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.Chart_defect.Legends.Add(legend7);
+            legend1.Name = "Legend1";
+            this.Chart_defect.Legends.Add(legend1);
             this.Chart_defect.Location = new System.Drawing.Point(3, 88);
             this.Chart_defect.Name = "Chart_defect";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.Chart_defect.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Chart_defect.Series.Add(series1);
             this.Chart_defect.Size = new System.Drawing.Size(533, 306);
             this.Chart_defect.TabIndex = 4;
             this.Chart_defect.Text = "chart1";
@@ -238,19 +238,19 @@
             // 
             // pg_chart
             // 
-            chartArea9.Name = "ChartArea1";
-            this.pg_chart.ChartAreas.Add(chartArea9);
+            chartArea2.Name = "ChartArea1";
+            this.pg_chart.ChartAreas.Add(chartArea2);
             this.pg_chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            legend9.Name = "Legend1";
-            this.pg_chart.Legends.Add(legend9);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            legend2.Name = "Legend1";
+            this.pg_chart.Legends.Add(legend2);
             this.pg_chart.Location = new System.Drawing.Point(0, 0);
             this.pg_chart.Name = "pg_chart";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.pg_chart.Series.Add(series9);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.pg_chart.Series.Add(series2);
             this.pg_chart.Size = new System.Drawing.Size(533, 307);
             this.pg_chart.TabIndex = 0;
             this.pg_chart.Text = "chart1";
@@ -265,18 +265,18 @@
             // 
             // tp_chart
             // 
-            chartArea8.Name = "ChartArea1";
-            this.tp_chart.ChartAreas.Add(chartArea8);
+            chartArea3.Name = "ChartArea1";
+            this.tp_chart.ChartAreas.Add(chartArea3);
             this.tp_chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend8.Name = "Legend1";
-            this.tp_chart.Legends.Add(legend8);
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.Name = "Legend1";
+            this.tp_chart.Legends.Add(legend3);
             this.tp_chart.Location = new System.Drawing.Point(542, 440);
             this.tp_chart.Name = "tp_chart";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.tp_chart.Series.Add(series8);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.tp_chart.Series.Add(series3);
             this.tp_chart.Size = new System.Drawing.Size(534, 307);
             this.tp_chart.TabIndex = 7;
             this.tp_chart.Text = "chart1";
