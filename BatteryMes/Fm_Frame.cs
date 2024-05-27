@@ -92,6 +92,7 @@ namespace BatteryMes
             }
         }
 
+
         private void Pn_Side_Paint(object sender, PaintEventArgs e)
         {
 
@@ -100,6 +101,66 @@ namespace BatteryMes
         private void Bt_Mini_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Bt_Main_MouseHover(object sender, EventArgs e)
+        {
+            Bt_Main.BackColor = Color.FromArgb(255, 255, 255);
+            Bt_Main.ForeColor = Color.MidnightBlue;
+        }
+
+        private void Bt_Main_MouseLeave(object sender, EventArgs e)
+        {
+            Bt_Main.BackColor = Color.MidnightBlue;
+            Bt_Main.ForeColor = Color.White;
+        }
+
+        private void Bt_Control_MouseHover(object sender, EventArgs e)
+        {
+            Bt_Control.BackColor = Color.White;
+            Bt_Control.ForeColor = Color.MidnightBlue;
+        }
+
+        private void Bt_Control_MouseLeave(object sender, EventArgs e)
+        {
+            Bt_Control.BackColor = Color.MidnightBlue;
+            Bt_Control.ForeColor = Color.White;
+        }
+
+        private void Bt_Test_MouseHover(object sender, EventArgs e)
+        {
+            Bt_Test.BackColor = Color.FromArgb(255, 255, 255);
+            Bt_Test.ForeColor = Color.MidnightBlue;
+        }
+
+        private void Bt_Test_MouseLeave(object sender, EventArgs e)
+        {
+            Bt_Test.BackColor = Color.MidnightBlue;
+            Bt_Test.ForeColor = Color.White;
+        }
+
+        private void Bt_Static_MouseHover(object sender, EventArgs e)
+        {
+            Bt_Static.BackColor = Color.FromArgb(255, 255, 255);
+            Bt_Static.ForeColor = Color.MidnightBlue;
+        }
+
+        private void Bt_Static_MouseLeave(object sender, EventArgs e)
+        {
+            Bt_Static.BackColor = Color.MidnightBlue;
+            Bt_Static.ForeColor = Color.White;
+        }
+
+        private void Bt_User_MouseHover(object sender, EventArgs e)
+        {
+            Bt_User.BackColor = Color.FromArgb(255, 255, 255);
+            Bt_User.ForeColor = Color.MidnightBlue;
+        }
+
+        private void Bt_User_MouseLeave(object sender, EventArgs e)
+        {
+            Bt_User.BackColor = Color.MidnightBlue;
+            Bt_User.ForeColor = Color.White;
         }
     }
 }

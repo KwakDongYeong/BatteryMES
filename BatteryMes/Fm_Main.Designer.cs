@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.vision_check = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.cvlamp2 = new System.Windows.Forms.PictureBox();
@@ -96,12 +93,8 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.blinkTimer = new System.Windows.Forms.Timer(this.components);
-            this.durationTimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vision_check)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cvlamp2)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -164,7 +157,6 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::BatteryMes.Properties.Resources.main_2;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.tableLayoutPanel7);
             this.panel1.Controls.Add(this.tableLayoutPanel6);
             this.panel1.Controls.Add(this.tableLayoutPanel5);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
@@ -178,44 +170,6 @@
             this.panel1.Size = new System.Drawing.Size(1015, 380);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.vision_check, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(355, 328);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(177, 37);
-            this.tableLayoutPanel7.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(1, 1);
-            this.label7.Margin = new System.Windows.Forms.Padding(1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 35);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "비전 검사";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // vision_check
-            // 
-            this.vision_check.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.vision_check.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vision_check.Location = new System.Drawing.Point(144, 3);
-            this.vision_check.Name = "vision_check";
-            this.vision_check.Size = new System.Drawing.Size(30, 31);
-            this.vision_check.TabIndex = 1;
-            this.vision_check.TabStop = false;
             // 
             // tableLayoutPanel6
             // 
@@ -1093,18 +1047,8 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // blinkTimer
-            // 
-            this.blinkTimer.Interval = 1000;
-            this.blinkTimer.Tick += new System.EventHandler(this.blinkTimer_Tick);
-            // 
-            // durationTimer
-            // 
-            this.durationTimer.Interval = 1000;
-            this.durationTimer.Tick += new System.EventHandler(this.durationTimer_Tick);
             // 
             // Fm_Main
             // 
@@ -1118,9 +1062,6 @@
             this.Load += new System.EventHandler(this.Fm_Main_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vision_check)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cvlamp2)).EndInit();
@@ -1181,9 +1122,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox vision_check;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox cvlamp2;
@@ -1244,8 +1182,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label autosignal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Timer blinkTimer;
-        private System.Windows.Forms.Timer durationTimer;
         private System.Windows.Forms.Label label2;
     }
 }

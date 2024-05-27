@@ -9,15 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACTMULTILib;
+using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BatteryMes
 {
     public partial class Fm_Main : Form
     {
+        private string connectionString = "Server = 10.10.32.238; Database=batterymes; Uid=BatteryMes;Pwd=Battery;";
         //객체 선언
         ActEasyIF PLC1 = new ActEasyIF();
-        
+        private Dictionary<string, PictureBox> sensorPictureBoxes;
+
         private int blinkCount = 0;
         private bool alarm1581Displayed = false;
         private bool alarm1582Displayed = false;
@@ -37,6 +40,7 @@ namespace BatteryMes
 
         private void Fm_Main_Load(object sender, EventArgs e)
         {
+            LoadDataFromDatabase();
             case_cylamp.SizeMode = PictureBoxSizeMode.StretchImage;
             battery_cylamp.SizeMode = PictureBoxSizeMode.StretchImage;
             cvlamp1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -45,55 +49,156 @@ namespace BatteryMes
             fork_zlamp.SizeMode = PictureBoxSizeMode.StretchImage;
             fork_rotatelamp.SizeMode = PictureBoxSizeMode.StretchImage;
             cvlamp2.SizeMode = PictureBoxSizeMode.StretchImage;
-            vision_check.SizeMode = PictureBoxSizeMode.StretchImage;
             
         }
-
-        private void SetPanelRegionToCircle(Panel panel)
+        private void LoadDataFromDatabase()
         {
-            if (panel != null)
+            try
             {
-                // 원형 경로 생성
-                GraphicsPath path = new GraphicsPath();
-                path.AddEllipse(0, 0, panel.Width, panel.Height);
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    string query = "SELECT sensor, value FROM mainview WHERE value IN (0, 1)";
 
-                // 클리핑 영역 설정
-                panel.Region = new Region(path);
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        DataTable dataTable = new DataTable();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+
+                        connection.Close();
+
+                        ClearAllPictureBoxes();
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            foreach (DataRow row in dataTable.Rows)
+                            {
+                                string sensor = row["sensor"].ToString();
+                                int value = Convert.ToInt32(row["value"]);
+                                Image image = GetImage(sensor, value);
+                                SetPictureBoxImage(sensor, image);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("데이터를 불러오는 중 오류가 발생했습니다: " + ex.Message);
             }
         }
+
+        private Image GetImage(string sensor, int value)
+        {
+            Image image;
+
+            switch (sensor)
+            {
+                case "케이스_공급실린더":
+                    image = (value == 1) ? Properties.Resources.green : Properties.Resources.red;
+                    break;
+                case "베터리_공급실린더":
+                    image = (value == 1) ? Properties.Resources.green : Properties.Resources.red;
+                    break;
+                case "공급_컨베이어":
+                    image = (value == 1) ? Properties.Resources.green : null;
+                    break;
+                case "포크_전진":
+                    image = (value == 1) ? Properties.Resources.green : Properties.Resources.red;
+                    break;
+                case "서보주행":
+                    image = (value == 1) ? Properties.Resources.green : null;
+                    break;
+                case "서보승강":
+                    image = (value == 1) ? Properties.Resources.green : null;
+                    break;
+                case "포크_회전":
+                    image = (value == 1) ? Properties.Resources.green : Properties.Resources.red;
+                    break;
+                case "배출_컨베이어":
+                    image = (value == 1) ? Properties.Resources.green : null;
+                    break;
+                default:
+                    // 기본 이미지
+                    image = null;
+                    break;
+            }
+
+            return image;
+        }
+
+        private void SetPictureBoxImage(string sensor, Image image)
+        {
+            switch (sensor)
+            {
+                case "케이스_공급실린더":
+                    case_cylamp.Image = image;
+                    break;
+                case "베터리_공급실린더":
+                    battery_cylamp.Image = image;
+                    break;
+                case "공급_컨베이어":
+                    cvlamp1.Image = image;
+                    break;
+                case "포크_전진":
+                    fork_xlamp.Image = image;
+                    break;
+                case "서보주행":
+                    fork_ylamp.Image = image;
+                    break;
+                case "서보승강":
+                    fork_zlamp.Image = image;
+                    break;
+                case "포크_회전":
+                    fork_rotatelamp.Image = image;
+                    break;
+                case "배출_컨베이어":
+                    cvlamp2.Image = image;
+                    break;
+            }
+        }
+
+        private void ClearAllPictureBoxes()
+        {
+            case_cylamp.Image = null;
+            battery_cylamp.Image = null;
+            cvlamp1.Image = null;
+            fork_xlamp.Image = null;
+            fork_ylamp.Image = null;
+            fork_zlamp.Image = null;
+            fork_rotatelamp.Image = null;
+            cvlamp2.Image = null;
+        }
+        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            LoadDataFromDatabase();
             try
             {
 
-                int m1520 = 0; int m1521 = 0; int m1522 = 0; int m1523 = 0; int m1524 = 0; int m1525 = 0;
-                int m1534 = 0; int m1535 = 0; int m1568 = 0; int m1569 = 0; int m1578 = 0; int m1579 = 0;
+                
+                int m1578 = 0;
                 int m1540 = 0; int m1541 = 0; int m1542 = 0; int m1543 = 0; int m1544 = 0; int m1545 = 0; 
                 int m1546 = 0; int m1547 = 0; int m1548 = 0; int m1549 = 0; int m1550 = 0; int m1551 = 0;
-                int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; 
-                int m1580 = 0; int m1581 = 0; int m1582 = 0; int m1583 = 0; int m1584 = 0;
-                int y1001 = 0;
+                int m1552 = 0; int m1553 = 0; int m1554 = 0; int m1555 = 0; int m1581 = 0; int m1582 = 0;
+                int m1583 = 0; int m1584 = 0; int y1001 = 0;
 
-                PLC1.GetDevice("m1520", out m1520); PLC1.GetDevice("m1521", out m1521);
-                PLC1.GetDevice("M1522", out m1522); PLC1.GetDevice("M1523", out m1523);
-                PLC1.GetDevice("m1524", out m1524); PLC1.GetDevice("m1525", out m1525);
-                PLC1.GetDevice("M1534", out m1534); PLC1.GetDevice("M1535", out m1535);
                 PLC1.GetDevice("M1540", out m1540); PLC1.GetDevice("m1541", out m1541); PLC1.GetDevice("m1542", out m1542);
                 PLC1.GetDevice("m1543", out m1543); PLC1.GetDevice("m1544", out m1544); PLC1.GetDevice("m1545", out m1545);
                 PLC1.GetDevice("m1546", out m1546); PLC1.GetDevice("m1547", out m1547); PLC1.GetDevice("m1548", out m1548);
                 PLC1.GetDevice("m1549", out m1549); PLC1.GetDevice("m1550", out m1550); PLC1.GetDevice("m1551", out m1551);
                 PLC1.GetDevice("m1552", out m1552); PLC1.GetDevice("m1553", out m1553); PLC1.GetDevice("m1554", out m1554);
-                PLC1.GetDevice("m1555", out m1555);
-                PLC1.GetDevice("m1568", out m1568); PLC1.GetDevice("m1569", out m1569);
-                PLC1.GetDevice("m1578", out m1578); PLC1.GetDevice("m1579", out m1579); PLC1.GetDevice("m1580", out m1580);
+                PLC1.GetDevice("m1555", out m1555); PLC1.GetDevice("m1578", out m1578); 
                 PLC1.GetDevice("m1581", out m1581); PLC1.GetDevice("m1582", out m1582); PLC1.GetDevice("m1583", out m1583);
-                PLC1.GetDevice("m1584", out m1584);
-                PLC1.GetDevice("Y1001", out y1001);
-
+                PLC1.GetDevice("m1584", out m1584); PLC1.GetDevice("Y1001", out y1001);
 
                 int d1513 = 0;
                 int d1514 = 0;
@@ -103,17 +208,6 @@ namespace BatteryMes
                 // Label 업데이트
                 label18.Text = d1513.ToString();
                 label19.Text = d1514.ToString();
-
-                // PictureBox 이미지 변경
-                case_cylamp.Image = (m1520 == 1) ? Properties.Resources.green : (m1521 == 1) ? Properties.Resources.red : null;
-                //battery_cylamp.Image = (m15 == 1) ? Properties.Resources.green : (m15 == 1) ? Properties.Resources.red : null;
-                cvlamp1.Image = (1568 == 1) ? Properties.Resources.green : null;
-                fork_xlamp.Image = (m1524 == 1) ? Properties.Resources.green : (m1525 == 1) ? Properties.Resources.red : null;
-                fork_ylamp.Image = (m1579 == 1) ? Properties.Resources.green : null;
-                fork_zlamp.Image = (m1580 == 1) ? Properties.Resources.green : null;
-                fork_rotatelamp.Image = (m1522 == 1) ? Properties.Resources.green : (m1523 == 1) ? Properties.Resources.red : null;
-                cvlamp2.Image = (m1569 == 1) ? Properties.Resources.green : null;
-                vision_check.Image = (m1534 == 1) ? Properties.Resources.green : (m1535 == 1) ? Properties.Resources.red : null;
 
                 try
                 {
@@ -148,19 +242,8 @@ namespace BatteryMes
                 }
                 rackplace.Text = $"{activeCount}";
 
-                if (m1578 == 1)
-                {
-                    // "autoSignal" 라벨이 깜박이도록 타이머 시작
-                    blinkTimer.Start();
-                    durationTimer.Start();
-                }
-                else
-                {
-                    // "autoSignal" 라벨이 깜박이는 타이머 중지
-                    blinkTimer.Stop();
-                    durationTimer.Stop();
-                    autosignal.Text = ": Stopped";
-                }
+                autosignal.Text = (m1578 == 1) ? " Running" : " Stopped";
+            
             }
             catch (Exception ex)
             {
@@ -192,31 +275,12 @@ namespace BatteryMes
 
         private void blinkTimer_Tick(object sender, EventArgs e)
         {
-            autosignal.Visible = !autosignal.Visible;
-            // 깜박임 횟수 증가
-            blinkCount++;
-            // 3번 깜박였을 때
-            if (blinkCount == 3)
-            {
-                // "blinkTimer" 중지
-                blinkTimer.Stop();
-                // "autoSignal" 라벨이 깜박임을 멈추고 "running"으로 설정
-                autosignal.Visible = true;
-                autosignal.Text = ": Running";
-                // 깜박임 횟수 초기화
-                blinkCount = 0;
-            }
+
         }
 
         private void durationTimer_Tick(object sender, EventArgs e)
         {
-            // "blinkTimer" 중지
-            blinkTimer.Stop();
-            // "autoSignal" 라벨이 깜박임을 멈추고 "running"으로 설정
-            autosignal.Visible = true;
-            autosignal.Text = ": Running";
-            // 깜박임 횟수 초기화
-            blinkCount = 0;
+
         }
 
         private void mentbox_TextChanged(object sender, EventArgs e)

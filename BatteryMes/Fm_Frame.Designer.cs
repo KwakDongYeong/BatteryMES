@@ -122,6 +122,8 @@
             this.Bt_User.Text = "직원관리";
             this.Bt_User.UseVisualStyleBackColor = false;
             this.Bt_User.Click += new System.EventHandler(this.Bt_User_Click);
+            this.Bt_User.MouseLeave += new System.EventHandler(this.Bt_User_MouseLeave);
+            this.Bt_User.MouseHover += new System.EventHandler(this.Bt_User_MouseHover);
             // 
             // tableLayoutPanel7
             // 
@@ -155,6 +157,8 @@
             this.Bt_Static.Text = "통계";
             this.Bt_Static.UseVisualStyleBackColor = false;
             this.Bt_Static.Click += new System.EventHandler(this.Bt_Static_Click);
+            this.Bt_Static.MouseLeave += new System.EventHandler(this.Bt_Static_MouseLeave);
+            this.Bt_Static.MouseHover += new System.EventHandler(this.Bt_Static_MouseHover);
             // 
             // tableLayoutPanel6
             // 
@@ -188,6 +192,8 @@
             this.Bt_Test.Text = "수동 제어";
             this.Bt_Test.UseVisualStyleBackColor = false;
             this.Bt_Test.Click += new System.EventHandler(this.Bt_Test_Click);
+            this.Bt_Test.MouseLeave += new System.EventHandler(this.Bt_Test_MouseLeave);
+            this.Bt_Test.MouseHover += new System.EventHandler(this.Bt_Test_MouseHover);
             // 
             // tableLayoutPanel5
             // 
@@ -221,6 +227,8 @@
             this.Bt_Control.Text = "제어";
             this.Bt_Control.UseVisualStyleBackColor = false;
             this.Bt_Control.Click += new System.EventHandler(this.Bt_Control_Click);
+            this.Bt_Control.MouseLeave += new System.EventHandler(this.Bt_Control_MouseLeave);
+            this.Bt_Control.MouseHover += new System.EventHandler(this.Bt_Control_MouseHover);
             // 
             // tableLayoutPanel4
             // 
@@ -253,6 +261,8 @@
             this.Bt_Main.Text = "메인";
             this.Bt_Main.UseVisualStyleBackColor = false;
             this.Bt_Main.Click += new System.EventHandler(this.Bt_Main_Click);
+            this.Bt_Main.MouseLeave += new System.EventHandler(this.Bt_Main_MouseLeave);
+            this.Bt_Main.MouseHover += new System.EventHandler(this.Bt_Main_MouseHover);
             // 
             // tableLayoutPanel2
             // 

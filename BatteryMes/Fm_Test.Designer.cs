@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Lb_Title_M = new System.Windows.Forms.Label();
             this.Pn_Title_C = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Lb_Title_C = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Pb_ST2_4 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_3 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_2 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST2_1 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_3 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_2 = new System.Windows.Forms.PictureBox();
-            this.Pb_ST1_1 = new System.Windows.Forms.PictureBox();
-            this.Pb_Fork = new System.Windows.Forms.PictureBox();
-            this.Pb_ForkOff = new System.Windows.Forms.PictureBox();
-            this.Pb_ForkOn = new System.Windows.Forms.PictureBox();
-            this.Pb_Right = new System.Windows.Forms.PictureBox();
-            this.Pb_Left = new System.Windows.Forms.PictureBox();
-            this.Pb_TrayOff = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,22 +54,40 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Pb_Trayon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.visionpicture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.Lb_Title_C = new System.Windows.Forms.Label();
             this.rack_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.Pb_ST2_4 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_3 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_2 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST2_1 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_3 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_2 = new System.Windows.Forms.PictureBox();
+            this.Pb_ST1_1 = new System.Windows.Forms.PictureBox();
+            this.Pb_Fork = new System.Windows.Forms.PictureBox();
+            this.Pb_ForkOff = new System.Windows.Forms.PictureBox();
+            this.Pb_ForkOn = new System.Windows.Forms.PictureBox();
+            this.Pb_Right = new System.Windows.Forms.PictureBox();
+            this.Pb_Left = new System.Windows.Forms.PictureBox();
+            this.Pb_TrayOff = new System.Windows.Forms.PictureBox();
+            this.Pb_Trayon = new System.Windows.Forms.PictureBox();
+            this.visionpicture = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.Pn_Title_C.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).BeginInit();
@@ -95,25 +102,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lb_Title_M
             // 
             this.Lb_Title_M.AutoSize = true;
+            this.Lb_Title_M.BackColor = System.Drawing.Color.Black;
             this.Lb_Title_M.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lb_Title_M.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Lb_Title_M.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lb_Title_M.Location = new System.Drawing.Point(142, 1);
+            this.Lb_Title_M.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.Lb_Title_M.ForeColor = System.Drawing.Color.White;
+            this.Lb_Title_M.Location = new System.Drawing.Point(1, 4);
             this.Lb_Title_M.Margin = new System.Windows.Forms.Padding(1);
             this.Lb_Title_M.Name = "Lb_Title_M";
-            this.Lb_Title_M.Size = new System.Drawing.Size(281, 48);
+            this.Lb_Title_M.Size = new System.Drawing.Size(281, 42);
             this.Lb_Title_M.TabIndex = 0;
             this.Lb_Title_M.Text = "Sensor Monitoring";
             this.Lb_Title_M.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,6 +129,37 @@
             this.Pn_Title_C.Name = "Pn_Title_C";
             this.Pn_Title_C.Size = new System.Drawing.Size(688, 44);
             this.Pn_Title_C.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Controls.Add(this.Lb_Title_C, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 44);
+            this.tableLayoutPanel5.TabIndex = 16;
+            // 
+            // Lb_Title_C
+            // 
+            this.Lb_Title_C.AutoSize = true;
+            this.Lb_Title_C.BackColor = System.Drawing.Color.Black;
+            this.Lb_Title_C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lb_Title_C.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Lb_Title_C.ForeColor = System.Drawing.Color.White;
+            this.Lb_Title_C.Location = new System.Drawing.Point(173, 1);
+            this.Lb_Title_C.Margin = new System.Windows.Forms.Padding(1);
+            this.Lb_Title_C.Name = "Lb_Title_C";
+            this.Lb_Title_C.Size = new System.Drawing.Size(342, 42);
+            this.Lb_Title_C.TabIndex = 0;
+            this.Lb_Title_C.Text = "Rack 사용 빈도 현황";
+            this.Lb_Title_C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -192,16 +226,17 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Black;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(186, 1);
             this.label15.Margin = new System.Windows.Forms.Padding(1);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(183, 42);
             this.label15.TabIndex = 0;
             this.label15.Text = "Vision CAM";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -254,136 +289,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(516, 282);
             this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // Pb_ST2_4
-            // 
-            this.Pb_ST2_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_4.Location = new System.Drawing.Point(263, 245);
-            this.Pb_ST2_4.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST2_4.Name = "Pb_ST2_4";
-            this.Pb_ST2_4.Size = new System.Drawing.Size(40, 32);
-            this.Pb_ST2_4.TabIndex = 30;
-            this.Pb_ST2_4.TabStop = false;
-            // 
-            // Pb_ST2_3
-            // 
-            this.Pb_ST2_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_3.Location = new System.Drawing.Point(25, 245);
-            this.Pb_ST2_3.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST2_3.Name = "Pb_ST2_3";
-            this.Pb_ST2_3.Size = new System.Drawing.Size(40, 32);
-            this.Pb_ST2_3.TabIndex = 29;
-            this.Pb_ST2_3.TabStop = false;
-            // 
-            // Pb_ST2_2
-            // 
-            this.Pb_ST2_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_2.Location = new System.Drawing.Point(263, 205);
-            this.Pb_ST2_2.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST2_2.Name = "Pb_ST2_2";
-            this.Pb_ST2_2.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ST2_2.TabIndex = 28;
-            this.Pb_ST2_2.TabStop = false;
-            // 
-            // Pb_ST2_1
-            // 
-            this.Pb_ST2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST2_1.Location = new System.Drawing.Point(25, 205);
-            this.Pb_ST2_1.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST2_1.Name = "Pb_ST2_1";
-            this.Pb_ST2_1.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ST2_1.TabIndex = 27;
-            this.Pb_ST2_1.TabStop = false;
-            // 
-            // Pb_ST1_3
-            // 
-            this.Pb_ST1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_3.Location = new System.Drawing.Point(263, 165);
-            this.Pb_ST1_3.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST1_3.Name = "Pb_ST1_3";
-            this.Pb_ST1_3.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ST1_3.TabIndex = 26;
-            this.Pb_ST1_3.TabStop = false;
-            // 
-            // Pb_ST1_2
-            // 
-            this.Pb_ST1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_2.Location = new System.Drawing.Point(25, 165);
-            this.Pb_ST1_2.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST1_2.Name = "Pb_ST1_2";
-            this.Pb_ST1_2.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ST1_2.TabIndex = 25;
-            this.Pb_ST1_2.TabStop = false;
-            // 
-            // Pb_ST1_1
-            // 
-            this.Pb_ST1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ST1_1.Location = new System.Drawing.Point(263, 125);
-            this.Pb_ST1_1.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ST1_1.Name = "Pb_ST1_1";
-            this.Pb_ST1_1.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ST1_1.TabIndex = 24;
-            this.Pb_ST1_1.TabStop = false;
-            // 
-            // Pb_Fork
-            // 
-            this.Pb_Fork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Fork.Location = new System.Drawing.Point(25, 125);
-            this.Pb_Fork.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_Fork.Name = "Pb_Fork";
-            this.Pb_Fork.Size = new System.Drawing.Size(40, 30);
-            this.Pb_Fork.TabIndex = 23;
-            this.Pb_Fork.TabStop = false;
-            // 
-            // Pb_ForkOff
-            // 
-            this.Pb_ForkOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ForkOff.Location = new System.Drawing.Point(263, 85);
-            this.Pb_ForkOff.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ForkOff.Name = "Pb_ForkOff";
-            this.Pb_ForkOff.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ForkOff.TabIndex = 22;
-            this.Pb_ForkOff.TabStop = false;
-            // 
-            // Pb_ForkOn
-            // 
-            this.Pb_ForkOn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_ForkOn.Location = new System.Drawing.Point(25, 85);
-            this.Pb_ForkOn.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_ForkOn.Name = "Pb_ForkOn";
-            this.Pb_ForkOn.Size = new System.Drawing.Size(40, 30);
-            this.Pb_ForkOn.TabIndex = 21;
-            this.Pb_ForkOn.TabStop = false;
-            // 
-            // Pb_Right
-            // 
-            this.Pb_Right.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Right.Location = new System.Drawing.Point(263, 45);
-            this.Pb_Right.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_Right.Name = "Pb_Right";
-            this.Pb_Right.Size = new System.Drawing.Size(40, 30);
-            this.Pb_Right.TabIndex = 20;
-            this.Pb_Right.TabStop = false;
-            // 
-            // Pb_Left
-            // 
-            this.Pb_Left.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Left.Location = new System.Drawing.Point(25, 45);
-            this.Pb_Left.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_Left.Name = "Pb_Left";
-            this.Pb_Left.Size = new System.Drawing.Size(40, 30);
-            this.Pb_Left.TabIndex = 19;
-            this.Pb_Left.TabStop = false;
-            // 
-            // Pb_TrayOff
-            // 
-            this.Pb_TrayOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_TrayOff.Location = new System.Drawing.Point(263, 5);
-            this.Pb_TrayOff.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_TrayOff.Name = "Pb_TrayOff";
-            this.Pb_TrayOff.Size = new System.Drawing.Size(40, 30);
-            this.Pb_TrayOff.TabIndex = 18;
-            this.Pb_TrayOff.TabStop = false;
             // 
             // label14
             // 
@@ -554,16 +459,6 @@
             this.label2.Text = "포크 센서";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Pb_Trayon
-            // 
-            this.Pb_Trayon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pb_Trayon.Location = new System.Drawing.Point(25, 5);
-            this.Pb_Trayon.Margin = new System.Windows.Forms.Padding(5);
-            this.Pb_Trayon.Name = "Pb_Trayon";
-            this.Pb_Trayon.Size = new System.Drawing.Size(40, 30);
-            this.Pb_Trayon.TabIndex = 0;
-            this.Pb_Trayon.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -588,16 +483,6 @@
             this.panel3.Size = new System.Drawing.Size(531, 268);
             this.panel3.TabIndex = 9;
             // 
-            // visionpicture
-            // 
-            this.visionpicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.visionpicture.Location = new System.Drawing.Point(0, 0);
-            this.visionpicture.Margin = new System.Windows.Forms.Padding(2);
-            this.visionpicture.Name = "visionpicture";
-            this.visionpicture.Size = new System.Drawing.Size(531, 268);
-            this.visionpicture.TabIndex = 9;
-            this.visionpicture.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel4);
@@ -617,9 +502,30 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 626F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(688, 626);
             this.tableLayoutPanel4.TabIndex = 9;
+            // 
+            // rack_chart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.rack_chart.ChartAreas.Add(chartArea3);
+            this.rack_chart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.rack_chart.Legends.Add(legend3);
+            this.rack_chart.Location = new System.Drawing.Point(3, 3);
+            this.rack_chart.Name = "rack_chart";
+            this.rack_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.LegendText = "Count";
+            series3.Name = "Series1";
+            this.rack_chart.Series.Add(series3);
+            this.rack_chart.Size = new System.Drawing.Size(682, 620);
+            this.rack_chart.TabIndex = 20;
+            this.rack_chart.Text = "chart1";
             // 
             // tableLayoutPanel7
             // 
@@ -627,7 +533,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.Lb_Title_M, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
@@ -637,56 +543,171 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(567, 50);
             this.tableLayoutPanel7.TabIndex = 15;
             // 
-            // tableLayoutPanel5
+            // Pb_ST2_4
             // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Controls.Add(this.Lb_Title_C, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(688, 44);
-            this.tableLayoutPanel5.TabIndex = 16;
+            this.Pb_ST2_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_4.Location = new System.Drawing.Point(263, 245);
+            this.Pb_ST2_4.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_4.Name = "Pb_ST2_4";
+            this.Pb_ST2_4.Size = new System.Drawing.Size(40, 32);
+            this.Pb_ST2_4.TabIndex = 30;
+            this.Pb_ST2_4.TabStop = false;
             // 
-            // Lb_Title_C
+            // Pb_ST2_3
             // 
-            this.Lb_Title_C.AutoSize = true;
-            this.Lb_Title_C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lb_Title_C.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Lb_Title_C.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.Lb_Title_C.Location = new System.Drawing.Point(173, 1);
-            this.Lb_Title_C.Margin = new System.Windows.Forms.Padding(1);
-            this.Lb_Title_C.Name = "Lb_Title_C";
-            this.Lb_Title_C.Size = new System.Drawing.Size(342, 42);
-            this.Lb_Title_C.TabIndex = 0;
-            this.Lb_Title_C.Text = "Rack 사용 빈도 현황";
-            this.Lb_Title_C.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Pb_ST2_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_3.Location = new System.Drawing.Point(25, 245);
+            this.Pb_ST2_3.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_3.Name = "Pb_ST2_3";
+            this.Pb_ST2_3.Size = new System.Drawing.Size(40, 32);
+            this.Pb_ST2_3.TabIndex = 29;
+            this.Pb_ST2_3.TabStop = false;
             // 
-            // rack_chart
+            // Pb_ST2_2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.rack_chart.ChartAreas.Add(chartArea1);
-            this.rack_chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.rack_chart.Legends.Add(legend1);
-            this.rack_chart.Location = new System.Drawing.Point(3, 3);
-            this.rack_chart.Name = "rack_chart";
-            this.rack_chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.LegendText = "Count";
-            series1.Name = "Series1";
-            this.rack_chart.Series.Add(series1);
-            this.rack_chart.Size = new System.Drawing.Size(682, 620);
-            this.rack_chart.TabIndex = 20;
-            this.rack_chart.Text = "chart1";
+            this.Pb_ST2_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_2.Location = new System.Drawing.Point(263, 205);
+            this.Pb_ST2_2.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_2.Name = "Pb_ST2_2";
+            this.Pb_ST2_2.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST2_2.TabIndex = 28;
+            this.Pb_ST2_2.TabStop = false;
+            // 
+            // Pb_ST2_1
+            // 
+            this.Pb_ST2_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST2_1.Location = new System.Drawing.Point(25, 205);
+            this.Pb_ST2_1.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST2_1.Name = "Pb_ST2_1";
+            this.Pb_ST2_1.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST2_1.TabIndex = 27;
+            this.Pb_ST2_1.TabStop = false;
+            // 
+            // Pb_ST1_3
+            // 
+            this.Pb_ST1_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_3.Location = new System.Drawing.Point(263, 165);
+            this.Pb_ST1_3.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_3.Name = "Pb_ST1_3";
+            this.Pb_ST1_3.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_3.TabIndex = 26;
+            this.Pb_ST1_3.TabStop = false;
+            // 
+            // Pb_ST1_2
+            // 
+            this.Pb_ST1_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_2.Location = new System.Drawing.Point(25, 165);
+            this.Pb_ST1_2.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_2.Name = "Pb_ST1_2";
+            this.Pb_ST1_2.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_2.TabIndex = 25;
+            this.Pb_ST1_2.TabStop = false;
+            // 
+            // Pb_ST1_1
+            // 
+            this.Pb_ST1_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ST1_1.Location = new System.Drawing.Point(263, 125);
+            this.Pb_ST1_1.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ST1_1.Name = "Pb_ST1_1";
+            this.Pb_ST1_1.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ST1_1.TabIndex = 24;
+            this.Pb_ST1_1.TabStop = false;
+            // 
+            // Pb_Fork
+            // 
+            this.Pb_Fork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Fork.Location = new System.Drawing.Point(25, 125);
+            this.Pb_Fork.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Fork.Name = "Pb_Fork";
+            this.Pb_Fork.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Fork.TabIndex = 23;
+            this.Pb_Fork.TabStop = false;
+            // 
+            // Pb_ForkOff
+            // 
+            this.Pb_ForkOff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ForkOff.Location = new System.Drawing.Point(263, 85);
+            this.Pb_ForkOff.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ForkOff.Name = "Pb_ForkOff";
+            this.Pb_ForkOff.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ForkOff.TabIndex = 22;
+            this.Pb_ForkOff.TabStop = false;
+            // 
+            // Pb_ForkOn
+            // 
+            this.Pb_ForkOn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_ForkOn.Location = new System.Drawing.Point(25, 85);
+            this.Pb_ForkOn.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_ForkOn.Name = "Pb_ForkOn";
+            this.Pb_ForkOn.Size = new System.Drawing.Size(40, 30);
+            this.Pb_ForkOn.TabIndex = 21;
+            this.Pb_ForkOn.TabStop = false;
+            // 
+            // Pb_Right
+            // 
+            this.Pb_Right.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Right.Location = new System.Drawing.Point(263, 45);
+            this.Pb_Right.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Right.Name = "Pb_Right";
+            this.Pb_Right.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Right.TabIndex = 20;
+            this.Pb_Right.TabStop = false;
+            // 
+            // Pb_Left
+            // 
+            this.Pb_Left.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Left.Location = new System.Drawing.Point(25, 45);
+            this.Pb_Left.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Left.Name = "Pb_Left";
+            this.Pb_Left.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Left.TabIndex = 19;
+            this.Pb_Left.TabStop = false;
+            // 
+            // Pb_TrayOff
+            // 
+            this.Pb_TrayOff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_TrayOff.Location = new System.Drawing.Point(263, 5);
+            this.Pb_TrayOff.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_TrayOff.Name = "Pb_TrayOff";
+            this.Pb_TrayOff.Size = new System.Drawing.Size(40, 30);
+            this.Pb_TrayOff.TabIndex = 18;
+            this.Pb_TrayOff.TabStop = false;
+            // 
+            // Pb_Trayon
+            // 
+            this.Pb_Trayon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pb_Trayon.Location = new System.Drawing.Point(25, 5);
+            this.Pb_Trayon.Margin = new System.Windows.Forms.Padding(5);
+            this.Pb_Trayon.Name = "Pb_Trayon";
+            this.Pb_Trayon.Size = new System.Drawing.Size(40, 30);
+            this.Pb_Trayon.TabIndex = 0;
+            this.Pb_Trayon.TabStop = false;
+            // 
+            // visionpicture
+            // 
+            this.visionpicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visionpicture.Location = new System.Drawing.Point(0, 0);
+            this.visionpicture.Margin = new System.Windows.Forms.Padding(2);
+            this.visionpicture.Name = "visionpicture";
+            this.visionpicture.Size = new System.Drawing.Size(531, 268);
+            this.visionpicture.TabIndex = 9;
+            this.visionpicture.TabStop = false;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.Lb_Title_M, 0, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(141, 0);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 3;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(283, 50);
+            this.tableLayoutPanel8.TabIndex = 1;
             // 
             // Fm_Test
             // 
@@ -700,6 +721,8 @@
             this.Text = "Fm_Test";
             this.Load += new System.EventHandler(this.Fm_Test_Load);
             this.Pn_Title_C.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -707,6 +730,11 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ST2_2)).EndInit();
@@ -721,15 +749,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_TrayOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_Trayon)).EndInit();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.visionpicture)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rack_chart)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -779,5 +801,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label Lb_Title_C;
         private System.Windows.Forms.DataVisualization.Charting.Chart rack_chart;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
     }
 }
