@@ -102,11 +102,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fm_Control.cs">
+    <Compile Include="..\..\..\..\Desktop\Fm_Control.cs">
       <SubType>Form</SubType>
+      <Link>Fm_Control.cs</Link>
     </Compile>
-    <Compile Include="Fm_Control.Designer.cs">
+    <Compile Include="..\..\..\..\Desktop\Fm_Control.Designer.cs">
       <DependentUpon>Fm_Control.cs</DependentUpon>
+      <Link>Fm_Control.Designer.cs</Link>
     </Compile>
     <Compile Include="Fm_Frame.cs">
       <SubType>Form</SubType>
@@ -152,8 +154,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Fm_Control.resx">
+    <EmbeddedResource Include="..\..\..\..\Desktop\Fm_Control.resx">
       <DependentUpon>Fm_Control.cs</DependentUpon>
+      <Link>Fm_Control.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Fm_Frame.resx">
       <DependentUpon>Fm_Frame.cs</DependentUpon>

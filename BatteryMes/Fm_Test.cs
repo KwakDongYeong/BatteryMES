@@ -35,9 +35,9 @@ namespace BatteryMes
             timer.Start();
             this.DoubleBuffered = true;
 
-            plc.ActLogicalStationNumber = 0;
+       /*     plc.ActLogicalStationNumber = 0;
             plc.Open();
-            LightOn();
+            LightOn();*/
         }
 
         private void Fm_Test_Load(object sender, EventArgs e)
@@ -83,14 +83,11 @@ namespace BatteryMes
             {
                 //MessageBox.Show("An error occurred: " + ex.Message);
             }
-
-
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             CheckPLCSignal();
-            LightOn();
+         //   LightOn();
             UpdateChart();
         }
         private void UpdateChart()
@@ -124,7 +121,7 @@ namespace BatteryMes
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void LightOn()
+     /*   private void LightOn()
         {
             for (int i = 1520; i <= 1533; i++)
             {
@@ -178,7 +175,7 @@ namespace BatteryMes
                         break;
                 }
             }
-        }
+        }*/
 
         private void CreateChart(DataTable dataTable)
         {
