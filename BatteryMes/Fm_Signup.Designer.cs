@@ -102,7 +102,10 @@
             this.Cb_Position.FormattingEnabled = true;
             this.Cb_Position.Items.AddRange(new object[] {
             "사원",
+            "주임",
             "대리",
+            "과장",
+            "차장",
             "부장"});
             this.Cb_Position.Location = new System.Drawing.Point(137, 231);
             this.Cb_Position.Name = "Cb_Position";
@@ -124,8 +127,10 @@
             this.Cb_Deparment.FormattingEnabled = true;
             this.Cb_Deparment.Items.AddRange(new object[] {
             "생산팀",
+            "생산기술팀",
             "인사팀",
-            "품질관리팀"});
+            "품질관리팀",
+            "구매자재팀"});
             this.Cb_Deparment.Location = new System.Drawing.Point(137, 183);
             this.Cb_Deparment.Name = "Cb_Deparment";
             this.Cb_Deparment.Size = new System.Drawing.Size(127, 23);
