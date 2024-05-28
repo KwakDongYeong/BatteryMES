@@ -31,7 +31,8 @@ namespace BatteryMes
                 fm.TopLevel = false;
             fm.Dock = DockStyle.Fill;
             this.Pn_Main.Controls.Add(fm);
-                this.Pn_Main.Tag = fm;
+            this.WindowState = FormWindowState.Maximized;
+            this.Pn_Main.Tag = fm;
                 fm.Show();
 
             

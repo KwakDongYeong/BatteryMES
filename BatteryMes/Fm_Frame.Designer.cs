@@ -45,7 +45,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Bt_Mini = new System.Windows.Forms.Button();
             this.Bt_Close = new System.Windows.Forms.Button();
-            this.Bt_Zoom = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -189,7 +188,7 @@
             this.Bt_Test.Name = "Bt_Test";
             this.Bt_Test.Size = new System.Drawing.Size(242, 62);
             this.Bt_Test.TabIndex = 2;
-            this.Bt_Test.Text = "수동 제어";
+            this.Bt_Test.Text = "모니터링";
             this.Bt_Test.UseVisualStyleBackColor = false;
             this.Bt_Test.Click += new System.EventHandler(this.Bt_Test_Click);
             this.Bt_Test.MouseLeave += new System.EventHandler(this.Bt_Test_MouseLeave);
@@ -301,12 +300,11 @@
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Mini, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.Bt_Close, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.Bt_Zoom, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Bt_Mini, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -324,10 +322,10 @@
             this.Bt_Mini.FlatAppearance.BorderSize = 0;
             this.Bt_Mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bt_Mini.ForeColor = System.Drawing.Color.White;
-            this.Bt_Mini.Location = new System.Drawing.Point(980, 5);
+            this.Bt_Mini.Location = new System.Drawing.Point(1014, 5);
             this.Bt_Mini.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.Bt_Mini.Name = "Bt_Mini";
-            this.Bt_Mini.Size = new System.Drawing.Size(34, 30);
+            this.Bt_Mini.Size = new System.Drawing.Size(30, 30);
             this.Bt_Mini.TabIndex = 3;
             this.Bt_Mini.UseVisualStyleBackColor = true;
             this.Bt_Mini.Click += new System.EventHandler(this.Bt_Mini_Click);
@@ -346,22 +344,6 @@
             this.Bt_Close.TabIndex = 0;
             this.Bt_Close.UseVisualStyleBackColor = true;
             this.Bt_Close.Click += new System.EventHandler(this.Bt_Close_Click);
-            // 
-            // Bt_Zoom
-            // 
-            this.Bt_Zoom.BackgroundImage = global::BatteryMes.Properties.Resources.maximize;
-            this.Bt_Zoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Bt_Zoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Zoom.FlatAppearance.BorderSize = 0;
-            this.Bt_Zoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bt_Zoom.ForeColor = System.Drawing.Color.White;
-            this.Bt_Zoom.Location = new System.Drawing.Point(1014, 5);
-            this.Bt_Zoom.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.Bt_Zoom.Name = "Bt_Zoom";
-            this.Bt_Zoom.Size = new System.Drawing.Size(30, 30);
-            this.Bt_Zoom.TabIndex = 1;
-            this.Bt_Zoom.UseVisualStyleBackColor = true;
-            this.Bt_Zoom.Click += new System.EventHandler(this.Bt_Zoom_Click);
             // 
             // Fm_Frame
             // 
@@ -389,7 +371,6 @@
 
         #endregion
         private System.Windows.Forms.Panel Pn_Main;
-        private System.Windows.Forms.Button Bt_Zoom;
         private System.Windows.Forms.Button Bt_Close;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;

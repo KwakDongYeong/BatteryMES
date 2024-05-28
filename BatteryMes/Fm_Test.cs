@@ -148,12 +148,12 @@ namespace BatteryMes
                 int bitIndex = i % 16;
                 int bitValue = (data[arrayIndex] >> bitIndex) & 1;
                 UpdateImage(i, bitValue);
-                Console.WriteLine($"Address M{1520 + i} = {bitValue}");
+           //     Console.WriteLine($"Address M{1520 + i} = {bitValue}");
             }
         }
         private void UpdateImage(int index, int value)
         {
-            if (index >= 0 && index < pictureBoxes.Length)
+            if (pictureBoxes != null && index >= 0 && index < pictureBoxes.Length)
             {
                 pictureBoxes[index].Image = (value == 0) ? Properties.Resources.제목_없음 : Properties.Resources._1;
             }
